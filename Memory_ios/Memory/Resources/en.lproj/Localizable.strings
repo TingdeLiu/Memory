@@ -1,0 +1,756 @@
+/* Memory App — English (Base Language) */
+
+// MARK: - Tabs
+
+"tab.home" = "Home";
+"tab.memories" = "Memories";
+"tab.contacts" = "Contacts";
+"tab.ai" = "AI";
+"tab.settings" = "Settings";
+
+// MARK: - Home
+
+"home.title" = "Memory";
+"home.search.prompt" = "Search your memories...";
+"home.empty.title" = "Your memories start here";
+"home.empty.subtitle" = "Every thought, every feeling, every moment worth remembering.\nStart capturing what matters to you.";
+"home.empty.button" = "Write a Memory";
+"home.empty.hint" = "or press + anytime";
+"home.filter.date" = "Filter by Date";
+"home.filter.clear" = "Clear Filters";
+"home.filter.from" = "From %@";
+"home.filter.until" = "Until %@";
+"home.stat.total" = "Total";
+"home.stat.thisWeek" = "This Week";
+"home.stat.topMood" = "Top Mood";
+"home.ai.title" = "AI Memory Assistant";
+"home.ai.subtitle" = "Chat about your memories";
+"home.date.today" = "Today";
+"home.date.yesterday" = "Yesterday";
+
+// MARK: - Date Filter Sheet
+
+"dateFilter.title" = "Filter by Date";
+"dateFilter.fromDate" = "From date";
+"dateFilter.toDate" = "To date";
+"dateFilter.start" = "Start";
+"dateFilter.end" = "End";
+"dateFilter.clearAll" = "Clear All Filters";
+"dateFilter.cancel" = "Cancel";
+"dateFilter.apply" = "Apply";
+
+// MARK: - Memory List
+
+"memoryList.title" = "Memories";
+"memoryList.search.prompt" = "Search memories & transcriptions...";
+"memoryList.empty.title" = "No Memories Yet";
+"memoryList.empty.subtitle" = "Start capturing your thoughts and moments.";
+"memoryList.results" = "%lld results";
+"memoryList.result" = "%lld result";
+"memoryList.clearFilters" = "Clear filters";
+"memoryList.sort" = "Sort";
+"memoryList.sort.newest" = "Newest";
+"memoryList.sort.oldest" = "Oldest";
+"memoryList.sort.title" = "Title";
+"memoryList.filter.all" = "All";
+"memoryList.type.text" = "Text";
+"memoryList.type.voice" = "Voice";
+"memoryList.type.photo" = "Photo";
+"memoryList.type.video" = "Video";
+
+// MARK: - Memory Editor
+
+"memoryEditor.new.title" = "New Memory";
+"memoryEditor.edit.title" = "Edit Memory";
+"memoryEditor.titlePlaceholder" = "Title";
+"memoryEditor.contentPlaceholder" = "What's on your mind?";
+"memoryEditor.cancel" = "Cancel";
+"memoryEditor.save" = "Save";
+"memoryEditor.discard.title" = "Discard Changes?";
+"memoryEditor.discard.message" = "You have unsaved changes that will be lost.";
+"memoryEditor.discard.button" = "Discard";
+"memoryEditor.keepEditing" = "Keep Editing";
+"memoryEditor.draftSaved" = "Draft saved %@ ago";
+"memoryEditor.recordVoice" = "Record Voice";
+"memoryEditor.reRecord" = "Re-record";
+"memoryEditor.addPhoto" = "Add Photo";
+"memoryEditor.changePhoto" = "Change Photo";
+"memoryEditor.recordVideo" = "Record Video";
+"memoryEditor.reRecordVideo" = "Re-record Video";
+"memoryEditor.importVideo" = "Import Video";
+"memoryEditor.changeVideo" = "Change Video";
+"memoryEditor.moodPrompt" = "How are you feeling?";
+"memoryEditor.tags" = "Tags";
+"memoryEditor.addTag" = "Add tag...";
+"memoryEditor.tagLabel" = "Tag: %@";
+"memoryEditor.tagRemoveHint" = "Double tap to remove";
+"memoryEditor.privateMemory" = "Private Memory";
+"memoryEditor.privateHint" = "Requires Face ID / Touch ID to view";
+
+// MARK: - Voice Recording
+
+"voiceRecording.title" = "Voice Recording";
+"voiceRecording.cancel" = "Cancel";
+"voiceRecording.useRecording" = "Use Recording";
+"voiceRecording.stopRecording" = "Stop recording";
+"voiceRecording.startRecording" = "Start recording";
+"voiceRecording.transcribing" = "Transcribing...";
+"voiceRecording.transcription" = "Transcription";
+"voiceRecording.transcribeButton" = "Transcribe to Text";
+"voiceRecording.noPermission" = "Microphone access is required to record voice memories.\nPlease enable it in Settings.";
+"voiceRecording.waveform" = "Audio waveform";
+
+// MARK: - Video Recording
+
+"videoRecording.useVideo" = "Use Video";
+"videoRecording.noPermission" = "Camera and microphone access required.\nPlease enable in Settings.";
+
+// MARK: - Memory Detail
+
+"memoryDetail.untitled" = "Untitled";
+"memoryDetail.transcription" = "Transcription";
+"memoryDetail.tags" = "Tags";
+"memoryDetail.lastEdited" = "Last edited %@";
+"memoryDetail.edit" = "Edit";
+"memoryDetail.shareAudio" = "Share Audio";
+"memoryDetail.shareVideo" = "Share Video";
+"memoryDetail.delete" = "Delete";
+"memoryDetail.deleteConfirm.title" = "Delete Memory?";
+"memoryDetail.deleteConfirm.message" = "This memory will be permanently deleted.";
+"memoryDetail.cancel" = "Cancel";
+"memoryDetail.private" = "Private";
+"memoryDetail.type.voice" = "Voice";
+"memoryDetail.type.photo" = "Photo";
+"memoryDetail.type.video" = "Video";
+"memoryDetail.pause" = "Pause";
+"memoryDetail.play" = "Play";
+"memoryDetail.playbackProgress" = "Playback progress";
+
+// MARK: - Memory Timeline Row
+
+"timeline.untitled" = "Untitled";
+"timeline.type.voice" = "Voice";
+"timeline.type.photo" = "Photo";
+"timeline.type.video" = "Video";
+"timeline.type.text" = "Text";
+"timeline.private" = "Private";
+"timeline.tags" = "%lld tags";
+
+// MARK: - Contact List
+
+"contactList.title" = "Contacts";
+"contactList.search.prompt" = "Search contacts...";
+"contactList.addManually" = "Add Manually";
+"contactList.importContacts" = "Import from Contacts";
+"contactList.empty.title" = "People You Cherish";
+"contactList.empty.subtitle" = "Add the people who matter most to you.\nLeave them messages they'll treasure forever.";
+"contactList.favorites" = "Favorites";
+"contactList.unfavorite" = "Unfavorite";
+"contactList.favorite" = "Favorite";
+"contactList.stat.people" = "People";
+"contactList.stat.messages" = "Messages";
+"contactList.stat.sealed" = "Sealed";
+"contactList.sealed" = "%lld sealed";
+"contactList.filter.all" = "All";
+"contactList.filter.favorites" = "Favorites";
+
+// MARK: - Contact Detail
+
+"contactDetail.about" = "About";
+"contactDetail.editContact" = "Edit Contact";
+"contactDetail.removeFromFavorites" = "Remove from Favorites";
+"contactDetail.addToFavorites" = "Add to Favorites";
+"contactDetail.deleteContact" = "Delete Contact";
+"contactDetail.deleteConfirm.title" = "Delete Contact?";
+"contactDetail.deleteConfirm.message" = "This will permanently delete %@ and all %lld messages.";
+"contactDetail.importedFromContacts" = "Imported from Contacts";
+"contactDetail.write" = "Write";
+"contactDetail.edit" = "Edit";
+"contactDetail.fave" = "Fave";
+"contactDetail.unfave" = "Unfave";
+"contactDetail.messages" = "Messages";
+"contactDetail.noMessages" = "No messages yet";
+"contactDetail.writeFirstMessage" = "Write your first message";
+
+// MARK: - Contact Editor
+
+"contactEditor.new.title" = "New Contact";
+"contactEditor.edit.title" = "Edit Contact";
+"contactEditor.name" = "Name";
+"contactEditor.relationship" = "Relationship";
+"contactEditor.favorite" = "Favorite";
+"contactEditor.aboutSection" = "About this person";
+"contactEditor.aboutPlaceholder" = "What makes this person special to you?";
+"contactEditor.deleteContact" = "Delete Contact";
+"contactEditor.deleteFooter" = "Deleting a contact will also delete all messages for them.";
+"contactEditor.deleteConfirm.title" = "Delete Contact?";
+"contactEditor.deleteConfirm.message" = "This will permanently delete %@ and all their messages.";
+"contactEditor.cancel" = "Cancel";
+"contactEditor.save" = "Save";
+
+// MARK: - Contact Import
+
+"contactImport.title" = "Import Contacts";
+"contactImport.cancel" = "Cancel";
+"contactImport.importButton" = "Import (%lld)";
+"contactImport.loading" = "Loading contacts...";
+"contactImport.accessTitle" = "Access Your Contacts";
+"contactImport.accessDescription" = "Memory needs access to your contacts to let you import people you want to leave messages for. We only read names and photos — nothing is shared externally.";
+"contactImport.allowAccess" = "Allow Access";
+"contactImport.deniedTitle" = "Contacts Access Denied";
+"contactImport.deniedDescription" = "To import contacts, please enable access in:\nSettings > Privacy & Security > Contacts > Memory";
+"contactImport.openSettings" = "Open Settings";
+"contactImport.importAs" = "Import as";
+"contactImport.importAsFooter" = "You can change individual relationships after importing.";
+"contactImport.contactsAvailable" = "%lld contacts available";
+"contactImport.deselectAll" = "Deselect All";
+"contactImport.selectAll" = "Select All";
+"contactImport.alreadyImported" = "%lld already imported";
+"contactImport.allImported" = "All contacts have been imported.";
+"contactImport.searchPrompt" = "Search contacts to import...";
+
+// MARK: - Message Editor
+
+"messageEditor.new.title" = "New Message";
+"messageEditor.edit.title" = "Edit Message";
+"messageEditor.to" = "To: %@";
+"messageEditor.messageType" = "Message Type";
+"messageEditor.text" = "Text";
+"messageEditor.voice" = "Voice";
+"messageEditor.messageSection" = "Message";
+"messageEditor.placeholder" = "What would you like to say to %@?";
+"messageEditor.voiceSection" = "Voice Message";
+"messageEditor.tapToRecord" = "Tap to Record";
+"messageEditor.addNote" = "Add a note (optional)";
+"messageEditor.deliveryDate" = "Delivery Date";
+"messageEditor.whenToDeliver" = "When to deliver";
+"messageEditor.afterDeathFooter" = "This message will be kept encrypted and sealed. A trusted contact or executor will be able to deliver it in the future.";
+"messageEditor.cancel" = "Cancel";
+"messageEditor.save" = "Save";
+"messageEditor.discard.title" = "Discard Message?";
+"messageEditor.discard.button" = "Discard";
+"messageEditor.keepEditing" = "Keep Editing";
+"messageEditor.reRecord" = "Re-record";
+"messageEditor.remove" = "Remove";
+
+// MARK: - Message Detail
+
+"messageDetail.title" = "Message";
+"messageDetail.to" = "To: %@";
+"messageDetail.deliveryStatus" = "Delivery status: %@";
+"messageDetail.deliveredOn" = "Delivered on %@";
+"messageDetail.scheduledFor" = "Scheduled for %@";
+"messageDetail.sealedMessage" = "This message is sealed and will be delivered when the time comes.";
+"messageDetail.edited" = "Edited %@";
+"messageDetail.done" = "Done";
+"messageDetail.edit" = "Edit";
+"messageDetail.delete" = "Delete";
+"messageDetail.deleteConfirm.title" = "Delete Message?";
+"messageDetail.deleteConfirm.message" = "This message will be permanently deleted.";
+"messageDetail.cancel" = "Cancel";
+"messageDetail.status" = "Status: %@";
+
+// MARK: - AI Chat
+
+"aiChat.title" = "AI Chat";
+"aiChat.done" = "Done";
+"aiChat.premiumTitle" = "Premium Feature";
+"aiChat.setupTitle" = "Set Up AI";
+"aiChat.premiumDescription" = "AI features require Memory Premium. Upgrade to chat about your memories, get summaries, and discover insights.";
+"aiChat.setupDescription" = "Configure an AI provider to chat about your memories, get summaries, and discover insights.";
+"aiChat.upgradePremium" = "Upgrade to Premium";
+"aiChat.openSettings" = "Open AI Settings";
+"aiChat.welcomePrompt" = "Ask me about your memories...";
+"aiChat.quickSummarize" = "Summarize this week";
+"aiChat.quickFeeling" = "How am I feeling lately?";
+"aiChat.quickThemes" = "What are my most common themes?";
+"aiChat.sendHint" = "Sends this question to AI";
+"aiChat.inputPlaceholder" = "Ask about your memories...";
+"aiChat.sendMessage" = "Send message";
+"aiChat.aiLabel" = "AI";
+"aiChat.aiGenerated" = "AI Generated";
+"aiChat.copy" = "Copy";
+"aiChat.error" = "Sorry, I encountered an error: %@";
+"aiChat.you" = "You";
+
+// MARK: - AI Insights
+
+"aiInsights.title" = "AI Insights";
+"aiInsights.summary.title" = "Memory Summary";
+"aiInsights.summary.subtitle" = "A thoughtful overview of your recent memories";
+"aiInsights.emotions.title" = "Emotion Trends";
+"aiInsights.emotions.subtitle" = "How your feelings have evolved over time";
+"aiInsights.report.title" = "Annual Report";
+"aiInsights.report.subtitle" = "A personal reflection of your year in memories";
+"aiInsights.generating" = "Generating...";
+"aiInsights.regenerate" = "Regenerate";
+"aiInsights.generate" = "Generate";
+"aiInsights.chatWithAI" = "Chat with AI";
+
+// MARK: - Settings
+
+"settings.title" = "Settings";
+"settings.premium" = "Premium";
+"settings.premiumActive" = "Memory Premium";
+"settings.premiumAllUnlocked" = "All features unlocked";
+"settings.upgradePremium" = "Upgrade to Premium";
+"settings.premiumSubtitle" = "Unlimited memories, AI, and more";
+"settings.security" = "Security";
+"settings.requireBiometric" = "Require %@";
+"settings.lockOnClose" = "Lock app when closed";
+"settings.autoLockBackground" = "Auto-lock on Background";
+"settings.autoLockSubtitle" = "Lock immediately when leaving app";
+"settings.encryptionSecurity" = "Encryption & Security";
+"settings.encryptionSubtitle" = "AES-256 encryption details";
+"settings.biometricUnavailable" = "Biometric authentication is not available on this device. Device passcode will be used instead.";
+"settings.cloudSync" = "Cloud & Sync";
+"settings.iCloudSync" = "iCloud Sync";
+"settings.iCloudSubtitle" = "Sync memories across your Apple devices";
+"settings.syncStatus" = "Status";
+"settings.lastSynced" = "Last synced";
+"settings.googleDrive" = "Google Drive";
+"settings.googleDriveConnected" = "Connected";
+"settings.googleDriveSubtitle" = "Backup to Google Drive";
+"settings.cloudEncryptionFooter" = "All data is encrypted with AES-256-GCM before syncing. Neither Apple nor Google can read your content.";
+"settings.data" = "Data";
+"settings.privacyData" = "Privacy & Data Management";
+"settings.aiSettings" = "AI Settings";
+"settings.aiSettingsSubtitle" = "Provider, API key, and privacy";
+"settings.storage" = "Storage";
+"settings.localStorage" = "Local Storage";
+"settings.memories" = "Memories";
+"settings.contacts" = "Contacts";
+"settings.messages" = "Messages";
+"settings.sealedMessages" = "Sealed messages";
+"settings.about" = "About";
+"settings.version" = "Version";
+"settings.privacyPolicy" = "Privacy Policy";
+"settings.termsOfUse" = "Terms of Use";
+"settings.support" = "Support";
+"settings.motto" = "When no one in the world remembers you,\nthat's when you truly disappear.";
+
+// MARK: - Security Settings
+
+"security.title" = "Security";
+"security.appLock" = "App Lock";
+"security.requireBiometric" = "Require %@";
+"security.autoLockBackground" = "Auto-lock on Background";
+"security.appLockFooter" = "When enabled, %@ or device passcode is required each time you open the app.";
+"security.encryptionLevel" = "Encryption Level";
+"security.recommended" = "Recommended";
+"security.fullEncryptionFooter" = "Full encryption protects your data even if the device is physically compromised. Search and sorting are performed in memory.";
+"security.cloudEncryptionFooter" = "Cloud encryption keeps your local data readable for fast search and sorting. Data is encrypted before syncing to the cloud.";
+"security.migration" = "Migration";
+"security.migratingMemories" = "Migrating memories...";
+"security.migratingContacts" = "Migrating contacts...";
+"security.migratingMessages" = "Migrating messages...";
+"security.encryptingMedia" = "Encrypting media files...";
+"security.decryptingMedia" = "Decrypting media files...";
+"security.migrationComplete" = "Complete";
+"security.encryption" = "Encryption";
+"security.algorithm" = "Algorithm";
+"security.keyStorage" = "Key Storage";
+"security.keyStorageValue" = "Secure Enclave / Keychain";
+"security.masterKey" = "Master Key";
+"security.masterKeyActive" = "Active";
+"security.masterKeyNotCreated" = "Not created";
+"security.initializeKey" = "Initialize Encryption Key";
+"security.encryptionFooter" = "Your data is encrypted using AES-256-GCM. The encryption key is stored in the device Keychain and never leaves your device.";
+"security.keyRecovery" = "Key Recovery";
+"security.setRecoveryPassword" = "Set Recovery Password";
+"security.setRecoverySubtitle" = "Required to restore your data on a new device";
+"security.recoveryBackup" = "Recovery backup";
+"security.recoveryConfigured" = "Configured";
+"security.restoreFromRecovery" = "Restore from Recovery Password";
+"security.keyRecoveryFooter" = "In full encryption mode, if you lose your device without a recovery password, your encrypted data cannot be recovered.";
+"security.encryptAudio" = "Encrypt Audio Recordings";
+"security.encryptAudioSubtitle" = "Extra protection for voice memories";
+"security.encryptAudioFooter" = "When enabled, audio files are encrypted at rest. This may slightly increase the time to play recordings.";
+"security.dataProtection" = "Data Protection";
+"security.e2e" = "End-to-End Encryption";
+"security.dataAtRest" = "Data at Rest";
+"security.dataAtRestDetail" = "AES-256-GCM encrypted";
+"security.dataInTransit" = "Data in Transit";
+"security.dataInTransitDetail" = "TLS 1.3 to iCloud";
+"security.iCloudStorage" = "iCloud Storage";
+"security.iCloudStorageDetail" = "Client-side encrypted";
+"security.keychain" = "Keychain";
+"security.keychainDetail" = "Hardware-backed";
+"security.dataProtectionFooter" = "Memory encrypts your data before it leaves your device. Neither Apple nor Memory can read your content stored in iCloud.";
+"security.advanced" = "Advanced";
+"security.resetKey" = "Reset Encryption Key";
+"security.resetKeyFooter" = "Resetting the encryption key will make any encrypted data unreadable. Only use this if you have issues with encryption.";
+"security.resetKeyConfirm.title" = "Reset Encryption Key?";
+"security.resetKeyConfirm.message" = "This will delete the current encryption key. Any previously encrypted data will become unreadable. This cannot be undone.";
+"security.resetButton" = "Reset";
+"security.cancel" = "Cancel";
+"security.migrate" = "Migrate";
+"security.changeLevel.title" = "Change Encryption Level?";
+"security.changeToFull" = "This will encrypt all sensitive fields in your local database. This may take a moment depending on your data size.";
+"security.changeToCloud" = "This will decrypt all locally encrypted fields back to plain text. Cloud data will remain encrypted.";
+"security.backupSheet.title" = "Set Recovery Password";
+"security.backupSheet.password" = "Recovery Password";
+"security.backupSheet.confirmPassword" = "Confirm Password";
+"security.backupSheet.footer" = "Choose a strong password you'll remember. You'll need this to recover your encryption key on a new device.";
+"security.backupSheet.cancel" = "Cancel";
+"security.backupSheet.save" = "Save";
+"security.backupSheet.mismatch" = "Passwords do not match.";
+"security.backupSheet.tooShort" = "Password must be at least 8 characters.";
+"security.restoreSheet.title" = "Restore Key";
+"security.restoreSheet.password" = "Recovery Password";
+"security.restoreSheet.footer" = "Enter the recovery password you set when backing up your encryption key.";
+"security.restoreSheet.cancel" = "Cancel";
+"security.restoreSheet.restore" = "Restore";
+"security.restoreSheet.noBackup" = "No recovery backup found.";
+"security.restoreSheet.invalid" = "Invalid recovery password.";
+
+// MARK: - Privacy & Data
+
+"privacy.title" = "Privacy & Data";
+"privacy.yourData" = "Your Data";
+"privacy.memories" = "Memories";
+"privacy.text" = "  Text";
+"privacy.voice" = "  Voice";
+"privacy.photo" = "  Photo";
+"privacy.private" = "  Private";
+"privacy.contacts" = "Contacts";
+"privacy.messages" = "Messages";
+"privacy.sealed" = "  Sealed";
+"privacy.archivingSince" = "Archiving since";
+"privacy.export" = "Export";
+"privacy.exportAll" = "Export All Data";
+"privacy.exportAllSubtitle" = "Save a copy of everything";
+"privacy.encryptedBackup" = "Create Encrypted Backup";
+"privacy.encryptedBackupSubtitle" = "AES-256 encrypted archive";
+"privacy.preparing" = "Preparing export...";
+"privacy.exportFooter" = "JSON export is human-readable. Encrypted backup can only be restored with your device's encryption key.";
+"privacy.exportFormat" = "Export Format";
+"privacy.jsonFormat" = "JSON (Machine-readable)";
+"privacy.textFormat" = "Plain Text (Human-readable)";
+"privacy.principles" = "Privacy Principles";
+"privacy.yourDataControl.title" = "Your Data, Your Control";
+"privacy.yourDataControl.description" = "All memories and messages are stored locally on your device. When iCloud sync is enabled, data is encrypted before upload.";
+"privacy.zeroKnowledge.title" = "Zero Knowledge";
+"privacy.zeroKnowledge.description" = "Memory has no servers and no access to your data. Everything stays in your personal iCloud account.";
+"privacy.rightToDelete.title" = "Right to Delete";
+"privacy.rightToDelete.description" = "You can permanently delete all your data at any time. Deletion is immediate and irreversible.";
+"privacy.aiPrivacy" = "AI Privacy";
+"privacy.aiFeatures" = "AI Features";
+"privacy.aiDescription" = "When you use AI features, only the specific memories you choose are sent to the AI service. Data is transmitted over encrypted connections and is not stored by the AI provider.";
+"privacy.aiChoose" = "You choose what to share";
+"privacy.aiEncrypted" = "Encrypted in transit (TLS 1.3)";
+"privacy.aiNoTraining" = "Not used for AI training";
+"privacy.dangerZone" = "Danger Zone";
+"privacy.deleteAll" = "Delete All Data";
+"privacy.deleteAllSubtitle" = "Permanently erase everything";
+"privacy.deleting" = "Deleting all data...";
+"privacy.deleteAllFooter" = "This permanently deletes all memories, contacts, messages, and audio recordings. This cannot be undone.";
+"privacy.deleteAllConfirm.title" = "Delete All Data?";
+"privacy.deleteAllConfirm.message" = "This will permanently delete all your memories, contacts, and messages. Audio recordings will be securely wiped.";
+"privacy.deleteEverything" = "Delete Everything";
+"privacy.typeDelete" = "Type DELETE to confirm";
+"privacy.typeDeleteMessage" = "This action is permanent and cannot be undone. Type DELETE to confirm.";
+"privacy.deleteForever" = "Delete Forever";
+"privacy.cancel" = "Cancel";
+
+// MARK: - AI Settings
+
+"aiSettings.title" = "AI Settings";
+"aiSettings.enableAI" = "Enable AI Features";
+"aiSettings.enableSubtitle" = "Chat, summarize, and organize memories with AI";
+"aiSettings.provider" = "AI Provider";
+"aiSettings.providerLabel" = "Provider";
+"aiSettings.apiKey" = "API Key";
+"aiSettings.status" = "Status";
+"aiSettings.configured" = "Configured";
+"aiSettings.notSet" = "Not Set";
+"aiSettings.enterKey" = "Enter API Key";
+"aiSettings.saveKey" = "Save API Key";
+"aiSettings.clearKey" = "Clear API Key";
+"aiSettings.clearKeyConfirm" = "Clear API Key?";
+"aiSettings.clearButton" = "Clear";
+"aiSettings.clearMessage" = "This will remove the API key for %@.";
+"aiSettings.apiKeyFooter" = "Your API key is stored securely in the device Keychain and never leaves your device except when making AI requests.";
+"aiSettings.customEndpoint" = "Custom Endpoint";
+"aiSettings.baseURL" = "Base URL";
+"aiSettings.modelName" = "Model Name";
+"aiSettings.customFooter" = "Enter the base URL of an OpenAI-compatible API (e.g., a local Ollama instance).";
+"aiSettings.model" = "Model";
+"aiSettings.privacy" = "Privacy";
+"aiSettings.includePrivate" = "Include Private Memories";
+"aiSettings.includePrivateSubtitle" = "Allow AI to access memories marked as private";
+"aiSettings.privacyFooter" = "Data minimization: Only memory title, content, tags, mood, and date are sent to the AI. Photos and audio files are never sent.";
+"aiSettings.testConnection" = "Test Connection";
+"aiSettings.testing" = "Testing...";
+"aiSettings.connectionSuccess" = "Connection successful";
+
+// MARK: - Purchase
+
+"purchase.title" = "Memory Premium";
+"purchase.close" = "Close";
+"purchase.subtitle" = "Unlock the full power of Memory.\nOne purchase, yours forever.";
+"purchase.feature" = "Feature";
+"purchase.free" = "Free";
+"purchase.premium" = "Premium";
+"purchase.textMemories" = "Text Memories";
+"purchase.voiceMemories" = "Voice Memories";
+"purchase.contacts" = "Contacts";
+"purchase.aiFeatures" = "AI Features";
+"purchase.encryptedExport" = "Encrypted Export";
+"purchase.iCloudSync" = "iCloud Sync";
+"purchase.unlimited" = "Unlimited";
+"purchase.youHavePremium" = "You have Premium";
+"purchase.purchaseFor" = "Purchase for %@";
+"purchase.oneTime" = "One-time purchase";
+"purchase.productUnavailable" = "Product not available";
+"purchase.restore" = "Restore Purchases";
+"purchase.termsOfUse" = "Terms of Use";
+"purchase.privacyPolicy" = "Privacy Policy";
+
+// MARK: - Google Drive Settings
+
+"gdrive.title" = "Google Drive";
+"gdrive.account" = "Account";
+"gdrive.connected" = "Connected";
+"gdrive.signOut" = "Sign Out";
+"gdrive.signIn" = "Sign in with Google";
+"gdrive.signInSubtitle" = "Connect to sync your data";
+"gdrive.accountFooter" = "Memory uses the drive.file scope, which only accesses files created by this app.";
+"gdrive.sync" = "Sync";
+"gdrive.enableSync" = "Enable Sync";
+"gdrive.enableSyncSubtitle" = "Auto-sync in the background";
+"gdrive.syncNow" = "Sync Now";
+"gdrive.syncing" = "Syncing...";
+"gdrive.status" = "Status";
+"gdrive.lastSynced" = "Last synced";
+"gdrive.never" = "Never";
+"gdrive.security" = "Security";
+"gdrive.e2e" = "End-to-End Encrypted";
+"gdrive.e2eDescription" = "All data is encrypted with AES-256-GCM before uploading. Google cannot read your content.";
+
+// MARK: - Lock Screen
+
+"lockScreen.title" = "Memory";
+"lockScreen.protected" = "Your memories are protected";
+"lockScreen.unlock" = "Unlock with %@";
+"lockScreen.unlockHint" = "Authenticates to access your memories";
+"lockScreen.usePasscode" = "Use Passcode Instead";
+"lockScreen.authFailed" = "Authentication failed. Try again.";
+
+// MARK: - Onboarding
+
+"onboarding.welcome.title" = "Welcome to Memory";
+"onboarding.welcome.subtitle" = "Record your thoughts, feelings, and moments.\nLeave messages for the people you love.";
+"onboarding.privacy.title" = "Your Privacy, Our Promise";
+"onboarding.privacy.subtitle" = "All data is encrypted and stored locally on your device.\niCloud sync uses your personal, private account.\nWe never see your memories.";
+"onboarding.start.title" = "Start Remembering";
+"onboarding.start.subtitle" = "When no one in the world remembers you,\nthat's when you truly disappear.";
+"onboarding.getStarted" = "Get Started";
+
+// MARK: - Model: Mood
+
+"mood.happy" = "Happy";
+"mood.grateful" = "Grateful";
+"mood.calm" = "Calm";
+"mood.nostalgic" = "Nostalgic";
+"mood.sad" = "Sad";
+"mood.anxious" = "Anxious";
+"mood.hopeful" = "Hopeful";
+"mood.loving" = "Loving";
+
+// MARK: - Model: Relationship
+
+"relationship.family" = "Family";
+"relationship.partner" = "Partner";
+"relationship.friend" = "Friend";
+"relationship.colleague" = "Colleague";
+"relationship.mentor" = "Mentor";
+"relationship.other" = "Other";
+
+// MARK: - Model: Delivery Condition
+
+"delivery.immediate.label" = "Visible Now";
+"delivery.specificDate.label" = "Specific Date";
+"delivery.afterDeath.label" = "After I'm Gone";
+"delivery.immediate.description" = "This message is a personal note, always visible to you.";
+"delivery.specificDate.description" = "This message will be marked for delivery on a specific date.";
+"delivery.afterDeath.description" = "This message will be kept safe and sealed until the time comes.";
+
+// MARK: - Model: Message Status
+
+"message.status.visible" = "Visible";
+"message.status.delivered" = "Delivered";
+"message.status.scheduled" = "Scheduled";
+"message.status.sealed" = "Sealed";
+
+// MARK: - Model: Encryption Level
+
+"encryption.cloudOnly.label" = "Cloud Encryption";
+"encryption.full.label" = "Full Encryption";
+"encryption.cloudOnly.description" = "Data is encrypted when synced to iCloud or Google Drive. Local data is protected by device lock and biometrics.";
+"encryption.full.description" = "Sensitive fields are encrypted locally and in the cloud. Maximum security, but search and sorting may be limited.";
+
+// MARK: - Model: Biometric Type
+
+"biometric.faceID" = "Face ID";
+"biometric.touchID" = "Touch ID";
+"biometric.opticID" = "Optic ID";
+"biometric.passcode" = "Passcode";
+
+// MARK: - Biometric Auth
+
+"biometric.reason" = "Authenticate to access your memories";
+"biometric.reasonPrivate" = "Authenticate to view private memories";
+"biometric.fallback" = "Use Passcode";
+
+// MARK: - Common
+
+"common.cancel" = "Cancel";
+"common.save" = "Save";
+"common.delete" = "Delete";
+"common.done" = "Done";
+"common.edit" = "Edit";
+"common.all" = "All";
+"common.copy" = "Copy";
+"common.pause" = "Pause";
+"common.play" = "Play";
+"common.private" = "Private";
+"common.remove" = "Remove";
+"common.untitled" = "Untitled";
+"common.a11y.deselect" = "Deselect filter";
+"common.a11y.filter" = "Tap to filter";
+
+// MARK: - Additional Settings Keys
+
+"settings.tagline" = "When no one in the world remembers you,\nthat's when you truly disappear.";
+"settings.section.premium" = "Premium";
+"settings.section.security" = "Security";
+"settings.section.sync" = "Cloud & Sync";
+"settings.section.data" = "Data";
+"settings.section.storage" = "Storage";
+"settings.section.about" = "About";
+"settings.premium.title" = "Memory Premium";
+"settings.premium.unlocked" = "All features unlocked";
+"settings.premium.upgrade" = "Upgrade to Premium";
+"settings.premium.upgradeSubtitle" = "Unlimited memories, AI, and more";
+"settings.icloud" = "iCloud Sync";
+"settings.icloudSubtitle" = "Sync memories across your Apple devices";
+"settings.gdrive.connected" = "Connected";
+"settings.gdrive.backup" = "Backup to Google Drive";
+"settings.syncFooter" = "All data is encrypted with AES-256-GCM before syncing. Neither Apple nor Google can read your content.";
+"settings.privacy" = "Privacy & Data Management";
+"settings.storage.memories" = "Memories";
+"settings.storage.contacts" = "Contacts";
+"settings.storage.messages" = "Messages";
+"settings.storage.sealed" = "Sealed messages";
+
+// MARK: - Additional Security Keys
+
+"security.require" = "Require";
+"security.lockOnClose" = "Lock app when closed";
+"security.autoLock" = "Auto-lock on Background";
+"security.autoLockSubtitle" = "Lock immediately when leaving app";
+"security.encryptionSubtitle" = "AES-256 encryption details";
+"security.noBiometric" = "Biometric authentication is not available on this device. Device passcode will be used instead.";
+"security.fullFooter" = "Full encryption protects your data even if the device is physically compromised. Search and sorting are performed in memory.";
+"security.cloudFooter" = "Cloud encryption keeps your local data readable for fast search and sorting. Data is encrypted before syncing to the cloud.";
+"security.configured" = "Configured";
+"security.masterKey.active" = "Active";
+"security.masterKey.notCreated" = "Not created";
+"security.initKey" = "Initialize Encryption Key";
+"security.setRecovery" = "Set Recovery Password";
+"security.restoreRecovery" = "Restore from Recovery Password";
+"security.icloudStorage" = "iCloud Storage";
+"security.icloudStorageDetail" = "Client-side encrypted";
+"security.resetKeyTitle" = "Reset Encryption Key?";
+"security.resetKeyMessage" = "This will delete the current encryption key. Any previously encrypted data will become unreadable. This cannot be undone.";
+"security.changeLevelTitle" = "Change Encryption Level?";
+"security.migrateButton" = "Migrate";
+"security.migrateToFull" = "This will encrypt all sensitive fields in your local database. This may take a moment depending on your data size.";
+"security.migrateToCloud" = "This will decrypt all locally encrypted fields back to plain text. Cloud data will remain encrypted.";
+"security.recoveryPassword" = "Recovery Password";
+"security.confirmPassword" = "Confirm Password";
+"security.recoveryPasswordFooter" = "Choose a strong password you'll remember. You'll need this to recover your encryption key on a new device.";
+"security.restoreKey" = "Restore Key";
+"security.restoreFooter" = "Enter the recovery password you set when backing up your encryption key.";
+"security.restoreButton" = "Restore";
+"security.migrating.memories" = "Migrating memories...";
+"security.migrating.contacts" = "Migrating contacts...";
+"security.migrating.messages" = "Migrating messages...";
+"security.migrating.encrypting" = "Encrypting media files...";
+"security.migrating.decrypting" = "Decrypting media files...";
+
+// MARK: - Additional Memory Keys
+
+"memoryType.text" = "Text";
+"memoryType.voice" = "Voice";
+"memoryType.photo" = "Photo";
+"memoryType.video" = "Video";
+"memoryEditor.title" = "Title";
+"memoryEditor.placeholder" = "What's on your mind?";
+"memoryEditor.editTitle" = "Edit Memory";
+"memoryEditor.newTitle" = "New Memory";
+"memoryEditor.discardTitle" = "Discard Changes?";
+"memoryEditor.discardMessage" = "You have unsaved changes that will be lost.";
+"memoryEditor.discardButton" = "Discard";
+"memoryEditor.mood" = "How are you feeling?";
+"memoryEditor.removeTagHint" = "Double tap to remove";
+"memoryEditor.private" = "Private Memory";
+"memoryDetail.deleteTitle" = "Delete Memory?";
+"memoryDetail.deleteMessage" = "This memory will be permanently deleted.";
+
+// MARK: - Additional Contact Keys
+
+"contactDetail.deleteTitle" = "Delete Contact?";
+"contactDetail.removeFavorite" = "Remove from Favorites";
+"contactDetail.addFavorite" = "Add to Favorites";
+"contactDetail.imported" = "Imported from Contacts";
+"contactDetail.action.write" = "Write";
+"contactDetail.action.edit" = "Edit";
+"contactDetail.action.fave" = "Fave";
+"contactDetail.action.unfave" = "Unfave";
+"contactDetail.writeFirst" = "Write your first message";
+"contactDetail.statusA11y" = "Delivery status:";
+"contactDetail.delivered" = "Delivered";
+"contactDetail.scheduled" = "Scheduled for";
+"contactEditor.editTitle" = "Edit Contact";
+"contactEditor.newTitle" = "New Contact";
+"contactEditor.notesPlaceholder" = "What makes this person special to you?";
+"contactList.stats.people" = "People";
+"contactList.stats.messages" = "Messages";
+"contactList.stats.sealed" = "Sealed";
+"contactImport.permission.title" = "Access Your Contacts";
+"contactImport.permission.description" = "Memory needs access to your contacts to let you import people you want to leave messages for. We only read names and photos — nothing is shared externally.";
+"contactImport.denied.title" = "Contacts Access Denied";
+"contactImport.denied.description" = "To import contacts, please enable access in:\nSettings > Privacy & Security > Contacts > Memory";
+"contactImport.search.prompt" = "Search contacts to import...";
+
+// MARK: - Additional Message Keys
+
+"messageDetail.deleteTitle" = "Delete Message?";
+"messageDetail.deleteMessage" = "This message will be permanently deleted.";
+"messageDetail.sealedInfo" = "This message is sealed and will be delivered when the time comes.";
+"messageEditor.type" = "Message Type";
+"messageEditor.message" = "Message";
+"messageEditor.voiceMessage" = "Voice Message";
+"messageEditor.sealedFooter" = "This message will be kept encrypted and sealed. A trusted contact or executor will be able to deliver it in the future.";
+"messageEditor.editTitle" = "Edit Message";
+"messageEditor.newTitle" = "New Message";
+"messageEditor.discardTitle" = "Discard Message?";
+
+// MARK: - Additional AI Keys
+
+"aiChat.premiumFeature" = "Premium Feature";
+"aiChat.setup" = "Set Up AI";
+"aiChat.welcome" = "Ask me about your memories...";
+"aiChat.quick.summarize" = "Summarize this week";
+"aiChat.quick.feeling" = "How am I feeling lately?";
+"aiChat.quick.themes" = "What are my most common themes?";
+"aiChat.quickHint" = "Sends this question to AI";
+"aiChat.send" = "Send message";
+"aiChat.ai" = "AI";
+
+// MARK: - Additional Voice Recording Keys
+
+"voiceRecording.start" = "Start recording";
+"voiceRecording.stop" = "Stop recording";

@@ -1,0 +1,8 @@
+/* Info.plist permission descriptions — 简体中文 */
+
+"NSFaceIDUsageDescription" = "Memory 使用 Face ID 保护你的私密回忆和留言。";
+"NSContactsUsageDescription" = "Memory 访问你的通讯录以便导入你想留言的人。";
+"NSMicrophoneUsageDescription" = "Memory 使用麦克风录制语音回忆和语音留言。";
+"NSSpeechRecognitionUsageDescription" = "Memory 使用语音识别将你的语音录制转写为文字。";
+"NSCameraUsageDescription" = "Memory 使用相机录制视频回忆。";
+"NSPhotoLibraryUsageDescription" = "Memory 访问你的照片图库以添加照片到回忆和联系人头像。";

@@ -1,0 +1,756 @@
+/* Memory App — 简体中文 */
+
+// MARK: - Tabs
+
+"tab.home" = "首页";
+"tab.memories" = "回忆";
+"tab.contacts" = "联系人";
+"tab.ai" = "AI";
+"tab.settings" = "设置";
+
+// MARK: - Home
+
+"home.title" = "Memory";
+"home.search.prompt" = "搜索你的回忆...";
+"home.empty.title" = "从这里开始记录";
+"home.empty.subtitle" = "每一个想法，每一份感受，每一个值得铭记的瞬间。\n开始记录对你重要的一切。";
+"home.empty.button" = "写一段回忆";
+"home.empty.hint" = "或随时按 +";
+"home.filter.date" = "按日期筛选";
+"home.filter.clear" = "清除筛选";
+"home.filter.from" = "从 %@";
+"home.filter.until" = "至 %@";
+"home.stat.total" = "总计";
+"home.stat.thisWeek" = "本周";
+"home.stat.topMood" = "最多心情";
+"home.ai.title" = "AI 记忆助手";
+"home.ai.subtitle" = "与 AI 聊聊你的回忆";
+"home.date.today" = "今天";
+"home.date.yesterday" = "昨天";
+
+// MARK: - Date Filter Sheet
+
+"dateFilter.title" = "按日期筛选";
+"dateFilter.fromDate" = "起始日期";
+"dateFilter.toDate" = "截止日期";
+"dateFilter.start" = "开始";
+"dateFilter.end" = "结束";
+"dateFilter.clearAll" = "清除所有筛选";
+"dateFilter.cancel" = "取消";
+"dateFilter.apply" = "应用";
+
+// MARK: - Memory List
+
+"memoryList.title" = "回忆";
+"memoryList.search.prompt" = "搜索回忆和语音转写...";
+"memoryList.empty.title" = "还没有回忆";
+"memoryList.empty.subtitle" = "开始记录你的想法和瞬间。";
+"memoryList.results" = "%lld 条结果";
+"memoryList.result" = "%lld 条结果";
+"memoryList.clearFilters" = "清除筛选";
+"memoryList.sort" = "排序";
+"memoryList.sort.newest" = "最新";
+"memoryList.sort.oldest" = "最早";
+"memoryList.sort.title" = "标题";
+"memoryList.filter.all" = "全部";
+"memoryList.type.text" = "文字";
+"memoryList.type.voice" = "语音";
+"memoryList.type.photo" = "照片";
+"memoryList.type.video" = "视频";
+
+// MARK: - Memory Editor
+
+"memoryEditor.new.title" = "新回忆";
+"memoryEditor.edit.title" = "编辑回忆";
+"memoryEditor.titlePlaceholder" = "标题";
+"memoryEditor.contentPlaceholder" = "在想什么？";
+"memoryEditor.cancel" = "取消";
+"memoryEditor.save" = "保存";
+"memoryEditor.discard.title" = "放弃修改？";
+"memoryEditor.discard.message" = "你有未保存的修改将会丢失。";
+"memoryEditor.discard.button" = "放弃";
+"memoryEditor.keepEditing" = "继续编辑";
+"memoryEditor.draftSaved" = "草稿已保存于 %@ 前";
+"memoryEditor.recordVoice" = "录制语音";
+"memoryEditor.reRecord" = "重新录制";
+"memoryEditor.addPhoto" = "添加照片";
+"memoryEditor.changePhoto" = "更换照片";
+"memoryEditor.recordVideo" = "录制视频";
+"memoryEditor.reRecordVideo" = "重新录制视频";
+"memoryEditor.importVideo" = "导入视频";
+"memoryEditor.changeVideo" = "更换视频";
+"memoryEditor.moodPrompt" = "你现在感觉怎样？";
+"memoryEditor.tags" = "标签";
+"memoryEditor.addTag" = "添加标签...";
+"memoryEditor.tagLabel" = "标签：%@";
+"memoryEditor.tagRemoveHint" = "双击移除";
+"memoryEditor.privateMemory" = "私密回忆";
+"memoryEditor.privateHint" = "需要 Face ID / Touch ID 才能查看";
+
+// MARK: - Voice Recording
+
+"voiceRecording.title" = "语音录制";
+"voiceRecording.cancel" = "取消";
+"voiceRecording.useRecording" = "使用录音";
+"voiceRecording.stopRecording" = "停止录制";
+"voiceRecording.startRecording" = "开始录制";
+"voiceRecording.transcribing" = "正在转写...";
+"voiceRecording.transcription" = "语音转写";
+"voiceRecording.transcribeButton" = "转写为文字";
+"voiceRecording.noPermission" = "录制语音回忆需要麦克风权限。\n请在"设置"中开启。";
+"voiceRecording.waveform" = "音频波形";
+
+// MARK: - Video Recording
+
+"videoRecording.useVideo" = "使用视频";
+"videoRecording.noPermission" = "需要相机和麦克风权限。\n请在"设置"中开启。";
+
+// MARK: - Memory Detail
+
+"memoryDetail.untitled" = "无标题";
+"memoryDetail.transcription" = "语音转写";
+"memoryDetail.tags" = "标签";
+"memoryDetail.lastEdited" = "最后编辑于 %@";
+"memoryDetail.edit" = "编辑";
+"memoryDetail.shareAudio" = "分享音频";
+"memoryDetail.shareVideo" = "分享视频";
+"memoryDetail.delete" = "删除";
+"memoryDetail.deleteConfirm.title" = "删除回忆？";
+"memoryDetail.deleteConfirm.message" = "此回忆将被永久删除。";
+"memoryDetail.cancel" = "取消";
+"memoryDetail.private" = "私密";
+"memoryDetail.type.voice" = "语音";
+"memoryDetail.type.photo" = "照片";
+"memoryDetail.type.video" = "视频";
+"memoryDetail.pause" = "暂停";
+"memoryDetail.play" = "播放";
+"memoryDetail.playbackProgress" = "播放进度";
+
+// MARK: - Memory Timeline Row
+
+"timeline.untitled" = "无标题";
+"timeline.type.voice" = "语音";
+"timeline.type.photo" = "照片";
+"timeline.type.video" = "视频";
+"timeline.type.text" = "文字";
+"timeline.private" = "私密";
+"timeline.tags" = "%lld 个标签";
+
+// MARK: - Contact List
+
+"contactList.title" = "联系人";
+"contactList.search.prompt" = "搜索联系人...";
+"contactList.addManually" = "手动添加";
+"contactList.importContacts" = "从通讯录导入";
+"contactList.empty.title" = "你珍视的人";
+"contactList.empty.subtitle" = "添加对你最重要的人。\n给他们留下永远珍藏的话语。";
+"contactList.favorites" = "收藏";
+"contactList.unfavorite" = "取消收藏";
+"contactList.favorite" = "收藏";
+"contactList.stat.people" = "联系人";
+"contactList.stat.messages" = "留言";
+"contactList.stat.sealed" = "封存";
+"contactList.sealed" = "%lld 条封存";
+"contactList.filter.all" = "全部";
+"contactList.filter.favorites" = "收藏";
+
+// MARK: - Contact Detail
+
+"contactDetail.about" = "关于";
+"contactDetail.editContact" = "编辑联系人";
+"contactDetail.removeFromFavorites" = "取消收藏";
+"contactDetail.addToFavorites" = "添加到收藏";
+"contactDetail.deleteContact" = "删除联系人";
+"contactDetail.deleteConfirm.title" = "删除联系人？";
+"contactDetail.deleteConfirm.message" = "将永久删除 %@ 及其全部 %lld 条留言。";
+"contactDetail.importedFromContacts" = "从通讯录导入";
+"contactDetail.write" = "写留言";
+"contactDetail.edit" = "编辑";
+"contactDetail.fave" = "收藏";
+"contactDetail.unfave" = "取消";
+"contactDetail.messages" = "留言";
+"contactDetail.noMessages" = "还没有留言";
+"contactDetail.writeFirstMessage" = "写下你的第一条留言";
+
+// MARK: - Contact Editor
+
+"contactEditor.new.title" = "新联系人";
+"contactEditor.edit.title" = "编辑联系人";
+"contactEditor.name" = "姓名";
+"contactEditor.relationship" = "关系";
+"contactEditor.favorite" = "收藏";
+"contactEditor.aboutSection" = "关于此人";
+"contactEditor.aboutPlaceholder" = "这个人对你来说有什么特别？";
+"contactEditor.deleteContact" = "删除联系人";
+"contactEditor.deleteFooter" = "删除联系人将同时删除所有留言。";
+"contactEditor.deleteConfirm.title" = "删除联系人？";
+"contactEditor.deleteConfirm.message" = "将永久删除 %@ 及其所有留言。";
+"contactEditor.cancel" = "取消";
+"contactEditor.save" = "保存";
+
+// MARK: - Contact Import
+
+"contactImport.title" = "导入联系人";
+"contactImport.cancel" = "取消";
+"contactImport.importButton" = "导入 (%lld)";
+"contactImport.loading" = "正在加载联系人...";
+"contactImport.accessTitle" = "访问你的通讯录";
+"contactImport.accessDescription" = "Memory 需要访问你的通讯录以便导入你想留言的人。我们仅读取姓名和头像，不会对外分享任何信息。";
+"contactImport.allowAccess" = "允许访问";
+"contactImport.deniedTitle" = "通讯录访问被拒绝";
+"contactImport.deniedDescription" = "如需导入联系人，请前往：\n设置 > 隐私与安全 > 通讯录 > Memory";
+"contactImport.openSettings" = "打开设置";
+"contactImport.importAs" = "导入为";
+"contactImport.importAsFooter" = "导入后可单独修改各联系人的关系。";
+"contactImport.contactsAvailable" = "%lld 个联系人可导入";
+"contactImport.deselectAll" = "取消全选";
+"contactImport.selectAll" = "全选";
+"contactImport.alreadyImported" = "已导入 %lld 个";
+"contactImport.allImported" = "所有联系人已导入。";
+"contactImport.searchPrompt" = "搜索要导入的联系人...";
+
+// MARK: - Message Editor
+
+"messageEditor.new.title" = "新留言";
+"messageEditor.edit.title" = "编辑留言";
+"messageEditor.to" = "收信人：%@";
+"messageEditor.messageType" = "留言类型";
+"messageEditor.text" = "文字";
+"messageEditor.voice" = "语音";
+"messageEditor.messageSection" = "留言";
+"messageEditor.placeholder" = "你想对 %@ 说什么？";
+"messageEditor.voiceSection" = "语音留言";
+"messageEditor.tapToRecord" = "点击录制";
+"messageEditor.addNote" = "添加备注（可选）";
+"messageEditor.deliveryDate" = "送达日期";
+"messageEditor.whenToDeliver" = "送达时间";
+"messageEditor.afterDeathFooter" = "此留言将被加密封存。你的受信人或执行人将来可以送达它。";
+"messageEditor.cancel" = "取消";
+"messageEditor.save" = "保存";
+"messageEditor.discard.title" = "放弃留言？";
+"messageEditor.discard.button" = "放弃";
+"messageEditor.keepEditing" = "继续编辑";
+"messageEditor.reRecord" = "重新录制";
+"messageEditor.remove" = "移除";
+
+// MARK: - Message Detail
+
+"messageDetail.title" = "留言";
+"messageDetail.to" = "收信人：%@";
+"messageDetail.deliveryStatus" = "送达状态：%@";
+"messageDetail.deliveredOn" = "已于 %@ 送达";
+"messageDetail.scheduledFor" = "计划于 %@ 送达";
+"messageDetail.sealedMessage" = "此留言已封存，将在适当的时候送达。";
+"messageDetail.edited" = "编辑于 %@";
+"messageDetail.done" = "完成";
+"messageDetail.edit" = "编辑";
+"messageDetail.delete" = "删除";
+"messageDetail.deleteConfirm.title" = "删除留言？";
+"messageDetail.deleteConfirm.message" = "此留言将被永久删除。";
+"messageDetail.cancel" = "取消";
+"messageDetail.status" = "状态：%@";
+
+// MARK: - AI Chat
+
+"aiChat.title" = "AI 聊天";
+"aiChat.done" = "完成";
+"aiChat.premiumTitle" = "高级功能";
+"aiChat.setupTitle" = "设置 AI";
+"aiChat.premiumDescription" = "AI 功能需要 Memory 高级版。升级后可以与 AI 聊你的回忆、获取摘要和发现洞察。";
+"aiChat.setupDescription" = "配置 AI 服务商，即可与 AI 聊你的回忆、获取摘要和发现洞察。";
+"aiChat.upgradePremium" = "升级到高级版";
+"aiChat.openSettings" = "打开 AI 设置";
+"aiChat.welcomePrompt" = "问我关于你的回忆...";
+"aiChat.quickSummarize" = "总结这一周";
+"aiChat.quickFeeling" = "我最近心情怎么样？";
+"aiChat.quickThemes" = "我最常见的主题是什么？";
+"aiChat.sendHint" = "将此问题发送给 AI";
+"aiChat.inputPlaceholder" = "问问你的回忆...";
+"aiChat.sendMessage" = "发送消息";
+"aiChat.aiLabel" = "AI";
+"aiChat.aiGenerated" = "AI 生成";
+"aiChat.copy" = "复制";
+"aiChat.error" = "抱歉，遇到了错误：%@";
+"aiChat.you" = "你";
+
+// MARK: - AI Insights
+
+"aiInsights.title" = "AI 洞察";
+"aiInsights.summary.title" = "回忆摘要";
+"aiInsights.summary.subtitle" = "你近期回忆的贴心概览";
+"aiInsights.emotions.title" = "情绪趋势";
+"aiInsights.emotions.subtitle" = "你的感受如何随时间变化";
+"aiInsights.report.title" = "年度报告";
+"aiInsights.report.subtitle" = "一份关于你回忆之年的个人回顾";
+"aiInsights.generating" = "正在生成...";
+"aiInsights.regenerate" = "重新生成";
+"aiInsights.generate" = "生成";
+"aiInsights.chatWithAI" = "与 AI 聊天";
+
+// MARK: - Settings
+
+"settings.title" = "设置";
+"settings.premium" = "高级版";
+"settings.premiumActive" = "Memory 高级版";
+"settings.premiumAllUnlocked" = "所有功能已解锁";
+"settings.upgradePremium" = "升级到高级版";
+"settings.premiumSubtitle" = "无限回忆、AI 等更多功能";
+"settings.security" = "安全";
+"settings.requireBiometric" = "启用 %@";
+"settings.lockOnClose" = "关闭时锁定应用";
+"settings.autoLockBackground" = "后台自动锁定";
+"settings.autoLockSubtitle" = "离开应用时立即锁定";
+"settings.encryptionSecurity" = "加密与安全";
+"settings.encryptionSubtitle" = "AES-256 加密详情";
+"settings.biometricUnavailable" = "此设备不支持生物识别认证。将使用设备密码。";
+"settings.cloudSync" = "云同步";
+"settings.iCloudSync" = "iCloud 同步";
+"settings.iCloudSubtitle" = "在你的 Apple 设备间同步回忆";
+"settings.syncStatus" = "状态";
+"settings.lastSynced" = "上次同步";
+"settings.googleDrive" = "Google Drive";
+"settings.googleDriveConnected" = "已连接";
+"settings.googleDriveSubtitle" = "备份到 Google Drive";
+"settings.cloudEncryptionFooter" = "同步前所有数据均使用 AES-256-GCM 加密。Apple 和 Google 都无法读取你的内容。";
+"settings.data" = "数据";
+"settings.privacyData" = "隐私与数据管理";
+"settings.aiSettings" = "AI 设置";
+"settings.aiSettingsSubtitle" = "服务商、API 密钥和隐私";
+"settings.storage" = "存储";
+"settings.localStorage" = "本地存储";
+"settings.memories" = "回忆";
+"settings.contacts" = "联系人";
+"settings.messages" = "留言";
+"settings.sealedMessages" = "封存留言";
+"settings.about" = "关于";
+"settings.version" = "版本";
+"settings.privacyPolicy" = "隐私政策";
+"settings.termsOfUse" = "使用条款";
+"settings.support" = "帮助与支持";
+"settings.motto" = "当世上再无人记得你，\n那才是你真正消失的时候。";
+
+// MARK: - Security Settings
+
+"security.title" = "安全";
+"security.appLock" = "应用锁";
+"security.requireBiometric" = "启用 %@";
+"security.autoLockBackground" = "后台自动锁定";
+"security.appLockFooter" = "开启后，每次打开应用需要 %@ 或设备密码验证。";
+"security.encryptionLevel" = "加密级别";
+"security.recommended" = "推荐";
+"security.fullEncryptionFooter" = "全盘加密即使设备被物理窃取也能保护你的数据。搜索和排序在内存中执行。";
+"security.cloudEncryptionFooter" = "云端加密让本地数据保持可读以便快速搜索和排序。数据在同步到云端前加密。";
+"security.migration" = "迁移";
+"security.migratingMemories" = "正在迁移回忆...";
+"security.migratingContacts" = "正在迁移联系人...";
+"security.migratingMessages" = "正在迁移留言...";
+"security.encryptingMedia" = "正在加密媒体文件...";
+"security.decryptingMedia" = "正在解密媒体文件...";
+"security.migrationComplete" = "完成";
+"security.encryption" = "加密";
+"security.algorithm" = "算法";
+"security.keyStorage" = "密钥存储";
+"security.keyStorageValue" = "Secure Enclave / Keychain";
+"security.masterKey" = "主密钥";
+"security.masterKeyActive" = "已激活";
+"security.masterKeyNotCreated" = "未创建";
+"security.initializeKey" = "初始化加密密钥";
+"security.encryptionFooter" = "你的数据使用 AES-256-GCM 加密。加密密钥存储在设备 Keychain 中，永远不会离开你的设备。";
+"security.keyRecovery" = "密钥恢复";
+"security.setRecoveryPassword" = "设置恢复密码";
+"security.setRecoverySubtitle" = "在新设备上恢复数据时必需";
+"security.recoveryBackup" = "恢复备份";
+"security.recoveryConfigured" = "已配置";
+"security.restoreFromRecovery" = "通过恢复密码还原";
+"security.keyRecoveryFooter" = "在全盘加密模式下，如果你丢失设备且未设置恢复密码，加密数据将无法恢复。";
+"security.encryptAudio" = "加密音频录制";
+"security.encryptAudioSubtitle" = "为语音回忆提供额外保护";
+"security.encryptAudioFooter" = "开启后，音频文件将在存储时加密。这可能会稍微增加播放录音的时间。";
+"security.dataProtection" = "数据保护";
+"security.e2e" = "端到端加密";
+"security.dataAtRest" = "静态数据";
+"security.dataAtRestDetail" = "AES-256-GCM 加密";
+"security.dataInTransit" = "传输中数据";
+"security.dataInTransitDetail" = "TLS 1.3 传输到 iCloud";
+"security.iCloudStorage" = "iCloud 存储";
+"security.iCloudStorageDetail" = "客户端加密";
+"security.keychain" = "Keychain";
+"security.keychainDetail" = "硬件级保护";
+"security.dataProtectionFooter" = "Memory 在数据离开设备前进行加密。Apple 和 Memory 都无法读取你存储在 iCloud 中的内容。";
+"security.advanced" = "高级";
+"security.resetKey" = "重置加密密钥";
+"security.resetKeyFooter" = "重置加密密钥将使所有已加密数据不可读。仅在加密出现问题时使用。";
+"security.resetKeyConfirm.title" = "重置加密密钥？";
+"security.resetKeyConfirm.message" = "这将删除当前加密密钥。所有已加密数据将变得不可读。此操作不可撤销。";
+"security.resetButton" = "重置";
+"security.cancel" = "取消";
+"security.migrate" = "迁移";
+"security.changeLevel.title" = "更改加密级别？";
+"security.changeToFull" = "这将加密本地数据库中的所有敏感字段。取决于数据量，可能需要一些时间。";
+"security.changeToCloud" = "这将把所有本地加密字段解密为明文。云端数据仍将保持加密。";
+"security.backupSheet.title" = "设置恢复密码";
+"security.backupSheet.password" = "恢复密码";
+"security.backupSheet.confirmPassword" = "确认密码";
+"security.backupSheet.footer" = "选择一个你能记住的强密码。在新设备上恢复加密密钥时需要用到它。";
+"security.backupSheet.cancel" = "取消";
+"security.backupSheet.save" = "保存";
+"security.backupSheet.mismatch" = "两次密码不一致。";
+"security.backupSheet.tooShort" = "密码至少需要 8 个字符。";
+"security.restoreSheet.title" = "还原密钥";
+"security.restoreSheet.password" = "恢复密码";
+"security.restoreSheet.footer" = "输入你备份加密密钥时设置的恢复密码。";
+"security.restoreSheet.cancel" = "取消";
+"security.restoreSheet.restore" = "还原";
+"security.restoreSheet.noBackup" = "未找到恢复备份。";
+"security.restoreSheet.invalid" = "恢复密码无效。";
+
+// MARK: - Privacy & Data
+
+"privacy.title" = "隐私与数据";
+"privacy.yourData" = "你的数据";
+"privacy.memories" = "回忆";
+"privacy.text" = "  文字";
+"privacy.voice" = "  语音";
+"privacy.photo" = "  照片";
+"privacy.private" = "  私密";
+"privacy.contacts" = "联系人";
+"privacy.messages" = "留言";
+"privacy.sealed" = "  封存";
+"privacy.archivingSince" = "记录始于";
+"privacy.export" = "导出";
+"privacy.exportAll" = "导出全部数据";
+"privacy.exportAllSubtitle" = "保存一份完整副本";
+"privacy.encryptedBackup" = "创建加密备份";
+"privacy.encryptedBackupSubtitle" = "AES-256 加密存档";
+"privacy.preparing" = "正在准备导出...";
+"privacy.exportFooter" = "JSON 导出人类可读。加密备份仅能通过你设备的加密密钥恢复。";
+"privacy.exportFormat" = "导出格式";
+"privacy.jsonFormat" = "JSON（机器可读）";
+"privacy.textFormat" = "纯文本（人类可读）";
+"privacy.principles" = "隐私原则";
+"privacy.yourDataControl.title" = "你的数据，你做主";
+"privacy.yourDataControl.description" = "所有回忆和留言都存储在你的设备本地。开启 iCloud 同步时，数据在上传前加密。";
+"privacy.zeroKnowledge.title" = "零知识";
+"privacy.zeroKnowledge.description" = "Memory 没有服务器，也无法访问你的数据。一切都保存在你的个人 iCloud 账户中。";
+"privacy.rightToDelete.title" = "删除权";
+"privacy.rightToDelete.description" = "你可以随时永久删除所有数据。删除立即生效且不可逆。";
+"privacy.aiPrivacy" = "AI 隐私";
+"privacy.aiFeatures" = "AI 功能";
+"privacy.aiDescription" = "使用 AI 功能时，仅你选择的特定回忆会发送给 AI 服务。数据通过加密连接传输，AI 提供商不会存储你的数据。";
+"privacy.aiChoose" = "由你选择分享内容";
+"privacy.aiEncrypted" = "传输加密 (TLS 1.3)";
+"privacy.aiNoTraining" = "不用于 AI 训练";
+"privacy.dangerZone" = "危险区域";
+"privacy.deleteAll" = "删除全部数据";
+"privacy.deleteAllSubtitle" = "永久擦除所有内容";
+"privacy.deleting" = "正在删除所有数据...";
+"privacy.deleteAllFooter" = "这将永久删除所有回忆、联系人、留言和音频录制。此操作不可撤销。";
+"privacy.deleteAllConfirm.title" = "删除全部数据？";
+"privacy.deleteAllConfirm.message" = "这将永久删除你的所有回忆、联系人和留言。音频录制将被安全擦除。";
+"privacy.deleteEverything" = "删除全部";
+"privacy.typeDelete" = "输入 DELETE 确认";
+"privacy.typeDeleteMessage" = "此操作不可逆。输入 DELETE 确认。";
+"privacy.deleteForever" = "永久删除";
+"privacy.cancel" = "取消";
+
+// MARK: - AI Settings
+
+"aiSettings.title" = "AI 设置";
+"aiSettings.enableAI" = "启用 AI 功能";
+"aiSettings.enableSubtitle" = "用 AI 聊天、总结和整理回忆";
+"aiSettings.provider" = "AI 服务商";
+"aiSettings.providerLabel" = "服务商";
+"aiSettings.apiKey" = "API 密钥";
+"aiSettings.status" = "状态";
+"aiSettings.configured" = "已配置";
+"aiSettings.notSet" = "未设置";
+"aiSettings.enterKey" = "输入 API 密钥";
+"aiSettings.saveKey" = "保存 API 密钥";
+"aiSettings.clearKey" = "清除 API 密钥";
+"aiSettings.clearKeyConfirm" = "清除 API 密钥？";
+"aiSettings.clearButton" = "清除";
+"aiSettings.clearMessage" = "这将移除 %@ 的 API 密钥。";
+"aiSettings.apiKeyFooter" = "你的 API 密钥安全存储在设备 Keychain 中，仅在发起 AI 请求时离开设备。";
+"aiSettings.customEndpoint" = "自定义端点";
+"aiSettings.baseURL" = "基础 URL";
+"aiSettings.modelName" = "模型名称";
+"aiSettings.customFooter" = "输入 OpenAI 兼容 API 的基础 URL（如本地 Ollama 实例）。";
+"aiSettings.model" = "模型";
+"aiSettings.privacy" = "隐私";
+"aiSettings.includePrivate" = "包含私密回忆";
+"aiSettings.includePrivateSubtitle" = "允许 AI 访问标记为私密的回忆";
+"aiSettings.privacyFooter" = "数据最小化：仅回忆的标题、内容、标签、心情和日期会发送给 AI。照片和音频文件永远不会发送。";
+"aiSettings.testConnection" = "测试连接";
+"aiSettings.testing" = "测试中...";
+"aiSettings.connectionSuccess" = "连接成功";
+
+// MARK: - Purchase
+
+"purchase.title" = "Memory 高级版";
+"purchase.close" = "关闭";
+"purchase.subtitle" = "解锁 Memory 的全部功能。\n一次购买，永久拥有。";
+"purchase.feature" = "功能";
+"purchase.free" = "免费";
+"purchase.premium" = "高级版";
+"purchase.textMemories" = "文字回忆";
+"purchase.voiceMemories" = "语音回忆";
+"purchase.contacts" = "联系人";
+"purchase.aiFeatures" = "AI 功能";
+"purchase.encryptedExport" = "加密导出";
+"purchase.iCloudSync" = "iCloud 同步";
+"purchase.unlimited" = "无限";
+"purchase.youHavePremium" = "你已拥有高级版";
+"purchase.purchaseFor" = "购买 %@";
+"purchase.oneTime" = "一次性购买";
+"purchase.productUnavailable" = "产品不可用";
+"purchase.restore" = "恢复购买";
+"purchase.termsOfUse" = "使用条款";
+"purchase.privacyPolicy" = "隐私政策";
+
+// MARK: - Google Drive Settings
+
+"gdrive.title" = "Google Drive";
+"gdrive.account" = "账户";
+"gdrive.connected" = "已连接";
+"gdrive.signOut" = "退出登录";
+"gdrive.signIn" = "使用 Google 登录";
+"gdrive.signInSubtitle" = "连接以同步数据";
+"gdrive.accountFooter" = "Memory 使用 drive.file 权限范围，仅访问本应用创建的文件。";
+"gdrive.sync" = "同步";
+"gdrive.enableSync" = "启用同步";
+"gdrive.enableSyncSubtitle" = "在后台自动同步";
+"gdrive.syncNow" = "立即同步";
+"gdrive.syncing" = "正在同步...";
+"gdrive.status" = "状态";
+"gdrive.lastSynced" = "上次同步";
+"gdrive.never" = "从未";
+"gdrive.security" = "安全";
+"gdrive.e2e" = "端到端加密";
+"gdrive.e2eDescription" = "上传前所有数据均使用 AES-256-GCM 加密。Google 无法读取你的内容。";
+
+// MARK: - Lock Screen
+
+"lockScreen.title" = "Memory";
+"lockScreen.protected" = "你的回忆受到保护";
+"lockScreen.unlock" = "使用 %@ 解锁";
+"lockScreen.unlockHint" = "验证身份以访问你的回忆";
+"lockScreen.usePasscode" = "使用密码";
+"lockScreen.authFailed" = "认证失败，请重试。";
+
+// MARK: - Onboarding
+
+"onboarding.welcome.title" = "欢迎使用 Memory";
+"onboarding.welcome.subtitle" = "记录你的想法、感受和瞬间。\n给你爱的人留下话语。";
+"onboarding.privacy.title" = "你的隐私，我们的承诺";
+"onboarding.privacy.subtitle" = "所有数据加密存储在你的设备本地。\niCloud 同步使用你的个人私有账户。\n我们永远看不到你的回忆。";
+"onboarding.start.title" = "开始记录";
+"onboarding.start.subtitle" = "当世上再无人记得你，\n那才是你真正消失的时候。";
+"onboarding.getStarted" = "开始使用";
+
+// MARK: - Model: Mood
+
+"mood.happy" = "开心";
+"mood.grateful" = "感恩";
+"mood.calm" = "平静";
+"mood.nostalgic" = "怀旧";
+"mood.sad" = "难过";
+"mood.anxious" = "焦虑";
+"mood.hopeful" = "希望";
+"mood.loving" = "爱意";
+
+// MARK: - Model: Relationship
+
+"relationship.family" = "家人";
+"relationship.partner" = "伴侣";
+"relationship.friend" = "朋友";
+"relationship.colleague" = "同事";
+"relationship.mentor" = "导师";
+"relationship.other" = "其他";
+
+// MARK: - Model: Delivery Condition
+
+"delivery.immediate.label" = "立即可见";
+"delivery.specificDate.label" = "指定日期";
+"delivery.afterDeath.label" = "在我离开后";
+"delivery.immediate.description" = "这是一条私人备注，始终对你可见。";
+"delivery.specificDate.description" = "这条留言将在指定日期标记为待送达。";
+"delivery.afterDeath.description" = "这条留言将被安全封存，直到合适的时候。";
+
+// MARK: - Model: Message Status
+
+"message.status.visible" = "可见";
+"message.status.delivered" = "已送达";
+"message.status.scheduled" = "已计划";
+"message.status.sealed" = "已封存";
+
+// MARK: - Model: Encryption Level
+
+"encryption.cloudOnly.label" = "云端加密";
+"encryption.full.label" = "全盘加密";
+"encryption.cloudOnly.description" = "数据在同步到 iCloud 或 Google Drive 时加密。本地数据由设备锁和生物识别保护。";
+"encryption.full.description" = "敏感字段在本地和云端均加密。最高安全级别，但搜索和排序可能受限。";
+
+// MARK: - Model: Biometric Type
+
+"biometric.faceID" = "Face ID";
+"biometric.touchID" = "Touch ID";
+"biometric.opticID" = "Optic ID";
+"biometric.passcode" = "密码";
+
+// MARK: - Biometric Auth
+
+"biometric.reason" = "验证身份以访问你的回忆";
+"biometric.reasonPrivate" = "验证身份以查看私密回忆";
+"biometric.fallback" = "使用密码";
+
+// MARK: - Common
+
+"common.cancel" = "取消";
+"common.save" = "保存";
+"common.delete" = "删除";
+"common.done" = "完成";
+"common.edit" = "编辑";
+"common.all" = "全部";
+"common.copy" = "复制";
+"common.pause" = "暂停";
+"common.play" = "播放";
+"common.private" = "私密";
+"common.remove" = "移除";
+"common.untitled" = "无标题";
+"common.a11y.deselect" = "取消筛选";
+"common.a11y.filter" = "点击筛选";
+
+// MARK: - 补充设置键
+
+"settings.tagline" = "当世上再无人记得你，\n那才是你真正消失的时候。";
+"settings.section.premium" = "高级版";
+"settings.section.security" = "安全";
+"settings.section.sync" = "云端与同步";
+"settings.section.data" = "数据";
+"settings.section.storage" = "存储";
+"settings.section.about" = "关于";
+"settings.premium.title" = "Memory 高级版";
+"settings.premium.unlocked" = "所有功能已解锁";
+"settings.premium.upgrade" = "升级至高级版";
+"settings.premium.upgradeSubtitle" = "无限回忆、AI 及更多";
+"settings.icloud" = "iCloud 同步";
+"settings.icloudSubtitle" = "在 Apple 设备间同步回忆";
+"settings.gdrive.connected" = "已连接";
+"settings.gdrive.backup" = "备份至 Google Drive";
+"settings.syncFooter" = "所有数据在同步前均使用 AES-256-GCM 加密。Apple 和 Google 都无法读取你的内容。";
+"settings.privacy" = "隐私与数据管理";
+"settings.storage.memories" = "回忆";
+"settings.storage.contacts" = "联系人";
+"settings.storage.messages" = "留言";
+"settings.storage.sealed" = "封存留言";
+
+// MARK: - 补充安全键
+
+"security.require" = "需要";
+"security.lockOnClose" = "关闭时锁定应用";
+"security.autoLock" = "进入后台时自动锁定";
+"security.autoLockSubtitle" = "离开应用时立即锁定";
+"security.encryptionSubtitle" = "AES-256 加密详情";
+"security.noBiometric" = "此设备不支持生物识别认证，将使用设备密码代替。";
+"security.fullFooter" = "全盘加密即使设备被物理破解也能保护你的数据。搜索和排序在内存中进行。";
+"security.cloudFooter" = "云端加密保持本地数据可读，方便快速搜索和排序。数据在同步至云端前加密。";
+"security.configured" = "已配置";
+"security.masterKey.active" = "已激活";
+"security.masterKey.notCreated" = "未创建";
+"security.initKey" = "初始化加密密钥";
+"security.setRecovery" = "设置恢复密码";
+"security.restoreRecovery" = "从恢复密码还原";
+"security.icloudStorage" = "iCloud 存储";
+"security.icloudStorageDetail" = "客户端加密";
+"security.resetKeyTitle" = "重置加密密钥？";
+"security.resetKeyMessage" = "这将删除当前加密密钥。之前加密的数据将无法读取。此操作不可撤销。";
+"security.changeLevelTitle" = "更改加密级别？";
+"security.migrateButton" = "迁移";
+"security.migrateToFull" = "这将加密本地数据库中所有敏感字段。根据数据量大小，这可能需要一些时间。";
+"security.migrateToCloud" = "这将把所有本地加密字段解密为纯文本。云端数据仍将保持加密。";
+"security.recoveryPassword" = "恢复密码";
+"security.confirmPassword" = "确认密码";
+"security.recoveryPasswordFooter" = "选择一个你能记住的强密码。在新设备上恢复加密密钥时需要使用此密码。";
+"security.restoreKey" = "还原密钥";
+"security.restoreFooter" = "输入你备份加密密钥时设置的恢复密码。";
+"security.restoreButton" = "还原";
+"security.migrating.memories" = "正在迁移回忆...";
+"security.migrating.contacts" = "正在迁移联系人...";
+"security.migrating.messages" = "正在迁移留言...";
+"security.migrating.encrypting" = "正在加密媒体文件...";
+"security.migrating.decrypting" = "正在解密媒体文件...";
+
+// MARK: - 补充回忆键
+
+"memoryType.text" = "文字";
+"memoryType.voice" = "语音";
+"memoryType.photo" = "照片";
+"memoryType.video" = "视频";
+"memoryEditor.title" = "标题";
+"memoryEditor.placeholder" = "此刻你在想什么？";
+"memoryEditor.editTitle" = "编辑回忆";
+"memoryEditor.newTitle" = "新建回忆";
+"memoryEditor.discardTitle" = "放弃更改？";
+"memoryEditor.discardMessage" = "你有未保存的更改将会丢失。";
+"memoryEditor.discardButton" = "放弃";
+"memoryEditor.mood" = "此刻心情如何？";
+"memoryEditor.removeTagHint" = "双击以移除";
+"memoryEditor.private" = "私密回忆";
+"memoryDetail.deleteTitle" = "删除回忆？";
+"memoryDetail.deleteMessage" = "此回忆将被永久删除。";
+
+// MARK: - 补充联系人键
+
+"contactDetail.deleteTitle" = "删除联系人？";
+"contactDetail.removeFavorite" = "取消收藏";
+"contactDetail.addFavorite" = "添加到收藏";
+"contactDetail.imported" = "从通讯录导入";
+"contactDetail.action.write" = "写信";
+"contactDetail.action.edit" = "编辑";
+"contactDetail.action.fave" = "收藏";
+"contactDetail.action.unfave" = "取消";
+"contactDetail.writeFirst" = "写下你的第一条留言";
+"contactDetail.statusA11y" = "送达状态：";
+"contactDetail.delivered" = "已送达";
+"contactDetail.scheduled" = "计划于";
+"contactEditor.editTitle" = "编辑联系人";
+"contactEditor.newTitle" = "新建联系人";
+"contactEditor.notesPlaceholder" = "这个人对你来说有什么特别？";
+"contactList.stats.people" = "联系人";
+"contactList.stats.messages" = "留言";
+"contactList.stats.sealed" = "封存";
+"contactImport.permission.title" = "访问你的通讯录";
+"contactImport.permission.description" = "Memory 需要访问你的通讯录以导入你想留言的人。我们仅读取姓名和照片——不会对外分享任何信息。";
+"contactImport.denied.title" = "通讯录访问被拒绝";
+"contactImport.denied.description" = "要导入联系人，请在以下位置启用访问权限：\n设置 > 隐私与安全性 > 通讯录 > Memory";
+"contactImport.search.prompt" = "搜索要导入的联系人...";
+
+// MARK: - 补充留言键
+
+"messageDetail.deleteTitle" = "删除留言？";
+"messageDetail.deleteMessage" = "此留言将被永久删除。";
+"messageDetail.sealedInfo" = "此留言已封存，将在合适的时候送达。";
+"messageEditor.type" = "留言类型";
+"messageEditor.message" = "留言";
+"messageEditor.voiceMessage" = "语音留言";
+"messageEditor.sealedFooter" = "此留言将被加密封存。受托联系人或执行人可在未来送达。";
+"messageEditor.editTitle" = "编辑留言";
+"messageEditor.newTitle" = "新建留言";
+"messageEditor.discardTitle" = "放弃留言？";
+
+// MARK: - 补充 AI 键
+
+"aiChat.premiumFeature" = "高级功能";
+"aiChat.setup" = "设置 AI";
+"aiChat.welcome" = "问我关于你的回忆...";
+"aiChat.quick.summarize" = "总结这一周";
+"aiChat.quick.feeling" = "我最近感觉怎么样？";
+"aiChat.quick.themes" = "我最常见的主题是什么？";
+"aiChat.quickHint" = "将此问题发送给 AI";
+"aiChat.send" = "发送消息";
+"aiChat.ai" = "AI";
+
+// MARK: - 补充语音录制键
+
+"voiceRecording.start" = "开始录制";
+"voiceRecording.stop" = "停止录制";

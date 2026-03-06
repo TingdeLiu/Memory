@@ -1,0 +1,45 @@
+# Sensitive files
+**/plan.md
+**/AIService.swift
+**/EncryptionHelper.swift
+
+# Xcode
+xcuserdata/
+*.xcuserstate
+DerivedData/
+.build/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xccheckout
+*.xcscmblueprint
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.swiftpm/
+Package.resolved
+
+# CocoaPods
+Pods/
+
+# Secrets
+*.p12
+*.mobileprovision
+GoogleService-Info.plist
+
+# macOS
+.DS_Store
+._*
+
+# IDE
+.claude/
+.ccb/
+.idea/
+.vscode/
+
+# Build
+build/

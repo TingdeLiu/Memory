@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Memory uses Face ID to protect your private memories and messages.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Memory can import your contacts so you can leave messages for the people you care about.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Memory uses the microphone to record voice memories and audio messages.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Memory can transcribe your voice recordings to text.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Memory needs camera access to record video memories.</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.tyndall.memory</string>
+			</array>
+			<key>CFBundleURLName</key>
+			<string>Google OAuth Callback</string>
+		</dict>
+	</array>
+</dict>
+</plist>
