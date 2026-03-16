@@ -23,17 +23,31 @@ final class Message {
     var _encryptedContent: String?
     var _encryptedAudioFilePath: String?
 
+    // MARK: - Decryption Cache (Performance Optimization)
+
+    @Transient private var _cachedContent: String?
+    @Transient private var _cachedAudioFilePath: String?
+
+    func invalidateDecryptionCache() {
+        _cachedContent = nil
+        _cachedAudioFilePath = nil
+    }
+
     // MARK: - Transparent accessors
 
     var content: String {
         get {
             if EncryptionLevel.current == .full, let encrypted = _encryptedContent {
-                return EncryptedFieldHelper.decryptString(encrypted, recordId: id) ?? _plainContent
+                if let cached = _cachedContent { return cached }
+                let decrypted = EncryptedFieldHelper.decryptString(encrypted, recordId: id) ?? _plainContent
+                _cachedContent = decrypted
+                return decrypted
             }
             return _plainContent
         }
         set {
             _plainContent = newValue
+            _cachedContent = newValue
             if EncryptionLevel.current == .full {
                 _encryptedContent = EncryptedFieldHelper.encryptString(newValue, recordId: id)
             }
@@ -43,12 +57,16 @@ final class Message {
     var audioFilePath: String? {
         get {
             if EncryptionLevel.current == .full, let encrypted = _encryptedAudioFilePath {
-                return EncryptedFieldHelper.decryptString(encrypted, recordId: id)
+                if let cached = _cachedAudioFilePath { return cached }
+                let decrypted = EncryptedFieldHelper.decryptString(encrypted, recordId: id)
+                _cachedAudioFilePath = decrypted
+                return decrypted
             }
             return _plainAudioFilePath
         }
         set {
             _plainAudioFilePath = newValue
+            _cachedAudioFilePath = newValue
             if EncryptionLevel.current == .full, let value = newValue {
                 _encryptedAudioFilePath = EncryptedFieldHelper.encryptString(value, recordId: id)
             } else {

@@ -146,7 +146,7 @@ struct ContactEditorView: View {
                 }
 
                 Circle()
-                    .fill(.accent)
+                    .fill(Color.accentColor)
                     .frame(width: 28, height: 28)
                     .overlay {
                         Image(systemName: "camera.fill")
@@ -178,6 +178,8 @@ struct ContactEditorView: View {
             contact.avatarData = avatarData
             modelContext.insert(contact)
         }
+        // Ensure immediate persistence
+        try? modelContext.save()
     }
 }
 

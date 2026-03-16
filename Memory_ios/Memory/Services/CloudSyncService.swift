@@ -61,7 +61,10 @@ final class CloudSyncService: ObservableObject {
         }
     }
 
-    private let container = CKContainer(identifier: "iCloud.com.tyndall.memory")
+    private lazy var container: CKContainer = {
+        CKContainer.default()
+    }()
+    private var notificationObserver: (any NSObjectProtocol)?
 
     init() {
         setupNotifications()
@@ -118,7 +121,7 @@ final class CloudSyncService: ObservableObject {
 
     /// Listen for CloudKit account change notifications.
     private func setupNotifications() {
-        NotificationCenter.default.addObserver(
+        notificationObserver = NotificationCenter.default.addObserver(
             forName: .CKAccountChanged,
             object: nil,
             queue: .main
@@ -144,7 +147,7 @@ final class CloudSyncService: ObservableObject {
         let database = container.privateCloudDatabase
 
         do {
-            _ = try await database.modifiedRecordZones(saving: [zone], deleting: [])
+            _ = try await database.modifyRecordZones(saving: [zone], deleting: [])
         } catch {
             // Zone likely already exists — that's fine
         }

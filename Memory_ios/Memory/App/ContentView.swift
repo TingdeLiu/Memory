@@ -4,7 +4,7 @@ struct ContentView: View {
     @State private var selectedTab: Tab = .home
 
     enum Tab: String {
-        case home, memories, contacts, ai, settings
+        case home, memories, contacts, universe, soul, settings
     }
 
     var body: some View {
@@ -27,11 +27,17 @@ struct ContentView: View {
                 }
                 .tag(Tab.contacts)
 
-            AIChatView()
+            LightOrbUniverseView(showCloseButton: false)
                 .tabItem {
-                    Label(String(localized: "tab.ai"), systemImage: "sparkles")
+                    Label(String(localized: "tab.universe"), systemImage: "globe.asia.australia.fill")
                 }
-                .tag(Tab.ai)
+                .tag(Tab.universe)
+
+            SoulTabView()
+                .tabItem {
+                    Label(String(localized: "tab.soul"), systemImage: "person.crop.circle.badge.moon")
+                }
+                .tag(Tab.soul)
 
             SettingsView()
                 .tabItem {
@@ -45,5 +51,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: [MemoryEntry.self, Contact.self, Message.self], inMemory: true)
+        .modelContainer(for: [MemoryEntry.self, Contact.self, Message.self, SoulProfile.self, InterviewSession.self, AssessmentResult.self, RelationshipProfile.self, VoiceProfile.self, VoiceSample.self, WritingStyleProfile.self, AvatarProfile.self, DigitalSelfConfig.self], inMemory: true)
 }

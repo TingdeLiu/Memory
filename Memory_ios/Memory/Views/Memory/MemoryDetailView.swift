@@ -248,7 +248,7 @@ struct MemoryDetailView: View {
                 } label: {
                     Image(systemName: player.isPlaying ? "pause.circle.fill" : "play.circle.fill")
                         .font(.system(size: 44))
-                        .foregroundStyle(.accent)
+                        .foregroundStyle(Color.accentColor)
                 }
                 .accessibilityLabel(player.isPlaying ? String(localized: "common.pause") : String(localized: "common.play"))
 
@@ -308,7 +308,7 @@ struct MemoryDetailView: View {
                         .padding(.horizontal, 12)
                         .padding(.vertical, 6)
                         .background(Color.accentColor.opacity(0.1))
-                        .foregroundStyle(.accent)
+                        .foregroundStyle(Color.accentColor)
                         .clipShape(Capsule())
                 }
             }

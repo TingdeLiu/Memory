@@ -1,15 +1,45 @@
 /* Memory App — 繁體中文 */
 
-// MARK: - Tabs
-
+/* MARK: - Tabs
+ */
 "tab.home" = "首頁";
 "tab.memories" = "回憶";
 "tab.contacts" = "聯絡人";
 "tab.ai" = "AI";
 "tab.settings" = "設定";
+"tab.soul" = "靈魂";
+"tab.universe" = "宇宙";
 
-// MARK: - Home
+/* MARK: - Light Orb Universe
+ */
+"orb.title" = "我的宇宙";
+"orb.rotating" = "旋轉中";
+"orb.paused" = "已暫停";
+"orb.hint" = "點擊中心光球暫停，點擊人物開始對話";
+"orb.chat.placeholder" = "說點什麼...";
+"orb.chat.greeting %@" = "你好！我是%@。你想聊什麼呢？";
+"orb.chat.error" = "抱歉，我現在無法回應。請稍後再試。";
+"orb.chat.clear" = "清除聊天記錄";
+"orb.accessibility.contact %@ %@" = "%@，%@";
+"orb.accessibility.hint.chat" = "雙擊開始對話";
+"orb.accessibility.addContact" = "新增聯絡人";
+"orb.accessibility.centerOrb" = "你的頭像，宇宙中心";
+"orb.accessibility.hint.pause" = "雙擊暫停旋轉";
+"orb.accessibility.hint.resume" = "雙擊繼續旋轉";
+"orb.menu.chat" = "開始對話";
+"orb.menu.viewMessages" = "查看訊息";
+"orb.menu.edit" = "編輯聯絡人";
+"orb.menu.favorite" = "加入收藏";
+"orb.menu.unfavorite" = "取消收藏";
+"orb.menu.remove" = "從宇宙移除";
+"orb.hint.drag" = "長按拖動可調整順序";
+"orb.empty.title" = "你的宇宙等待著";
+"orb.empty.subtitle" = "新增對你重要的人，他們將在這片星空中環繞著你。";
+"orb.empty.addButton" = "新增重要的人";
+"soul.tap_avatar_hint" = "點擊頭像進入你的宇宙";
 
+/* MARK: - Home
+ */
 "home.title" = "Memory";
 "home.search.prompt" = "搜尋你的回憶...";
 "home.empty.title" = "從這裡開始記錄";
@@ -28,8 +58,8 @@
 "home.date.today" = "今天";
 "home.date.yesterday" = "昨天";
 
-// MARK: - Date Filter Sheet
-
+/* MARK: - Date Filter Sheet
+ */
 "dateFilter.title" = "依日期篩選";
 "dateFilter.fromDate" = "起始日期";
 "dateFilter.toDate" = "截止日期";
@@ -39,8 +69,8 @@
 "dateFilter.cancel" = "取消";
 "dateFilter.apply" = "套用";
 
-// MARK: - Memory List
-
+/* MARK: - Memory List
+ */
 "memoryList.title" = "回憶";
 "memoryList.search.prompt" = "搜尋回憶與語音轉寫...";
 "memoryList.empty.title" = "還沒有回憶";
@@ -58,8 +88,8 @@
 "memoryList.type.photo" = "照片";
 "memoryList.type.video" = "影片";
 
-// MARK: - Memory Editor
-
+/* MARK: - Memory Editor
+ */
 "memoryEditor.new.title" = "新回憶";
 "memoryEditor.edit.title" = "編輯回憶";
 "memoryEditor.titlePlaceholder" = "標題";
@@ -87,8 +117,8 @@
 "memoryEditor.privateMemory" = "私密回憶";
 "memoryEditor.privateHint" = "需要 Face ID / Touch ID 才能檢視";
 
-// MARK: - Voice Recording
-
+/* MARK: - Voice Recording
+ */
 "voiceRecording.title" = "語音錄製";
 "voiceRecording.cancel" = "取消";
 "voiceRecording.useRecording" = "使用錄音";
@@ -100,13 +130,13 @@
 "voiceRecording.noPermission" = "錄製語音回憶需要麥克風權限。\n請在「設定」中開啟。";
 "voiceRecording.waveform" = "音訊波形";
 
-// MARK: - Video Recording
-
+/* MARK: - Video Recording
+ */
 "videoRecording.useVideo" = "使用影片";
 "videoRecording.noPermission" = "需要相機和麥克風權限。\n請在「設定」中開啟。";
 
-// MARK: - Memory Detail
-
+/* MARK: - Memory Detail
+ */
 "memoryDetail.untitled" = "無標題";
 "memoryDetail.transcription" = "語音轉寫";
 "memoryDetail.tags" = "標籤";
@@ -126,8 +156,8 @@
 "memoryDetail.play" = "播放";
 "memoryDetail.playbackProgress" = "播放進度";
 
-// MARK: - Memory Timeline Row
-
+/* MARK: - Memory Timeline Row
+ */
 "timeline.untitled" = "無標題";
 "timeline.type.voice" = "語音";
 "timeline.type.photo" = "照片";
@@ -136,8 +166,8 @@
 "timeline.private" = "私密";
 "timeline.tags" = "%lld 個標籤";
 
-// MARK: - Contact List
-
+/* MARK: - Contact List
+ */
 "contactList.title" = "聯絡人";
 "contactList.search.prompt" = "搜尋聯絡人...";
 "contactList.addManually" = "手動新增";
@@ -154,8 +184,8 @@
 "contactList.filter.all" = "全部";
 "contactList.filter.favorites" = "收藏";
 
-// MARK: - Contact Detail
-
+/* MARK: - Contact Detail
+ */
 "contactDetail.about" = "關於";
 "contactDetail.editContact" = "編輯聯絡人";
 "contactDetail.removeFromFavorites" = "取消收藏";
@@ -172,8 +202,8 @@
 "contactDetail.noMessages" = "還沒有留言";
 "contactDetail.writeFirstMessage" = "寫下你的第一則留言";
 
-// MARK: - Contact Editor
-
+/* MARK: - Contact Editor
+ */
 "contactEditor.new.title" = "新聯絡人";
 "contactEditor.edit.title" = "編輯聯絡人";
 "contactEditor.name" = "姓名";
@@ -188,8 +218,8 @@
 "contactEditor.cancel" = "取消";
 "contactEditor.save" = "儲存";
 
-// MARK: - Contact Import
-
+/* MARK: - Contact Import
+ */
 "contactImport.title" = "匯入聯絡人";
 "contactImport.cancel" = "取消";
 "contactImport.importButton" = "匯入 (%lld)";
@@ -209,8 +239,8 @@
 "contactImport.allImported" = "所有聯絡人已匯入。";
 "contactImport.searchPrompt" = "搜尋要匯入的聯絡人...";
 
-// MARK: - Message Editor
-
+/* MARK: - Message Editor
+ */
 "messageEditor.new.title" = "新留言";
 "messageEditor.edit.title" = "編輯留言";
 "messageEditor.to" = "收信人：%@";
@@ -233,8 +263,8 @@
 "messageEditor.reRecord" = "重新錄製";
 "messageEditor.remove" = "移除";
 
-// MARK: - Message Detail
-
+/* MARK: - Message Detail
+ */
 "messageDetail.title" = "留言";
 "messageDetail.to" = "收信人：%@";
 "messageDetail.deliveryStatus" = "送達狀態：%@";
@@ -250,8 +280,8 @@
 "messageDetail.cancel" = "取消";
 "messageDetail.status" = "狀態：%@";
 
-// MARK: - AI Chat
-
+/* MARK: - AI Chat
+ */
 "aiChat.title" = "AI 聊天";
 "aiChat.done" = "完成";
 "aiChat.premiumTitle" = "進階功能";
@@ -273,8 +303,8 @@
 "aiChat.error" = "抱歉，遇到了錯誤：%@";
 "aiChat.you" = "你";
 
-// MARK: - AI Insights
-
+/* MARK: - AI Insights
+ */
 "aiInsights.title" = "AI 洞察";
 "aiInsights.summary.title" = "回憶摘要";
 "aiInsights.summary.subtitle" = "你近期回憶的貼心概覽";
@@ -287,8 +317,8 @@
 "aiInsights.generate" = "產生";
 "aiInsights.chatWithAI" = "與 AI 聊天";
 
-// MARK: - Settings
-
+/* MARK: - Settings
+ */
 "settings.title" = "設定";
 "settings.premium" = "進階版";
 "settings.premiumActive" = "Memory 進階版";
@@ -329,8 +359,8 @@
 "settings.support" = "協助與支援";
 "settings.motto" = "當世上再無人記得你，\n那才是你真正消失的時候。";
 
-// MARK: - Security Settings
-
+/* MARK: - Security Settings
+ */
 "security.title" = "安全";
 "security.appLock" = "App 鎖定";
 "security.requireBiometric" = "啟用 %@";
@@ -404,8 +434,8 @@
 "security.restoreSheet.noBackup" = "未找到復原備份。";
 "security.restoreSheet.invalid" = "復原密碼無效。";
 
-// MARK: - Privacy & Data
-
+/* MARK: - Privacy & Data
+ */
 "privacy.title" = "隱私權與資料";
 "privacy.yourData" = "你的資料";
 "privacy.memories" = "回憶";
@@ -453,8 +483,8 @@
 "privacy.deleteForever" = "永久刪除";
 "privacy.cancel" = "取消";
 
-// MARK: - AI Settings
-
+/* MARK: - AI Settings
+ */
 "aiSettings.title" = "AI 設定";
 "aiSettings.enableAI" = "啟用 AI 功能";
 "aiSettings.enableSubtitle" = "用 AI 聊天、總結和整理回憶";
@@ -484,8 +514,8 @@
 "aiSettings.testing" = "測試中...";
 "aiSettings.connectionSuccess" = "連線成功";
 
-// MARK: - Purchase
-
+/* MARK: - Purchase
+ */
 "purchase.title" = "Memory 進階版";
 "purchase.close" = "關閉";
 "purchase.subtitle" = "解鎖 Memory 的全部功能。\n一次購買，永久擁有。";
@@ -507,8 +537,8 @@
 "purchase.termsOfUse" = "使用條款";
 "purchase.privacyPolicy" = "隱私權政策";
 
-// MARK: - Google Drive Settings
-
+/* MARK: - Google Drive Settings
+ */
 "gdrive.title" = "Google Drive";
 "gdrive.account" = "帳號";
 "gdrive.connected" = "已連線";
@@ -528,8 +558,8 @@
 "gdrive.e2e" = "端對端加密";
 "gdrive.e2eDescription" = "上傳前所有資料均使用 AES-256-GCM 加密。Google 無法讀取你的內容。";
 
-// MARK: - Lock Screen
-
+/* MARK: - Lock Screen
+ */
 "lockScreen.title" = "Memory";
 "lockScreen.protected" = "你的回憶受到保護";
 "lockScreen.unlock" = "使用 %@ 解鎖";
@@ -537,8 +567,8 @@
 "lockScreen.usePasscode" = "使用密碼";
 "lockScreen.authFailed" = "驗證失敗，請重試。";
 
-// MARK: - Onboarding
-
+/* MARK: - Onboarding
+ */
 "onboarding.welcome.title" = "歡迎使用 Memory";
 "onboarding.welcome.subtitle" = "記錄你的想法、感受和瞬間。\n為你愛的人留下話語。";
 "onboarding.privacy.title" = "你的隱私，我們的承諾";
@@ -547,8 +577,8 @@
 "onboarding.start.subtitle" = "當世上再無人記得你，\n那才是你真正消失的時候。";
 "onboarding.getStarted" = "開始使用";
 
-// MARK: - Model: Mood
-
+/* MARK: - Model: Mood
+ */
 "mood.happy" = "開心";
 "mood.grateful" = "感恩";
 "mood.calm" = "平靜";
@@ -558,8 +588,8 @@
 "mood.hopeful" = "希望";
 "mood.loving" = "愛意";
 
-// MARK: - Model: Relationship
-
+/* MARK: - Model: Relationship
+ */
 "relationship.family" = "家人";
 "relationship.partner" = "伴侶";
 "relationship.friend" = "朋友";
@@ -567,8 +597,8 @@
 "relationship.mentor" = "導師";
 "relationship.other" = "其他";
 
-// MARK: - Model: Delivery Condition
-
+/* MARK: - Model: Delivery Condition
+ */
 "delivery.immediate.label" = "立即可見";
 "delivery.specificDate.label" = "指定日期";
 "delivery.afterDeath.label" = "在我離開後";
@@ -576,35 +606,35 @@
 "delivery.specificDate.description" = "這則留言將在指定日期標記為待送達。";
 "delivery.afterDeath.description" = "這則留言將被安全封存，直到合適的時候。";
 
-// MARK: - Model: Message Status
-
+/* MARK: - Model: Message Status
+ */
 "message.status.visible" = "可見";
 "message.status.delivered" = "已送達";
 "message.status.scheduled" = "已排程";
 "message.status.sealed" = "已封存";
 
-// MARK: - Model: Encryption Level
-
+/* MARK: - Model: Encryption Level
+ */
 "encryption.cloudOnly.label" = "雲端加密";
 "encryption.full.label" = "全面加密";
 "encryption.cloudOnly.description" = "資料在同步到 iCloud 或 Google Drive 時加密。本機資料由裝置鎖和生物辨識保護。";
 "encryption.full.description" = "敏感欄位在本機和雲端均加密。最高安全等級，但搜尋和排序可能受限。";
 
-// MARK: - Model: Biometric Type
-
+/* MARK: - Model: Biometric Type
+ */
 "biometric.faceID" = "Face ID";
 "biometric.touchID" = "Touch ID";
 "biometric.opticID" = "Optic ID";
 "biometric.passcode" = "密碼";
 
-// MARK: - Biometric Auth
-
+/* MARK: - Biometric Auth
+ */
 "biometric.reason" = "驗證身分以存取你的回憶";
 "biometric.reasonPrivate" = "驗證身分以檢視私密回憶";
 "biometric.fallback" = "使用密碼";
 
-// MARK: - Common
-
+/* MARK: - Common
+ */
 "common.cancel" = "取消";
 "common.save" = "儲存";
 "common.delete" = "刪除";
@@ -620,14 +650,22 @@
 "common.a11y.deselect" = "取消篩選";
 "common.a11y.filter" = "點擊篩選";
 
-// MARK: - 補充設定鍵
-
+/* MARK: - 補充設定鍵
+ */
 "settings.tagline" = "當世上再無人記得你，\n那才是你真正消失的時候。";
 "settings.section.premium" = "進階版";
 "settings.section.security" = "安全性";
 "settings.section.sync" = "雲端與同步";
 "settings.section.data" = "資料";
 "settings.section.storage" = "儲存空間";
+"settings.section.language" = "語言";
+"settings.language" = "應用程式語言";
+"settings.language.footer" = "重新啟動應用程式以使語言更改完全生效。";
+"settings.language.restart.title" = "語言已更改";
+"settings.language.restart.message" = "請重新啟動應用程式以使語言更改完全生效。";
+"language.system" = "跟隨系統";
+"common.ok" = "好";
+
 "settings.section.about" = "關於";
 "settings.premium.title" = "Memory 進階版";
 "settings.premium.unlocked" = "所有功能已解鎖";
@@ -644,8 +682,8 @@
 "settings.storage.messages" = "留言";
 "settings.storage.sealed" = "封存留言";
 
-// MARK: - 補充安全鍵
-
+/* MARK: - 補充安全鍵
+ */
 "security.require" = "需要";
 "security.lockOnClose" = "關閉時鎖定 App";
 "security.autoLock" = "進入背景時自動鎖定";
@@ -680,8 +718,8 @@
 "security.migrating.encrypting" = "正在加密媒體檔案...";
 "security.migrating.decrypting" = "正在解密媒體檔案...";
 
-// MARK: - 補充回憶鍵
-
+/* MARK: - 補充回憶鍵
+ */
 "memoryType.text" = "文字";
 "memoryType.voice" = "語音";
 "memoryType.photo" = "照片";
@@ -699,8 +737,8 @@
 "memoryDetail.deleteTitle" = "刪除回憶？";
 "memoryDetail.deleteMessage" = "此回憶將被永久刪除。";
 
-// MARK: - 補充聯絡人鍵
-
+/* MARK: - 補充聯絡人鍵
+ */
 "contactDetail.deleteTitle" = "刪除聯絡人？";
 "contactDetail.removeFavorite" = "取消收藏";
 "contactDetail.addFavorite" = "加入收藏";
@@ -725,8 +763,8 @@
 "contactImport.denied.description" = "若要匯入聯絡人，請在以下位置啟用存取權限：\n設定 > 隱私權與安全性 > 聯絡人 > Memory";
 "contactImport.search.prompt" = "搜尋要匯入的聯絡人...";
 
-// MARK: - 補充留言鍵
-
+/* MARK: - 補充留言鍵
+ */
 "messageDetail.deleteTitle" = "刪除留言？";
 "messageDetail.deleteMessage" = "此留言將被永久刪除。";
 "messageDetail.sealedInfo" = "此留言已封存，將在適當的時候送達。";
@@ -738,8 +776,8 @@
 "messageEditor.newTitle" = "新增留言";
 "messageEditor.discardTitle" = "捨棄留言？";
 
-// MARK: - 補充 AI 鍵
-
+/* MARK: - 補充 AI 鍵
+ */
 "aiChat.premiumFeature" = "進階功能";
 "aiChat.setup" = "設定 AI";
 "aiChat.welcome" = "問我關於你的回憶...";
@@ -750,7 +788,686 @@
 "aiChat.send" = "傳送訊息";
 "aiChat.ai" = "AI";
 
-// MARK: - 補充語音錄製鍵
-
+/* MARK: - 補充語音錄製鍵
+ */
 "voiceRecording.start" = "開始錄製";
 "voiceRecording.stop" = "停止錄製";
+
+/* MARK: - 靈魂檔案
+ */
+"tab.soul" = "靈魂";
+"tab.universe" = "宇宙";
+"tab.universe" = "宇宙";
+"soul.title" = "靈魂檔案";
+"soul.greeting" = "你好";
+"soul.age %lld" = "%lld 歲";
+"soul.completeness" = "檔案完整度";
+"soul.progress" = "進度";
+"soul.stat.interviews" = "訪談";
+"soul.stat.assessments" = "測評";
+"soul.actions" = "探索自己";
+"soul.action.interview" = "訪談";
+"soul.action.interview.desc" = "聊聊你的生活";
+"soul.action.mbti" = "性格";
+"soul.action.mbti.desc" = "做個測試";
+"soul.action.deepdive" = "深入探索";
+"soul.action.deepdive.desc" = "探索一個話題";
+"soul.action.values" = "價值觀";
+"soul.action.values.desc" = "什麼對你重要";
+"soul.action.voice" = "聲音複製";
+"soul.action.voice.desc" = "創建你的聲音";
+"soul.action.voice.collecting" = "錄製樣本中";
+"soul.action.voice.training" = "訓練中...";
+"soul.action.voice.ready" = "聲音已就緒";
+"soul.action.voice.failed" = "訓練失敗";
+"soul.recent" = "最近活動";
+
+/* MARK: - 聲音複製
+ */
+"voice.title" = "聲音複製";
+"voice.preview" = "預覽聲音";
+"voice.progress" = "錄製進度";
+"voice.duration_progress %lld %lld" = "%lld秒 / %lld秒";
+"voice.minimum" = "最低要求";
+"voice.recommended" = "建議";
+"voice.optimal" = "最佳";
+"voice.start_recording" = "開始錄製";
+"voice.continue_recording" = "繼續錄製";
+"voice.start_training" = "開始訓練";
+"voice.import_from_memories" = "從回憶匯入";
+"voice.samples" = "聲音樣本";
+"voice.sample_count %lld" = "%lld 個樣本";
+"voice.view_all" = "檢視全部";
+"voice.all_samples" = "所有樣本";
+
+// 聲音狀態
+"voice.status.not_started" = "未開始";
+"voice.status.collecting" = "收集樣本中";
+"voice.status.training" = "訓練中";
+"voice.status.ready" = "聲音就緒";
+"voice.status.failed" = "訓練失敗";
+"voice.status.not_started.desc" = "錄製聲音樣本來複製你的聲音";
+"voice.status.collecting.desc" = "繼續錄製以提高聲音品質";
+"voice.status.training.desc" = "正在訓練你的聲音...";
+"voice.status.ready.desc" = "你的聲音複製已準備就緒";
+
+// 聲音品質
+"voice.quality.pending" = "分析中...";
+"voice.quality.excellent" = "優秀";
+"voice.quality.good" = "良好";
+"voice.quality.fair" = "普通";
+"voice.quality.poor" = "較差";
+
+// 聲音來源
+"voice.source.recorded" = "錄製";
+"voice.source.memory" = "回憶";
+"voice.source.message" = "留言";
+
+// 聲音錄製
+"voice.record.title" = "錄製樣本";
+"voice.record.instructions" = "請清晰朗讀以下文字";
+"voice.record.tips" = "在安靜的環境中自然說話。將裝置放在距離嘴巴15-30公分處。";
+"voice.record.read_aloud" = "請朗讀：";
+"voice.record.next_prompt" = "下一段";
+"voice.record.tap_to_start" = "點擊開始錄製";
+"voice.record.tap_to_stop" = "點擊停止錄製";
+"voice.record.session_count %lld" = "本次錄製 %lld 個樣本";
+"voice.record.saved" = "樣本已儲存";
+"voice.record.another" = "繼續錄製";
+"voice.record.quality %@" = "品質：%@";
+
+// 聲音訓練
+"voice.training.title" = "訓練聲音";
+"voice.training.ready" = "準備訓練";
+"voice.training.description" = "你的聲音樣本將被上傳以創建個人化的聲音複製。";
+"voice.training.samples %lld" = "%lld 個優質樣本";
+"voice.training.duration %lld" = "%lld 秒音訊";
+"voice.training.quality_good" = "品質符合要求";
+"voice.training.name_label" = "聲音名稱";
+"voice.training.name_placeholder" = "我的聲音";
+"voice.training.provider %@" = "使用 %@";
+"voice.training.start" = "開始訓練";
+"voice.training.need_api_key" = "需要 API 金鑰，請在設定中配置。";
+"voice.training.in_progress" = "訓練進行中";
+"voice.training.please_wait" = "這可能需要幾分鐘...";
+"voice.training.progress %lld" = "已完成 %lld%%";
+"voice.training.do_not_close" = "請不要關閉應用程式";
+"voice.training.complete" = "訓練完成！";
+"voice.training.complete_desc" = "你的聲音複製已就緒，試試看吧！";
+
+// 聲音設定
+"voice.settings.title" = "聲音設定";
+"voice.settings.provider" = "提供者";
+"voice.settings.provider_section" = "聲音複製提供者";
+"voice.settings.api_key" = "API 金鑰";
+"voice.settings.api_key_saved" = "API 金鑰已儲存";
+"voice.settings.save_api_key" = "儲存 API 金鑰";
+"voice.settings.delete_api_key" = "刪除 API 金鑰";
+"voice.settings.api_section" = "驗證";
+"voice.settings.elevenlabs_footer" = "從 elevenlabs.io 取得你的 API 金鑰";
+"voice.settings.endpoint" = "端點 URL";
+"voice.settings.save_endpoint" = "儲存端點";
+"voice.settings.endpoint_section" = "自訂端點";
+"voice.settings.model" = "模型";
+"voice.settings.model_section" = "聲音模型";
+"voice.settings.voice_name" = "聲音名稱";
+"voice.settings.voice_id" = "聲音 ID";
+"voice.settings.trained_at" = "訓練時間";
+"voice.settings.current_voice" = "目前聲音";
+"voice.settings.samples_count" = "樣本數";
+"voice.settings.total_duration" = "總時長";
+"voice.settings.reset" = "重設全部";
+"voice.settings.delete_voice" = "從提供者刪除聲音";
+"voice.settings.data_section" = "資料";
+"voice.settings.data_footer" = "重設將刪除所有本機樣本和聲音資料。";
+"voice.settings.privacy_title" = "隱私保護";
+"voice.settings.privacy_desc" = "聲音樣本僅用於訓練你的個人聲音複製。";
+"voice.settings.privacy_section" = "隱私權";
+"voice.settings.reset_confirm" = "重設聲音資料？";
+"voice.settings.reset_message" = "這將刪除所有聲音樣本並重設你的設定檔。";
+"voice.settings.delete_confirm" = "刪除聲音？";
+"voice.settings.delete_message" = "這將從提供者的伺服器中刪除你的聲音。";
+
+// 聲音提供者
+"voice.provider.custom" = "自訂";
+"voice.provider.elevenlabs.desc" = "高品質聲音複製，自然語調";
+"voice.provider.openai.desc" = "使用預設聲音的文字轉語音（無複製）";
+"voice.provider.custom.desc" = "使用你自己的 OpenAI 相容端點";
+
+// ElevenLabs 模型
+"elevenlabs.model.multilingual" = "最佳品質，支援29種語言";
+"elevenlabs.model.turbo" = "更快生成，英語最佳化";
+"elevenlabs.model.monolingual" = "僅英語，舊版模型";
+
+// 聲音錯誤
+"voice.error.missing_api_key" = "未設定 API 金鑰";
+"voice.error.missing_endpoint" = "未設定端點";
+"voice.error.invalid_endpoint" = "無效的端點 URL";
+"voice.error.no_samples" = "沒有可用於訓練的樣本";
+"voice.error.network" = "發生網路錯誤";
+"voice.error.http %lld" = "伺服器錯誤：%lld";
+"voice.error.invalid_response" = "伺服器回應無效";
+"voice.error.voice_not_ready" = "聲音尚未就緒";
+"voice.error.synthesis" = "生成語音失敗";
+"voice.error.delete" = "刪除聲音失敗";
+"voice.error.recording" = "錄製失敗";
+
+// 聲音預覽
+"voice.preview.text" = "你好！這是我複製聲音的預覽。希望它聽起來像我。";
+
+// 聲音訓練提示文本
+"voice.prompt.1" = "春眠不覺曉，處處聞啼鳥。夜來風雨聲，花落知多少。";
+"voice.prompt.2" = "床前明月光，疑是地上霜。舉頭望明月，低頭思故鄉。";
+"voice.prompt.3" = "白日依山盡，黃河入海流。欲窮千里目，更上一層樓。";
+"voice.prompt.4" = "鋤禾日當午，汗滴禾下土。誰知盤中飧，粒粒皆辛苦。";
+"voice.prompt.5" = "離離原上草，一歲一枯榮。野火燒不盡，春風吹又生。";
+"voice.prompt.6" = "千里之行，始於足下。";
+"voice.prompt.7" = "學而不思則罔，思而不學則殆。";
+"voice.prompt.8" = "己所不欲，勿施於人。";
+"voice.prompt.9" = "三人行，必有我師焉。";
+"voice.prompt.10" = "知之為知之，不知為不知，是知也。";
+"voice.prompt.11" = "天行健，君子以自強不息。";
+"voice.prompt.12" = "海納百川，有容乃大。";
+"voice.prompt.13" = "不積跬步，無以至千里。";
+"voice.prompt.14" = "路漫漫其修遠兮，吾將上下而求索。";
+"voice.prompt.15" = "人生自古誰無死，留取丹心照汗青。";
+"voice.prompt.happy" = "今天心情特別好！一切都很順利。";
+"voice.prompt.sad" = "有時候會感到些許憂傷，但沒關係。";
+"voice.prompt.excited" = "太棒了！這真是令人興奮！";
+"voice.prompt.calm" = "深呼吸，一切都很平靜祥和。";
+"voice.prompt.serious" = "這是一個非常重要的事情，需要認真考慮。";
+"voice.prompt.numbers" = "一、二、三、四、五、六、七、八、九、十。";
+"voice.prompt.days" = "星期一、星期二、星期三、星期四、星期五、星期六、星期日。";
+"voice.prompt.months" = "一月、二月、三月、四月、五月、六月、七月、八月、九月、十月、十一月、十二月。";
+
+/* MARK: - 文字風格
+ */
+"writing.title" = "文字風格";
+"writing.generate" = "生成文字";
+"writing.data_status" = "資料狀態";
+"writing.memories_count %lld" = "%lld 條文字回憶";
+"writing.min_required %lld" = "最少需要 %lld 條";
+"writing.recommendation" = "回憶越多，風格分析越準確";
+"writing.style_summary" = "你的寫作風格";
+"writing.overall_style" = "整體風格";
+"writing.tone" = "語氣";
+"writing.vocabulary" = "詞彙";
+"writing.emotional" = "情感表達";
+"writing.unique_traits" = "獨特特點";
+"writing.top_words" = "常用詞彙";
+"writing.top_phrases" = "常用短語";
+"writing.reanalyze" = "重新分析";
+"writing.start_analysis" = "分析我的寫作";
+"writing.need_more_memories %lld" = "需要至少 %lld 條回憶才能分析";
+"writing.last_analyzed %@" = "分析於 %@";
+
+// 寫作狀態
+"writing.status.not_analyzed" = "未分析";
+"writing.status.analyzing" = "分析中...";
+"writing.status.ready" = "風格就緒";
+"writing.status.failed" = "分析失敗";
+"writing.status.not_analyzed.desc" = "分析你的回憶來學習你的寫作風格";
+"writing.status.analyzing.desc" = "正在學習你獨特的寫作模式...";
+"writing.status.failed.desc" = "出了點問題，請重試。";
+
+// 靈魂標籤頁動作
+"soul.action.writing" = "文字風格";
+"soul.action.writing.desc" = "學習你的風格";
+"soul.action.writing.analyzing" = "分析中...";
+"soul.action.writing.ready" = "風格就緒";
+"soul.action.writing.failed" = "分析失敗";
+
+// 寫作分析
+"writing.analysis.title" = "分析寫作";
+"writing.analysis.ready" = "準備分析";
+"writing.analysis.description" = "我們將分析你的回憶，學習你獨特的寫作風格、詞彙和表達模式。";
+"writing.analysis.memories %lld" = "將分析 %lld 條回憶";
+"writing.analysis.words %lld" = "約 %lld 字";
+"writing.analysis.time" = "大約需要 1-2 分鐘";
+"writing.analysis.need_ai" = "需要 AI 服務。請在設定中配置。";
+"writing.analysis.privacy" = "分析在本機進行。只分析文字內容。";
+"writing.analysis.start" = "開始分析";
+"writing.analysis.in_progress" = "正在分析你的寫作";
+"writing.analysis.progress %lld" = "已完成 %lld%%";
+"writing.analysis.please_wait" = "這可能需要一兩分鐘...";
+"writing.analysis.complete" = "分析完成！";
+"writing.analysis.complete_desc" = "你的寫作風格已被捕獲。現在可以用你的風格生成文字了。";
+"writing.stat.memories" = "回憶";
+"writing.stat.words" = "字數";
+"writing.your_style" = "你的風格";
+"writing.stage.extracting" = "擷取文字...";
+"writing.stage.words" = "分析詞彙...";
+"writing.stage.patterns" = "尋找模式...";
+"writing.stage.ai" = "AI 生成洞察...";
+"writing.stage.finishing" = "即將完成...";
+
+// 文字生成器
+"writing.generator.title" = "生成文字";
+"writing.mode.freeform" = "自由寫作";
+"writing.mode.message" = "留言";
+"writing.freeform.title" = "寫什麼？";
+"writing.freeform.desc" = "描述你想寫的內容，AI 會用你的風格來生成。";
+"writing.freeform.placeholder" = "例如：寫一篇關於海邊一天的日記...";
+"writing.examples" = "範例：";
+"writing.example.diary" = "今天的日記";
+"writing.example.reflection" = "人生感悟";
+"writing.example.memory" = "童年回憶";
+"writing.message.to" = "收件人";
+"writing.message.no_contacts" = "還沒有聯絡人。請先新增聯絡人。";
+"writing.message.occasion" = "場合";
+"writing.message.custom_occasion" = "描述場合...";
+"writing.generate_button" = "生成";
+"writing.generating" = "生成中...";
+"writing.result" = "生成的文字";
+"writing.use_as_message" = "用作留言";
+"writing.regenerate" = "重新生成";
+"common.copied" = "已複製！";
+
+// 寫作場合
+"writing.occasion.birthday" = "生日";
+"writing.occasion.holiday" = "節日";
+"writing.occasion.gratitude" = "感謝";
+"writing.occasion.apology" = "道歉";
+"writing.occasion.encouragement" = "鼓勵";
+"writing.occasion.farewell" = "告別";
+"writing.occasion.congratulations" = "祝賀";
+"writing.occasion.comfort" = "安慰";
+"writing.occasion.love" = "表白";
+"writing.occasion.custom" = "自訂";
+"writing.hint.birthday" = "生日祝福和慶祝";
+"writing.hint.holiday" = "節日問候和祝願";
+"writing.hint.gratitude" = "表達感謝和感激";
+"writing.hint.apology" = "道歉和彌補";
+"writing.hint.encouragement" = "激勵和支持";
+"writing.hint.farewell" = "告別或再見";
+"writing.hint.congratulations" = "慶祝成就";
+"writing.hint.comfort" = "在困難時期給予安慰";
+"writing.hint.love" = "表達愛意和深情";
+"writing.hint.custom" = "描述你自己的場合";
+
+// 寫作設定
+"writing.settings.title" = "文字風格設定";
+"writing.settings.status" = "狀態";
+"writing.settings.status_section" = "分析狀態";
+"writing.settings.last_analyzed" = "上次分析";
+"writing.settings.memories_analyzed" = "分析的回憶";
+"writing.settings.words_analyzed" = "分析的字數";
+"writing.settings.features_section" = "功能";
+"writing.settings.enable" = "啟用風格生成";
+"writing.settings.enable_desc" = "允許 AI 用你的寫作風格生成文字";
+"writing.settings.features_footer" = "停用後，生成功能將不可用。";
+"writing.settings.statistics_section" = "寫作統計";
+"writing.settings.avg_sentence" = "平均句子長度";
+"writing.settings.avg_paragraph" = "平均段落長度";
+"writing.settings.words_count %lld" = "%lld 字";
+"writing.settings.unique_words" = "獨特詞彙數";
+"writing.settings.unique_phrases" = "獨特短語數";
+"writing.settings.samples_section" = "範例文本";
+"writing.settings.sample %lld" = "範例 %lld";
+"writing.settings.samples_footer" = "你寫作的代表性摘錄。";
+"writing.settings.data_section" = "資料管理";
+"writing.settings.reset" = "重設分析";
+"writing.settings.reset_footer" = "清除所有分析資料，重新開始。";
+"writing.settings.reset_confirm" = "重設寫作分析？";
+"writing.settings.reset_message" = "這將清除所有風格分析資料。你需要重新分析回憶。";
+"writing.settings.privacy_section" = "隱私權";
+"writing.settings.privacy_title" = "你的資料是安全的";
+"writing.settings.privacy_desc" = "寫作分析在本機進行。除了 AI 生成請求，風格資料不會離開你的裝置。";
+
+// 寫作錯誤
+"writing.error.title" = "錯誤";
+"writing.error.no_memories" = "沒有可分析的回憶";
+"writing.error.no_content" = "回憶中沒有找到文字內容";
+"writing.error.not_ready" = "尚未分析寫作風格";
+
+/* MARK: - 頭像
+ */
+"avatar.title" = "頭像";
+"avatar.status.no_photo" = "未設定頭像";
+"avatar.status.has_photo" = "頭像已設定";
+"avatar.status.stylizing" = "風格化中...";
+"avatar.status.stylized" = "頭像已風格化";
+"avatar.status.failed" = "風格化失敗";
+"avatar.status.no_photo.desc" = "上傳一張照片來創建你的頭像";
+"avatar.status.has_photo.desc" = "選擇風格並創建獨特頭像";
+"avatar.status.stylizing.desc" = "正在處理你的頭像...";
+"avatar.status.stylized.desc" = "你的風格化頭像已就緒";
+
+// 靈魂標籤頁頭像動作
+"soul.action.avatar" = "頭像";
+"soul.action.avatar.desc" = "創建你的頭像";
+"soul.action.avatar.ready" = "照片已上傳";
+"soul.action.avatar.stylized" = "頭像已就緒";
+
+// 頭像主視圖
+"avatar.upload_photo" = "上傳照片";
+"avatar.change_photo" = "更換照片";
+"avatar.style" = "選擇風格";
+"avatar.frame" = "選擇邊框";
+"avatar.stylize" = "風格化";
+"avatar.stylizing" = "處理中...";
+"avatar.export" = "匯出頭像";
+"avatar.preview" = "預覽";
+"avatar.original" = "原圖";
+"avatar.stylized_preview" = "風格化";
+
+// 頭像風格
+"avatar.style.natural" = "自然";
+"avatar.style.artistic" = "藝術";
+"avatar.style.cartoon" = "卡通";
+"avatar.style.anime" = "動漫";
+"avatar.style.sketch" = "素描";
+"avatar.style.oil_painting" = "油畫";
+
+// 頭像邊框
+"avatar.frame.none" = "無";
+"avatar.frame.circle" = "圓形";
+"avatar.frame.square" = "方形";
+"avatar.frame.hexagon" = "六邊形";
+
+// 頭像設定
+"avatar.settings.title" = "頭像設定";
+"avatar.settings.display" = "顯示";
+"avatar.settings.show_original" = "顯示原圖";
+"avatar.settings.show_original_desc" = "在風格化頭像旁顯示原始照片";
+"avatar.settings.appearance" = "外觀";
+"avatar.settings.current_style" = "目前風格";
+"avatar.settings.current_frame" = "目前邊框";
+"avatar.settings.last_updated" = "上次更新";
+"avatar.settings.data" = "資料管理";
+"avatar.settings.reset" = "重設頭像";
+"avatar.settings.reset_footer" = "這將刪除你的頭像和所有風格化版本。";
+"avatar.settings.reset_confirm" = "重設頭像？";
+"avatar.settings.reset_message" = "這將刪除你的頭像照片和所有風格化版本。此操作無法復原。";
+"avatar.settings.privacy" = "隱私";
+"avatar.settings.privacy_title" = "你的照片受到保護";
+"avatar.settings.privacy_desc" = "頭像照片儲存在本機，使用你的加密金鑰保護。風格化處理可能需要傳送至 AI 服務。";
+
+// 頭像錯誤
+"avatar.error.no_photo" = "請先上傳照片";
+"avatar.error.stylize_failed" = "風格化處理失敗";
+"avatar.error.export_failed" = "匯出頭像失敗";
+
+/* MARK: - 數位自我
+ */
+"digitalself.title" = "數位自我";
+"digitalself.unnamed" = "數位分身";
+"digitalself.components_ready %lld %lld" = "%lld / %lld 已就緒";
+"digitalself.enable" = "啟用數位自我";
+"digitalself.enable.desc" = "允許聯絡人與你的數位分身互動";
+
+// 數位自我狀態
+"digitalself.status.not_ready" = "未就緒";
+"digitalself.status.ready" = "已就緒";
+"digitalself.status.active" = "已啟用";
+"digitalself.status.paused" = "已暫停";
+
+// 數位自我組件
+"digitalself.components" = "組件";
+"digitalself.component.soul" = "靈魂檔案";
+"digitalself.component.writing" = "文字風格";
+"digitalself.component.voice" = "聲音複製";
+"digitalself.component.avatar" = "數位形象";
+"digitalself.component.ready" = "已就緒";
+"digitalself.component.soul.needed" = "完善你的檔案";
+"digitalself.component.writing.needed" = "分析你的文字";
+"digitalself.component.voice.needed" = "訓練你的聲音";
+"digitalself.component.avatar.needed" = "上傳照片";
+
+// 數位自我操作
+"digitalself.actions" = "操作";
+"digitalself.action.chat" = "開始對話";
+"digitalself.action.chat.desc" = "以你的數位身分對話";
+
+// 數位自我存取控制
+"digitalself.access" = "存取控制";
+"digitalself.access.everyone" = "所有人";
+"digitalself.access.selected" = "指定聯絡人";
+"digitalself.access.no_one" = "無人";
+"digitalself.access.everyone.desc" = "所有聯絡人可以互動";
+"digitalself.access.selected.desc" = "僅選定的聯絡人";
+"digitalself.access.no_one.desc" = "停用互動";
+"digitalself.allowed_contacts" = "允許的聯絡人";
+"digitalself.no_contacts_selected" = "未選擇聯絡人";
+"digitalself.select_contacts" = "選擇聯絡人";
+"digitalself.chat_with" = "與誰對話";
+
+// 數位自我統計
+"digitalself.statistics" = "統計";
+"digitalself.stat.conversations" = "對話數";
+"digitalself.stat.messages" = "訊息數";
+"digitalself.last_interaction %@" = "上次互動 %@";
+
+// 數位自我聊天
+"digitalself.input_placeholder" = "輸入訊息...";
+"digitalself.voice_output" = "語音輸出";
+"digitalself.clear_chat" = "清除聊天";
+"digitalself.greeting.default %@" = "嘿！我是%@。你最近怎麼樣？";
+
+// 數位自我設定
+"digitalself.settings.title" = "數位自我設定";
+"digitalself.settings.status_section" = "狀態";
+"digitalself.settings.status" = "狀態";
+"digitalself.settings.readiness" = "準備程度";
+"digitalself.settings.personality_section" = "人格";
+"digitalself.settings.personality_mode" = "人格模式";
+"digitalself.settings.emotional_level" = "情感程度";
+"digitalself.emotional.reserved" = "內斂";
+"digitalself.emotional.balanced" = "平衡";
+"digitalself.emotional.expressive" = "外放";
+"digitalself.settings.voice_section" = "語音";
+"digitalself.settings.voice_output" = "語音輸出";
+"digitalself.settings.voice_not_ready" = "聲音複製未就緒";
+"digitalself.settings.voice_footer" = "回覆將以你複製的聲音說出。";
+"digitalself.settings.behavior_section" = "行為";
+"digitalself.settings.auto_greet" = "自動問候";
+"digitalself.settings.auto_greet_footer" = "聯絡人開始對話時自動發送問候語。";
+"digitalself.settings.statistics_section" = "統計";
+"digitalself.settings.last_interaction" = "上次互動";
+"digitalself.settings.privacy_section" = "隱私";
+"digitalself.settings.privacy_title" = "你的隱私很重要";
+"digitalself.settings.privacy_desc" = "對話儲存在本機。你的數位自我只分享你明確設定的內容。";
+"digitalself.settings.data_section" = "資料管理";
+"digitalself.settings.reset" = "重設數位自我";
+"digitalself.settings.reset_confirm" = "重設數位自我？";
+"digitalself.settings.reset_message" = "這將清除所有對話記錄和設定。";
+"digitalself.settings.reset_footer" = "清除所有統計資料和對話記錄。";
+
+// 數位自我人格模式
+"digitalself.personality.authentic" = "真實";
+"digitalself.personality.supportive" = "支持";
+"digitalself.personality.playful" = "活潑";
+"digitalself.personality.wise" = "睿智";
+"digitalself.personality.authentic.desc" = "以真實的自己回應";
+"digitalself.personality.supportive.desc" = "更溫暖和鼓勵";
+"digitalself.personality.playful.desc" = "輕鬆幽默";
+"digitalself.personality.wise.desc" = "分享智慧和指導";
+
+// 靈魂標籤頁動作
+"soul.action.digitalself" = "數位自我";
+"soul.action.digitalself.desc" = "你的數位分身";
+"soul.action.digitalself.ready" = "可以啟用";
+"soul.action.digitalself.active" = "已啟用";
+"soul.action.digitalself.paused" = "已暫停";
+
+// 數位自我錯誤
+"digitalself.error.ai_not_configured" = "AI 服務未設定";
+"digitalself.error.generation_failed %@" = "產生回覆失敗：%@";
+"digitalself.error.voice_not_ready" = "聲音複製未就緒";
+"digitalself.error.voice_failed %@" = "語音合成失敗：%@";
+"digitalself.error.profile_incomplete" = "靈魂檔案不完整";
+"digitalself.error.access_denied" = "存取遭拒";
+
+// 數位自我會員
+"digitalself.premium.title" = "數位永生";
+"digitalself.premium.description" = "創建你的數位分身，用你的聲音、性格和記憶與所愛的人進行有意義的對話。";
+"digitalself.premium.feature.chat" = "個人化對話";
+"digitalself.premium.feature.voice" = "用你複製的聲音說話";
+"digitalself.premium.feature.contacts" = "選擇誰可以互動";
+"digitalself.premium.feature.privacy" = "完全隱私控制";
+"digitalself.premium.upgrade" = "升級至進階版";
+
+/* MARK: - Feedback */
+"settings.feedback" = "傳送回饋";
+"feedback.title" = "傳送回饋";
+"feedback.type" = "回饋類型";
+"feedback.type.header" = "什麼類型的回饋？";
+"feedback.type.bug" = "問題回報";
+"feedback.type.suggestion" = "改進建議";
+"feedback.type.feature" = "功能請求";
+"feedback.type.question" = "問題諮詢";
+"feedback.type.praise" = "好評";
+"feedback.type.bug.desc" = "回報問題或異常行為";
+"feedback.type.suggestion.desc" = "對現有功能提出改進建議";
+"feedback.type.feature.desc" = "請求新功能";
+"feedback.type.question.desc" = "關於應用程式的問題";
+"feedback.type.praise.desc" = "分享你喜歡這個應用程式的地方";
+"feedback.content.header" = "你的回饋";
+"feedback.content.placeholder" = "告訴我們你的想法...";
+"feedback.content.footer" = "請盡可能詳細描述，這有助於我們改進。";
+"feedback.email.header" = "聯絡信箱（選填）";
+"feedback.email.placeholder" = "your@email.com";
+"feedback.email.footer" = "如果你希望我們跟進，請提供信箱。";
+"feedback.device_info" = "包含裝置資訊";
+"feedback.device_info.footer" = "幫助我們診斷問題，不包含個人資料。";
+"feedback.device" = "裝置";
+"feedback.ios_version" = "iOS 版本";
+"feedback.app_version" = "應用程式版本";
+"feedback.submit" = "提交回饋";
+"feedback.send_email" = "透過郵件傳送";
+"feedback.success.title" = "感謝你！";
+"feedback.success.message" = "你的回饋已收到，我們非常感謝你的意見！";
+"feedback.error.title" = "錯誤";
+"feedback.error.invalid_url" = "伺服器位址無效";
+"feedback.error.server" = "伺服器錯誤，請重試。";
+"feedback.error.encoding" = "回饋編碼失敗";
+
+/* MARK: - MBTI Assessment */
+"assessment.mbti.desc" = "透過 16 個維度了解你的性格類型。";
+"mbti.extraversion" = "外向";
+"mbti.introversion" = "內向";
+"mbti.sensing" = "實感";
+"mbti.intuition" = "直覺";
+"mbti.thinking" = "思考";
+"mbti.feeling" = "情感";
+"mbti.judging" = "判斷";
+"mbti.perceiving" = "感知";
+
+"mbti.q.ei.1" = "在社交場合，你通常：";
+"mbti.q.ei.1.a" = "與很多人交談，包括陌生人";
+"mbti.q.ei.1.b" = "只與少數幾個熟識的人交談";
+"mbti.q.ei.2" = "你更傾向於：";
+"mbti.q.ei.2.a" = "外向且善於表達";
+"mbti.q.ei.2.b" = "安靜且內斂";
+"mbti.q.ei.3" = "空閒時，你更喜歡：";
+"mbti.q.ei.3.a" = "與他人在一起並分享想法";
+"mbti.q.ei.3.b" = "獨自思考";
+"mbti.q.ei.4" = "你覺得大型社交聚會：";
+"mbti.q.ei.4.a" = "令人興奮，充滿活力";
+"mbti.q.ei.4.b" = "令人疲憊，消耗精力";
+"mbti.q.ei.5" = "在集體中，你通常：";
+"mbti.q.ei.5.a" = "主動發起對話並領導";
+"mbti.q.ei.5.b" = "等待他人來接觸你";
+
+"mbti.q.sn.1" = "你傾向於關注：";
+"mbti.q.sn.1.a" = "具體的事实和眼下的細節";
+"mbti.q.sn.1.b" = "未來的可能性和潛在的模式";
+"mbti.q.sn.2" = "別人會如何描述你：";
+"mbti.q.sn.2.a" = "務實且現實";
+"mbti.q.sn.2.b" = "富有想像力且有創意";
+"mbti.q.sn.3" = "做決定時，你更相信：";
+"mbti.q.sn.3.a" = "過去的經驗和證明過的方法";
+"mbti.q.sn.3.b" = "你的直覺和靈感";
+"mbti.q.sn.4" = "你更喜歡哪種工作：";
+"mbti.q.sn.4.a" = "有具體指示和清晰步驟的";
+"mbti.q.sn.4.b" = "只有大致方針和抽象概念的";
+"mbti.q.sn.5" = "你花更多時間思考：";
+"mbti.q.sn.5.a" = "此時此刻";
+"mbti.q.sn.5.b" = "未來可能發生的事";
+
+"mbti.q.tf.1" = "做重大決定時，你優先考慮：";
+"mbti.q.tf.1.a" = "邏輯、理性和客觀分析";
+"mbti.q.tf.1.b" = "個人價值觀和對他人的影響";
+"mbti.q.tf.2" = "你通常：";
+"mbti.q.tf.2.a" = "客觀且堅定";
+"mbti.q.tf.2.b" = "感性且富有同情心";
+"mbti.q.tf.3" = "在衝突中，你更看重：";
+"mbti.q.tf.3.a" = "尋找真相和正義";
+"mbti.q.tf.3.b" = "維持和諧和感受";
+"mbti.q.tf.4" = "在給出回饋時，你更可能：";
+"mbti.q.tf.4.a" = "直接且誠實，即使可能傷人";
+"mbti.q.tf.4.b" = "委婉且溫和，以免傷害感情";
+"mbti.q.tf.5" = "你更希望被看作是一個：";
+"mbti.q.tf.5.a" = "理智且有邏輯的人";
+"mbti.q.tf.5.b" = "感性且善良的人";
+
+"mbti.q.jp.1" = "你更喜歡哪種生活方式：";
+"mbti.q.jp.1.a" = "按計劃和日程辦事";
+"mbti.q.jp.1.b" = "隨性而為，順其自然";
+"mbti.q.jp.2" = "處理項目時，你通常：";
+"mbti.q.jp.2.a" = "在截止日期前很久就完成";
+"mbti.q.jp.2.b" = "在最後關頭壓力下效率最高";
+"mbti.q.jp.3" = "你的環境通常是：";
+"mbti.q.jp.3.a" = "井井有條，整潔乾淨";
+"mbti.q.jp.3.b" = "比較隨意，甚至有點亂";
+"mbti.q.jp.4" = "你在哪種情況下感到舒適：";
+"mbti.q.jp.4.a" = "事情有了定論和明確結果";
+"mbti.q.jp.4.b" = "保持選擇的開放性和靈活性";
+"mbti.q.jp.5" = "旅行時，你更喜歡：";
+"mbti.q.jp.5.a" = "有詳細的行程計劃和預訂";
+"mbti.q.jp.5.b" = "到了地方再說，看心情決定";
+
+/* MBTI Types */
+"mbti.intj" = "具有戰略眼光和邏輯性，對自己的想法有很強的推動力。";
+"mbti.intj.nickname" = "建築師";
+"mbti.intp" = "獨立且善於分析，對知識有強烈的渴望。";
+"mbti.intp.nickname" = "邏輯學家";
+"mbti.entj" = "大膽且意志堅定，總能找到或開創出一條道路。";
+"mbti.entj.nickname" = "指揮官";
+"mbti.entp" = "聰明且好奇的思想家，無法抗拒智力挑戰。";
+"mbti.entp.nickname" = "辯論家";
+"mbti.infj" = "安靜而神秘，同時又是鼓舞人心且不知疲倦的理想主義者。";
+"mbti.infj.nickname" = "提倡者";
+"mbti.infp" = "詩意、善良且利他的人，總是渴望為正義事業提供幫助。";
+"mbti.infp.nickname" = "調解者";
+"mbti.enfj" = "富有魅力且鼓舞人心的領導者，能夠令聽眾著迷。";
+"mbti.enfj.nickname" = "主人公";
+"mbti.enfp" = "熱情、創造力強且愛社交的自由靈魂，總能找到微笑的理由。";
+"mbti.enfp.nickname" = "競選者";
+"mbti.istj" = "務實且注重事實，其可靠性不容置疑。";
+"mbti.istj.nickname" = "物流師";
+"mbti.isfj" = "非常敬業且熱情的保護者，隨時準備捍衛他們所愛的人。";
+"mbti.isfj.nickname" = "守衛者";
+"mbti.estj" = "出色的管理人員，在管理事務或人員方面無與倫比。";
+"mbti.estj.nickname" = "總經理";
+"mbti.esfj" = "極具愛心、愛社交且受歡迎的人，總是渴望提供幫助。";
+"mbti.esfj.nickname" = "執政官";
+"mbti.istp" = "大膽且實際的實驗家，精通各種工具。";
+"mbti.istp.nickname" = "鑑賞家";
+"mbti.isfp" = "靈活且富有魅力的藝術家，隨時準備探索和體驗新事物。";
+"mbti.isfp.nickname" = "探險家";
+"mbti.estp" = "聰明、精力充沛且觀察力敏銳，真正享受生活在邊緣的感覺。";
+"mbti.estp.nickname" = "企業家";
+"mbti.esfp" = "自發、精力充沛且熱情的享樂主義者——身邊永遠不會無聊。";
+"mbti.esfp.nickname" = "表演者";
+
+/* MARK: - Assessment Common */
+"assessment.question %lld %lld" = "第 %lld 題，共 %lld 題";
+"assessment.previous" = "上一題";
+"assessment.ai_analysis" = "AI 深度分析";
+"assessment.generating" = "AI 分析生成中...";
+"assessment.dimensions" = "維度解析";
+"assessment.complete.title" = "測評完成";
+"assessment.minutes %lld" = "%lld 分鐘";
+
+/* MARK: - Assessments Labels */
+"assessment.values" = "核心價值觀";
+"assessment.values.desc" = "探索驅動你人生的核心信念。";
+"assessment.lovelanguage" = "愛之語";
+"assessment.lovelanguage.desc" = "了解你如何表達和接收愛。";
+"assessment.bigfive" = "大五人格";
+"assessment.bigfive.desc" = "科學評估你的五大性格維度。";
+"assessment.mbti.desc" = "透過 16 型人格了解你的性格傾向。";
+"legacy.title" = "生命意義與傳承";
+"legacy.desc" = "思考並記錄你想要留給世界的精神遺產。";
+"assessment.complete" = "已完成";

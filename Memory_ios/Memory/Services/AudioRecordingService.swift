@@ -12,6 +12,11 @@ final class AudioRecordingService: NSObject, AVAudioRecorderDelegate {
     private var audioRecorder: AVAudioRecorder?
     private var timer: Timer?
 
+    deinit {
+        timer?.invalidate()
+        audioRecorder?.stop()
+    }
+
     /// Request microphone permission.
     func requestPermission() async -> Bool {
         await AVAudioApplication.requestRecordPermission()

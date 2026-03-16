@@ -158,7 +158,7 @@ struct MessageDetailView: View {
             } label: {
                 Image(systemName: player.isPlaying ? "pause.circle.fill" : "play.circle.fill")
                     .font(.system(size: 44))
-                    .foregroundStyle(.accent)
+                    .foregroundStyle(Color.accentColor)
             }
 
             VStack(spacing: 6) {

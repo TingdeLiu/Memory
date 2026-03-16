@@ -91,7 +91,7 @@ struct SecuritySettingsView: View {
 
                             if encryptionLevel == level {
                                 Image(systemName: "checkmark.circle.fill")
-                                    .foregroundStyle(.accent)
+                                    .foregroundStyle(Color.accentColor)
                             }
                         }
                     }

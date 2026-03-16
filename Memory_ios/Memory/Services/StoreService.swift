@@ -20,13 +20,14 @@ final class StoreService {
 
     // MARK: - Feature Gating
 
-    var canCreateVoiceMemory: Bool { isPremium }
-    var canCreateVideoMemory: Bool { isPremium }
+    var canCreateVoiceMemory: Bool { true }  // Free
+    var canCreateVideoMemory: Bool { true }  // Free
     var canUseAI: Bool { isPremium }
     var canExportEncrypted: Bool { isPremium }
-    var contactLimit: Int { isPremium ? Int.max : 5 }
-    var voiceMemoryLimit: Int { isPremium ? Int.max : 3 }
-    var videoMemoryLimit: Int { isPremium ? Int.max : 1 }
+    var canUseDigitalSelf: Bool { isPremium }
+    var contactLimit: Int { Int.max }  // Free unlimited
+    var voiceMemoryLimit: Int { Int.max }  // Free unlimited
+    var videoMemoryLimit: Int { Int.max }  // Free unlimited
 
     // MARK: - Init
 

@@ -245,7 +245,7 @@ struct PrivacySettingsView: View {
 
     private func statsSection(_ stats: DataStatistics) -> some View {
         Section(String(localized: "privacy.yourData")) {
-            DataStatRow(label: String(localized: "privacy.memories"), value: "\(stats.totalMemories)", icon: "brain", color: .accent)
+            DataStatRow(label: String(localized: "privacy.memories"), value: "\(stats.totalMemories)", icon: "brain", color: Color.accentColor)
             if stats.textMemories > 0 {
                 DataStatRow(label: String(localized: "privacy.text"), value: "\(stats.textMemories)", icon: "doc.text", color: .blue)
             }
@@ -259,7 +259,7 @@ struct PrivacySettingsView: View {
                 DataStatRow(label: String(localized: "privacy.private"), value: "\(stats.privateMemories)", icon: "lock.fill", color: .red)
             }
 
-            DataStatRow(label: String(localized: "privacy.contacts"), value: "\(stats.totalContacts)", icon: "person.2", color: .accent)
+            DataStatRow(label: String(localized: "privacy.contacts"), value: "\(stats.totalContacts)", icon: "person.2", color: Color.accentColor)
             DataStatRow(label: String(localized: "privacy.messages"), value: "\(stats.totalMessages)", icon: "envelope", color: .blue)
 
             if stats.sealedMessages > 0 {
@@ -329,7 +329,7 @@ struct InfoCard: View {
         HStack(alignment: .top, spacing: 12) {
             Image(systemName: icon)
                 .font(.title3)
-                .foregroundStyle(.accent)
+                .foregroundStyle(Color.accentColor)
                 .frame(width: 28)
 
             VStack(alignment: .leading, spacing: 2) {

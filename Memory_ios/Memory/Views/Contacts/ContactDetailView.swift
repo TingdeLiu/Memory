@@ -4,286 +4,179 @@ import SwiftData
 struct ContactDetailView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
-    @Bindable var contact: Contact
+    @State private var viewModel: ContactDetailViewModel?
+    private let contact: Contact
 
-    @State private var showingMessageEditor = false
-    @State private var showingContactEditor = false
-    @State private var showingDeleteAlert = false
-    @State private var selectedConditionFilter: DeliveryCondition?
-    @State private var selectedMessage: Message?
-
-    private var filteredMessages: [Message] {
-        if let condition = selectedConditionFilter {
-            return contact.messages(for: condition)
-        }
-        return contact.sortedMessages
-    }
-
-    private var messageCountByCondition: [DeliveryCondition: Int] {
-        Dictionary(grouping: contact.messages, by: \.deliveryCondition)
-            .mapValues(\.count)
+    init(contact: Contact) {
+        self.contact = contact
     }
 
     var body: some View {
-        List {
-            // Profile header
-            profileSection
+        ScrollView {
+            if let vm = viewModel {
+                VStack(spacing: 24) {
+                    // Profile Header
+                    profileHeader
 
-            // Quick actions
-            actionSection
+                    // Condition Filter
+                    conditionFilter
 
-            // Notes
-            if !contact.notes.isEmpty {
-                Section(String(localized: "contactDetail.about")) {
-                    Text(contact.notes)
-                        .font(.body)
+                    // Messages List
+                    if vm.filteredMessages.isEmpty {
+                        emptyMessagesState
+                    } else {
+                        messagesList
+                    }
                 }
+                .padding()
+            } else {
+                ProgressView()
+                    .padding()
             }
-
-            // Message stats
-            if !contact.messages.isEmpty {
-                messageStatsSection
-            }
-
-            // Message filter & list
-            messagesSection
         }
-        .listStyle(.insetGrouped)
+        .navigationTitle(viewModel?.contact.name ?? contact.name)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                Menu {
+            ToolbarItem(placement: .topBarTrailing) {
+                HStack {
                     Button {
-                        showingContactEditor = true
+                        viewModel?.toggleFavorite()
                     } label: {
-                        Label(String(localized: "contactDetail.editContact"), systemImage: "pencil")
+                        Image(systemName: viewModel?.contact.isFavorite == true ? "star.fill" : "star")
+                            .foregroundStyle(viewModel?.contact.isFavorite == true ? .yellow : .accentColor)
                     }
 
                     Button {
-                        contact.isFavorite.toggle()
+                        viewModel?.toggleEditing()
                     } label: {
-                        Label(
-                            contact.isFavorite ? String(localized: "contactDetail.removeFavorite") : String(localized: "contactDetail.addFavorite"),
-                            systemImage: contact.isFavorite ? "star.slash" : "star.fill"
-                        )
+                        Text(viewModel?.isEditing == true ? String(localized: "common.save") : String(localized: "common.edit"))
                     }
-
-                    Divider()
-
-                    Button(role: .destructive) {
-                        showingDeleteAlert = true
-                    } label: {
-                        Label(String(localized: "contactDetail.deleteContact"), systemImage: "trash")
-                    }
-                } label: {
-                    Image(systemName: "ellipsis.circle")
                 }
             }
         }
-        .sheet(isPresented: $showingMessageEditor) {
-            MessageEditorView(contact: contact)
-        }
-        .sheet(isPresented: $showingContactEditor) {
-            ContactEditorView(existingContact: contact)
-        }
-        .sheet(item: $selectedMessage) { message in
-            MessageDetailView(message: message)
-        }
-        .alert(String(localized: "contactDetail.deleteTitle"), isPresented: $showingDeleteAlert) {
-            Button(String(localized: "common.delete"), role: .destructive) {
-                for msg in contact.messages {
-                    if let path = msg.audioFilePath {
-                        AudioRecordingService().deleteRecording(
-                            at: AudioRecordingService.recordingURL(for: path)
-                        )
-                    }
-                }
-                modelContext.delete(contact)
-                dismiss()
+        .onAppear {
+            if viewModel == nil {
+                viewModel = ContactDetailViewModel(contact: contact, modelContext: modelContext)
             }
-            Button(String(localized: "common.cancel"), role: .cancel) {}
-        } message: {
-            Text(L10n.contactDeleteMessage(contact.name, contact.messages.count))
+        }
+        .sheet(isPresented: Binding(
+            get: { viewModel?.showingMessageEditor ?? false },
+            set: { viewModel?.showingMessageEditor = $0 }
+        )) {
+            if let vm = viewModel {
+                MessageEditorView(contact: vm.contact)
+            }
         }
     }
 
-    // MARK: - Profile Section
+    private var profileHeader: some View {
+        VStack(spacing: 16) {
+            ContactAvatarView(contact: viewModel?.contact ?? contact, size: 100)
+                .shadow(radius: 5)
 
-    private var profileSection: some View {
-        Section {
-            VStack(spacing: 14) {
-                ContactAvatarView(contact: contact, size: 88)
+            VStack(spacing: 4) {
+                if viewModel?.isEditing == true {
+                    TextField(String(localized: "contact.name"), text: Binding(
+                        get: { viewModel?.contact.name ?? "" },
+                        set: { viewModel?.contact.name = $0 }
+                    ))
+                    .textFieldStyle(.roundedBorder)
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: 200)
+                } else {
+                    Text(viewModel?.contact.name ?? contact.name)
+                        .font(.title2)
+                        .fontWeight(.bold)
+                }
 
-                VStack(spacing: 4) {
-                    HStack(spacing: 6) {
-                        Text(contact.name)
-                            .font(.title2)
-                            .fontWeight(.bold)
-                        if contact.isFavorite {
-                            Image(systemName: "star.fill")
-                                .foregroundStyle(.yellow)
-                                .font(.subheadline)
-                        }
-                    }
+                RelationshipBadge(relationship: viewModel?.contact.relationship ?? contact.relationship)
+            }
 
-                    Label(contact.relationship.label, systemImage: contact.relationship.icon)
-                        .font(.subheadline)
+            if !(viewModel?.contact.notes.isEmpty ?? true) || viewModel?.isEditing == true {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(String(localized: "contact.notes"))
+                        .font(.caption)
                         .foregroundStyle(.secondary)
-                }
+                        .textCase(.uppercase)
 
-                if contact.importSource == .systemContacts {
-                    Label(String(localized: "contactDetail.imported"), systemImage: "person.crop.circle")
-                        .font(.caption2)
-                        .foregroundStyle(.tertiary)
-                }
-            }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 8)
-            .listRowBackground(Color.clear)
-        }
-    }
-
-    // MARK: - Action Section
-
-    private var actionSection: some View {
-        Section {
-            HStack(spacing: 12) {
-                ActionButton(
-                    title: String(localized: "contactDetail.action.write"),
-                    icon: "pencil.line",
-                    color: .accent
-                ) {
-                    showingMessageEditor = true
-                }
-
-                ActionButton(
-                    title: String(localized: "contactDetail.action.edit"),
-                    icon: "person.text.rectangle",
-                    color: .blue
-                ) {
-                    showingContactEditor = true
-                }
-
-                ActionButton(
-                    title: contact.isFavorite ? String(localized: "contactDetail.action.unfave") : String(localized: "contactDetail.action.fave"),
-                    icon: contact.isFavorite ? "star.slash" : "star.fill",
-                    color: .yellow
-                ) {
-                    withAnimation { contact.isFavorite.toggle() }
-                }
-            }
-            .listRowBackground(Color.clear)
-            .listRowInsets(EdgeInsets())
-            .padding(.horizontal)
-        }
-    }
-
-    // MARK: - Message Stats
-
-    private var messageStatsSection: some View {
-        Section {
-            HStack(spacing: 16) {
-                ForEach(DeliveryCondition.allCases, id: \.self) { condition in
-                    let count = messageCountByCondition[condition] ?? 0
-                    if count > 0 {
-                        VStack(spacing: 4) {
-                            Image(systemName: condition.icon)
-                                .font(.title3)
-                            Text("\(count)")
-                                .font(.headline)
-                            Text(condition.label)
-                                .font(.caption2)
-                                .foregroundStyle(.secondary)
-                        }
-                        .frame(maxWidth: .infinity)
-                    }
-                }
-            }
-            .padding(.vertical, 4)
-        }
-    }
-
-    // MARK: - Messages Section
-
-    private var messagesSection: some View {
-        Section {
-            // Filter
-            if contact.messages.count > 1 {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 8) {
-                        FilterChip(
-                            label: String(localized: "common.all") + " (\(contact.messages.count))",
-                            isSelected: selectedConditionFilter == nil
-                        ) {
-                            selectedConditionFilter = nil
-                        }
-
-                        ForEach(DeliveryCondition.allCases, id: \.self) { condition in
-                            let count = messageCountByCondition[condition] ?? 0
-                            if count > 0 {
-                                FilterChip(
-                                    label: "\(condition.label) (\(count))",
-                                    isSelected: selectedConditionFilter == condition
-                                ) {
-                                    selectedConditionFilter = selectedConditionFilter == condition ? nil : condition
-                                }
-                            }
-                        }
-                    }
-                    .padding(.horizontal, 4)
-                }
-                .listRowInsets(EdgeInsets())
-                .listRowBackground(Color.clear)
-            }
-
-            // Message list
-            if filteredMessages.isEmpty {
-                VStack(spacing: 12) {
-                    Image(systemName: "envelope")
-                        .font(.title)
-                        .foregroundStyle(.secondary)
-                    Text(String(localized: "contactDetail.noMessages"))
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                    Button {
-                        showingMessageEditor = true
-                    } label: {
-                        Label(String(localized: "contactDetail.writeFirst"), systemImage: "pencil.line")
+                    if viewModel?.isEditing == true {
+                        TextEditor(text: Binding(
+                            get: { viewModel?.contact.notes ?? "" },
+                            set: { viewModel?.contact.notes = $0 }
+                        ))
+                        .frame(height: 80)
+                        .padding(8)
+                        .background(Color(.secondarySystemBackground))
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                    } else {
+                        Text(viewModel?.contact.notes ?? "")
                             .font(.subheadline)
                     }
                 }
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 16)
-            } else {
-                ForEach(filteredMessages) { message in
-                    Button {
-                        selectedMessage = message
-                    } label: {
-                        MessageRowView(message: message)
-                    }
-                    .buttonStyle(.plain)
-                }
-                .onDelete { offsets in
-                    for index in offsets {
-                        let message = filteredMessages[index]
-                        if let path = message.audioFilePath {
-                            AudioRecordingService().deleteRecording(
-                                at: AudioRecordingService.recordingURL(for: path)
-                            )
-                        }
-                        modelContext.delete(message)
-                    }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
+                .background(Color(.secondarySystemBackground).opacity(0.5))
+                .clipShape(RoundedRectangle(cornerRadius: 12))
+            }
+
+            Button {
+                viewModel?.showingMessageEditor = true
+            } label: {
+                Label(String(localized: "contact.writeMessage"), systemImage: "square.and.pencil")
+                    .font(.headline)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.accentColor)
+                    .foregroundStyle(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+            }
+        }
+    }
+
+    private var conditionFilter: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 12) {
+                FilterChip(
+                    label: String(localized: "filter.all"),
+                    isSelected: viewModel?.selectedCondition == nil,
+                    action: { viewModel?.selectedCondition = nil }
+                )
+
+                ForEach(DeliveryCondition.allCases, id: \.self) { condition in
+                    FilterChip(
+                        label: condition.label,
+                        isSelected: viewModel?.selectedCondition == condition,
+                        action: { viewModel?.selectedCondition = condition }
+                    )
                 }
             }
-        } header: {
-            HStack {
-                Text(String(localized: "contactDetail.messages"))
-                Spacer()
-                if !contact.messages.isEmpty {
-                    Button {
-                        showingMessageEditor = true
+        }
+    }
+
+    private var emptyMessagesState: some View {
+        VStack(spacing: 16) {
+            Image(systemName: "tray")
+                .font(.system(size: 48))
+                .foregroundStyle(.secondary)
+            Text(String(localized: "contact.noMessages"))
+                .foregroundStyle(.secondary)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 40)
+    }
+
+    private var messagesList: some View {
+        LazyVStack(spacing: 16) {
+            ForEach(viewModel?.filteredMessages ?? []) { message in
+                NavigationLink(destination: MessageDetailView(message: message)) {
+                    MessageRowView(message: message)
+                }
+                .buttonStyle(PlainButtonStyle())
+                .contextMenu {
+                    Button(role: .destructive) {
+                        viewModel?.deleteMessage(message)
                     } label: {
-                        Image(systemName: "plus")
+                        Label(String(localized: "common.delete"), systemImage: "trash")
                     }
                 }
             }
@@ -291,120 +184,89 @@ struct ContactDetailView: View {
     }
 }
 
-// MARK: - Action Button
+struct RelationshipBadge: View {
+    let relationship: Relationship
+    
+    var body: some View {
+        HStack(spacing: 4) {
+            Image(systemName: relationship.icon)
+            Text(relationship.label)
+        }
+        .font(.caption)
+        .fontWeight(.bold)
+        .padding(.horizontal, 10)
+        .padding(.vertical, 5)
+        .background(relationship.color.opacity(0.1))
+        .foregroundStyle(relationship.color)
+        .clipShape(Capsule())
+    }
+}
 
-struct ActionButton: View {
-    let title: String
-    let icon: String
-    let color: Color
+struct FilterChip: View {
+    let label: String
+    let isSelected: Bool
     let action: () -> Void
-
+    
     var body: some View {
         Button(action: action) {
-            VStack(spacing: 6) {
-                Image(systemName: icon)
-                    .font(.title3)
-                Text(title)
-                    .font(.caption2)
-            }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 12)
-            .background(color.opacity(0.1))
-            .foregroundStyle(color)
-            .clipShape(RoundedRectangle(cornerRadius: 12))
+            Text(label)
+                .font(.subheadline)
+                .fontWeight(.medium)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 8)
+                .background(isSelected ? Color.accentColor : Color(.secondarySystemBackground))
+                .foregroundStyle(isSelected ? .white : .primary)
+                .clipShape(Capsule())
         }
-        .buttonStyle(.plain)
     }
 }
-
-// MARK: - Message Row View (enhanced)
 
 struct MessageRowView: View {
     let message: Message
-
+    
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            // Status bar
-            HStack(spacing: 8) {
-                HStack(spacing: 4) {
+        HStack {
+            VStack(alignment: .leading, spacing: 4) {
+                HStack {
                     Image(systemName: message.deliveryCondition.icon)
-                    Text(message.statusLabel)
+                        .font(.caption)
+                    Text(message.deliveryCondition.label)
+                        .font(.caption)
+                        .fontWeight(.bold)
                 }
-                .font(.caption)
-                .fontWeight(.medium)
                 .foregroundStyle(statusColor)
-                .padding(.horizontal, 8)
-                .padding(.vertical, 3)
-                .background(statusColor.opacity(0.1))
-                .clipShape(Capsule())
-                .accessibilityLabel(String(localized: "contactDetail.statusA11y") + " " + message.statusLabel)
-
+                
                 if message.type == .audio {
-                    HStack(spacing: 3) {
-                        Image(systemName: "waveform")
-                        if let dur = message.audioDuration {
-                            Text(formatDuration(dur))
-                        }
-                    }
-                    .font(.caption)
-                    .foregroundStyle(.orange)
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 3)
-                    .background(Color.orange.opacity(0.1))
-                    .clipShape(Capsule())
+                    Label(String(localized: "message.type.audio"), systemImage: "waveform")
+                        .font(.subheadline)
+                } else {
+                    Text(message.content)
+                        .font(.subheadline)
+                        .lineLimit(2)
                 }
-
-                Spacer()
-
-                Text(message.createdAt, style: .date)
+                
+                Text(message.createdAt.formatted(date: .abbreviated, time: .omitted))
                     .font(.caption2)
-                    .foregroundStyle(.tertiary)
+                    .foregroundStyle(.secondary)
             }
-
-            // Content
-            if !message.content.isEmpty {
-                Text(message.content)
-                    .font(.body)
-                    .lineLimit(4)
-            }
-
-            // Delivery date
-            if message.deliveryCondition == .specificDate, let date = message.deliveryDate {
-                HStack(spacing: 4) {
-                    Image(systemName: "calendar.badge.clock")
-                    if Date() >= date {
-                        Text(String(localized: "contactDetail.delivered") + " " + date.formatted(date: .abbreviated, time: .omitted))
-                    } else {
-                        Text(String(localized: "contactDetail.scheduled") + " " + date.formatted(date: .abbreviated, time: .omitted))
-                    }
-                }
+            
+            Spacer()
+            
+            Image(systemName: "chevron.right")
                 .font(.caption)
-                .foregroundStyle(.secondary)
-            }
+                .foregroundStyle(.tertiary)
         }
-        .padding(.vertical, 4)
+        .padding()
+        .background(Color(.secondarySystemBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 12))
     }
-
+    
     private var statusColor: Color {
         switch message.deliveryCondition {
         case .immediate: return .green
-        case .specificDate:
-            if let date = message.deliveryDate, Date() >= date { return .green }
-            return .orange
+        case .specificDate: return .orange
         case .afterDeath: return .purple
         }
     }
-
-    private func formatDuration(_ duration: TimeInterval) -> String {
-        let minutes = Int(duration) / 60
-        let seconds = Int(duration) % 60
-        return String(format: "%d:%02d", minutes, seconds)
-    }
 }
 
-#Preview {
-    NavigationStack {
-        ContactDetailView(contact: Contact(name: "Mom", relationship: .family, notes: "The most important person in my life."))
-    }
-    .modelContainer(for: [MemoryEntry.self, Contact.self, Message.self], inMemory: true)
-}

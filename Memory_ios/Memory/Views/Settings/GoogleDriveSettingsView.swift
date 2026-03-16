@@ -2,7 +2,7 @@ import SwiftUI
 
 struct GoogleDriveSettingsView: View {
     @Environment(\.modelContext) private var modelContext
-    @State private var gdriveService = GoogleDriveSyncService.shared
+    private var gdriveService: GoogleDriveSyncService { GoogleDriveSyncService.shared }
     @AppStorage("googleDriveEnabled") private var googleDriveEnabled = false
 
     var body: some View {

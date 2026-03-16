@@ -3,7 +3,7 @@ import StoreKit
 
 struct PurchaseView: View {
     @Environment(\.dismiss) private var dismiss
-    @State private var store = StoreService.shared
+    private var store: StoreService { StoreService.shared }
 
     var body: some View {
         NavigationStack {
@@ -53,7 +53,7 @@ struct PurchaseView: View {
         VStack(spacing: 12) {
             Image(systemName: "brain.head.profile")
                 .font(.system(size: 64))
-                .foregroundStyle(.accent)
+                .foregroundStyle(Color.accentColor)
 
             Text(String(localized: "purchase.title"))
                 .font(.title)
@@ -84,7 +84,7 @@ struct PurchaseView: View {
                 Text(String(localized: "purchase.premium"))
                     .font(.caption)
                     .fontWeight(.semibold)
-                    .foregroundStyle(.accent)
+                    .foregroundStyle(Color.accentColor)
                     .frame(width: 70)
             }
             .padding(.horizontal, 16)
@@ -117,7 +117,7 @@ struct PurchaseView: View {
             Text(premium)
                 .font(.caption)
                 .fontWeight(.medium)
-                .foregroundStyle(.accent)
+                .foregroundStyle(Color.accentColor)
                 .frame(width: 70)
         }
         .padding(.horizontal, 16)
@@ -133,7 +133,7 @@ struct PurchaseView: View {
                 .foregroundStyle(free ? .green : .secondary)
                 .frame(width: 60)
             Image(systemName: premium ? "checkmark.circle.fill" : "xmark.circle")
-                .foregroundStyle(premium ? .accent : .secondary)
+                .foregroundStyle(premium ? Color.accentColor : .secondary)
                 .frame(width: 70)
         }
         .padding(.horizontal, 16)

@@ -8,10 +8,14 @@ struct SettingsView: View {
     @AppStorage("iCloudSyncEnabled") private var iCloudSyncEnabled = true
 
     @AppStorage("googleDriveEnabled") private var googleDriveEnabled = false
-    @StateObject private var cloudService = CloudSyncService.shared
-    @State private var gdriveService = GoogleDriveSyncService.shared
-    @State private var store = StoreService.shared
+
+    @ObservedObject private var cloudService = CloudSyncService.shared
+    private var gdriveService: GoogleDriveSyncService { GoogleDriveSyncService.shared }
+    private var store: StoreService { StoreService.shared }
+    private var languageManager: LanguageManager { LanguageManager.shared }
     @State private var showingPurchase = false
+    @State private var showingFeedback = false
+    @State private var showingLanguageRestart = false
     @State private var storageSize: String = "Calculating..."
     @State private var stats: DataStatistics?
 
@@ -34,6 +38,9 @@ struct SettingsView: View {
                 // Privacy & Data
                 dataSection
 
+                // Language
+                languageSection
+
                 // Storage info
                 storageSection
 
@@ -45,7 +52,7 @@ struct SettingsView: View {
                     VStack(spacing: 8) {
                         Image(systemName: "brain.head.profile")
                             .font(.title2)
-                            .foregroundStyle(.accent)
+                            .foregroundStyle(Color.accentColor)
                         Text("Memory")
                             .font(.headline)
                         Text(String(localized: "settings.tagline"))
@@ -84,7 +91,7 @@ struct SettingsView: View {
                     }
                 } icon: {
                     Image(systemName: "checkmark.seal.fill")
-                        .foregroundStyle(.accent)
+                        .foregroundStyle(Color.accentColor)
                 }
             } else {
                 Button {
@@ -248,6 +255,47 @@ struct SettingsView: View {
         }
     }
 
+    // MARK: - Language
+
+    private var languageSection: some View {
+        Section {
+            Picker(selection: Binding(
+                get: { languageManager.currentLanguage },
+                set: { newValue in
+                    let oldValue = languageManager.currentLanguage
+                    languageManager.currentLanguage = newValue
+                    if oldValue != newValue {
+                        showingLanguageRestart = true
+                    }
+                }
+            )) {
+                ForEach(AppLanguage.allCases) { language in
+                    Text(language.displayName).tag(language)
+                }
+            } label: {
+                Label {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(String(localized: "settings.language"))
+                        Text(languageManager.currentLanguage.displayName)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                } icon: {
+                    Image(systemName: "globe")
+                }
+            }
+        } header: {
+            Text(String(localized: "settings.section.language"))
+        } footer: {
+            Text(String(localized: "settings.language.footer"))
+        }
+        .alert(String(localized: "settings.language.restart.title"), isPresented: $showingLanguageRestart) {
+            Button(String(localized: "common.ok")) { }
+        } message: {
+            Text(String(localized: "settings.language.restart.message"))
+        }
+    }
+
     // MARK: - Storage
 
     private var storageSection: some View {
@@ -308,6 +356,13 @@ struct SettingsView: View {
                     .foregroundStyle(.secondary)
             }
 
+            // Feedback Button
+            Button {
+                showingFeedback = true
+            } label: {
+                Label(String(localized: "settings.feedback"), systemImage: "bubble.left.and.text.bubble.right")
+            }
+
             Link(destination: URL(string: "https://memory.app/privacy")!) {
                 Label(String(localized: "settings.privacyPolicy"), systemImage: "doc.text")
             }
@@ -319,6 +374,9 @@ struct SettingsView: View {
             Link(destination: URL(string: "https://memory.app/support")!) {
                 Label(String(localized: "settings.support"), systemImage: "questionmark.circle")
             }
+        }
+        .sheet(isPresented: $showingFeedback) {
+            FeedbackView()
         }
     }
 

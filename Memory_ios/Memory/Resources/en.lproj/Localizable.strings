@@ -1,15 +1,45 @@
 /* Memory App — English (Base Language) */
 
-// MARK: - Tabs
-
+/* MARK: - Tabs
+ */
 "tab.home" = "Home";
 "tab.memories" = "Memories";
 "tab.contacts" = "Contacts";
 "tab.ai" = "AI";
 "tab.settings" = "Settings";
+"tab.soul" = "Soul";
+"tab.universe" = "Universe";
 
-// MARK: - Home
+/* MARK: - Light Orb Universe
+ */
+"orb.title" = "My Universe";
+"orb.rotating" = "Rotating";
+"orb.paused" = "Paused";
+"orb.hint" = "Tap the center orb to pause, tap a person to chat";
+"orb.chat.placeholder" = "Say something...";
+"orb.chat.greeting %@" = "Hi! I'm %@. What would you like to talk about?";
+"orb.chat.error" = "Sorry, I couldn't respond right now. Please try again.";
+"orb.chat.clear" = "Clear Chat History";
+"orb.accessibility.contact %@ %@" = "%@, %@";
+"orb.accessibility.hint.chat" = "Double tap to start a conversation";
+"orb.accessibility.addContact" = "Add a new contact";
+"orb.accessibility.centerOrb" = "Your avatar, center of the universe";
+"orb.accessibility.hint.pause" = "Double tap to pause rotation";
+"orb.accessibility.hint.resume" = "Double tap to resume rotation";
+"orb.menu.chat" = "Start Chat";
+"orb.menu.viewMessages" = "View Messages";
+"orb.menu.edit" = "Edit Contact";
+"orb.menu.favorite" = "Add to Favorites";
+"orb.menu.unfavorite" = "Remove from Favorites";
+"orb.menu.remove" = "Remove from Universe";
+"orb.hint.drag" = "Long press and drag to reorder";
+"orb.empty.title" = "Your Universe Awaits";
+"orb.empty.subtitle" = "Add people who matter to you and they'll orbit around you in this cosmic space.";
+"orb.empty.addButton" = "Add Someone Special";
+"soul.tap_avatar_hint" = "Tap avatar to enter your universe";
 
+/* MARK: - Home
+ */
 "home.title" = "Memory";
 "home.search.prompt" = "Search your memories...";
 "home.empty.title" = "Your memories start here";
@@ -28,8 +58,8 @@
 "home.date.today" = "Today";
 "home.date.yesterday" = "Yesterday";
 
-// MARK: - Date Filter Sheet
-
+/* MARK: - Date Filter Sheet
+ */
 "dateFilter.title" = "Filter by Date";
 "dateFilter.fromDate" = "From date";
 "dateFilter.toDate" = "To date";
@@ -39,8 +69,8 @@
 "dateFilter.cancel" = "Cancel";
 "dateFilter.apply" = "Apply";
 
-// MARK: - Memory List
-
+/* MARK: - Memory List
+ */
 "memoryList.title" = "Memories";
 "memoryList.search.prompt" = "Search memories & transcriptions...";
 "memoryList.empty.title" = "No Memories Yet";
@@ -58,8 +88,8 @@
 "memoryList.type.photo" = "Photo";
 "memoryList.type.video" = "Video";
 
-// MARK: - Memory Editor
-
+/* MARK: - Memory Editor
+ */
 "memoryEditor.new.title" = "New Memory";
 "memoryEditor.edit.title" = "Edit Memory";
 "memoryEditor.titlePlaceholder" = "Title";
@@ -87,8 +117,8 @@
 "memoryEditor.privateMemory" = "Private Memory";
 "memoryEditor.privateHint" = "Requires Face ID / Touch ID to view";
 
-// MARK: - Voice Recording
-
+/* MARK: - Voice Recording
+ */
 "voiceRecording.title" = "Voice Recording";
 "voiceRecording.cancel" = "Cancel";
 "voiceRecording.useRecording" = "Use Recording";
@@ -100,13 +130,13 @@
 "voiceRecording.noPermission" = "Microphone access is required to record voice memories.\nPlease enable it in Settings.";
 "voiceRecording.waveform" = "Audio waveform";
 
-// MARK: - Video Recording
-
+/* MARK: - Video Recording
+ */
 "videoRecording.useVideo" = "Use Video";
 "videoRecording.noPermission" = "Camera and microphone access required.\nPlease enable in Settings.";
 
-// MARK: - Memory Detail
-
+/* MARK: - Memory Detail
+ */
 "memoryDetail.untitled" = "Untitled";
 "memoryDetail.transcription" = "Transcription";
 "memoryDetail.tags" = "Tags";
@@ -126,8 +156,8 @@
 "memoryDetail.play" = "Play";
 "memoryDetail.playbackProgress" = "Playback progress";
 
-// MARK: - Memory Timeline Row
-
+/* MARK: - Memory Timeline Row
+ */
 "timeline.untitled" = "Untitled";
 "timeline.type.voice" = "Voice";
 "timeline.type.photo" = "Photo";
@@ -136,8 +166,8 @@
 "timeline.private" = "Private";
 "timeline.tags" = "%lld tags";
 
-// MARK: - Contact List
-
+/* MARK: - Contact List
+ */
 "contactList.title" = "Contacts";
 "contactList.search.prompt" = "Search contacts...";
 "contactList.addManually" = "Add Manually";
@@ -154,8 +184,8 @@
 "contactList.filter.all" = "All";
 "contactList.filter.favorites" = "Favorites";
 
-// MARK: - Contact Detail
-
+/* MARK: - Contact Detail
+ */
 "contactDetail.about" = "About";
 "contactDetail.editContact" = "Edit Contact";
 "contactDetail.removeFromFavorites" = "Remove from Favorites";
@@ -172,8 +202,8 @@
 "contactDetail.noMessages" = "No messages yet";
 "contactDetail.writeFirstMessage" = "Write your first message";
 
-// MARK: - Contact Editor
-
+/* MARK: - Contact Editor
+ */
 "contactEditor.new.title" = "New Contact";
 "contactEditor.edit.title" = "Edit Contact";
 "contactEditor.name" = "Name";
@@ -188,8 +218,8 @@
 "contactEditor.cancel" = "Cancel";
 "contactEditor.save" = "Save";
 
-// MARK: - Contact Import
-
+/* MARK: - Contact Import
+ */
 "contactImport.title" = "Import Contacts";
 "contactImport.cancel" = "Cancel";
 "contactImport.importButton" = "Import (%lld)";
@@ -209,8 +239,8 @@
 "contactImport.allImported" = "All contacts have been imported.";
 "contactImport.searchPrompt" = "Search contacts to import...";
 
-// MARK: - Message Editor
-
+/* MARK: - Message Editor
+ */
 "messageEditor.new.title" = "New Message";
 "messageEditor.edit.title" = "Edit Message";
 "messageEditor.to" = "To: %@";
@@ -233,8 +263,8 @@
 "messageEditor.reRecord" = "Re-record";
 "messageEditor.remove" = "Remove";
 
-// MARK: - Message Detail
-
+/* MARK: - Message Detail
+ */
 "messageDetail.title" = "Message";
 "messageDetail.to" = "To: %@";
 "messageDetail.deliveryStatus" = "Delivery status: %@";
@@ -250,8 +280,8 @@
 "messageDetail.cancel" = "Cancel";
 "messageDetail.status" = "Status: %@";
 
-// MARK: - AI Chat
-
+/* MARK: - AI Chat
+ */
 "aiChat.title" = "AI Chat";
 "aiChat.done" = "Done";
 "aiChat.premiumTitle" = "Premium Feature";
@@ -273,8 +303,8 @@
 "aiChat.error" = "Sorry, I encountered an error: %@";
 "aiChat.you" = "You";
 
-// MARK: - AI Insights
-
+/* MARK: - AI Insights
+ */
 "aiInsights.title" = "AI Insights";
 "aiInsights.summary.title" = "Memory Summary";
 "aiInsights.summary.subtitle" = "A thoughtful overview of your recent memories";
@@ -287,8 +317,8 @@
 "aiInsights.generate" = "Generate";
 "aiInsights.chatWithAI" = "Chat with AI";
 
-// MARK: - Settings
-
+/* MARK: - Settings
+ */
 "settings.title" = "Settings";
 "settings.premium" = "Premium";
 "settings.premiumActive" = "Memory Premium";
@@ -329,8 +359,8 @@
 "settings.support" = "Support";
 "settings.motto" = "When no one in the world remembers you,\nthat's when you truly disappear.";
 
-// MARK: - Security Settings
-
+/* MARK: - Security Settings
+ */
 "security.title" = "Security";
 "security.appLock" = "App Lock";
 "security.requireBiometric" = "Require %@";
@@ -404,8 +434,8 @@
 "security.restoreSheet.noBackup" = "No recovery backup found.";
 "security.restoreSheet.invalid" = "Invalid recovery password.";
 
-// MARK: - Privacy & Data
-
+/* MARK: - Privacy & Data
+ */
 "privacy.title" = "Privacy & Data";
 "privacy.yourData" = "Your Data";
 "privacy.memories" = "Memories";
@@ -453,8 +483,8 @@
 "privacy.deleteForever" = "Delete Forever";
 "privacy.cancel" = "Cancel";
 
-// MARK: - AI Settings
-
+/* MARK: - AI Settings
+ */
 "aiSettings.title" = "AI Settings";
 "aiSettings.enableAI" = "Enable AI Features";
 "aiSettings.enableSubtitle" = "Chat, summarize, and organize memories with AI";
@@ -484,8 +514,8 @@
 "aiSettings.testing" = "Testing...";
 "aiSettings.connectionSuccess" = "Connection successful";
 
-// MARK: - Purchase
-
+/* MARK: - Purchase
+ */
 "purchase.title" = "Memory Premium";
 "purchase.close" = "Close";
 "purchase.subtitle" = "Unlock the full power of Memory.\nOne purchase, yours forever.";
@@ -507,8 +537,8 @@
 "purchase.termsOfUse" = "Terms of Use";
 "purchase.privacyPolicy" = "Privacy Policy";
 
-// MARK: - Google Drive Settings
-
+/* MARK: - Google Drive Settings
+ */
 "gdrive.title" = "Google Drive";
 "gdrive.account" = "Account";
 "gdrive.connected" = "Connected";
@@ -528,8 +558,8 @@
 "gdrive.e2e" = "End-to-End Encrypted";
 "gdrive.e2eDescription" = "All data is encrypted with AES-256-GCM before uploading. Google cannot read your content.";
 
-// MARK: - Lock Screen
-
+/* MARK: - Lock Screen
+ */
 "lockScreen.title" = "Memory";
 "lockScreen.protected" = "Your memories are protected";
 "lockScreen.unlock" = "Unlock with %@";
@@ -537,8 +567,8 @@
 "lockScreen.usePasscode" = "Use Passcode Instead";
 "lockScreen.authFailed" = "Authentication failed. Try again.";
 
-// MARK: - Onboarding
-
+/* MARK: - Onboarding
+ */
 "onboarding.welcome.title" = "Welcome to Memory";
 "onboarding.welcome.subtitle" = "Record your thoughts, feelings, and moments.\nLeave messages for the people you love.";
 "onboarding.privacy.title" = "Your Privacy, Our Promise";
@@ -547,8 +577,8 @@
 "onboarding.start.subtitle" = "When no one in the world remembers you,\nthat's when you truly disappear.";
 "onboarding.getStarted" = "Get Started";
 
-// MARK: - Model: Mood
-
+/* MARK: - Model: Mood
+ */
 "mood.happy" = "Happy";
 "mood.grateful" = "Grateful";
 "mood.calm" = "Calm";
@@ -558,8 +588,8 @@
 "mood.hopeful" = "Hopeful";
 "mood.loving" = "Loving";
 
-// MARK: - Model: Relationship
-
+/* MARK: - Model: Relationship
+ */
 "relationship.family" = "Family";
 "relationship.partner" = "Partner";
 "relationship.friend" = "Friend";
@@ -567,8 +597,8 @@
 "relationship.mentor" = "Mentor";
 "relationship.other" = "Other";
 
-// MARK: - Model: Delivery Condition
-
+/* MARK: - Model: Delivery Condition
+ */
 "delivery.immediate.label" = "Visible Now";
 "delivery.specificDate.label" = "Specific Date";
 "delivery.afterDeath.label" = "After I'm Gone";
@@ -576,35 +606,35 @@
 "delivery.specificDate.description" = "This message will be marked for delivery on a specific date.";
 "delivery.afterDeath.description" = "This message will be kept safe and sealed until the time comes.";
 
-// MARK: - Model: Message Status
-
+/* MARK: - Model: Message Status
+ */
 "message.status.visible" = "Visible";
 "message.status.delivered" = "Delivered";
 "message.status.scheduled" = "Scheduled";
 "message.status.sealed" = "Sealed";
 
-// MARK: - Model: Encryption Level
-
+/* MARK: - Model: Encryption Level
+ */
 "encryption.cloudOnly.label" = "Cloud Encryption";
 "encryption.full.label" = "Full Encryption";
 "encryption.cloudOnly.description" = "Data is encrypted when synced to iCloud or Google Drive. Local data is protected by device lock and biometrics.";
 "encryption.full.description" = "Sensitive fields are encrypted locally and in the cloud. Maximum security, but search and sorting may be limited.";
 
-// MARK: - Model: Biometric Type
-
+/* MARK: - Model: Biometric Type
+ */
 "biometric.faceID" = "Face ID";
 "biometric.touchID" = "Touch ID";
 "biometric.opticID" = "Optic ID";
 "biometric.passcode" = "Passcode";
 
-// MARK: - Biometric Auth
-
+/* MARK: - Biometric Auth
+ */
 "biometric.reason" = "Authenticate to access your memories";
 "biometric.reasonPrivate" = "Authenticate to view private memories";
 "biometric.fallback" = "Use Passcode";
 
-// MARK: - Common
-
+/* MARK: - Common
+ */
 "common.cancel" = "Cancel";
 "common.save" = "Save";
 "common.delete" = "Delete";
@@ -620,14 +650,22 @@
 "common.a11y.deselect" = "Deselect filter";
 "common.a11y.filter" = "Tap to filter";
 
-// MARK: - Additional Settings Keys
-
+/* MARK: - Additional Settings Keys
+ */
 "settings.tagline" = "When no one in the world remembers you,\nthat's when you truly disappear.";
 "settings.section.premium" = "Premium";
 "settings.section.security" = "Security";
 "settings.section.sync" = "Cloud & Sync";
 "settings.section.data" = "Data";
 "settings.section.storage" = "Storage";
+"settings.section.language" = "Language";
+"settings.language" = "App Language";
+"settings.language.footer" = "Restart the app for language changes to take full effect.";
+"settings.language.restart.title" = "Language Changed";
+"settings.language.restart.message" = "Please restart the app for the language change to take full effect.";
+"language.system" = "System Default";
+"common.ok" = "OK";
+
 "settings.section.about" = "About";
 "settings.premium.title" = "Memory Premium";
 "settings.premium.unlocked" = "All features unlocked";
@@ -644,8 +682,8 @@
 "settings.storage.messages" = "Messages";
 "settings.storage.sealed" = "Sealed messages";
 
-// MARK: - Additional Security Keys
-
+/* MARK: - Additional Security Keys
+ */
 "security.require" = "Require";
 "security.lockOnClose" = "Lock app when closed";
 "security.autoLock" = "Auto-lock on Background";
@@ -680,8 +718,8 @@
 "security.migrating.encrypting" = "Encrypting media files...";
 "security.migrating.decrypting" = "Decrypting media files...";
 
-// MARK: - Additional Memory Keys
-
+/* MARK: - Additional Memory Keys
+ */
 "memoryType.text" = "Text";
 "memoryType.voice" = "Voice";
 "memoryType.photo" = "Photo";
@@ -699,8 +737,8 @@
 "memoryDetail.deleteTitle" = "Delete Memory?";
 "memoryDetail.deleteMessage" = "This memory will be permanently deleted.";
 
-// MARK: - Additional Contact Keys
-
+/* MARK: - Additional Contact Keys
+ */
 "contactDetail.deleteTitle" = "Delete Contact?";
 "contactDetail.removeFavorite" = "Remove from Favorites";
 "contactDetail.addFavorite" = "Add to Favorites";
@@ -725,8 +763,8 @@
 "contactImport.denied.description" = "To import contacts, please enable access in:\nSettings > Privacy & Security > Contacts > Memory";
 "contactImport.search.prompt" = "Search contacts to import...";
 
-// MARK: - Additional Message Keys
-
+/* MARK: - Additional Message Keys
+ */
 "messageDetail.deleteTitle" = "Delete Message?";
 "messageDetail.deleteMessage" = "This message will be permanently deleted.";
 "messageDetail.sealedInfo" = "This message is sealed and will be delivered when the time comes.";
@@ -738,8 +776,8 @@
 "messageEditor.newTitle" = "New Message";
 "messageEditor.discardTitle" = "Discard Message?";
 
-// MARK: - Additional AI Keys
-
+/* MARK: - Additional AI Keys
+ */
 "aiChat.premiumFeature" = "Premium Feature";
 "aiChat.setup" = "Set Up AI";
 "aiChat.welcome" = "Ask me about your memories...";
@@ -750,7 +788,702 @@
 "aiChat.send" = "Send message";
 "aiChat.ai" = "AI";
 
-// MARK: - Additional Voice Recording Keys
-
+/* MARK: - Additional Voice Recording Keys
+ */
 "voiceRecording.start" = "Start recording";
 "voiceRecording.stop" = "Stop recording";
+
+/* MARK: - Soul Tab
+ */
+"tab.soul" = "Soul";
+"tab.universe" = "Universe";
+"soul.title" = "Soul Profile";
+"soul.greeting" = "Hello";
+"soul.age %lld" = "%lld years old";
+"soul.completeness" = "Profile Completeness";
+"soul.progress" = "Progress";
+"soul.stat.interviews" = "Interviews";
+"soul.stat.assessments" = "Assessments";
+"soul.actions" = "Discover Yourself";
+"soul.action.interview" = "Interview";
+"soul.action.interview.desc" = "Chat about your life";
+"soul.action.mbti" = "Personality";
+"soul.action.mbti.desc" = "Take assessment";
+"soul.action.deepdive" = "Deep Dive";
+"soul.action.deepdive.desc" = "Explore a topic";
+"soul.action.values" = "Values";
+"soul.action.values.desc" = "What matters to you";
+"soul.action.voice" = "Voice Clone";
+"soul.action.voice.desc" = "Create your voice";
+"soul.action.voice.collecting" = "Recording samples";
+"soul.action.voice.training" = "Training...";
+"soul.action.voice.ready" = "Voice ready";
+"soul.action.voice.failed" = "Training failed";
+"soul.recent" = "Recent Activity";
+
+/* MARK: - Voice Clone
+ */
+"voice.title" = "Voice Clone";
+"voice.preview" = "Preview Voice";
+"voice.progress" = "Recording Progress";
+"voice.duration_progress %lld %lld" = "%llds / %llds";
+"voice.minimum" = "Minimum";
+"voice.recommended" = "Recommended";
+"voice.optimal" = "Optimal";
+"voice.start_recording" = "Start Recording";
+"voice.continue_recording" = "Continue Recording";
+"voice.start_training" = "Train Voice";
+"voice.import_from_memories" = "Import from Memories";
+"voice.samples" = "Voice Samples";
+"voice.sample_count %lld" = "%lld samples";
+"voice.view_all" = "View All Samples";
+"voice.all_samples" = "All Samples";
+
+// Voice Status
+"voice.status.not_started" = "Not Started";
+"voice.status.collecting" = "Collecting Samples";
+"voice.status.training" = "Training";
+"voice.status.ready" = "Voice Ready";
+"voice.status.failed" = "Training Failed";
+"voice.status.not_started.desc" = "Record voice samples to create a clone of your voice";
+"voice.status.collecting.desc" = "Keep recording to improve voice quality";
+"voice.status.training.desc" = "Your voice is being trained...";
+"voice.status.ready.desc" = "Your voice clone is ready to use";
+
+// Voice Quality
+"voice.quality.pending" = "Analyzing...";
+"voice.quality.excellent" = "Excellent";
+"voice.quality.good" = "Good";
+"voice.quality.fair" = "Fair";
+"voice.quality.poor" = "Poor";
+
+// Voice Source
+"voice.source.recorded" = "Recorded";
+"voice.source.memory" = "Memory";
+"voice.source.message" = "Message";
+
+// Voice Recording
+"voice.record.title" = "Record Sample";
+"voice.record.instructions" = "Read the text below clearly";
+"voice.record.tips" = "Speak naturally in a quiet environment. Hold the device 6-12 inches from your mouth.";
+"voice.record.read_aloud" = "Read aloud:";
+"voice.record.next_prompt" = "Next prompt";
+"voice.record.tap_to_start" = "Tap to start recording";
+"voice.record.tap_to_stop" = "Tap to stop recording";
+"voice.record.session_count %lld" = "%lld samples this session";
+"voice.record.saved" = "Sample Saved";
+"voice.record.another" = "Record Another";
+"voice.record.quality %@" = "Quality: %@";
+
+// Voice Training
+"voice.training.title" = "Train Voice";
+"voice.training.ready" = "Ready to Train";
+"voice.training.description" = "Your voice samples will be uploaded to create a personalized voice clone.";
+"voice.training.samples %lld" = "%lld quality samples";
+"voice.training.duration %lld" = "%lld seconds of audio";
+"voice.training.quality_good" = "Quality meets requirements";
+"voice.training.name_label" = "Voice Name";
+"voice.training.name_placeholder" = "My Voice";
+"voice.training.provider %@" = "Using %@";
+"voice.training.start" = "Start Training";
+"voice.training.need_api_key" = "API key required. Configure in settings.";
+"voice.training.in_progress" = "Training in Progress";
+"voice.training.please_wait" = "This may take a few minutes...";
+"voice.training.progress %lld" = "%lld%% complete";
+"voice.training.do_not_close" = "Please don't close the app";
+"voice.training.complete" = "Training Complete!";
+"voice.training.complete_desc" = "Your voice clone is ready. Try it out!";
+
+// Voice Settings
+"voice.settings.title" = "Voice Settings";
+"voice.settings.provider" = "Provider";
+"voice.settings.provider_section" = "Voice Clone Provider";
+"voice.settings.api_key" = "API Key";
+"voice.settings.api_key_saved" = "API key saved";
+"voice.settings.save_api_key" = "Save API Key";
+"voice.settings.delete_api_key" = "Delete API Key";
+"voice.settings.api_section" = "Authentication";
+"voice.settings.elevenlabs_footer" = "Get your API key from elevenlabs.io";
+"voice.settings.endpoint" = "Endpoint URL";
+"voice.settings.save_endpoint" = "Save Endpoint";
+"voice.settings.endpoint_section" = "Custom Endpoint";
+"voice.settings.model" = "Model";
+"voice.settings.model_section" = "Voice Model";
+"voice.settings.voice_name" = "Voice Name";
+"voice.settings.voice_id" = "Voice ID";
+"voice.settings.trained_at" = "Trained";
+"voice.settings.current_voice" = "Current Voice";
+"voice.settings.samples_count" = "Samples";
+"voice.settings.total_duration" = "Total Duration";
+"voice.settings.reset" = "Reset All";
+"voice.settings.delete_voice" = "Delete Voice from Provider";
+"voice.settings.data_section" = "Data";
+"voice.settings.data_footer" = "Resetting will delete all local samples and voice data.";
+"voice.settings.privacy_title" = "Privacy Protected";
+"voice.settings.privacy_desc" = "Voice samples are only used to train your personal voice clone.";
+"voice.settings.privacy_section" = "Privacy";
+"voice.settings.reset_confirm" = "Reset Voice Data?";
+"voice.settings.reset_message" = "This will delete all voice samples and reset your profile.";
+"voice.settings.delete_confirm" = "Delete Voice?";
+"voice.settings.delete_message" = "This will remove your voice from the provider's servers.";
+
+// Voice Provider
+"voice.provider.custom" = "Custom";
+"voice.provider.elevenlabs.desc" = "High-quality voice cloning with natural intonation";
+"voice.provider.openai.desc" = "Text-to-speech with preset voices (no cloning)";
+"voice.provider.custom.desc" = "Use your own OpenAI-compatible endpoint";
+
+// ElevenLabs Models
+"elevenlabs.model.multilingual" = "Best quality, supports 29 languages";
+"elevenlabs.model.turbo" = "Faster generation, English optimized";
+"elevenlabs.model.monolingual" = "English only, legacy model";
+
+// Voice Errors
+"voice.error.missing_api_key" = "API key not configured";
+"voice.error.missing_endpoint" = "Endpoint not configured";
+"voice.error.invalid_endpoint" = "Invalid endpoint URL";
+"voice.error.no_samples" = "No samples available for training";
+"voice.error.network" = "Network error occurred";
+"voice.error.http %lld" = "Server error: %lld";
+"voice.error.invalid_response" = "Invalid response from server";
+"voice.error.voice_not_ready" = "Voice not ready yet";
+"voice.error.synthesis" = "Failed to generate speech";
+"voice.error.delete" = "Failed to delete voice";
+"voice.error.recording" = "Recording failed";
+
+// Voice Preview
+"voice.preview.text" = "Hello! This is a preview of my cloned voice. I hope it sounds just like me.";
+
+// Voice Training Prompts
+"voice.prompt.1" = "The quick brown fox jumps over the lazy dog.";
+"voice.prompt.2" = "She sells seashells by the seashore.";
+"voice.prompt.3" = "How much wood would a woodchuck chuck if a woodchuck could chuck wood?";
+"voice.prompt.4" = "Peter Piper picked a peck of pickled peppers.";
+"voice.prompt.5" = "I scream, you scream, we all scream for ice cream.";
+"voice.prompt.6" = "The rain in Spain stays mainly in the plain.";
+"voice.prompt.7" = "To be or not to be, that is the question.";
+"voice.prompt.8" = "All that glitters is not gold.";
+"voice.prompt.9" = "A journey of a thousand miles begins with a single step.";
+"voice.prompt.10" = "The only thing we have to fear is fear itself.";
+"voice.prompt.11" = "Ask not what your country can do for you, ask what you can do for your country.";
+"voice.prompt.12" = "That's one small step for man, one giant leap for mankind.";
+"voice.prompt.13" = "I have a dream that one day this nation will rise up.";
+"voice.prompt.14" = "In the beginning, there was nothing but endless possibility.";
+"voice.prompt.15" = "The future belongs to those who believe in the beauty of their dreams.";
+"voice.prompt.happy" = "I'm so happy today! Everything is going wonderfully.";
+"voice.prompt.sad" = "Sometimes I feel a little melancholy, but that's okay.";
+"voice.prompt.excited" = "This is amazing! I can't believe how exciting this is!";
+"voice.prompt.calm" = "Take a deep breath. Everything is peaceful and calm.";
+"voice.prompt.serious" = "This is a very important matter that requires careful consideration.";
+"voice.prompt.numbers" = "One, two, three, four, five, six, seven, eight, nine, ten.";
+"voice.prompt.days" = "Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.";
+"voice.prompt.months" = "January, February, March, April, May, June, July, August, September, October, November, December.";
+
+/* MARK: - Writing Style
+ */
+"writing.title" = "Writing Style";
+"writing.generate" = "Generate Text";
+"writing.data_status" = "Data Status";
+"writing.memories_count %lld" = "%lld text memories";
+"writing.min_required %lld" = "Min: %lld required";
+"writing.recommendation" = "More memories = better style analysis";
+"writing.style_summary" = "Your Writing Style";
+"writing.overall_style" = "Overall Style";
+"writing.tone" = "Tone";
+"writing.vocabulary" = "Vocabulary";
+"writing.emotional" = "Emotional Expression";
+"writing.unique_traits" = "Unique Traits";
+"writing.top_words" = "Your Top Words";
+"writing.top_phrases" = "Common Phrases";
+"writing.reanalyze" = "Re-analyze";
+"writing.start_analysis" = "Analyze My Writing";
+"writing.need_more_memories %lld" = "Need at least %lld memories to analyze";
+"writing.last_analyzed %@" = "Analyzed %@";
+
+// Writing Status
+"writing.status.not_analyzed" = "Not Analyzed";
+"writing.status.analyzing" = "Analyzing...";
+"writing.status.ready" = "Style Ready";
+"writing.status.failed" = "Analysis Failed";
+"writing.status.not_analyzed.desc" = "Analyze your memories to learn your writing style";
+"writing.status.analyzing.desc" = "Learning your unique writing patterns...";
+"writing.status.failed.desc" = "Something went wrong. Please try again.";
+
+// Soul Tab Actions
+"soul.action.writing" = "Writing Style";
+"soul.action.writing.desc" = "Learn your style";
+"soul.action.writing.analyzing" = "Analyzing...";
+"soul.action.writing.ready" = "Style ready";
+"soul.action.writing.failed" = "Analysis failed";
+
+// Writing Analysis
+"writing.analysis.title" = "Analyze Writing";
+"writing.analysis.ready" = "Ready to Analyze";
+"writing.analysis.description" = "We'll analyze your memories to learn your unique writing style, vocabulary, and expression patterns.";
+"writing.analysis.memories %lld" = "%lld memories to analyze";
+"writing.analysis.words %lld" = "~%lld words estimated";
+"writing.analysis.time" = "Takes about 1-2 minutes";
+"writing.analysis.need_ai" = "AI provider required. Configure in Settings.";
+"writing.analysis.privacy" = "Analysis happens locally. Only text is analyzed.";
+"writing.analysis.start" = "Start Analysis";
+"writing.analysis.in_progress" = "Analyzing Your Writing";
+"writing.analysis.progress %lld" = "%lld%% complete";
+"writing.analysis.please_wait" = "This may take a minute or two...";
+"writing.analysis.complete" = "Analysis Complete!";
+"writing.analysis.complete_desc" = "Your writing style has been captured. You can now generate text in your voice.";
+"writing.stat.memories" = "Memories";
+"writing.stat.words" = "Words";
+"writing.your_style" = "Your Style";
+"writing.stage.extracting" = "Extracting text...";
+"writing.stage.words" = "Analyzing vocabulary...";
+"writing.stage.patterns" = "Finding patterns...";
+"writing.stage.ai" = "AI generating insights...";
+"writing.stage.finishing" = "Finishing up...";
+
+// Writing Generator
+"writing.generator.title" = "Generate Text";
+"writing.mode.freeform" = "Freeform";
+"writing.mode.message" = "Message";
+"writing.freeform.title" = "What to write?";
+"writing.freeform.desc" = "Describe what you want to write, and AI will generate it in your style.";
+"writing.freeform.placeholder" = "e.g., Write a diary entry about my day at the beach...";
+"writing.examples" = "Examples:";
+"writing.example.diary" = "A diary entry about today";
+"writing.example.reflection" = "A reflection on life";
+"writing.example.memory" = "A childhood memory";
+"writing.message.to" = "To";
+"writing.message.no_contacts" = "No contacts yet. Add contacts first.";
+"writing.message.occasion" = "Occasion";
+"writing.message.custom_occasion" = "Describe the occasion...";
+"writing.generate_button" = "Generate";
+"writing.generating" = "Generating...";
+"writing.result" = "Generated Text";
+"writing.use_as_message" = "Use as Message";
+"writing.regenerate" = "Regenerate";
+"common.copied" = "Copied!";
+
+// Writing Occasions
+"writing.occasion.birthday" = "Birthday";
+"writing.occasion.holiday" = "Holiday";
+"writing.occasion.gratitude" = "Gratitude";
+"writing.occasion.apology" = "Apology";
+"writing.occasion.encouragement" = "Encouragement";
+"writing.occasion.farewell" = "Farewell";
+"writing.occasion.congratulations" = "Congratulations";
+"writing.occasion.comfort" = "Comfort";
+"writing.occasion.love" = "Love";
+"writing.occasion.custom" = "Custom";
+"writing.hint.birthday" = "Birthday wishes and celebration";
+"writing.hint.holiday" = "Holiday greetings and wishes";
+"writing.hint.gratitude" = "Express thanks and appreciation";
+"writing.hint.apology" = "Apologize and make amends";
+"writing.hint.encouragement" = "Motivate and support";
+"writing.hint.farewell" = "Say goodbye or see you later";
+"writing.hint.congratulations" = "Celebrate achievements";
+"writing.hint.comfort" = "Offer comfort during hard times";
+"writing.hint.love" = "Express love and affection";
+"writing.hint.custom" = "Describe your own occasion";
+
+// Writing Settings
+"writing.settings.title" = "Writing Style Settings";
+"writing.settings.status" = "Status";
+"writing.settings.status_section" = "Analysis Status";
+"writing.settings.last_analyzed" = "Last Analyzed";
+"writing.settings.memories_analyzed" = "Memories Analyzed";
+"writing.settings.words_analyzed" = "Words Analyzed";
+"writing.settings.features_section" = "Features";
+"writing.settings.enable" = "Enable Style Generation";
+"writing.settings.enable_desc" = "Allow AI to generate text in your writing style";
+"writing.settings.features_footer" = "When disabled, the generate feature will not be available.";
+"writing.settings.statistics_section" = "Writing Statistics";
+"writing.settings.avg_sentence" = "Avg Sentence Length";
+"writing.settings.avg_paragraph" = "Avg Paragraph Length";
+"writing.settings.words_count %lld" = "%lld words";
+"writing.settings.unique_words" = "Unique Words Found";
+"writing.settings.unique_phrases" = "Unique Phrases Found";
+"writing.settings.samples_section" = "Sample Texts";
+"writing.settings.sample %lld" = "Sample %lld";
+"writing.settings.samples_footer" = "Representative excerpts from your writing.";
+"writing.settings.data_section" = "Data Management";
+"writing.settings.reset" = "Reset Analysis";
+"writing.settings.reset_footer" = "Clear all analysis data and start fresh.";
+"writing.settings.reset_confirm" = "Reset Writing Analysis?";
+"writing.settings.reset_message" = "This will clear all style analysis data. You'll need to re-analyze your memories.";
+"writing.settings.privacy_section" = "Privacy";
+"writing.settings.privacy_title" = "Your Data is Safe";
+"writing.settings.privacy_desc" = "Writing analysis is performed locally. Style data never leaves your device except during AI generation requests.";
+
+// Writing Errors
+"writing.error.title" = "Error";
+"writing.error.no_memories" = "No memories to analyze";
+"writing.error.no_content" = "No text content found in memories";
+"writing.error.not_ready" = "Writing style not analyzed yet";
+
+/* MARK: - Avatar
+ */
+"avatar.title" = "Avatar";
+"avatar.upload_photo" = "Upload Photo";
+"avatar.change_photo" = "Change Photo";
+"avatar.photo_hint" = "Use a clear, front-facing photo for best results";
+"avatar.style" = "Style";
+"avatar.frame" = "Frame";
+"avatar.ai_stylize" = "AI Stylization";
+"avatar.ai_stylize.desc" = "Transform your photo into an artistic style";
+"avatar.generate_style" = "Generate Stylized Avatar";
+"avatar.restylize" = "Regenerate Style";
+"avatar.stylize_note" = "Uses local image filters. AI image generation available in future updates.";
+"avatar.stylizing" = "Stylizing...";
+"avatar.using_stylized" = "Using stylized version";
+"avatar.show_original" = "Show Original";
+"avatar.show_stylized" = "Show Stylized";
+"avatar.export" = "Export";
+
+// Avatar Status
+"avatar.status.none" = "No stylization";
+"avatar.status.processing" = "Processing...";
+"avatar.status.ready" = "Ready";
+"avatar.status.failed" = "Failed";
+
+// Avatar Styles
+"avatar.style.realistic" = "Realistic";
+"avatar.style.cartoon" = "Cartoon";
+"avatar.style.anime" = "Anime";
+"avatar.style.sketch" = "Sketch";
+"avatar.style.watercolor" = "Watercolor";
+"avatar.style.minimal" = "Minimal";
+"avatar.style.realistic.desc" = "Enhanced photo";
+"avatar.style.cartoon.desc" = "Fun and colorful";
+"avatar.style.anime.desc" = "Japanese animation style";
+"avatar.style.sketch.desc" = "Hand-drawn pencil";
+"avatar.style.watercolor.desc" = "Soft artistic painting";
+"avatar.style.minimal.desc" = "Simple and clean";
+
+// Avatar Frames
+"avatar.frame.circle" = "Circle";
+"avatar.frame.rounded_square" = "Rounded";
+"avatar.frame.square" = "Square";
+"avatar.frame.hexagon" = "Hexagon";
+
+// Soul Tab Actions
+"soul.action.avatar" = "Avatar";
+"soul.action.avatar.desc" = "Create your look";
+"soul.action.avatar.ready" = "Photo uploaded";
+"soul.action.avatar.stylized" = "Stylized";
+
+// Avatar Settings
+"avatar.settings.title" = "Avatar Settings";
+"avatar.settings.display_section" = "Display";
+"avatar.settings.show_in_chat" = "Show in AI Chat";
+"avatar.settings.show_in_profile" = "Show in Soul Profile";
+"avatar.settings.use_stylized" = "Use Stylized Version";
+"avatar.settings.display_footer" = "Control where your avatar appears in the app.";
+"avatar.settings.appearance_section" = "Appearance";
+"avatar.settings.background_color" = "Background Color";
+"avatar.settings.reset_color" = "Reset to Default";
+"avatar.settings.status_section" = "Status";
+"avatar.settings.has_photo" = "Photo Uploaded";
+"avatar.settings.current_style" = "Current Style";
+"avatar.settings.current_frame" = "Current Frame";
+"avatar.settings.stylized_version" = "Stylized Version";
+"avatar.settings.stylized_at" = "Stylized At";
+"avatar.settings.data_section" = "Data Management";
+"avatar.settings.clear_stylized" = "Clear Stylized Version";
+"avatar.settings.reset" = "Reset Avatar";
+"avatar.settings.reset_footer" = "Removes all avatar data including photos.";
+"avatar.settings.reset_confirm" = "Reset Avatar?";
+"avatar.settings.reset_message" = "This will remove your photo and all avatar settings.";
+"avatar.settings.clear_stylized_confirm" = "Clear Stylized Version?";
+"avatar.settings.clear_stylized_message" = "This will remove the stylized version. Your original photo will be kept.";
+"avatar.settings.privacy_section" = "Privacy";
+"avatar.settings.privacy_title" = "Your Photo is Safe";
+"avatar.settings.privacy_desc" = "Your photo is stored locally and never uploaded to any server. Stylization is performed on-device.";
+
+// Avatar Errors
+"avatar.error.title" = "Error";
+"avatar.error.no_image" = "No image to process";
+"avatar.error.invalid_image" = "Invalid image format";
+"avatar.error.stylization_failed" = "Stylization failed";
+"avatar.error.export_failed" = "Export failed";
+
+/* MARK: - Digital Self
+ */
+"digitalself.title" = "Digital Self";
+"digitalself.unnamed" = "Digital You";
+"digitalself.components_ready %lld %lld" = "%lld of %lld ready";
+"digitalself.enable" = "Enable Digital Self";
+"digitalself.enable.desc" = "Allow contacts to interact with your digital presence";
+
+// Digital Self Status
+"digitalself.status.not_ready" = "Not Ready";
+"digitalself.status.ready" = "Ready";
+"digitalself.status.active" = "Active";
+"digitalself.status.paused" = "Paused";
+
+// Digital Self Components
+"digitalself.components" = "Components";
+"digitalself.component.soul" = "Soul Profile";
+"digitalself.component.writing" = "Writing Style";
+"digitalself.component.voice" = "Voice Clone";
+"digitalself.component.avatar" = "Avatar";
+"digitalself.component.ready" = "Ready";
+"digitalself.component.soul.needed" = "Complete your profile";
+"digitalself.component.writing.needed" = "Analyze your writing";
+"digitalself.component.voice.needed" = "Train your voice";
+"digitalself.component.avatar.needed" = "Upload a photo";
+
+// Digital Self Actions
+"digitalself.actions" = "Actions";
+"digitalself.action.chat" = "Start Conversation";
+"digitalself.action.chat.desc" = "Chat as your digital self";
+
+// Digital Self Access
+"digitalself.access" = "Access Control";
+"digitalself.access.everyone" = "Everyone";
+"digitalself.access.selected" = "Selected Contacts";
+"digitalself.access.no_one" = "No One";
+"digitalself.access.everyone.desc" = "All contacts can interact";
+"digitalself.access.selected.desc" = "Only chosen contacts";
+"digitalself.access.no_one.desc" = "Interactions disabled";
+"digitalself.allowed_contacts" = "Allowed Contacts";
+"digitalself.no_contacts_selected" = "No contacts selected";
+"digitalself.select_contacts" = "Select Contacts";
+"digitalself.chat_with" = "Chat With";
+
+// Digital Self Statistics
+"digitalself.statistics" = "Statistics";
+"digitalself.stat.conversations" = "Conversations";
+"digitalself.stat.messages" = "Messages";
+"digitalself.last_interaction %@" = "Last interaction %@";
+
+// Digital Self Chat
+"digitalself.input_placeholder" = "Type a message...";
+"digitalself.voice_output" = "Voice Output";
+"digitalself.clear_chat" = "Clear Chat";
+"digitalself.greeting.default %@" = "Hey there! It's %@. How are you doing?";
+
+// Digital Self Settings
+"digitalself.settings.title" = "Digital Self Settings";
+"digitalself.settings.status_section" = "Status";
+"digitalself.settings.status" = "Status";
+"digitalself.settings.readiness" = "Readiness";
+"digitalself.settings.personality_section" = "Personality";
+"digitalself.settings.personality_mode" = "Personality Mode";
+"digitalself.settings.emotional_level" = "Emotional Level";
+"digitalself.emotional.reserved" = "Reserved";
+"digitalself.emotional.balanced" = "Balanced";
+"digitalself.emotional.expressive" = "Expressive";
+"digitalself.settings.voice_section" = "Voice";
+"digitalself.settings.voice_output" = "Voice Output";
+"digitalself.settings.voice_not_ready" = "Voice clone not ready";
+"digitalself.settings.voice_footer" = "Responses will be spoken in your cloned voice.";
+"digitalself.settings.behavior_section" = "Behavior";
+"digitalself.settings.auto_greet" = "Auto Greeting";
+"digitalself.settings.auto_greet_footer" = "Automatically greet contacts when they start a conversation.";
+"digitalself.settings.statistics_section" = "Statistics";
+"digitalself.settings.last_interaction" = "Last Interaction";
+"digitalself.settings.privacy_section" = "Privacy";
+"digitalself.settings.privacy_title" = "Your Privacy Matters";
+"digitalself.settings.privacy_desc" = "Conversations are stored locally. Your digital self only shares what you've explicitly configured.";
+"digitalself.settings.data_section" = "Data Management";
+"digitalself.settings.reset" = "Reset Digital Self";
+"digitalself.settings.reset_confirm" = "Reset Digital Self?";
+"digitalself.settings.reset_message" = "This will clear all conversation history and settings.";
+"digitalself.settings.reset_footer" = "Clear all statistics and conversation history.";
+
+// Digital Self Personality Modes
+"digitalself.personality.authentic" = "Authentic";
+"digitalself.personality.supportive" = "Supportive";
+"digitalself.personality.playful" = "Playful";
+"digitalself.personality.wise" = "Wise";
+"digitalself.personality.authentic.desc" = "Respond naturally as yourself";
+"digitalself.personality.supportive.desc" = "Extra warm and encouraging";
+"digitalself.personality.playful.desc" = "Lighthearted with humor";
+"digitalself.personality.wise.desc" = "Share wisdom and guidance";
+
+// Soul Tab Action
+"soul.action.digitalself" = "Digital Self";
+"soul.action.digitalself.desc" = "Your digital presence";
+"soul.action.digitalself.ready" = "Ready to activate";
+"soul.action.digitalself.active" = "Active";
+"soul.action.digitalself.paused" = "Paused";
+
+// Digital Self Errors
+"digitalself.error.ai_not_configured" = "AI service not configured";
+"digitalself.error.generation_failed %@" = "Failed to generate response: %@";
+"digitalself.error.voice_not_ready" = "Voice clone not ready";
+"digitalself.error.voice_failed %@" = "Voice synthesis failed: %@";
+"digitalself.error.profile_incomplete" = "Soul profile incomplete";
+"digitalself.error.access_denied" = "Access denied";
+
+// Digital Self Premium
+"digitalself.premium.title" = "Digital Immortality";
+"digitalself.premium.description" = "Create a digital version of yourself that can have meaningful conversations with your loved ones, using your voice, personality, and memories.";
+"digitalself.premium.feature.chat" = "Personalized conversations";
+"digitalself.premium.feature.voice" = "Speak with your cloned voice";
+"digitalself.premium.feature.contacts" = "Choose who can interact";
+"digitalself.premium.feature.privacy" = "Complete privacy control";
+"digitalself.premium.upgrade" = "Upgrade to Premium";
+
+/* MARK: - Feedback */
+"settings.feedback" = "Send Feedback";
+"feedback.title" = "Send Feedback";
+"feedback.type" = "Feedback Type";
+"feedback.type.header" = "What kind of feedback?";
+"feedback.type.bug" = "Bug Report";
+"feedback.type.suggestion" = "Suggestion";
+"feedback.type.feature" = "Feature Request";
+"feedback.type.question" = "Question";
+"feedback.type.praise" = "Praise";
+"feedback.type.bug.desc" = "Report an issue or unexpected behavior";
+"feedback.type.suggestion.desc" = "Suggest an improvement to existing features";
+"feedback.type.feature.desc" = "Request a new feature";
+"feedback.type.question.desc" = "Ask a question about the app";
+"feedback.type.praise.desc" = "Share what you love about the app";
+"feedback.content.header" = "Your Feedback";
+"feedback.content.placeholder" = "Tell us what's on your mind...";
+"feedback.content.footer" = "Be as detailed as possible. This helps us improve.";
+"feedback.email.header" = "Contact Email (Optional)";
+"feedback.email.placeholder" = "your@email.com";
+"feedback.email.footer" = "If you'd like us to follow up, provide your email.";
+"feedback.device_info" = "Include Device Info";
+"feedback.device_info.footer" = "Helps us diagnose issues. No personal data.";
+"feedback.device" = "Device";
+"feedback.ios_version" = "iOS Version";
+"feedback.app_version" = "App Version";
+"feedback.submit" = "Submit Feedback";
+"feedback.send_email" = "Send via Email";
+"feedback.success.title" = "Thank You!";
+"feedback.success.message" = "Your feedback has been received. We appreciate your input!";
+"feedback.error.title" = "Error";
+"feedback.error.invalid_url" = "Invalid server URL";
+"feedback.error.server" = "Server error. Please try again.";
+"feedback.error.encoding" = "Failed to encode feedback";
+
+/* MARK: - MBTI Assessment */
+"assessment.mbti.desc" = "Discover your personality type through 16 dimensions.";
+"mbti.extraversion" = "Extraversion";
+"mbti.introversion" = "Introversion";
+"mbti.sensing" = "Sensing";
+"mbti.intuition" = "Intuition";
+"mbti.thinking" = "Thinking";
+"mbti.feeling" = "Feeling";
+"mbti.judging" = "Judging";
+"mbti.perceiving" = "Perceiving";
+
+"mbti.q.ei.1" = "At a social event, do you usually:";
+"mbti.q.ei.1.a" = "Interact with many people, including strangers";
+"mbti.q.ei.1.b" = "Interact with a few people you already know";
+"mbti.q.ei.2" = "Are you more:";
+"mbti.q.ei.2.a" = "Outgoing and expressive";
+"mbti.q.ei.2.b" = "Quiet and reserved";
+"mbti.q.ei.3" = "When you have free time, do you prefer to:";
+"mbti.q.ei.3.a" = "Be around others and share thoughts";
+"mbti.q.ei.3.b" = "Spend time alone with your thoughts";
+"mbti.q.ei.4" = "Do you find large social gatherings:";
+"mbti.q.ei.4.a" = "Energizing and exciting";
+"mbti.q.ei.4.b" = "Tiring and draining";
+"mbti.q.ei.5" = "In a group setting, do you usually:";
+"mbti.q.ei.5.a" = "Start conversations and lead";
+"mbti.q.ei.5.b" = "Wait to be approached by others";
+
+"mbti.q.sn.1" = "Do you tend to focus more on:";
+"mbti.q.sn.1.a" = "Concrete facts and immediate details";
+"mbti.q.sn.1.b" = "Future possibilities and hidden patterns";
+"mbti.q.sn.2" = "Would people describe you as more:";
+"mbti.q.sn.2.a" = "Practical and realistic";
+"mbti.q.sn.2.b" = "Imaginative and creative";
+"mbti.q.sn.3" = "When making a decision, do you trust more in:";
+"mbti.q.sn.3.a" = "Past experience and proven methods";
+"mbti.q.sn.3.b" = "Your intuition and gut feelings";
+"mbti.q.sn.4" = "Do you prefer work that involves:";
+"mbti.q.sn.4.a" = "Specific instructions and clear steps";
+"mbti.q.sn.4.b" = "General guidelines and abstract concepts";
+"mbti.q.sn.5" = "Do you spend more time thinking about:";
+"mbti.q.sn.5.a" = "The here and now";
+"mbti.q.sn.5.b" = "What could be in the future";
+
+"mbti.q.tf.1" = "When making important decisions, do you prioritize:";
+"mbti.q.tf.1.a" = "Logic, reason, and objective analysis";
+"mbti.q.tf.1.b" = "Personal values and impact on others";
+"mbti.q.tf.2" = "Are you usually more:";
+"mbti.q.tf.2.a" = "Objective and firm";
+"mbti.q.tf.2.b" = "Empathetic and compassionate";
+"mbti.q.tf.3" = "In a conflict, what matters more to you?";
+"mbti.q.tf.3.a" = "Finding the truth and justice";
+"mbti.q.tf.3.b" = "Maintaining harmony and feelings";
+"mbti.q.tf.4" = "When giving feedback, are you more likely to be:";
+"mbti.q.tf.4.a" = "Direct and honest even if it hurts";
+"mbti.q.tf.4.b" = "Tactful and gentle to avoid hurting feelings";
+"mbti.q.tf.5" = "Would you rather be seen as:";
+"mbti.q.tf.5.a" = "A person of reason and logic";
+"mbti.q.tf.5.b" = "A person of heart and kindness";
+
+"mbti.q.jp.1" = "Do you prefer to live your life according to:";
+"mbti.q.jp.1.a" = "A planned schedule and structured routine";
+"mbti.q.jp.1.b" = "Spontaneous impulses and going with the flow";
+"mbti.q.jp.2" = "When working on a project, do you usually:";
+"mbti.q.jp.2.a" = "Finish things well before the deadline";
+"mbti.q.jp.2.b" = "Work best under pressure at the last minute";
+"mbti.q.jp.3" = "Is your environment usually:";
+"mbti.q.jp.3.a" = "Organized and tidy";
+"mbti.q.jp.3.b" = "Spontaneous and a bit messy";
+"mbti.q.jp.4" = "Do you find comfort in:";
+"mbti.q.jp.4.a" = "Closure, certainty, and final decisions";
+"mbti.q.jp.4.b" = "Keeping your options open and flexible";
+"mbti.q.jp.5" = "When traveling, do you prefer to:";
+"mbti.q.jp.5.a" = "Have a detailed itinerary and bookings";
+"mbti.q.jp.5.b" = "Just arrive and see what happens";
+
+/* MBTI Types */
+"mbti.intj" = "Strategic and logical, with a strong drive for their own ideas.";
+"mbti.intj.nickname" = "Architect";
+"mbti.intp" = "Independent and analytical, with a thirst for knowledge.";
+"mbti.intp.nickname" = "Logician";
+"mbti.entj" = "Bold and strong-willed, always finding a way - or making one.";
+"mbti.entj.nickname" = "Commander";
+"mbti.entp" = "Smart and curious thinkers who cannot resist an intellectual challenge.";
+"mbti.entp.nickname" = "Debater";
+"mbti.infj" = "Quiet and mystical, yet very inspiring and tireless idealists.";
+"mbti.infj.nickname" = "Advocate";
+"mbti.infp" = "Poetic, kind and altruistic people, always eager to help a good cause.";
+"mbti.infp.nickname" = "Mediator";
+"mbti.enfj" = "Charismatic and inspiring leaders, able to mesmerize their listeners.";
+"mbti.enfj.nickname" = "Protagonist";
+"mbti.enfp" = "Enthusiastic, creative and sociable free spirits, who can always find a reason to smile.";
+"mbti.enfp.nickname" = "Campaigner";
+"mbti.istj" = "Practical and fact-minded individuals, whose reliability cannot be doubted.";
+"mbti.istj.nickname" = "Logistician";
+"mbti.isfj" = "Very dedicated and warm protectors, always ready to defend their loved ones.";
+"mbti.isfj.nickname" = "Defender";
+"mbti.estj" = "Excellent administrators, unsurpassed at managing things - or people.";
+"mbti.estj.nickname" = "Executive";
+"mbti.esfj" = "Extraordinarily caring, social and popular people, always eager to help.";
+"mbti.esfj.nickname" = "Consul";
+"mbti.istp" = "Bold and practical experimenters, masters of all kinds of tools.";
+"mbti.istp.nickname" = "Virtuoso";
+"mbti.isfp" = "Flexible and charming artists, always ready to explore and experience something new.";
+"mbti.isfp.nickname" = "Adventurer";
+"mbti.estp" = "Smart, energetic and very perceptive people, who truly enjoy living on the edge.";
+"mbti.estp.nickname" = "Entrepreneur";
+"mbti.esfp" = "Spontaneous, energetic and enthusiastic people - life is never boring around them.";
+"mbti.esfp.nickname" = "Entertainer";
+
+/* MARK: - Assessment Common */
+"assessment.question %lld %lld" = "Question %lld of %lld";
+"assessment.previous" = "Previous";
+"assessment.ai_analysis" = "AI Deep Analysis";
+"assessment.generating" = "AI analysis generating...";
+"assessment.dimensions" = "Dimension Breakdown";
+"assessment.complete.title" = "Assessment Complete";
+"assessment.minutes %lld" = "%lld minutes";
+
+/* MARK: - Assessments Labels */
+"assessment.values" = "Core Values";
+"assessment.values.desc" = "Explore the core beliefs that drive your life.";
+"assessment.lovelanguage" = "Love Language";
+"assessment.lovelanguage.desc" = "Understand how you express and receive love.";
+"assessment.bigfive" = "Big Five";
+"assessment.bigfive.desc" = "Scientifically assess your personality across five dimensions.";
+"assessment.mbti.desc" = "Understand your personality type through 16 dimensions.";
+"legacy.title" = "Life Meaning & Legacy";
+"legacy.desc" = "Reflect on and record the spiritual legacy you want to leave the world.";

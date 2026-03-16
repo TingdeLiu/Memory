@@ -99,13 +99,13 @@ final class AudioPlaybackService: NSObject, AVAudioPlayerDelegate {
     // MARK: - AVAudioPlayerDelegate
 
     nonisolated func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        DispatchQueue.main.async {
-            self.isPlaying = false
-            self.currentTime = 0
-            self.progress = 0
-            self.timer?.invalidate()
-            self.timer = nil
-            self.cleanupTempFile()
+        Task { @MainActor [weak self] in
+            self?.isPlaying = false
+            self?.currentTime = 0
+            self?.progress = 0
+            self?.timer?.invalidate()
+            self?.timer = nil
+            self?.cleanupTempFile()
         }
     }
 

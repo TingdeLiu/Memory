@@ -1,5 +1,6 @@
 import Foundation
 import SwiftData
+import SwiftUI
 
 @Model
 final class Contact {
@@ -27,19 +28,44 @@ final class Contact {
     var _encryptedNotes: String?
     var _encryptedSystemContactId: String?
 
+    // MARK: - Decryption Cache (Performance Optimization)
+
+    @Transient private var _cachedName: String?
+    @Transient private var _cachedNotes: String?
+
+    func invalidateDecryptionCache() {
+        _cachedName = nil
+        _cachedNotes = nil
+    }
+
     // MARK: - Transparent accessors
 
     var name: String {
         get {
             if EncryptionLevel.current == .full, let encrypted = _encryptedName {
-                return EncryptedFieldHelper.decryptString(encrypted, recordId: id) ?? _plainName
+                if let cached = _cachedName { return cached }
+                let decrypted = EncryptedFieldHelper.decryptString(encrypted, recordId: id) ?? _plainName
+                _cachedName = decrypted
+                return decrypted
             }
             return _plainName
         }
         set {
             _plainName = newValue
+            _cachedName = newValue
             if EncryptionLevel.current == .full {
                 _encryptedName = EncryptedFieldHelper.encryptString(newValue, recordId: id)
+            }
+        }
+    }
+
+    /// Load avatar data asynchronously to avoid blocking the main thread.
+    func loadAvatarDataAsync() async -> Data? {
+        let contact = self
+        return await withCheckedContinuation { continuation in
+            Task.detached {
+                let data = contact.avatarData
+                continuation.resume(returning: data)
             }
         }
     }
@@ -64,12 +90,16 @@ final class Contact {
     var notes: String {
         get {
             if EncryptionLevel.current == .full, let encrypted = _encryptedNotes {
-                return EncryptedFieldHelper.decryptString(encrypted, recordId: id) ?? _plainNotes
+                if let cached = _cachedNotes { return cached }
+                let decrypted = EncryptedFieldHelper.decryptString(encrypted, recordId: id) ?? _plainNotes
+                _cachedNotes = decrypted
+                return decrypted
             }
             return _plainNotes
         }
         set {
             _plainNotes = newValue
+            _cachedNotes = newValue
             if EncryptionLevel.current == .full {
                 _encryptedNotes = EncryptedFieldHelper.encryptString(newValue, recordId: id)
             }
@@ -208,14 +238,14 @@ enum Relationship: String, Codable, CaseIterable {
         }
     }
 
-    var color: String {
+    var color: Color {
         switch self {
-        case .family: return "orange"
-        case .partner: return "pink"
-        case .friend: return "blue"
-        case .colleague: return "purple"
-        case .mentor: return "green"
-        case .other: return "gray"
+        case .family: return .orange
+        case .partner: return .pink
+        case .friend: return .blue
+        case .colleague: return .purple
+        case .mentor: return .green
+        case .other: return .gray
         }
     }
 }

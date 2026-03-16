@@ -82,7 +82,7 @@ struct ContactImportView: View {
             Spacer()
             Image(systemName: "person.crop.circle.badge.plus")
                 .font(.system(size: 64))
-                .foregroundStyle(.accent)
+                .foregroundStyle(Color.accentColor)
 
             Text(String(localized: "contactImport.permission.title"))
                 .font(.title2)
@@ -282,7 +282,7 @@ struct SystemContactRow: View {
 
                 Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
                     .font(.title3)
-                    .foregroundStyle(isSelected ? .accent : .secondary)
+                    .foregroundStyle(isSelected ? Color.accentColor : .secondary)
             }
         }
         .buttonStyle(.plain)

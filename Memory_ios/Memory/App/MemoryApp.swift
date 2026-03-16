@@ -4,21 +4,34 @@ import SwiftData
 @main
 struct MemoryApp: App {
     @AppStorage("requireBiometricAuth") private var requireBiometricAuth = false
-    @AppStorage("iCloudSyncEnabled") private var iCloudSyncEnabled = true
     @AppStorage("autoLockOnBackground") private var autoLockOnBackground = true
     @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = false
 
     @State private var isUnlocked = false
     @Environment(\.scenePhase) private var scenePhase
 
-    var sharedModelContainer: ModelContainer {
+    private var languageManager: LanguageManager { LanguageManager.shared }
+
+    // ModelContainer created once at app launch
+    // Note: iCloud setting is read at launch; changes require app restart
+    let sharedModelContainer: ModelContainer = {
         let schema = Schema([
             MemoryEntry.self,
             Contact.self,
             Message.self,
+            SoulProfile.self,
+            InterviewSession.self,
+            AssessmentResult.self,
+            RelationshipProfile.self,
+            VoiceProfile.self,
+            VoiceSample.self,
+            WritingStyleProfile.self,
+            AvatarProfile.self,
+            DigitalSelfConfig.self,
         ])
 
-        let cloudKitDB: ModelConfiguration.CloudKitDatabase = iCloudSyncEnabled
+        let iCloudEnabled = UserDefaults.standard.bool(forKey: "iCloudSyncEnabled")
+        let cloudKitDB: ModelConfiguration.CloudKitDatabase = iCloudEnabled
             ? .private("iCloud.com.tyndall.memory")
             : .none
 
@@ -33,17 +46,20 @@ struct MemoryApp: App {
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
         }
-    }
+    }()
 
     var body: some Scene {
         WindowGroup {
-            if !hasCompletedOnboarding {
-                OnboardingView(hasCompletedOnboarding: $hasCompletedOnboarding)
-            } else if requireBiometricAuth && !isUnlocked {
-                LockScreenView(isUnlocked: $isUnlocked)
-            } else {
-                ContentView()
+            Group {
+                if !hasCompletedOnboarding {
+                    OnboardingView(hasCompletedOnboarding: $hasCompletedOnboarding)
+                } else if requireBiometricAuth && !isUnlocked {
+                    LockScreenView(isUnlocked: $isUnlocked)
+                } else {
+                    ContentView()
+                }
             }
+            .environment(\.locale, languageManager.effectiveLocale)
         }
         .modelContainer(sharedModelContainer)
         .onChange(of: scenePhase) { _, newPhase in
@@ -51,6 +67,8 @@ struct MemoryApp: App {
             case .background:
                 if requireBiometricAuth && autoLockOnBackground {
                     isUnlocked = false
+                    // Clear cached encryption key when app locks for security
+                    EncryptionHelper.clearCachedMasterKey()
                 }
             case .active:
                 break

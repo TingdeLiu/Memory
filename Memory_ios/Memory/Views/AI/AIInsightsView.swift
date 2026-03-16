@@ -27,7 +27,7 @@ struct AIInsightsView: View {
                         title: String(localized: "aiInsights.summary.title"),
                         subtitle: String(localized: "aiInsights.summary.subtitle"),
                         icon: "text.alignleft",
-                        color: .accent,
+                        color: .accentColor,
                         result: summaryResult,
                         type: .summary
                     )

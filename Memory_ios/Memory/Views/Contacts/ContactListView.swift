@@ -3,7 +3,7 @@ import SwiftData
 
 struct ContactListView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query(sort: \Contact.name) private var contacts: [Contact]
+    @Query(sort: \Contact._plainName) private var contacts: [Contact]
     @State private var searchText = ""
     @State private var selectedRelationship: Relationship?
     @State private var showingAddContact = false
@@ -91,7 +91,7 @@ struct ContactListView: View {
 
             Image(systemName: "person.2.fill")
                 .font(.system(size: 64))
-                .foregroundStyle(.accent.opacity(0.6))
+                .foregroundStyle(Color.accentColor.opacity(0.6))
 
             VStack(spacing: 8) {
                 Text(String(localized: "contactList.empty.title"))
@@ -253,7 +253,7 @@ struct ContactListView: View {
                     title: String(localized: "contactList.stats.people"),
                     value: "\(contacts.count)",
                     icon: "person.2",
-                    color: .accent
+                    color: Color.accentColor
                 )
 
                 let totalMessages = contacts.reduce(0) { $0 + $1.messages.count }

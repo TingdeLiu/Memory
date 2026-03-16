@@ -8,7 +8,7 @@ struct OnboardingView: View {
         TabView(selection: $currentPage) {
             OnboardingPage(
                 icon: "brain.head.profile",
-                iconColor: .accent,
+                iconColor: Color.accentColor,
                 title: String(localized: "onboarding.welcome.title"),
                 subtitle: String(localized: "onboarding.welcome.subtitle"),
                 buttonTitle: nil,

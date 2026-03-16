@@ -100,7 +100,7 @@ struct MemoryEditorView: View {
                     optionsSection
 
                     // Auto-save indicator
-                    if let lastSave = lastAutoSave {
+                    if lastAutoSave != nil {
                         HStack {
                             Image(systemName: "checkmark.circle.fill")
                                 .font(.caption2)
@@ -227,7 +227,7 @@ struct MemoryEditorView: View {
             }
 
             // Video attachment
-            if let url = videoURL {
+            if videoURL != nil {
                 VideoAttachmentView(
                     thumbnailData: videoThumbnailData,
                     duration: videoDuration,
@@ -313,7 +313,7 @@ struct MemoryEditorView: View {
                                     .font(.title2)
                                 Text(mood.label)
                                     .font(.caption2)
-                                    .foregroundStyle(selectedMood == mood ? .accent : .secondary)
+                                    .foregroundStyle(selectedMood == mood ? Color.accentColor : .secondary)
                             }
                             .padding(.horizontal, 10)
                             .padding(.vertical, 8)
@@ -354,7 +354,7 @@ struct MemoryEditorView: View {
                             .padding(.horizontal, 10)
                             .padding(.vertical, 6)
                             .background(Color.accentColor.opacity(0.1))
-                            .foregroundStyle(.accent)
+                            .foregroundStyle(Color.accentColor)
                             .clipShape(Capsule())
                             .accessibilityLabel(L10n.tagAccessibilityLabel(tag))
                             .accessibilityHint(String(localized: "memoryEditor.removeTagHint"))
@@ -739,7 +739,7 @@ struct AudioAttachmentView: View {
             } label: {
                 Image(systemName: player.isPlaying ? "pause.circle.fill" : "play.circle.fill")
                     .font(.title)
-                    .foregroundStyle(.accent)
+                    .foregroundStyle(Color.accentColor)
             }
 
             VStack(alignment: .leading, spacing: 4) {
@@ -863,7 +863,7 @@ struct VideoRecordingSheet: View {
                         .foregroundStyle(.white)
                         .padding(.horizontal, 16)
                         .padding(.vertical, 8)
-                        .background(.accent)
+                        .background(Color.accentColor)
                         .clipShape(Capsule())
                     }
                 }

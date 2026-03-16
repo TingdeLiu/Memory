@@ -4,321 +4,209 @@ import SwiftData
 struct AIChatView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \MemoryEntry.createdAt, order: .reverse) private var allMemories: [MemoryEntry]
-    @State private var aiService = AIService()
-    @State private var messages: [ChatMessage] = []
-    @State private var inputText = ""
-    @State private var showingSettings = false
-    @AppStorage("aiEnabled") private var aiEnabled = false
+    @State private var viewModel: AIChatViewModel?
 
-    private var contextMemories: [MemoryEntry] {
-        Array(allMemories.filter { !$0.isPrivate }.prefix(50))
-    }
-
-    private var isConfigured: Bool {
-        StoreService.shared.canUseAI && aiEnabled && aiService.hasAPIKey(for: aiService.selectedProvider)
-    }
-
-    private var needsPremium: Bool {
-        !StoreService.shared.canUseAI
+    // Custom initializer to pass dependencies if needed
+    init(aiService: AIService? = nil, modelContext: ModelContext? = nil) {
+        if let aiService, let modelContext {
+            _viewModel = State(initialValue: AIChatViewModel(aiService: aiService, modelContext: modelContext))
+        }
     }
 
     var body: some View {
         NavigationStack {
-            Group {
-                if !isConfigured {
-                    setupPrompt
+            VStack(spacing: 0) {
+                if let vm = viewModel {
+                    if vm.messages.isEmpty {
+                        emptyState
+                    } else {
+                        messageList
+                    }
+
+                    Divider()
+                    inputArea
                 } else {
-                    chatContent
+                    ProgressView()
                 }
             }
             .navigationTitle(String(localized: "aiChat.title"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .principal) {
-                    if isConfigured {
-                        Text(aiService.selectedProvider.name)
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 3)
-                            .background(.quaternary)
-                            .clipShape(Capsule())
-                    }
-                }
-                ToolbarItem(placement: .primaryAction) {
-                    Button {
-                        showingSettings = true
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(role: .destructive) {
+                        viewModel?.clearChat()
                     } label: {
-                        Image(systemName: "gearshape")
+                        Label(String(localized: "aiChat.clear"), systemImage: "trash")
                     }
+                    .disabled(viewModel?.messages.isEmpty ?? true)
                 }
             }
-            .sheet(isPresented: $showingSettings) {
-                NavigationStack {
-                    AISettingsView()
-                        .toolbar {
-                            ToolbarItem(placement: .cancellationAction) {
-                                Button(String(localized: "common.done")) { showingSettings = false }
-                            }
-                        }
+            .onAppear {
+                if viewModel == nil {
+                    viewModel = AIChatViewModel(aiService: AIService(), modelContext: modelContext)
                 }
             }
         }
     }
-
-    // MARK: - Setup Prompt
-
-    @State private var showingPurchase = false
-
-    private var setupPrompt: some View {
+    
+    private var emptyState: some View {
         VStack(spacing: 20) {
-            Spacer()
-
-            Image(systemName: needsPremium ? "star.fill" : "sparkles")
-                .font(.system(size: 56))
-                .foregroundStyle(needsPremium ? .yellow.opacity(0.6) : .accent.opacity(0.6))
-
-            VStack(spacing: 8) {
-                Text(needsPremium ? String(localized: "aiChat.premiumFeature") : String(localized: "aiChat.setup"))
-                    .font(.title2)
-                    .fontWeight(.bold)
-
-                Text(needsPremium
-                    ? String(localized: "aiChat.premiumDescription")
-                    : String(localized: "aiChat.setupDescription"))
-                    .font(.body)
-                    .foregroundStyle(.secondary)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 32)
-            }
-
-            if needsPremium {
-                Button {
-                    showingPurchase = true
-                } label: {
-                    Label(String(localized: "aiChat.upgradePremium"), systemImage: "star.fill")
-                        .font(.headline)
-                        .frame(maxWidth: 240)
-                        .padding(.vertical, 14)
-                }
-                .buttonStyle(.borderedProminent)
-            } else {
-                Button {
-                    showingSettings = true
-                } label: {
-                    Label(String(localized: "aiChat.openSettings"), systemImage: "gearshape")
-                        .font(.headline)
-                        .frame(maxWidth: 240)
-                        .padding(.vertical, 14)
-                }
-                .buttonStyle(.borderedProminent)
-            }
-
-            Spacer()
-        }
-        .padding()
-        .sheet(isPresented: $showingPurchase) {
-            PurchaseView()
-        }
-    }
-
-    // MARK: - Chat Content
-
-    private var chatContent: some View {
-        VStack(spacing: 0) {
-            ScrollViewReader { proxy in
-                ScrollView {
-                    LazyVStack(spacing: 12) {
-                        // Welcome message
-                        if messages.isEmpty {
-                            welcomeSection
-                        }
-
-                        ForEach(messages) { message in
-                            MessageBubble(message: message)
-                                .id(message.id)
-                        }
-
-                        if aiService.isProcessing {
-                            typingIndicator
-                        }
-                    }
-                    .padding()
-                }
-                .onChange(of: messages.count) {
-                    if let last = messages.last {
-                        withAnimation {
-                            proxy.scrollTo(last.id, anchor: .bottom)
-                        }
-                    }
-                }
-            }
-
-            Divider()
-            inputBar
-        }
-    }
-
-    // MARK: - Welcome
-
-    private var welcomeSection: some View {
-        VStack(spacing: 16) {
             Image(systemName: "sparkles")
-                .font(.largeTitle)
-                .foregroundStyle(.accent)
-                .padding(.top, 24)
-
+                .font(.system(size: 60))
+                .foregroundStyle(.secondary)
+            
             Text(String(localized: "aiChat.welcome"))
                 .font(.headline)
+            
+            Text(String(localized: "aiChat.subtitle"))
+                .font(.subheadline)
                 .foregroundStyle(.secondary)
-
-            VStack(spacing: 8) {
-                quickQuestion(String(localized: "aiChat.quick.summarize"))
-                quickQuestion(String(localized: "aiChat.quick.feeling"))
-                quickQuestion(String(localized: "aiChat.quick.themes"))
+                .multilineTextAlignment(.center)
+                .padding(.horizontal)
+            
+            VStack(alignment: .leading, spacing: 12) {
+                Text(String(localized: "aiChat.suggestions.title"))
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .textCase(.uppercase)
+                
+                suggestionButton(String(localized: "aiChat.suggestions.1"))
+                suggestionButton(String(localized: "aiChat.suggestions.2"))
+                suggestionButton(String(localized: "aiChat.suggestions.3"))
             }
-            .padding(.bottom, 8)
+            .padding(.top, 20)
         }
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
-
-    private func quickQuestion(_ text: String) -> some View {
+    
+    private func suggestionButton(_ text: String) -> some View {
         Button {
-            inputText = text
-            sendMessage()
+            viewModel?.currentQuery = text
+            Task {
+                await viewModel?.sendMessage(allMemories: allMemories)
+            }
         } label: {
             Text(text)
                 .font(.subheadline)
                 .padding(.horizontal, 16)
                 .padding(.vertical, 10)
-                .frame(maxWidth: .infinity)
-                .background(.quaternary)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .background(Color.accentColor.opacity(0.1))
+                .clipShape(Capsule())
         }
-        .buttonStyle(.plain)
-        .accessibilityHint(String(localized: "aiChat.quickHint"))
     }
+    
+    private var messageList: some View {
+        ScrollViewReader { proxy in
+            ScrollView {
+                LazyVStack(spacing: 16) {
+                    ForEach(viewModel?.messages ?? []) { message in
+                        MessageBubble(message: message)
+                            .id(message.id)
+                    }
 
-    // MARK: - Typing Indicator
+                    if viewModel?.isProcessing == true {
+                        HStack {
+                            ProgressView()
+                                .padding(.trailing, 8)
+                            Text(String(localized: "aiChat.processing"))
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal)
+                        .id("processing")
+                    }
 
-    private var typingIndicator: some View {
-        HStack {
-            HStack(spacing: 4) {
-                ForEach(0..<3) { i in
-                    Circle()
-                        .fill(.secondary)
-                        .frame(width: 6, height: 6)
-                        .opacity(0.6)
+                    if let error = viewModel?.error {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Label(error.localizedDescription, systemImage: "exclamationmark.triangle")
+                                .font(.subheadline)
+                                .foregroundStyle(.red)
+
+                            Button(String(localized: "common.retry")) {
+                                Task {
+                                    await viewModel?.sendMessage(allMemories: allMemories)
+                                }
+                            }
+                            .font(.caption)
+                            .buttonStyle(.bordered)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding()
+                        .background(Color.red.opacity(0.05))
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                        .padding(.horizontal)
+                    }
+                }
+                .padding(.vertical)
+            }
+            .onChange(of: viewModel?.messages.count) {
+                withAnimation {
+                    proxy.scrollTo(viewModel?.messages.last?.id, anchor: .bottom)
                 }
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 12)
-            .background(Color(.systemGray6))
-            .clipShape(RoundedRectangle(cornerRadius: 16))
-
-            Spacer()
+            .onChange(of: viewModel?.isProcessing) {
+                if viewModel?.isProcessing == true {
+                    withAnimation {
+                        proxy.scrollTo("processing", anchor: .bottom)
+                    }
+                }
+            }
         }
     }
-
-    // MARK: - Input Bar
-
-    private var inputBar: some View {
-        HStack(spacing: 12) {
-            TextField(String(localized: "aiChat.inputPlaceholder"), text: $inputText, axis: .vertical)
-                .textFieldStyle(.plain)
-                .lineLimit(1...4)
+    
+    private var inputArea: some View {
+        HStack(alignment: .bottom, spacing: 12) {
+            TextField(String(localized: "aiChat.inputPlaceholder"), text: Binding(
+                get: { viewModel?.currentQuery ?? "" },
+                set: { viewModel?.currentQuery = $0 }
+            ), axis: .vertical)
                 .padding(.horizontal, 12)
                 .padding(.vertical, 8)
-                .background(Color(.systemGray6))
+                .background(Color(.secondarySystemBackground))
                 .clipShape(RoundedRectangle(cornerRadius: 20))
+                .lineLimit(1...5)
 
             Button {
-                sendMessage()
+                Task {
+                    await viewModel?.sendMessage(allMemories: allMemories)
+                }
             } label: {
                 Image(systemName: "arrow.up.circle.fill")
-                    .font(.title2)
-                    .foregroundStyle(inputText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? .secondary : .accent)
+                    .font(.system(size: 32))
             }
-            .disabled(inputText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || aiService.isProcessing)
-            .accessibilityLabel(String(localized: "aiChat.send"))
+            .disabled(viewModel?.currentQuery.isEmpty ?? true || viewModel?.isProcessing ?? false)
         }
-        .padding(.horizontal)
-        .padding(.vertical, 8)
-        .background(.bar)
-    }
-
-    // MARK: - Send
-
-    private func sendMessage() {
-        let text = inputText.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !text.isEmpty else { return }
-
-        let userMessage = ChatMessage(role: .user, content: text)
-        messages.append(userMessage)
-        inputText = ""
-
-        Task {
-            do {
-                let response = try await aiService.chatAboutMemories(
-                    query: text,
-                    context: contextMemories,
-                    conversationHistory: messages.filter { $0.role != .system }
-                )
-                let assistantMessage = ChatMessage(role: .assistant, content: response)
-                messages.append(assistantMessage)
-            } catch {
-                let errorMessage = ChatMessage(
-                    role: .assistant,
-                    content: L10n.aiChatError(error.localizedDescription)
-                )
-                messages.append(errorMessage)
-            }
-        }
+        .padding()
+        .background(.background)
     }
 }
 
-// MARK: - Message Bubble
-
-private struct MessageBubble: View {
+struct MessageBubble: View {
     let message: ChatMessage
-
+    
     var body: some View {
         HStack {
-            if message.role == .user { Spacer(minLength: 48) }
-
+            if message.role == .user { Spacer() }
+            
             VStack(alignment: message.role == .user ? .trailing : .leading, spacing: 4) {
-                if message.role == .assistant {
-                    Text("AI")
-                        .font(.caption2)
-                        .fontWeight(.semibold)
-                        .foregroundStyle(.secondary)
-                }
-
                 Text(message.content)
-                    .font(.body)
-                    .padding(.horizontal, 14)
+                    .padding(.horizontal, 16)
                     .padding(.vertical, 10)
-                    .background(message.role == .user ? Color.accentColor : Color(.systemGray6))
+                    .background(message.role == .user ? Color.accentColor : Color(.secondarySystemBackground))
                     .foregroundStyle(message.role == .user ? .white : .primary)
-                    .clipShape(RoundedRectangle(cornerRadius: 16))
-                    .contextMenu {
-                        Button {
-                            UIPasteboard.general.string = message.content
-                        } label: {
-                            Label(String(localized: "common.copy"), systemImage: "doc.on.doc")
-                        }
-                    }
-
-                if message.role == .assistant {
-                    Text(String(localized: "aiChat.aiGenerated"))
-                        .font(.caption2)
-                        .foregroundStyle(.tertiary)
-                }
+                    .clipShape(RoundedRectangle(cornerRadius: 18))
+                
+                Text(message.timestamp.formatted(date: .omitted, time: .shortened))
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+                    .padding(.horizontal, 4)
             }
-
-            if message.role == .assistant { Spacer(minLength: 48) }
+            
+            if message.role != .user { Spacer() }
         }
-        .accessibilityElement(children: .combine)
-        .accessibilityLabel("\(message.role == .user ? String(localized: "aiChat.you") : String(localized: "aiChat.ai")): \(message.content)")
+        .padding(.horizontal)
     }
 }
 

@@ -33,7 +33,7 @@ struct LockScreenView: View {
                 VStack(spacing: 20) {
                     Image(systemName: "brain.head.profile")
                         .font(.system(size: 80))
-                        .foregroundStyle(.accent)
+                        .foregroundStyle(Color.accentColor)
                         .scaleEffect(logoScale)
                         .opacity(logoOpacity)
 

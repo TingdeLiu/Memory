@@ -1,15 +1,35 @@
-/* Memory App — 简体中文 */
-
-// MARK: - Tabs
-
 "tab.home" = "首页";
 "tab.memories" = "回忆";
 "tab.contacts" = "联系人";
 "tab.ai" = "AI";
 "tab.settings" = "设置";
-
-// MARK: - Home
-
+"tab.soul" = "灵魂";
+"tab.universe" = "宇宙";
+"orb.title" = "我的宇宙";
+"orb.rotating" = "旋转中";
+"orb.paused" = "已暂停";
+"orb.hint" = "点击中心光球暂停，点击人物开始对话";
+"orb.chat.placeholder" = "说点什么...";
+"orb.chat.greeting %@" = "你好！我是%@。你想聊什么呢？";
+"orb.chat.error" = "抱歉，我现在无法回应。请稍后再试。";
+"orb.chat.clear" = "清除聊天记录";
+"orb.accessibility.contact %@ %@" = "%@，%@";
+"orb.accessibility.hint.chat" = "双击开始对话";
+"orb.accessibility.addContact" = "添加新联系人";
+"orb.accessibility.centerOrb" = "你的头像，宇宙中心";
+"orb.accessibility.hint.pause" = "双击暂停旋转";
+"orb.accessibility.hint.resume" = "双击继续旋转";
+"orb.menu.chat" = "开始对话";
+"orb.menu.viewMessages" = "查看消息";
+"orb.menu.edit" = "编辑联系人";
+"orb.menu.favorite" = "添加到收藏";
+"orb.menu.unfavorite" = "取消收藏";
+"orb.menu.remove" = "从宇宙移除";
+"orb.hint.drag" = "长按拖动可调整顺序";
+"orb.empty.title" = "你的宇宙等待着";
+"orb.empty.subtitle" = "添加对你重要的人，他们将在这片星空中环绕着你。";
+"orb.empty.addButton" = "添加重要的人";
+"soul.tap_avatar_hint" = "点击头像进入你的宇宙";
 "home.title" = "Memory";
 "home.search.prompt" = "搜索你的回忆...";
 "home.empty.title" = "从这里开始记录";
@@ -27,9 +47,6 @@
 "home.ai.subtitle" = "与 AI 聊聊你的回忆";
 "home.date.today" = "今天";
 "home.date.yesterday" = "昨天";
-
-// MARK: - Date Filter Sheet
-
 "dateFilter.title" = "按日期筛选";
 "dateFilter.fromDate" = "起始日期";
 "dateFilter.toDate" = "截止日期";
@@ -38,9 +55,6 @@
 "dateFilter.clearAll" = "清除所有筛选";
 "dateFilter.cancel" = "取消";
 "dateFilter.apply" = "应用";
-
-// MARK: - Memory List
-
 "memoryList.title" = "回忆";
 "memoryList.search.prompt" = "搜索回忆和语音转写...";
 "memoryList.empty.title" = "还没有回忆";
@@ -57,9 +71,6 @@
 "memoryList.type.voice" = "语音";
 "memoryList.type.photo" = "照片";
 "memoryList.type.video" = "视频";
-
-// MARK: - Memory Editor
-
 "memoryEditor.new.title" = "新回忆";
 "memoryEditor.edit.title" = "编辑回忆";
 "memoryEditor.titlePlaceholder" = "标题";
@@ -86,9 +97,6 @@
 "memoryEditor.tagRemoveHint" = "双击移除";
 "memoryEditor.privateMemory" = "私密回忆";
 "memoryEditor.privateHint" = "需要 Face ID / Touch ID 才能查看";
-
-// MARK: - Voice Recording
-
 "voiceRecording.title" = "语音录制";
 "voiceRecording.cancel" = "取消";
 "voiceRecording.useRecording" = "使用录音";
@@ -97,16 +105,10 @@
 "voiceRecording.transcribing" = "正在转写...";
 "voiceRecording.transcription" = "语音转写";
 "voiceRecording.transcribeButton" = "转写为文字";
-"voiceRecording.noPermission" = "录制语音回忆需要麦克风权限。\n请在"设置"中开启。";
+"voiceRecording.noPermission" = "录制语音回忆需要麦克风权限。\n请在\"设置\"中开启。";
 "voiceRecording.waveform" = "音频波形";
-
-// MARK: - Video Recording
-
 "videoRecording.useVideo" = "使用视频";
-"videoRecording.noPermission" = "需要相机和麦克风权限。\n请在"设置"中开启。";
-
-// MARK: - Memory Detail
-
+"videoRecording.noPermission" = "需要相机和麦克风权限。\n请在\"设置\"中开启。";
 "memoryDetail.untitled" = "无标题";
 "memoryDetail.transcription" = "语音转写";
 "memoryDetail.tags" = "标签";
@@ -125,9 +127,6 @@
 "memoryDetail.pause" = "暂停";
 "memoryDetail.play" = "播放";
 "memoryDetail.playbackProgress" = "播放进度";
-
-// MARK: - Memory Timeline Row
-
 "timeline.untitled" = "无标题";
 "timeline.type.voice" = "语音";
 "timeline.type.photo" = "照片";
@@ -135,9 +134,6 @@
 "timeline.type.text" = "文字";
 "timeline.private" = "私密";
 "timeline.tags" = "%lld 个标签";
-
-// MARK: - Contact List
-
 "contactList.title" = "联系人";
 "contactList.search.prompt" = "搜索联系人...";
 "contactList.addManually" = "手动添加";
@@ -153,9 +149,6 @@
 "contactList.sealed" = "%lld 条封存";
 "contactList.filter.all" = "全部";
 "contactList.filter.favorites" = "收藏";
-
-// MARK: - Contact Detail
-
 "contactDetail.about" = "关于";
 "contactDetail.editContact" = "编辑联系人";
 "contactDetail.removeFromFavorites" = "取消收藏";
@@ -171,9 +164,6 @@
 "contactDetail.messages" = "留言";
 "contactDetail.noMessages" = "还没有留言";
 "contactDetail.writeFirstMessage" = "写下你的第一条留言";
-
-// MARK: - Contact Editor
-
 "contactEditor.new.title" = "新联系人";
 "contactEditor.edit.title" = "编辑联系人";
 "contactEditor.name" = "姓名";
@@ -187,9 +177,6 @@
 "contactEditor.deleteConfirm.message" = "将永久删除 %@ 及其所有留言。";
 "contactEditor.cancel" = "取消";
 "contactEditor.save" = "保存";
-
-// MARK: - Contact Import
-
 "contactImport.title" = "导入联系人";
 "contactImport.cancel" = "取消";
 "contactImport.importButton" = "导入 (%lld)";
@@ -208,9 +195,6 @@
 "contactImport.alreadyImported" = "已导入 %lld 个";
 "contactImport.allImported" = "所有联系人已导入。";
 "contactImport.searchPrompt" = "搜索要导入的联系人...";
-
-// MARK: - Message Editor
-
 "messageEditor.new.title" = "新留言";
 "messageEditor.edit.title" = "编辑留言";
 "messageEditor.to" = "收信人：%@";
@@ -232,9 +216,6 @@
 "messageEditor.keepEditing" = "继续编辑";
 "messageEditor.reRecord" = "重新录制";
 "messageEditor.remove" = "移除";
-
-// MARK: - Message Detail
-
 "messageDetail.title" = "留言";
 "messageDetail.to" = "收信人：%@";
 "messageDetail.deliveryStatus" = "送达状态：%@";
@@ -249,9 +230,6 @@
 "messageDetail.deleteConfirm.message" = "此留言将被永久删除。";
 "messageDetail.cancel" = "取消";
 "messageDetail.status" = "状态：%@";
-
-// MARK: - AI Chat
-
 "aiChat.title" = "AI 聊天";
 "aiChat.done" = "完成";
 "aiChat.premiumTitle" = "高级功能";
@@ -272,9 +250,6 @@
 "aiChat.copy" = "复制";
 "aiChat.error" = "抱歉，遇到了错误：%@";
 "aiChat.you" = "你";
-
-// MARK: - AI Insights
-
 "aiInsights.title" = "AI 洞察";
 "aiInsights.summary.title" = "回忆摘要";
 "aiInsights.summary.subtitle" = "你近期回忆的贴心概览";
@@ -286,9 +261,6 @@
 "aiInsights.regenerate" = "重新生成";
 "aiInsights.generate" = "生成";
 "aiInsights.chatWithAI" = "与 AI 聊天";
-
-// MARK: - Settings
-
 "settings.title" = "设置";
 "settings.premium" = "高级版";
 "settings.premiumActive" = "Memory 高级版";
@@ -328,9 +300,6 @@
 "settings.termsOfUse" = "使用条款";
 "settings.support" = "帮助与支持";
 "settings.motto" = "当世上再无人记得你，\n那才是你真正消失的时候。";
-
-// MARK: - Security Settings
-
 "security.title" = "安全";
 "security.appLock" = "应用锁";
 "security.requireBiometric" = "启用 %@";
@@ -403,9 +372,6 @@
 "security.restoreSheet.restore" = "还原";
 "security.restoreSheet.noBackup" = "未找到恢复备份。";
 "security.restoreSheet.invalid" = "恢复密码无效。";
-
-// MARK: - Privacy & Data
-
 "privacy.title" = "隐私与数据";
 "privacy.yourData" = "你的数据";
 "privacy.memories" = "回忆";
@@ -452,9 +418,6 @@
 "privacy.typeDeleteMessage" = "此操作不可逆。输入 DELETE 确认。";
 "privacy.deleteForever" = "永久删除";
 "privacy.cancel" = "取消";
-
-// MARK: - AI Settings
-
 "aiSettings.title" = "AI 设置";
 "aiSettings.enableAI" = "启用 AI 功能";
 "aiSettings.enableSubtitle" = "用 AI 聊天、总结和整理回忆";
@@ -483,9 +446,6 @@
 "aiSettings.testConnection" = "测试连接";
 "aiSettings.testing" = "测试中...";
 "aiSettings.connectionSuccess" = "连接成功";
-
-// MARK: - Purchase
-
 "purchase.title" = "Memory 高级版";
 "purchase.close" = "关闭";
 "purchase.subtitle" = "解锁 Memory 的全部功能。\n一次购买，永久拥有。";
@@ -506,9 +466,6 @@
 "purchase.restore" = "恢复购买";
 "purchase.termsOfUse" = "使用条款";
 "purchase.privacyPolicy" = "隐私政策";
-
-// MARK: - Google Drive Settings
-
 "gdrive.title" = "Google Drive";
 "gdrive.account" = "账户";
 "gdrive.connected" = "已连接";
@@ -527,18 +484,12 @@
 "gdrive.security" = "安全";
 "gdrive.e2e" = "端到端加密";
 "gdrive.e2eDescription" = "上传前所有数据均使用 AES-256-GCM 加密。Google 无法读取你的内容。";
-
-// MARK: - Lock Screen
-
 "lockScreen.title" = "Memory";
 "lockScreen.protected" = "你的回忆受到保护";
 "lockScreen.unlock" = "使用 %@ 解锁";
 "lockScreen.unlockHint" = "验证身份以访问你的回忆";
 "lockScreen.usePasscode" = "使用密码";
 "lockScreen.authFailed" = "认证失败，请重试。";
-
-// MARK: - Onboarding
-
 "onboarding.welcome.title" = "欢迎使用 Memory";
 "onboarding.welcome.subtitle" = "记录你的想法、感受和瞬间。\n给你爱的人留下话语。";
 "onboarding.privacy.title" = "你的隐私，我们的承诺";
@@ -546,9 +497,6 @@
 "onboarding.start.title" = "开始记录";
 "onboarding.start.subtitle" = "当世上再无人记得你，\n那才是你真正消失的时候。";
 "onboarding.getStarted" = "开始使用";
-
-// MARK: - Model: Mood
-
 "mood.happy" = "开心";
 "mood.grateful" = "感恩";
 "mood.calm" = "平静";
@@ -557,54 +505,33 @@
 "mood.anxious" = "焦虑";
 "mood.hopeful" = "希望";
 "mood.loving" = "爱意";
-
-// MARK: - Model: Relationship
-
 "relationship.family" = "家人";
 "relationship.partner" = "伴侣";
 "relationship.friend" = "朋友";
 "relationship.colleague" = "同事";
 "relationship.mentor" = "导师";
 "relationship.other" = "其他";
-
-// MARK: - Model: Delivery Condition
-
 "delivery.immediate.label" = "立即可见";
 "delivery.specificDate.label" = "指定日期";
 "delivery.afterDeath.label" = "在我离开后";
 "delivery.immediate.description" = "这是一条私人备注，始终对你可见。";
 "delivery.specificDate.description" = "这条留言将在指定日期标记为待送达。";
 "delivery.afterDeath.description" = "这条留言将被安全封存，直到合适的时候。";
-
-// MARK: - Model: Message Status
-
 "message.status.visible" = "可见";
 "message.status.delivered" = "已送达";
 "message.status.scheduled" = "已计划";
 "message.status.sealed" = "已封存";
-
-// MARK: - Model: Encryption Level
-
 "encryption.cloudOnly.label" = "云端加密";
 "encryption.full.label" = "全盘加密";
 "encryption.cloudOnly.description" = "数据在同步到 iCloud 或 Google Drive 时加密。本地数据由设备锁和生物识别保护。";
 "encryption.full.description" = "敏感字段在本地和云端均加密。最高安全级别，但搜索和排序可能受限。";
-
-// MARK: - Model: Biometric Type
-
 "biometric.faceID" = "Face ID";
 "biometric.touchID" = "Touch ID";
 "biometric.opticID" = "Optic ID";
 "biometric.passcode" = "密码";
-
-// MARK: - Biometric Auth
-
 "biometric.reason" = "验证身份以访问你的回忆";
 "biometric.reasonPrivate" = "验证身份以查看私密回忆";
 "biometric.fallback" = "使用密码";
-
-// MARK: - Common
-
 "common.cancel" = "取消";
 "common.save" = "保存";
 "common.delete" = "删除";
@@ -619,15 +546,20 @@
 "common.untitled" = "无标题";
 "common.a11y.deselect" = "取消筛选";
 "common.a11y.filter" = "点击筛选";
-
-// MARK: - 补充设置键
-
 "settings.tagline" = "当世上再无人记得你，\n那才是你真正消失的时候。";
 "settings.section.premium" = "高级版";
 "settings.section.security" = "安全";
 "settings.section.sync" = "云端与同步";
 "settings.section.data" = "数据";
 "settings.section.storage" = "存储";
+"settings.section.language" = "语言";
+"settings.language" = "应用语言";
+"settings.language.footer" = "重新启动应用以使语言更改完全生效。";
+"settings.language.restart.title" = "语言已更改";
+"settings.language.restart.message" = "请重新启动应用以使语言更改完全生效。";
+"language.system" = "跟随系统";
+"common.ok" = "好";
+
 "settings.section.about" = "关于";
 "settings.premium.title" = "Memory 高级版";
 "settings.premium.unlocked" = "所有功能已解锁";
@@ -643,9 +575,6 @@
 "settings.storage.contacts" = "联系人";
 "settings.storage.messages" = "留言";
 "settings.storage.sealed" = "封存留言";
-
-// MARK: - 补充安全键
-
 "security.require" = "需要";
 "security.lockOnClose" = "关闭时锁定应用";
 "security.autoLock" = "进入后台时自动锁定";
@@ -679,9 +608,6 @@
 "security.migrating.messages" = "正在迁移留言...";
 "security.migrating.encrypting" = "正在加密媒体文件...";
 "security.migrating.decrypting" = "正在解密媒体文件...";
-
-// MARK: - 补充回忆键
-
 "memoryType.text" = "文字";
 "memoryType.voice" = "语音";
 "memoryType.photo" = "照片";
@@ -698,9 +624,6 @@
 "memoryEditor.private" = "私密回忆";
 "memoryDetail.deleteTitle" = "删除回忆？";
 "memoryDetail.deleteMessage" = "此回忆将被永久删除。";
-
-// MARK: - 补充联系人键
-
 "contactDetail.deleteTitle" = "删除联系人？";
 "contactDetail.removeFavorite" = "取消收藏";
 "contactDetail.addFavorite" = "添加到收藏";
@@ -724,9 +647,6 @@
 "contactImport.denied.title" = "通讯录访问被拒绝";
 "contactImport.denied.description" = "要导入联系人，请在以下位置启用访问权限：\n设置 > 隐私与安全性 > 通讯录 > Memory";
 "contactImport.search.prompt" = "搜索要导入的联系人...";
-
-// MARK: - 补充留言键
-
 "messageDetail.deleteTitle" = "删除留言？";
 "messageDetail.deleteMessage" = "此留言将被永久删除。";
 "messageDetail.sealedInfo" = "此留言已封存，将在合适的时候送达。";
@@ -737,9 +657,6 @@
 "messageEditor.editTitle" = "编辑留言";
 "messageEditor.newTitle" = "新建留言";
 "messageEditor.discardTitle" = "放弃留言？";
-
-// MARK: - 补充 AI 键
-
 "aiChat.premiumFeature" = "高级功能";
 "aiChat.setup" = "设置 AI";
 "aiChat.welcome" = "问我关于你的回忆...";
@@ -749,8 +666,801 @@
 "aiChat.quickHint" = "将此问题发送给 AI";
 "aiChat.send" = "发送消息";
 "aiChat.ai" = "AI";
-
-// MARK: - 补充语音录制键
-
 "voiceRecording.start" = "开始录制";
 "voiceRecording.stop" = "停止录制";
+"tab.soul" = "灵魂";
+"tab.universe" = "宇宙";
+"soul.title" = "灵魂档案";
+"soul.greeting" = "你好";
+"soul.age %lld" = "%lld 岁";
+"soul.completeness" = "档案完整度";
+"soul.progress" = "进度";
+"soul.stat.interviews" = "访谈";
+"soul.stat.assessments" = "测评";
+"soul.actions" = "探索自己";
+"soul.action.interview" = "访谈";
+"soul.action.interview.desc" = "聊聊你的生活";
+"soul.action.mbti" = "性格";
+"soul.action.mbti.desc" = "做个测试";
+"soul.action.deepdive" = "深入探索";
+"soul.action.deepdive.desc" = "探索一个话题";
+"soul.action.values" = "价值观";
+"soul.action.values.desc" = "什么对你重要";
+"soul.action.voice" = "声音克隆";
+"soul.action.voice.desc" = "创建你的声音";
+"soul.action.voice.collecting" = "录制样本中";
+"soul.action.voice.training" = "训练中...";
+"soul.action.voice.ready" = "声音已就绪";
+"soul.action.voice.failed" = "训练失败";
+"soul.recent" = "最近活动";
+"voice.title" = "声音克隆";
+"voice.preview" = "预览声音";
+"voice.progress" = "录制进度";
+"voice.duration_progress %lld %lld" = "%lld秒 / %lld秒";
+"voice.minimum" = "最低要求";
+"voice.recommended" = "推荐";
+"voice.optimal" = "最佳";
+"voice.start_recording" = "开始录制";
+"voice.continue_recording" = "继续录制";
+"voice.start_training" = "开始训练";
+"voice.import_from_memories" = "从回忆导入";
+"voice.samples" = "声音样本";
+"voice.sample_count %lld" = "%lld 个样本";
+"voice.view_all" = "查看全部";
+"voice.all_samples" = "所有样本";
+// 声音状态
+"voice.status.not_started" = "未开始";
+"voice.status.collecting" = "收集样本中";
+"voice.status.training" = "训练中";
+"voice.status.ready" = "声音就绪";
+"voice.status.failed" = "训练失败";
+"voice.status.not_started.desc" = "录制声音样本来克隆你的声音";
+"voice.status.collecting.desc" = "继续录制以提高声音质量";
+"voice.status.training.desc" = "正在训练你的声音...";
+"voice.status.ready.desc" = "你的声音克隆已准备就绪";
+// 声音质量
+"voice.quality.pending" = "分析中...";
+"voice.quality.excellent" = "优秀";
+"voice.quality.good" = "良好";
+"voice.quality.fair" = "一般";
+"voice.quality.poor" = "较差";
+// 声音来源
+"voice.source.recorded" = "录制";
+"voice.source.memory" = "回忆";
+"voice.source.message" = "留言";
+// 声音录制
+"voice.record.title" = "录制样本";
+"voice.record.instructions" = "请清晰朗读以下文字";
+"voice.record.tips" = "在安静的环境中自然说话。将设备放在距离嘴巴15-30厘米处。";
+"voice.record.read_aloud" = "请朗读：";
+"voice.record.next_prompt" = "下一段";
+"voice.record.tap_to_start" = "点击开始录制";
+"voice.record.tap_to_stop" = "点击停止录制";
+"voice.record.session_count %lld" = "本次录制 %lld 个样本";
+"voice.record.saved" = "样本已保存";
+"voice.record.another" = "继续录制";
+"voice.record.quality %@" = "质量：%@";
+// 声音训练
+"voice.training.title" = "训练声音";
+"voice.training.ready" = "准备训练";
+"voice.training.description" = "你的声音样本将被上传以创建个性化的声音克隆。";
+"voice.training.samples %lld" = "%lld 个优质样本";
+"voice.training.duration %lld" = "%lld 秒音频";
+"voice.training.quality_good" = "质量符合要求";
+"voice.training.name_label" = "声音名称";
+"voice.training.name_placeholder" = "我的声音";
+"voice.training.provider %@" = "使用 %@";
+"voice.training.start" = "开始训练";
+"voice.training.need_api_key" = "需要 API 密钥，请在设置中配置。";
+"voice.training.in_progress" = "训练进行中";
+"voice.training.please_wait" = "这可能需要几分钟...";
+"voice.training.progress %lld" = "已完成 %lld%%";
+"voice.training.do_not_close" = "请不要关闭应用";
+"voice.training.complete" = "训练完成！";
+"voice.training.complete_desc" = "你的声音克隆已就绪，试试看吧！";
+// 声音设置
+"voice.settings.title" = "声音设置";
+"voice.settings.provider" = "提供商";
+"voice.settings.provider_section" = "声音克隆提供商";
+"voice.settings.api_key" = "API 密钥";
+"voice.settings.api_key_saved" = "API 密钥已保存";
+"voice.settings.save_api_key" = "保存 API 密钥";
+"voice.settings.delete_api_key" = "删除 API 密钥";
+"voice.settings.api_section" = "认证";
+"voice.settings.elevenlabs_footer" = "从 elevenlabs.io 获取你的 API 密钥";
+"voice.settings.endpoint" = "端点 URL";
+"voice.settings.save_endpoint" = "保存端点";
+"voice.settings.endpoint_section" = "自定义端点";
+"voice.settings.model" = "模型";
+"voice.settings.model_section" = "声音模型";
+"voice.settings.voice_name" = "声音名称";
+"voice.settings.voice_id" = "声音 ID";
+"voice.settings.trained_at" = "训练时间";
+"voice.settings.current_voice" = "当前声音";
+"voice.settings.samples_count" = "样本数";
+"voice.settings.total_duration" = "总时长";
+"voice.settings.reset" = "重置全部";
+"voice.settings.delete_voice" = "从提供商删除声音";
+"voice.settings.data_section" = "数据";
+"voice.settings.data_footer" = "重置将删除所有本地样本和声音数据。";
+"voice.settings.privacy_title" = "隐私保护";
+"voice.settings.privacy_desc" = "声音样本仅用于训练你的个人声音克隆。";
+"voice.settings.privacy_section" = "隐私";
+"voice.settings.reset_confirm" = "重置声音数据？";
+"voice.settings.reset_message" = "这将删除所有声音样本并重置你的配置文件。";
+"voice.settings.delete_confirm" = "删除声音？";
+"voice.settings.delete_message" = "这将从提供商的服务器中删除你的声音。";
+// 声音提供商
+"voice.provider.custom" = "自定义";
+"voice.provider.elevenlabs.desc" = "高质量声音克隆，自然语调";
+"voice.provider.openai.desc" = "使用预设声音的文字转语音（无克隆）";
+"voice.provider.custom.desc" = "使用你自己的 OpenAI 兼容端点";
+// ElevenLabs 模型
+"elevenlabs.model.multilingual" = "最佳质量，支持29种语言";
+"elevenlabs.model.turbo" = "更快生成，英语优化";
+"elevenlabs.model.monolingual" = "仅英语，旧版模型";
+// 声音错误
+"voice.error.missing_api_key" = "未配置 API 密钥";
+"voice.error.missing_endpoint" = "未配置端点";
+"voice.error.invalid_endpoint" = "无效的端点 URL";
+"voice.error.no_samples" = "没有可用于训练的样本";
+"voice.error.network" = "发生网络错误";
+"voice.error.http %lld" = "服务器错误：%lld";
+"voice.error.invalid_response" = "服务器响应无效";
+"voice.error.voice_not_ready" = "声音尚未就绪";
+"voice.error.synthesis" = "生成语音失败";
+"voice.error.delete" = "删除声音失败";
+"voice.error.recording" = "录制失败";
+// 声音预览
+"voice.preview.text" = "你好！这是我克隆声音的预览。希望它听起来像我。";
+// 声音训练提示文本
+"voice.prompt.1" = "春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。";
+"voice.prompt.2" = "床前明月光，疑是地上霜。举头望明月，低头思故乡。";
+"voice.prompt.3" = "白日依山尽，黄河入海流。欲穷千里目，更上一层楼。";
+"voice.prompt.4" = "锄禾日当午，汗滴禾下土。谁知盘中餐，粒粒皆辛苦。";
+"voice.prompt.5" = "离离原上草，一岁一枯荣。野火烧不尽，春风吹又生。";
+"voice.prompt.6" = "千里之行，始于足下。";
+"voice.prompt.7" = "学而不思则罔，思而不学则殆。";
+"voice.prompt.8" = "己所不欲，勿施于人。";
+"voice.prompt.9" = "三人行，必有我师焉。";
+"voice.prompt.10" = "知之为知之，不知为不知，是知也。";
+"voice.prompt.11" = "天行健，君子以自强不息。";
+"voice.prompt.12" = "海纳百川，有容乃大。";
+"voice.prompt.13" = "不积跬步，无以至千里。";
+"voice.prompt.14" = "路漫漫其修远兮，吾将上下而求索。";
+"voice.prompt.15" = "人生自古谁无死，留取丹心照汗青。";
+"voice.prompt.happy" = "今天心情特别好！一切都很顺利。";
+"voice.prompt.sad" = "有时候会感到些许忧伤，但没关系。";
+"voice.prompt.excited" = "太棒了！这真是令人兴奋！";
+"voice.prompt.calm" = "深呼吸，一切都很平静祥和。";
+"voice.prompt.serious" = "这是一个非常重要的事情，需要认真考虑。";
+"voice.prompt.numbers" = "一、二、三、四、五、六、七、八、九、十。";
+"voice.prompt.days" = "星期一、星期二、星期三、星期四、星期五、星期六、星期日。";
+"voice.prompt.months" = "一月、二月、三月、四月、五月、六月、七月、八月、九月、十月、十一月、十二月。";
+"writing.title" = "文字风格";
+"writing.generate" = "生成文字";
+"writing.data_status" = "数据状态";
+"writing.memories_count %lld" = "%lld 条文字记忆";
+"writing.min_required %lld" = "最少需要 %lld 条";
+"writing.recommendation" = "记忆越多，风格分析越准确";
+"writing.style_summary" = "你的写作风格";
+"writing.overall_style" = "整体风格";
+"writing.tone" = "语气";
+"writing.vocabulary" = "词汇";
+"writing.emotional" = "情感表达";
+"writing.unique_traits" = "独特特点";
+"writing.top_words" = "常用词汇";
+"writing.top_phrases" = "常用短语";
+"writing.reanalyze" = "重新分析";
+"writing.start_analysis" = "分析我的写作";
+"writing.need_more_memories %lld" = "需要至少 %lld 条记忆才能分析";
+"writing.last_analyzed %@" = "分析于 %@";
+// 写作状态
+"writing.status.not_analyzed" = "未分析";
+"writing.status.analyzing" = "分析中...";
+"writing.status.ready" = "风格就绪";
+"writing.status.failed" = "分析失败";
+"writing.status.not_analyzed.desc" = "分析你的记忆来学习你的写作风格";
+"writing.status.analyzing.desc" = "正在学习你独特的写作模式...";
+"writing.status.failed.desc" = "出了点问题，请重试。";
+// 灵魂标签页动作
+"soul.action.writing" = "文字风格";
+"soul.action.writing.desc" = "学习你的风格";
+"soul.action.writing.analyzing" = "分析中...";
+"soul.action.writing.ready" = "风格就绪";
+"soul.action.writing.failed" = "分析失败";
+// 写作分析
+"writing.analysis.title" = "分析写作";
+"writing.analysis.ready" = "准备分析";
+"writing.analysis.description" = "我们将分析你的记忆，学习你独特的写作风格、词汇和表达模式。";
+"writing.analysis.memories %lld" = "将分析 %lld 条记忆";
+"writing.analysis.words %lld" = "约 %lld 字";
+"writing.analysis.time" = "大约需要 1-2 分钟";
+"writing.analysis.need_ai" = "需要 AI 服务。请在设置中配置。";
+"writing.analysis.privacy" = "分析在本地进行。只分析文字内容。";
+"writing.analysis.start" = "开始分析";
+"writing.analysis.in_progress" = "正在分析你的写作";
+"writing.analysis.progress %lld" = "已完成 %lld%%";
+"writing.analysis.please_wait" = "这可能需要一两分钟...";
+"writing.analysis.complete" = "分析完成！";
+"writing.analysis.complete_desc" = "你的写作风格已被捕获。现在可以用你的风格生成文字了。";
+"writing.stat.memories" = "记忆";
+"writing.stat.words" = "字数";
+"writing.your_style" = "你的风格";
+"writing.stage.extracting" = "提取文字...";
+"writing.stage.words" = "分析词汇...";
+"writing.stage.patterns" = "寻找模式...";
+"writing.stage.ai" = "AI 生成洞察...";
+"writing.stage.finishing" = "即将完成...";
+// 文字生成器
+"writing.generator.title" = "生成文字";
+"writing.mode.freeform" = "自由写作";
+"writing.mode.message" = "留言";
+"writing.freeform.title" = "写什么？";
+"writing.freeform.desc" = "描述你想写的内容，AI 会用你的风格来生成。";
+"writing.freeform.placeholder" = "例如：写一篇关于海边一天的日记...";
+"writing.examples" = "示例：";
+"writing.example.diary" = "今天的日记";
+"writing.example.reflection" = "人生感悟";
+"writing.example.memory" = "童年回忆";
+"writing.message.to" = "收件人";
+"writing.message.no_contacts" = "还没有联系人。请先添加联系人。";
+"writing.message.occasion" = "场合";
+"writing.message.custom_occasion" = "描述场合...";
+"writing.generate_button" = "生成";
+"writing.generating" = "生成中...";
+"writing.result" = "生成的文字";
+"writing.use_as_message" = "用作留言";
+"writing.regenerate" = "重新生成";
+"common.copied" = "已复制！";
+// 写作场合
+"writing.occasion.birthday" = "生日";
+"writing.occasion.holiday" = "节日";
+"writing.occasion.gratitude" = "感谢";
+"writing.occasion.apology" = "道歉";
+"writing.occasion.encouragement" = "鼓励";
+"writing.occasion.farewell" = "告别";
+"writing.occasion.congratulations" = "祝贺";
+"writing.occasion.comfort" = "安慰";
+"writing.occasion.love" = "表白";
+"writing.occasion.custom" = "自定义";
+"writing.hint.birthday" = "生日祝福和庆祝";
+"writing.hint.holiday" = "节日问候和祝愿";
+"writing.hint.gratitude" = "表达感谢和感激";
+"writing.hint.apology" = "道歉和弥补";
+"writing.hint.encouragement" = "激励和支持";
+"writing.hint.farewell" = "告别或再见";
+"writing.hint.congratulations" = "庆祝成就";
+"writing.hint.comfort" = "在困难时期给予安慰";
+"writing.hint.love" = "表达爱意和深情";
+"writing.hint.custom" = "描述你自己的场合";
+// 写作设置
+"writing.settings.title" = "文字风格设置";
+"writing.settings.status" = "状态";
+"writing.settings.status_section" = "分析状态";
+"writing.settings.last_analyzed" = "上次分析";
+"writing.settings.memories_analyzed" = "分析的记忆";
+"writing.settings.words_analyzed" = "分析的字数";
+"writing.settings.features_section" = "功能";
+"writing.settings.enable" = "启用风格生成";
+"writing.settings.enable_desc" = "允许 AI 用你的写作风格生成文字";
+"writing.settings.features_footer" = "禁用后，生成功能将不可用。";
+"writing.settings.statistics_section" = "写作统计";
+"writing.settings.avg_sentence" = "平均句子长度";
+"writing.settings.avg_paragraph" = "平均段落长度";
+"writing.settings.words_count %lld" = "%lld 字";
+"writing.settings.unique_words" = "独特词汇数";
+"writing.settings.unique_phrases" = "独特短语数";
+"writing.settings.samples_section" = "示例文本";
+"writing.settings.sample %lld" = "示例 %lld";
+"writing.settings.samples_footer" = "你写作的代表性摘录。";
+"writing.settings.data_section" = "数据管理";
+"writing.settings.reset" = "重置分析";
+"writing.settings.reset_footer" = "清除所有分析数据，重新开始。";
+"writing.settings.reset_confirm" = "重置写作分析？";
+"writing.settings.reset_message" = "这将清除所有风格分析数据。你需要重新分析记忆。";
+"writing.settings.privacy_section" = "隐私";
+"writing.settings.privacy_title" = "你的数据是安全的";
+"writing.settings.privacy_desc" = "写作分析在本地进行。除了 AI 生成请求，风格数据不会离开你的设备。";
+// 写作错误
+"writing.error.title" = "错误";
+"writing.error.no_memories" = "没有可分析的记忆";
+"writing.error.no_content" = "记忆中没有找到文字内容";
+"writing.error.not_ready" = "尚未分析写作风格";
+"avatar.title" = "数字形象";
+"avatar.upload_photo" = "上传照片";
+"avatar.change_photo" = "更换照片";
+"avatar.photo_hint" = "使用清晰的正面照片效果最佳";
+"avatar.style" = "风格";
+"avatar.frame" = "边框";
+"avatar.ai_stylize" = "AI 风格化";
+"avatar.ai_stylize.desc" = "将你的照片转换为艺术风格";
+"avatar.generate_style" = "生成风格化头像";
+"avatar.restylize" = "重新生成风格";
+"avatar.stylize_note" = "使用本地图像滤镜。AI 图像生成将在未来版本中提供。";
+"avatar.stylizing" = "风格化中...";
+"avatar.using_stylized" = "使用风格化版本";
+"avatar.show_original" = "显示原图";
+"avatar.show_stylized" = "显示风格化";
+"avatar.export" = "导出";
+// 头像状态
+"avatar.status.none" = "未风格化";
+"avatar.status.processing" = "处理中...";
+"avatar.status.ready" = "就绪";
+"avatar.status.failed" = "失败";
+// 头像风格
+"avatar.style.realistic" = "写实";
+"avatar.style.cartoon" = "卡通";
+"avatar.style.anime" = "动漫";
+"avatar.style.sketch" = "素描";
+"avatar.style.watercolor" = "水彩";
+"avatar.style.minimal" = "简约";
+"avatar.style.realistic.desc" = "增强照片";
+"avatar.style.cartoon.desc" = "有趣多彩";
+"avatar.style.anime.desc" = "日式动画风格";
+"avatar.style.sketch.desc" = "手绘铅笔画";
+"avatar.style.watercolor.desc" = "柔和艺术绘画";
+"avatar.style.minimal.desc" = "简洁干净";
+// 头像边框
+"avatar.frame.circle" = "圆形";
+"avatar.frame.rounded_square" = "圆角";
+"avatar.frame.square" = "方形";
+"avatar.frame.hexagon" = "六边形";
+// 灵魂标签页动作
+"soul.action.avatar" = "数字形象";
+"soul.action.avatar.desc" = "创建你的形象";
+"soul.action.avatar.ready" = "照片已上传";
+"soul.action.avatar.stylized" = "已风格化";
+// 头像设置
+"avatar.settings.title" = "头像设置";
+"avatar.settings.display_section" = "显示";
+"avatar.settings.show_in_chat" = "在 AI 聊天中显示";
+"avatar.settings.show_in_profile" = "在灵魂档案中显示";
+"avatar.settings.use_stylized" = "使用风格化版本";
+"avatar.settings.display_footer" = "控制头像在应用中的显示位置。";
+"avatar.settings.appearance_section" = "外观";
+"avatar.settings.background_color" = "背景颜色";
+"avatar.settings.reset_color" = "重置为默认";
+"avatar.settings.status_section" = "状态";
+"avatar.settings.has_photo" = "照片已上传";
+"avatar.settings.current_style" = "当前风格";
+"avatar.settings.current_frame" = "当前边框";
+"avatar.settings.stylized_version" = "风格化版本";
+"avatar.settings.stylized_at" = "风格化时间";
+"avatar.settings.data_section" = "数据管理";
+"avatar.settings.clear_stylized" = "清除风格化版本";
+"avatar.settings.reset" = "重置头像";
+"avatar.settings.reset_footer" = "删除所有头像数据包括照片。";
+"avatar.settings.reset_confirm" = "重置头像？";
+"avatar.settings.reset_message" = "这将删除你的照片和所有头像设置。";
+"avatar.settings.clear_stylized_confirm" = "清除风格化版本？";
+"avatar.settings.clear_stylized_message" = "这将删除风格化版本。你的原始照片将被保留。";
+"avatar.settings.privacy_section" = "隐私";
+"avatar.settings.privacy_title" = "你的照片是安全的";
+"avatar.settings.privacy_desc" = "你的照片存储在本地，不会上传到任何服务器。风格化在设备上完成。";
+// 头像错误
+"avatar.error.title" = "错误";
+"avatar.error.no_image" = "没有可处理的图片";
+"avatar.error.invalid_image" = "图片格式无效";
+"avatar.error.stylization_failed" = "风格化失败";
+"avatar.error.export_failed" = "导出失败";
+"digitalself.title" = "数字自我";
+"digitalself.unnamed" = "数字分身";
+"digitalself.components_ready %lld %lld" = "%lld / %lld 已就绪";
+"digitalself.enable" = "启用数字自我";
+"digitalself.enable.desc" = "允许联系人与你的数字分身互动";
+// 数字自我状态
+"digitalself.status.not_ready" = "未就绪";
+"digitalself.status.ready" = "已就绪";
+"digitalself.status.active" = "已激活";
+"digitalself.status.paused" = "已暂停";
+// 数字自我组件
+"digitalself.components" = "组件";
+"digitalself.component.soul" = "灵魂画像";
+"digitalself.component.writing" = "文字风格";
+"digitalself.component.voice" = "语音克隆";
+"digitalself.component.avatar" = "数字形象";
+"digitalself.component.ready" = "已就绪";
+"digitalself.component.soul.needed" = "完善你的档案";
+"digitalself.component.writing.needed" = "分析你的文字";
+"digitalself.component.voice.needed" = "训练你的声音";
+"digitalself.component.avatar.needed" = "上传照片";
+// 数字自我操作
+"digitalself.actions" = "操作";
+"digitalself.action.chat" = "开始对话";
+"digitalself.action.chat.desc" = "以你的数字身份对话";
+// 数字自我访问控制
+"digitalself.access" = "访问控制";
+"digitalself.access.everyone" = "所有人";
+"digitalself.access.selected" = "指定联系人";
+"digitalself.access.no_one" = "无人";
+"digitalself.access.everyone.desc" = "所有联系人可以互动";
+"digitalself.access.selected.desc" = "仅选定的联系人";
+"digitalself.access.no_one.desc" = "禁用互动";
+"digitalself.allowed_contacts" = "允许的联系人";
+"digitalself.no_contacts_selected" = "未选择联系人";
+"digitalself.select_contacts" = "选择联系人";
+"digitalself.chat_with" = "与谁对话";
+// 数字自我统计
+"digitalself.statistics" = "统计";
+"digitalself.stat.conversations" = "对话数";
+"digitalself.stat.messages" = "消息数";
+"digitalself.last_interaction %@" = "上次互动 %@";
+// 数字自我聊天
+"digitalself.input_placeholder" = "输入消息...";
+"digitalself.voice_output" = "语音输出";
+"digitalself.clear_chat" = "清除聊天";
+"digitalself.greeting.default %@" = "嘿！我是%@。你最近怎么样？";
+// 数字自我设置
+"digitalself.settings.title" = "数字自我设置";
+"digitalself.settings.status_section" = "状态";
+"digitalself.settings.status" = "状态";
+"digitalself.settings.readiness" = "准备程度";
+"digitalself.settings.personality_section" = "人格";
+"digitalself.settings.personality_mode" = "人格模式";
+"digitalself.settings.emotional_level" = "情感程度";
+"digitalself.emotional.reserved" = "内敛";
+"digitalself.emotional.balanced" = "平衡";
+"digitalself.emotional.expressive" = "外放";
+"digitalself.settings.voice_section" = "语音";
+"digitalself.settings.voice_output" = "语音输出";
+"digitalself.settings.voice_not_ready" = "语音克隆未就绪";
+"digitalself.settings.voice_footer" = "回复将以你克隆的声音说出。";
+"digitalself.settings.behavior_section" = "行为";
+"digitalself.settings.auto_greet" = "自动问候";
+"digitalself.settings.auto_greet_footer" = "联系人开始对话时自动发送问候语。";
+"digitalself.settings.statistics_section" = "统计";
+"digitalself.settings.last_interaction" = "上次互动";
+"digitalself.settings.privacy_section" = "隐私";
+"digitalself.settings.privacy_title" = "你的隐私很重要";
+"digitalself.settings.privacy_desc" = "对话存储在本地。你的数字自我只分享你明确配置的内容。";
+"digitalself.settings.data_section" = "数据管理";
+"digitalself.settings.reset" = "重置数字自我";
+"digitalself.settings.reset_confirm" = "重置数字自我？";
+"digitalself.settings.reset_message" = "这将清除所有对话记录和设置。";
+"digitalself.settings.reset_footer" = "清除所有统计数据和对话记录。";
+// 数字自我人格模式
+"digitalself.personality.authentic" = "真实";
+"digitalself.personality.supportive" = "支持";
+"digitalself.personality.playful" = "活泼";
+"digitalself.personality.wise" = "睿智";
+"digitalself.personality.authentic.desc" = "以真实的自己回应";
+"digitalself.personality.supportive.desc" = "更温暖和鼓励";
+"digitalself.personality.playful.desc" = "轻松幽默";
+"digitalself.personality.wise.desc" = "分享智慧和指导";
+// 灵魂标签页动作
+"soul.action.digitalself" = "数字自我";
+"soul.action.digitalself.desc" = "你的数字分身";
+"soul.action.digitalself.ready" = "可以激活";
+"soul.action.digitalself.active" = "已激活";
+"soul.action.digitalself.paused" = "已暂停";
+// 数字自我错误
+"digitalself.error.ai_not_configured" = "AI 服务未配置";
+"digitalself.error.generation_failed %@" = "生成回复失败：%@";
+"digitalself.error.voice_not_ready" = "语音克隆未就绪";
+"digitalself.error.voice_failed %@" = "语音合成失败：%@";
+"digitalself.error.profile_incomplete" = "灵魂画像不完整";
+"digitalself.error.access_denied" = "访问被拒绝";
+// 数字自我会员
+"digitalself.premium.title" = "数字永生";
+"digitalself.premium.description" = "创建你的数字分身，用你的声音、性格和记忆与所爱的人进行有意义的对话。";
+"digitalself.premium.feature.chat" = "个性化对话";
+"digitalself.premium.feature.voice" = "用你克隆的声音说话";
+"digitalself.premium.feature.contacts" = "选择谁可以互动";
+"digitalself.premium.feature.privacy" = "完全隐私控制";
+"digitalself.premium.upgrade" = "升级到高级版";
+
+/* MARK: - Feedback */
+"settings.feedback" = "发送反馈";
+"feedback.title" = "发送反馈";
+"feedback.type" = "反馈类型";
+"feedback.type.header" = "什么类型的反馈？";
+"feedback.type.bug" = "问题报告";
+"feedback.type.suggestion" = "改进建议";
+"feedback.type.feature" = "功能请求";
+"feedback.type.question" = "问题咨询";
+"feedback.type.praise" = "好评";
+"feedback.type.bug.desc" = "报告问题或异常行为";
+"feedback.type.suggestion.desc" = "对现有功能提出改进建议";
+"feedback.type.feature.desc" = "请求新功能";
+"feedback.type.question.desc" = "关于应用的问题";
+"feedback.type.praise.desc" = "分享你喜欢这个应用的地方";
+"feedback.content.header" = "你的反馈";
+"feedback.content.placeholder" = "告诉我们你的想法...";
+"feedback.content.footer" = "请尽可能详细描述，这有助于我们改进。";
+"feedback.email.header" = "联系邮箱（可选）";
+"feedback.email.placeholder" = "your@email.com";
+"feedback.email.footer" = "如果你希望我们跟进，请提供邮箱。";
+"feedback.device_info" = "包含设备信息";
+"feedback.device_info.footer" = "帮助我们诊断问题，不包含个人数据。";
+"feedback.device" = "设备";
+"feedback.ios_version" = "iOS 版本";
+"feedback.app_version" = "应用版本";
+"feedback.submit" = "提交反馈";
+"feedback.send_email" = "通过邮件发送";
+"feedback.success.title" = "感谢你！";
+"feedback.success.message" = "你的反馈已收到，我们非常感谢你的意见！";
+"feedback.error.title" = "错误";
+"feedback.error.invalid_url" = "服务器地址无效";
+"feedback.error.server" = "服务器错误，请重试。";
+"feedback.error.encoding" = "反馈编码失败";
+
+/* MARK: - Assessments (Big Five BFI-44) */
+"assessment.values" = "核心价值观";
+"assessment.values.desc" = "探索驱动你人生的核心信念。";
+"assessment.lovelanguage" = "爱之语";
+"assessment.lovelanguage.desc" = "了解你如何表达和接收爱。";
+"assessment.bigfive" = "大五人格";
+"assessment.bigfive.desc" = "科学评估你的五大性格维度。";
+"assessment.mbti.desc" = "通过 16 型人格了解你的性格倾向。";
+"assessment.complete" = "已完成";
+"assessment.complete.title" = "测评完成";
+"assessment.generating" = "AI 分析生成中...";
+"assessment.ai_analysis" = "AI 深度分析";
+"assessment.minutes %lld" = "%lld 分钟";
+
+"soul.proactive.title" = "灵魂探索建议";
+"soul.proactive.default_question" = "今天发生了什么让你感到特别有意义的事吗？";
+
+"bigfive.disagree" = "不同意";
+"bigfive.agree" = "同意";
+"bigfive.your_profile" = "性格特征概览";
+"bigfive.what_means" = "维度释义";
+"bigfive.level.high" = "高倾向";
+"bigfive.level.moderate" = "中等倾向";
+"bigfive.level.low" = "低倾向";
+"bigfive.openness" = "开放性";
+"bigfive.conscientiousness" = "尽责性";
+"bigfive.extraversion" = "外向性";
+"bigfive.agreeableness" = "宜人性";
+"bigfive.neuroticism" = "神经质";
+"bigfive.openness.desc" = "反映想象力、好奇心及对新体验的开放程度。";
+"bigfive.conscientiousness.desc" = "反映自律性、组织性及追求成就的倾向。";
+"bigfive.extraversion.desc" = "反映社交性、果敢性及寻求外界刺激的倾向。";
+"bigfive.agreeableness.desc" = "反映对他人的信任、同情心及合作倾向。";
+"bigfive.neuroticism.desc" = "反映情绪稳定性及对压力的敏感程度。";
+
+"bigfive.q.1" = "我认为自己是一个健谈的人。";
+"bigfive.q.2" = "我认为自己容易发现他人的缺点。";
+"bigfive.q.3" = "我认为自己做事彻底、尽职尽责。";
+"bigfive.q.4" = "我认为自己有时会感到忧郁、沮丧。";
+"bigfive.q.5" = "我认为自己富有独创性，能产生新点子。";
+"bigfive.q.6" = "我认为自己比较矜持、沉默寡言。";
+"bigfive.q.7" = "我认为自己乐于助人，对人无私。";
+"bigfive.q.8" = "我认为自己有时会有点粗心。";
+"bigfive.q.9" = "我认为自己很放松，能很好地应对压力。";
+"bigfive.q.10" = "我认为自己对很多不同的事物感到好奇。";
+"bigfive.q.11" = "我认为自己精力充沛、生机勃勃。";
+"bigfive.q.12" = "我认为自己容易与人争吵。";
+"bigfive.q.13" = "我认为自己是一个可靠的工作者。";
+"bigfive.q.14" = "我认为自己容易紧张。";
+"bigfive.q.15" = "我认为自己是一个机灵、深刻的思想家。";
+"bigfive.q.16" = "我认为自己充满了热情。";
+"bigfive.q.17" = "我认为自己具有宽容的本性。";
+"bigfive.q.18" = "我认为自己倾向于杂乱无章。";
+"bigfive.q.19" = "我认为自己经常忧虑。";
+"bigfive.q.20" = "我认为自己具有活跃的想象力。";
+"bigfive.q.21" = "我认为自己倾向于安静。";
+"bigfive.q.22" = "我认为自己通常信任他人。";
+"bigfive.q.23" = "我认为自己倾向于懒散。";
+"bigfive.q.24" = "我认为自己情绪稳定，不易心烦意乱。";
+"bigfive.q.25" = "我认为自己富有创造力。";
+"bigfive.q.26" = "我认为自己具有果断的性格。";
+"bigfive.q.27" = "我认为自己有时显得冷淡、疏远。";
+"bigfive.q.28" = "我认为自己能坚持直到任务完成。";
+"bigfive.q.29" = "我认为自己情绪多变。";
+"bigfive.q.30" = "我认为自己重视艺术和审美体验。";
+"bigfive.q.31" = "我认为自己有时害羞、拘谨。";
+"bigfive.q.32" = "我认为自己对几乎每个人都体贴、友善。";
+"bigfive.q.33" = "我认为自己做事有效率。";
+"bigfive.q.34" = "我认为自己在紧张的情况下能保持冷静。";
+"bigfive.q.35" = "我认为自己喜欢常规工作。";
+"bigfive.q.36" = "我认为自己外向、善于社交。";
+"bigfive.q.37" = "我认为自己有时对人粗鲁。";
+"bigfive.q.38" = "我认为自己会制定计划并贯彻执行。";
+"bigfive.q.39" = "我认为自己容易变得紧张。";
+"bigfive.q.40" = "我认为自己喜欢反思、玩味各种想法。";
+"bigfive.q.41" = "我认为自己几乎没有艺术兴趣。";
+"bigfive.q.42" = "我认为自己喜欢与他人合作。";
+"bigfive.q.43" = "我认为自己容易分心。";
+"bigfive.q.44" = "我认为自己在艺术、音乐或文学方面有造诣。";
+
+/* MARK: - Assessments (Schwartz Values PVQ-40) */
+"values.instruction" = "请评价以下描述与您的相似程度";
+"values.your_values" = "核心价值观画像";
+"values.similarity.very_much" = "非常像我";
+"values.similarity.like_me" = "像我";
+"values.similarity.somewhat" = "有一点像我";
+"values.similarity.little" = "有一点点像我";
+"values.similarity.not_like_me" = "不像我";
+"values.similarity.not_at_all" = "完全不像我";
+
+"value.schwartz.power" = "权力";
+"value.schwartz.achievement" = "成就";
+"value.schwartz.hedonism" = "享乐";
+"value.schwartz.stimulation" = "刺激";
+"value.schwartz.self_direction" = "自我导向";
+"value.schwartz.universalism" = "普世主义";
+"value.schwartz.benevolence" = "仁慈";
+"value.schwartz.tradition" = "传统";
+"value.schwartz.conformity" = "顺从";
+"value.schwartz.security" = "安全";
+
+"values.q.1" = "对他来说，想出新主意、发挥创意很重要。他喜欢以自己独创的方式做事。";
+"values.q.2" = "对他来说，富有很重要。他想要有很多钱和昂贵的东西。";
+"values.q.3" = "他认为世界上每个人都受到平等的对待是很重要的。他相信人在生活中应该享有平等的机会。";
+"values.q.4" = "对他来说，表现自己的能力很重要。他希望受人敬佩。";
+"values.q.5" = "对他来说，生活在安全的环境里很重要。他会尽量避免危及他安全的任何事。";
+"values.q.6" = "他觉得尝试生活中不同的事物是很重要的。他总是寻求尝试新的事物。";
+"values.q.7" = "他认为人们应该照别人说的来做。他认为即使在没有人注意的情况下，人们也应该随时遵守规定。";
+"values.q.8" = "对他来说，聆听与他不同的意见很重要。即使他不同意，他也会试着去了解。";
+"values.q.9" = "他认为不强求超出你所能拥有的是很重要。他相信人应该知足。";
+"values.q.10" = "他把握每个享乐的机会。做能带给他乐趣的事对他来说很重要。";
+"values.q.11" = "对他来说，自己的事由自己做决定很重要。他喜欢自由地计划和选择。";
+"values.q.12" = "对他来说，帮助他身边的人非常重要。他想要关心他们的幸福。";
+"values.q.13" = "对他来说，非常成功很重要。他喜欢给人留下深刻印象。";
+"values.q.14" = "对他来说，国家安全很重要。他认为政府必须防范威胁。";
+"values.q.15" = "他喜欢冒风险，总是在寻求冒险经历。";
+"values.q.16" = "对他来说，行为举止合宜很重要。他避免去做别人认为是不对的事。";
+"values.q.17" = "对他来说，有权责与发号施令很重要。他希望别人照他说的去做。";
+"values.q.18" = "对他来说，对朋友忠诚很重要。他希望为亲近的人付出。";
+"values.q.19" = "他坚信人们应该要保护大自然。保护生态环境对他来说很重要。";
+"values.q.20" = "对他来说，宗教信仰很重要。他尽力地去遵守宗教规范。";
+"values.q.21" = "对他来说，事物整洁有序很重要。他不喜欢把事情弄得一团乱。";
+"values.q.22" = "他认为对凡事都感兴趣是很重要的。他好奇而且喜欢寻根问底。";
+"values.q.23" = "他认为世人都应该和谐相处。促进世界各群体间的和平对他来说很重要。";
+"values.q.24" = "对他来说，有抱负很重要。他想展示自己是多么有能力。";
+"values.q.25" = "他认为最好按传统的方式做事。保持他所学到的习俗对他来说很重要。";
+"values.q.26" = "对他来说，享受生活的乐趣很重要。他喜欢“宠爱”自己。";
+"values.q.27" = "对他来说，回应他人所需很重要。他努力帮助他认识的人。";
+"values.q.28" = "他认为他应该随时尊重父母和长者。恭顺对他来说很重要。";
+"values.q.29" = "他希望所有人都能受到公平对待。保护社会上弱势的人对他来说很重要。";
+"values.q.30" = "他喜欢惊喜。刺激有趣的生活对他来说很重要。";
+"values.q.31" = "他努力避免生病。保持健康对他来说非常重要。";
+"values.q.32" = "在生活中出人头地对他来说很重要。他努力做得比别人好。";
+"values.q.33" = "对他来说，宽恕伤害过他的人很重要。他努力看到他们身上的优点。";
+"values.q.34" = "对他来说，独立很重要。他喜欢依靠自己。";
+"values.q.35" = "对他来说，拥有一个稳定的政府很重要。他关心社会秩序。";
+"values.q.36" = "对他来说，始终对别人有礼貌很重要。他努力不打扰或激怒他人。";
+"values.q.37" = "他真的很想享受生活。过得愉快对他来说非常重要。";
+"values.q.38" = "对他来说，谦虚和稳重很重要。他努力不引起别人注意。";
+"values.q.39" = "他总是想成为做决定的人。他喜欢当领导者。";
+"values.q.40" = "适应大自然的环境对他来说很重要。他认为人不应改变自然。";
+
+/* MARK: - Assessments (Legacy) */
+/* MARK: - Time Capsule */
+"capsule.locked" = "时光胶囊已锁定";
+"capsule.unlocks_on %@" = "将于 %@ 解锁";
+
+/* MARK: - Gamified Completeness */
+"level.spark" = "微光星火";
+"level.star" = "静谧伴星";
+"level.constellation" = "璀璨星图";
+"level.galaxy" = "不朽银河";
+"level.current" = "当前境界";
+
+"legacy.title" = "生命意义与传承";
+"legacy.desc" = "思考并记录你想要留给世界的精神遗产。";
+"legacy.result.desc" = "这些感悟将成为你数字灵魂中最重要的基石。";
+"legacy.q.1" = "如果你只能给后代留下一句话，那会是什么？";
+"legacy.q.2" = "你一生中最引以为傲的成就是什么？";
+"legacy.q.3" = "你希望别人在怀念你时，首先想到的是什么特质？";
+"legacy.q.4" = "有哪些人生教训是你希望更早知道的？";
+"legacy.q.5" = "对你来说，生命的意义主要体现在哪里？";
+/* MARK: - MBTI Assessment */
+"assessment.mbti.desc" = "通过 16 个维度了解你的性格类型。";
+"mbti.extraversion" = "外向";
+"mbti.introversion" = "内向";
+"mbti.sensing" = "实感";
+"mbti.intuition" = "直觉";
+"mbti.thinking" = "思考";
+"mbti.feeling" = "情感";
+"mbti.judging" = "判断";
+"mbti.perceiving" = "感知";
+
+"mbti.q.ei.1" = "在社交场合，你通常：";
+"mbti.q.ei.1.a" = "与很多人交谈，包括陌生人";
+"mbti.q.ei.1.b" = "只与少数几个熟识的人交谈";
+"mbti.q.ei.2" = "你更倾向于：";
+"mbti.q.ei.2.a" = "外向且善于表达";
+"mbti.q.ei.2.b" = "安静且内敛";
+"mbti.q.ei.3" = "空闲时，你更喜欢：";
+"mbti.q.ei.3.a" = "和他人在一起并分享想法";
+"mbti.q.ei.3.b" = "独自思考";
+"mbti.q.ei.4" = "你觉得大型社交聚会：";
+"mbti.q.ei.4.a" = "令人兴奋，充满活力";
+"mbti.q.ei.4.b" = "令人疲惫，消耗精力";
+"mbti.q.ei.5" = "在集体中，你通常：";
+"mbti.q.ei.5.a" = "主动发起对话并领导";
+"mbti.q.ei.5.b" = "等待他人来接触你";
+
+"mbti.q.sn.1" = "你倾向于关注：";
+"mbti.q.sn.1.a" = "具体的事实和眼下的细节";
+"mbti.q.sn.1.b" = "未来的可能性和潜在的模式";
+"mbti.q.sn.2" = "别人会如何描述你：";
+"mbti.q.sn.2.a" = "务实且现实";
+"mbti.q.sn.2.b" = "富有想象力且有创意";
+"mbti.q.sn.3" = "做决定时，你更相信：";
+"mbti.q.sn.3.a" = "过去的经验和证明过的方法";
+"mbti.q.sn.3.b" = "你的直觉和灵感";
+"mbti.q.sn.4" = "你更喜欢哪种工作：";
+"mbti.q.sn.4.a" = "有具体指示和清晰步骤的";
+"mbti.q.sn.4.b" = "只有大致方针和抽象概念的";
+"mbti.q.sn.5" = "你花更多时间思考：";
+"mbti.q.sn.5.a" = "此时此刻";
+"mbti.q.sn.5.b" = "未来可能发生的事";
+
+"mbti.q.tf.1" = "做重大决定时，你优先考虑：";
+"mbti.q.tf.1.a" = "逻辑、理性和客观分析";
+"mbti.q.tf.1.b" = "个人价值观和对他人的影响";
+"mbti.q.tf.2" = "你通常：";
+"mbti.q.tf.2.a" = "客观且坚定";
+"mbti.q.tf.2.b" = "感性且富有同情心";
+"mbti.q.tf.3" = "在冲突中，你更看重：";
+"mbti.q.tf.3.a" = "寻找真相和正义";
+"mbti.q.tf.3.b" = "维持和谐和感受";
+"mbti.q.tf.4" = "在给出反馈时，你更可能：";
+"mbti.q.tf.4.a" = "直接且诚实，即使可能伤人";
+"mbti.q.tf.4.b" = "委婉且温和，以免伤害感情";
+"mbti.q.tf.5" = "你更希望被看作是一个：";
+"mbti.q.tf.5.a" = "理智且有逻辑的人";
+"mbti.q.tf.5.b" = "感性且善良的人";
+
+"mbti.q.jp.1" = "你更喜欢哪种生活方式：";
+"mbti.q.jp.1.a" = "按计划和日程办事";
+"mbti.q.jp.1.b" = "随性而为，顺其自然";
+"mbti.q.jp.2" = "处理项目时，你通常：";
+"mbti.q.jp.2.a" = "在截止日期前很久就完成";
+"mbti.q.jp.2.b" = "在最后关头压力下效率最高";
+"mbti.q.jp.3" = "你的环境通常是：";
+"mbti.q.jp.3.a" = "井井有条，整洁干净";
+"mbti.q.jp.3.b" = "比较随意，甚至有点乱";
+"mbti.q.jp.4" = "你在哪种情况下感到舒适：";
+"mbti.q.jp.4.a" = "事情有了定论和明确结果";
+"mbti.q.jp.4.b" = "保持选择的开放性和灵活性";
+"mbti.q.jp.5" = "旅行时，你更喜欢：";
+"mbti.q.jp.5.a" = "有详细的行程计划和预订";
+"mbti.q.jp.5.b" = "到了地方再说，看心情决定";
+
+/* MBTI Types */
+"mbti.intj" = "具有战略眼光和逻辑性，对自己的想法有很强的推动力。";
+"mbti.intj.nickname" = "建筑师";
+"mbti.intp" = "独立且善于分析，对知识有强烈的渴望。";
+"mbti.intp.nickname" = "逻辑学家";
+"mbti.entj" = "大胆且意志坚定，总能找到或开创出一条道路。";
+"mbti.entj.nickname" = "指挥官";
+"mbti.entp" = "聪明且好奇的思想家，无法抗拒智力挑战。";
+"mbti.entp.nickname" = "辩论家";
+"mbti.infj" = "安静而神秘，同时又是鼓舞人心且不知疲倦的理想主义者。";
+"mbti.infj.nickname" = "提倡者";
+"mbti.infp" = "诗意、善良且利他的人，总是渴望为正义事业提供帮助。";
+"mbti.infp.nickname" = "调解者";
+"mbti.enfj" = "富有魅力且鼓舞人心的领导者，能够令听众着迷。";
+"mbti.enfj.nickname" = "主人公";
+"mbti.enfp" = "热情、创造力强且爱社交的自由灵魂，总能找到微笑的理由。";
+"mbti.enfp.nickname" = "竞选者";
+"mbti.istj" = "务实且注重事实，其可靠性不容置疑。";
+"mbti.istj.nickname" = "物流师";
+"mbti.isfj" = "非常敬业且热情的保护者，随时准备捍卫他们所爱的人。";
+"mbti.isfj.nickname" = "守卫者";
+"mbti.estj" = "出色的管理人员，在管理事务或人员方面无与伦比。";
+"mbti.estj.nickname" = "总经理";
+"mbti.esfj" = "极具爱心、爱社交且受欢迎的人，总是渴望提供帮助。";
+"mbti.esfj.nickname" = "执政官";
+"mbti.istp" = "大胆且实际的实验家，精通各种工具。";
+"mbti.istp.nickname" = "鉴赏家";
+"mbti.isfp" = "灵活且富有魅力的艺术家，随时准备探索和体验新事物。";
+"mbti.isfp.nickname" = "探险家";
+"mbti.estp" = "聪明、精力充沛且观察力敏锐，真正享受生活在边缘的感觉。";
+"mbti.estp.nickname" = "企业家";
+"mbti.esfp" = "自发、精力充沛且热情的享乐主义者——身边永远不会无聊。";
+"mbti.esfp.nickname" = "表演者";
+
+/* MARK: - Assessment Common */
+"assessment.question %lld %lld" = "第 %lld 题，共 %lld 题";
+"assessment.previous" = "上一题";
+"assessment.ai_analysis" = "AI 深度分析";
+"assessment.generating" = "AI 分析生成中...";
+"assessment.dimensions" = "维度解析";
+"assessment.complete.title" = "测评完成";
+"assessment.minutes %lld" = "%lld 分钟";

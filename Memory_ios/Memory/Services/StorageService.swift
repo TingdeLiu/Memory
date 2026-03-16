@@ -16,7 +16,7 @@ actor StorageService {
         let context = ModelContext(modelContainer)
 
         let memories = try context.fetch(FetchDescriptor<MemoryEntry>(sortBy: [SortDescriptor(\.createdAt, order: .reverse)]))
-        let contacts = try context.fetch(FetchDescriptor<Contact>(sortBy: [SortDescriptor(\.name)]))
+        let contacts = try context.fetch(FetchDescriptor<Contact>(sortBy: [SortDescriptor(\._plainName)]))
         let messages = try context.fetch(FetchDescriptor<Message>(sortBy: [SortDescriptor(\.createdAt, order: .reverse)]))
 
         let memoriesExport: [[String: Any]] = memories.map { m in
@@ -91,7 +91,7 @@ actor StorageService {
         let context = ModelContext(modelContainer)
 
         let memories = try context.fetch(FetchDescriptor<MemoryEntry>(sortBy: [SortDescriptor(\.createdAt, order: .reverse)]))
-        let contacts = try context.fetch(FetchDescriptor<Contact>(sortBy: [SortDescriptor(\.name)]))
+        let contacts = try context.fetch(FetchDescriptor<Contact>(sortBy: [SortDescriptor(\._plainName)]))
 
         var text = """
         ==========================================
@@ -149,29 +149,36 @@ actor StorageService {
     func getStatistics() async throws -> DataStatistics {
         let context = ModelContext(modelContainer)
 
-        let memories = try context.fetch(FetchDescriptor<MemoryEntry>())
-        let contacts = try context.fetch(FetchDescriptor<Contact>())
-        let messages = try context.fetch(FetchDescriptor<Message>())
+        let totalMemories = (try? context.fetchCount(FetchDescriptor<MemoryEntry>())) ?? 0
+        let totalContacts = (try? context.fetchCount(FetchDescriptor<Contact>())) ?? 0
+        let totalMessages = (try? context.fetchCount(FetchDescriptor<Message>())) ?? 0
 
-        let textMemories = memories.filter { $0.type == .text }.count
-        let audioMemories = memories.filter { $0.type == .audio }.count
-        let photoMemories = memories.filter { $0.type == .photo }.count
-        let privateMemories = memories.filter { $0.isPrivate }.count
+        // Use in-memory filtering since #Predicate doesn't support enum case comparison
+        let allMemories = (try? context.fetch(FetchDescriptor<MemoryEntry>())) ?? []
+        let textMemories = allMemories.filter { $0.type == .text }.count
+        let audioMemories = allMemories.filter { $0.type == .audio }.count
+        let photoMemories = allMemories.filter { $0.type == .photo }.count
+        let privateMemories = allMemories.filter { $0.isPrivate }.count
 
-        let immediateMessages = messages.filter { $0.deliveryCondition == .immediate }.count
-        let scheduledMessages = messages.filter { $0.deliveryCondition == .specificDate }.count
-        let sealedMessages = messages.filter { $0.deliveryCondition == .afterDeath }.count
+        let allMessages = (try? context.fetch(FetchDescriptor<Message>())) ?? []
+        let immediateMessages = allMessages.filter { $0.deliveryCondition == .immediate }.count
+        let scheduledMessages = allMessages.filter { $0.deliveryCondition == .specificDate }.count
+        let sealedMessages = allMessages.filter { $0.deliveryCondition == .afterDeath }.count
 
-        let oldestDate = memories.min(by: { $0.createdAt < $1.createdAt })?.createdAt
+        // For the oldest date, we still need a fetch but we can limit it to 1 and only get the date
+        var oldestDescriptor = FetchDescriptor<MemoryEntry>(sortBy: [SortDescriptor(\.createdAt, order: .forward)])
+        oldestDescriptor.fetchLimit = 1
+        let oldestMemory = try? context.fetch(oldestDescriptor).first
+        let oldestDate = oldestMemory?.createdAt
 
         return DataStatistics(
-            totalMemories: memories.count,
+            totalMemories: totalMemories,
             textMemories: textMemories,
             audioMemories: audioMemories,
             photoMemories: photoMemories,
             privateMemories: privateMemories,
-            totalContacts: contacts.count,
-            totalMessages: messages.count,
+            totalContacts: totalContacts,
+            totalMessages: totalMessages,
             immediateMessages: immediateMessages,
             scheduledMessages: scheduledMessages,
             sealedMessages: sealedMessages,

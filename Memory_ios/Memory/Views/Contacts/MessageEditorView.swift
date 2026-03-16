@@ -7,6 +7,7 @@ struct MessageEditorView: View {
 
     let contact: Contact
     var existingMessage: Message?
+    var prefillContent: String?
 
     @State private var content = ""
     @State private var deliveryCondition: DeliveryCondition = .immediate
@@ -96,7 +97,7 @@ struct MessageEditorView: View {
                                     VStack(spacing: 8) {
                                         Image(systemName: "mic.circle.fill")
                                             .font(.system(size: 44))
-                                            .foregroundStyle(.accent)
+                                            .foregroundStyle(Color.accentColor)
                                         Text(String(localized: "messageEditor.tapToRecord"))
                                             .font(.subheadline)
                                             .foregroundStyle(.secondary)
@@ -140,7 +141,7 @@ struct MessageEditorView: View {
 
                                 if deliveryCondition == condition {
                                     Image(systemName: "checkmark.circle.fill")
-                                        .foregroundStyle(.accent)
+                                        .foregroundStyle(Color.accentColor)
                                 }
                             }
                             .contentShape(Rectangle())
@@ -217,6 +218,8 @@ struct MessageEditorView: View {
                         audioURL = AudioRecordingService.recordingURL(for: path)
                         audioDuration = msg.audioDuration ?? 0
                     }
+                } else if let prefill = prefillContent {
+                    content = prefill
                 }
             }
         }
@@ -279,7 +282,7 @@ struct VoiceMessagePreview: View {
                 } label: {
                     Image(systemName: player.isPlaying ? "pause.circle.fill" : "play.circle.fill")
                         .font(.system(size: 36))
-                        .foregroundStyle(.accent)
+                        .foregroundStyle(Color.accentColor)
                 }
 
                 VStack(spacing: 4) {

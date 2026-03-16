@@ -180,7 +180,7 @@ final class GoogleDriveSyncService: NSObject {
 
     /// Perform a full sync with Google Drive.
     func sync(modelContainer: ModelContainer) async {
-        guard isSignedIn, let accessToken else {
+        guard isSignedIn, let _ = accessToken else {
             syncError = "Not signed in to Google Drive."
             return
         }
@@ -320,7 +320,10 @@ final class GoogleDriveSyncService: NSObject {
             query += " and '\(parentId)' in parents"
         }
 
-        let searchURL = URL(string: "\(Self.driveAPIBase)/files?q=\(query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")&fields=files(id)")!
+        let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        guard let searchURL = URL(string: "\(Self.driveAPIBase)/files?q=\(encodedQuery)&fields=files(id)") else {
+            throw GoogleDriveError.invalidURL
+        }
         let (data, _) = try await authenticatedRequest(url: searchURL)
 
         struct FileList: Decodable { let files: [DriveFile] }
@@ -340,7 +343,10 @@ final class GoogleDriveSyncService: NSObject {
             metadata["parents"] = [parentId]
         }
 
-        var request = URLRequest(url: URL(string: "\(Self.driveAPIBase)/files")!)
+        guard let createURL = URL(string: "\(Self.driveAPIBase)/files") else {
+            throw GoogleDriveError.invalidURL
+        }
+        var request = URLRequest(url: createURL)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Bearer \(accessToken ?? "")", forHTTPHeaderField: "Authorization")
@@ -355,7 +361,10 @@ final class GoogleDriveSyncService: NSObject {
     private func uploadFile(name: String, data: Data, parentId: String) async throws {
         // Check if file already exists
         let query = "name='\(name)' and '\(parentId)' in parents and trashed=false"
-        let searchURL = URL(string: "\(Self.driveAPIBase)/files?q=\(query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")&fields=files(id)")!
+        let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        guard let searchURL = URL(string: "\(Self.driveAPIBase)/files?q=\(encodedQuery)&fields=files(id)") else {
+            throw GoogleDriveError.invalidURL
+        }
         let (searchData, _) = try await authenticatedRequest(url: searchURL)
 
         struct FileList: Decodable { let files: [DriveFile] }
@@ -365,7 +374,10 @@ final class GoogleDriveSyncService: NSObject {
 
         if let existing = result.files.first {
             // Update existing file
-            var request = URLRequest(url: URL(string: "\(Self.driveUploadBase)/files/\(existing.id)?uploadType=media")!)
+            guard let updateURL = URL(string: "\(Self.driveUploadBase)/files/\(existing.id)?uploadType=media") else {
+                throw GoogleDriveError.invalidURL
+            }
+            var request = URLRequest(url: updateURL)
             request.httpMethod = "PATCH"
             request.setValue("application/octet-stream", forHTTPHeaderField: "Content-Type")
             request.setValue("Bearer \(accessToken ?? "")", forHTTPHeaderField: "Authorization")
@@ -382,16 +394,19 @@ final class GoogleDriveSyncService: NSObject {
             ]
             let metadataJSON = try JSONSerialization.data(withJSONObject: metadata)
 
-            body.append("--\(boundary)\r\n".data(using: .utf8)!)
-            body.append("Content-Type: application/json; charset=UTF-8\r\n\r\n".data(using: .utf8)!)
+            body.append(Data("--\(boundary)\r\n".utf8))
+            body.append(Data("Content-Type: application/json; charset=UTF-8\r\n\r\n".utf8))
             body.append(metadataJSON)
-            body.append("\r\n".data(using: .utf8)!)
-            body.append("--\(boundary)\r\n".data(using: .utf8)!)
-            body.append("Content-Type: application/octet-stream\r\n\r\n".data(using: .utf8)!)
+            body.append(Data("\r\n".utf8))
+            body.append(Data("--\(boundary)\r\n".utf8))
+            body.append(Data("Content-Type: application/octet-stream\r\n\r\n".utf8))
             body.append(data)
-            body.append("\r\n--\(boundary)--\r\n".data(using: .utf8)!)
+            body.append(Data("\r\n--\(boundary)--\r\n".utf8))
 
-            var request = URLRequest(url: URL(string: "\(Self.driveUploadBase)/files?uploadType=multipart")!)
+            guard let uploadURL = URL(string: "\(Self.driveUploadBase)/files?uploadType=multipart") else {
+                throw GoogleDriveError.invalidURL
+            }
+            var request = URLRequest(url: uploadURL)
             request.httpMethod = "POST"
             request.setValue("multipart/related; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
             request.setValue("Bearer \(accessToken ?? "")", forHTTPHeaderField: "Authorization")

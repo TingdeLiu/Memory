@@ -12,6 +12,7 @@ final class MemoryEntry {
     var audioDuration: TimeInterval?
     var videoFilePath: String?
     var videoDuration: TimeInterval?
+    var unlockDate: Date?
 
     // MARK: - Plain-text storage (always used in cloudOnly mode)
 
@@ -33,17 +34,40 @@ final class MemoryEntry {
     var _encryptedAudioFilePath: String?
     var _encryptedVideoThumbnailData: Data?
 
+    // MARK: - Decryption Cache (Performance Optimization)
+    // These caches avoid repeated decryption during list scrolling.
+    // Note: @Transient prevents SwiftData from persisting these fields.
+
+    @Transient private var _cachedTitle: String?
+    @Transient private var _cachedContent: String?
+    @Transient private var _cachedTags: [String]?
+    @Transient private var _cachedTranscription: String?
+    @Transient private var _cachedAudioFilePath: String?
+
+    /// Invalidate all decryption caches (call when encryption level changes).
+    func invalidateDecryptionCache() {
+        _cachedTitle = nil
+        _cachedContent = nil
+        _cachedTags = nil
+        _cachedTranscription = nil
+        _cachedAudioFilePath = nil
+    }
+
     // MARK: - Transparent accessors
 
     var title: String {
         get {
             if EncryptionLevel.current == .full, let encrypted = _encryptedTitle {
-                return EncryptedFieldHelper.decryptString(encrypted, recordId: id) ?? _plainTitle
+                if let cached = _cachedTitle { return cached }
+                let decrypted = EncryptedFieldHelper.decryptString(encrypted, recordId: id) ?? _plainTitle
+                _cachedTitle = decrypted
+                return decrypted
             }
             return _plainTitle
         }
         set {
             _plainTitle = newValue
+            _cachedTitle = newValue
             if EncryptionLevel.current == .full {
                 _encryptedTitle = EncryptedFieldHelper.encryptString(newValue, recordId: id)
             }
@@ -53,12 +77,16 @@ final class MemoryEntry {
     var content: String {
         get {
             if EncryptionLevel.current == .full, let encrypted = _encryptedContent {
-                return EncryptedFieldHelper.decryptString(encrypted, recordId: id) ?? _plainContent
+                if let cached = _cachedContent { return cached }
+                let decrypted = EncryptedFieldHelper.decryptString(encrypted, recordId: id) ?? _plainContent
+                _cachedContent = decrypted
+                return decrypted
             }
             return _plainContent
         }
         set {
             _plainContent = newValue
+            _cachedContent = newValue
             if EncryptionLevel.current == .full {
                 _encryptedContent = EncryptedFieldHelper.encryptString(newValue, recordId: id)
             }
@@ -68,12 +96,16 @@ final class MemoryEntry {
     var tags: [String] {
         get {
             if EncryptionLevel.current == .full, let encrypted = _encryptedTags {
-                return EncryptedFieldHelper.decryptStringArray(encrypted, recordId: id) ?? _plainTags
+                if let cached = _cachedTags { return cached }
+                let decrypted = EncryptedFieldHelper.decryptStringArray(encrypted, recordId: id) ?? _plainTags
+                _cachedTags = decrypted
+                return decrypted
             }
             return _plainTags
         }
         set {
             _plainTags = newValue
+            _cachedTags = newValue
             if EncryptionLevel.current == .full {
                 _encryptedTags = EncryptedFieldHelper.encryptStringArray(newValue, recordId: id)
             }
@@ -83,12 +115,16 @@ final class MemoryEntry {
     var transcription: String? {
         get {
             if EncryptionLevel.current == .full, let encrypted = _encryptedTranscription {
-                return EncryptedFieldHelper.decryptString(encrypted, recordId: id)
+                if let cached = _cachedTranscription { return cached }
+                let decrypted = EncryptedFieldHelper.decryptString(encrypted, recordId: id)
+                _cachedTranscription = decrypted
+                return decrypted
             }
             return _plainTranscription
         }
         set {
             _plainTranscription = newValue
+            _cachedTranscription = newValue
             if EncryptionLevel.current == .full, let value = newValue {
                 _encryptedTranscription = EncryptedFieldHelper.encryptString(value, recordId: id)
             } else {
@@ -96,6 +132,10 @@ final class MemoryEntry {
             }
         }
     }
+
+    // MARK: - Large Data Fields (No sync cache - use async loading)
+    // photoData and videoThumbnailData are large and should be loaded asynchronously.
+    // Use loadPhotoDataAsync() and loadVideoThumbnailAsync() in views.
 
     var photoData: Data? {
         get {
@@ -117,12 +157,16 @@ final class MemoryEntry {
     var audioFilePath: String? {
         get {
             if EncryptionLevel.current == .full, let encrypted = _encryptedAudioFilePath {
-                return EncryptedFieldHelper.decryptString(encrypted, recordId: id)
+                if let cached = _cachedAudioFilePath { return cached }
+                let decrypted = EncryptedFieldHelper.decryptString(encrypted, recordId: id)
+                _cachedAudioFilePath = decrypted
+                return decrypted
             }
             return _plainAudioFilePath
         }
         set {
             _plainAudioFilePath = newValue
+            _cachedAudioFilePath = newValue
             if EncryptionLevel.current == .full, let value = newValue {
                 _encryptedAudioFilePath = EncryptedFieldHelper.encryptString(value, recordId: id)
             } else {
@@ -148,8 +192,40 @@ final class MemoryEntry {
         }
     }
 
+    // MARK: - Async Data Loading (for large binary fields)
+
+    /// Load photo data asynchronously to avoid blocking the main thread.
+    func loadPhotoDataAsync() async -> Data? {
+        let entry = self
+        return await withCheckedContinuation { continuation in
+            Task.detached {
+                let data = entry.photoData
+                continuation.resume(returning: data)
+            }
+        }
+    }
+
+    /// Load video thumbnail asynchronously to avoid blocking the main thread.
+    func loadVideoThumbnailAsync() async -> Data? {
+        let entry = self
+        return await withCheckedContinuation { continuation in
+            Task.detached {
+                let data = entry.videoThumbnailData
+                continuation.resume(returning: data)
+            }
+        }
+    }
+
+    var isLocked: Bool {
+        if let unlockDate = unlockDate {
+            return Date() < unlockDate
+        }
+        return false
+    }
+
     init(
         title: String = "",
+
         content: String = "",
         type: MemoryType = .text,
         tags: [String] = [],
@@ -161,7 +237,8 @@ final class MemoryEntry {
         photoData: Data? = nil,
         videoFilePath: String? = nil,
         videoDuration: TimeInterval? = nil,
-        videoThumbnailData: Data? = nil
+        videoThumbnailData: Data? = nil,
+        unlockDate: Date? = nil
     ) {
         self.id = UUID()
         self.type = type
@@ -172,6 +249,7 @@ final class MemoryEntry {
         self.audioDuration = audioDuration
         self.videoFilePath = videoFilePath
         self.videoDuration = videoDuration
+        self.unlockDate = unlockDate
 
         // Store plain values
         self._plainTitle = title

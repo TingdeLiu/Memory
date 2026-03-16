@@ -41,7 +41,7 @@ final class ContactImportService: ObservableObject {
     func checkPermission() {
         let status = CNContactStore.authorizationStatus(for: .contacts)
         switch status {
-        case .authorized:
+        case .authorized, .limited:
             permissionStatus = .authorized
         case .denied:
             permissionStatus = .denied
@@ -101,8 +101,9 @@ final class ContactImportService: ObservableObject {
             ))
         }
 
+        let fetchedContacts = results
         await MainActor.run {
-            systemContacts = results
+            systemContacts = fetchedContacts
         }
     }
 
