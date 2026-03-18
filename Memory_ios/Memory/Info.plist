@@ -28,6 +28,20 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Memory needs microphone access to record voice memories and voice samples for voice cloning.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Memory needs camera access to record video memories.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Memory needs photo library access to import photos for your memories.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Memory needs contacts access to import your contacts for leaving messages to loved ones.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Memory needs location access to enable location-based time capsule unlocking.</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Memory uses Face ID to protect your private memories and messages.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Memory uses speech recognition to transcribe your voice memories into text.</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

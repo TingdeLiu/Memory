@@ -26,6 +26,7 @@ targets:
       - path: Shared
     resources:
       - path: Memory/Resources
+      - path: Memory/PrivacyInfo.xcprivacy
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.tyndall.memory
@@ -46,6 +47,13 @@ targets:
         CFBundleName: Memory
         CFBundleShortVersionString: "1.0.0"
         UILaunchScreen: {}
+        NSMicrophoneUsageDescription: Memory needs microphone access to record voice memories and voice samples for voice cloning.
+        NSCameraUsageDescription: Memory needs camera access to record video memories.
+        NSPhotoLibraryUsageDescription: Memory needs photo library access to import photos for your memories.
+        NSContactsUsageDescription: Memory needs contacts access to import your contacts for leaving messages to loved ones.
+        NSLocationWhenInUseUsageDescription: Memory needs location access to enable location-based time capsule unlocking.
+        NSFaceIDUsageDescription: Memory uses Face ID to protect your private memories and messages.
+        NSSpeechRecognitionUsageDescription: Memory uses speech recognition to transcribe your voice memories into text.
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
           - UIInterfaceOrientationLandscapeLeft

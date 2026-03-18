@@ -355,7 +355,7 @@ struct SettingsView: View {
             HStack {
                 Text(String(localized: "settings.version"))
                 Spacer()
-                Text("1.0.0")
+                Text(appVersionString)
                     .foregroundStyle(.secondary)
             }
 
@@ -387,6 +387,12 @@ struct SettingsView: View {
         .sheet(isPresented: $showingFeedback) {
             FeedbackView()
         }
+    }
+
+    private var appVersionString: String {
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
+        let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "1"
+        return "\(version) (\(build))"
     }
 
     // MARK: - Helpers

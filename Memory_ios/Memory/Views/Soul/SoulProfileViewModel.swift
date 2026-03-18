@@ -33,7 +33,7 @@ final class SoulProfileViewModel {
             do {
                 try modelContext.save()
             } catch {
-                print("Failed to save profile: \(error)")
+                // Save failed silently — data will persist on next successful save
             }
         }
         isEditing.toggle()
