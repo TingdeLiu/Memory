@@ -12,47 +12,62 @@ struct MemoryApp: App {
 
     private var languageManager: LanguageManager { LanguageManager.shared }
 
+    /// Set to true if the persistent store failed and we fell back to in-memory
+    private static var isUsingFallbackContainer = false
+
+    private static let appSchema = Schema([
+        MemoryEntry.self,
+        Contact.self,
+        Message.self,
+        SoulProfile.self,
+        InterviewSession.self,
+        AssessmentResult.self,
+        RelationshipProfile.self,
+        VoiceProfile.self,
+        VoiceSample.self,
+        WritingStyleProfile.self,
+        AvatarProfile.self,
+        DigitalSelfConfig.self,
+        TimeCapsule.self,
+    ])
+
     // ModelContainer created once at app launch
     // Note: iCloud setting is read at launch; changes require app restart
     let sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            MemoryEntry.self,
-            Contact.self,
-            Message.self,
-            SoulProfile.self,
-            InterviewSession.self,
-            AssessmentResult.self,
-            RelationshipProfile.self,
-            VoiceProfile.self,
-            VoiceSample.self,
-            WritingStyleProfile.self,
-            AvatarProfile.self,
-            DigitalSelfConfig.self,
-            TimeCapsule.self,
-        ])
-
         let iCloudEnabled = UserDefaults.standard.bool(forKey: "iCloudSyncEnabled")
         let cloudKitDB: ModelConfiguration.CloudKitDatabase = iCloudEnabled
             ? .private("iCloud.com.tyndall.memory")
             : .none
 
         let modelConfiguration = ModelConfiguration(
-            schema: schema,
+            schema: appSchema,
             isStoredInMemoryOnly: false,
             cloudKitDatabase: cloudKitDB
         )
 
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            return try ModelContainer(for: appSchema, configurations: [modelConfiguration])
         } catch {
-            fatalError("Could not create ModelContainer: \(error)")
+            // Fallback to in-memory container to prevent crash
+            isUsingFallbackContainer = true
+            let fallbackConfig = ModelConfiguration(
+                schema: appSchema,
+                isStoredInMemoryOnly: true
+            )
+            do {
+                return try ModelContainer(for: appSchema, configurations: [fallbackConfig])
+            } catch {
+                fatalError("Could not create even in-memory ModelContainer: \(error)")
+            }
         }
     }()
 
     var body: some Scene {
         WindowGroup {
             Group {
-                if !hasCompletedOnboarding {
+                if Self.isUsingFallbackContainer {
+                    DatabaseErrorView()
+                } else if !hasCompletedOnboarding {
                     OnboardingView(hasCompletedOnboarding: $hasCompletedOnboarding)
                 } else if requireBiometricAuth && !isUnlocked {
                     LockScreenView(isUnlocked: $isUnlocked)
@@ -70,9 +85,12 @@ struct MemoryApp: App {
                     isUnlocked = false
                     EncryptionHelper.clearCachedMasterKey()
                 }
-                // Sync data to widgets when going to background
-                let context = sharedModelContainer.mainContext
-                WidgetDataManager.refreshAll(modelContext: context)
+                // Sync data to widgets in background to avoid blocking main thread
+                let container = sharedModelContainer
+                Task.detached {
+                    let context = ModelContext(container)
+                    WidgetDataManager.refreshAll(modelContext: context)
+                }
             case .active:
                 break
             case .inactive:

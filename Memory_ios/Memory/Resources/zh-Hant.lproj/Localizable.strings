@@ -835,6 +835,7 @@
 "voice.continue_recording" = "繼續錄製";
 "voice.start_training" = "開始訓練";
 "voice.import_from_memories" = "從回憶匯入";
+"voice.import_button" = "匯入";
 "voice.samples" = "聲音樣本";
 "voice.sample_count %lld" = "%lld 個樣本";
 "voice.view_all" = "檢視全部";
@@ -1587,3 +1588,8 @@
 "widget.capsule.sealed" = "等待揭開...";
 "widget.capsule.more %lld" = "還有 %lld 個";
 "widget.capsule.none" = "沒有封存中的膠囊";
+
+/* Database Error */
+"database.error.title" = "資料庫錯誤";
+"database.error.message" = "無法載入您的資料。您的記憶是安全的，請重新啟動應用程式重試。";
+"database.error.restart" = "重新啟動";

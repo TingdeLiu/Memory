@@ -7,11 +7,18 @@ struct VoiceCloneView: View {
     @Query private var profiles: [VoiceProfile]
     @Query private var samples: [VoiceSample]
 
+    @Query private var allMemories: [MemoryEntry]
+
     @State private var showingRecording = false
     @State private var showingSettings = false
     @State private var showingTraining = false
+    @State private var showingImportPicker = false
     @State private var isPlayingPreview = false
     @State private var previewPlayer: AVAudioPlayer?
+
+    private var audioMemories: [MemoryEntry] {
+        allMemories.filter { $0.type == .audio && $0.audioFilePath != nil }
+    }
 
     private var profile: VoiceProfile? {
         profiles.first
@@ -299,7 +306,7 @@ struct VoiceCloneView: View {
 
             // Import from Memories Button
             Button {
-                // TODO: Import voice samples from existing memories
+                showingImportPicker = true
             } label: {
                 HStack {
                     Image(systemName: "square.and.arrow.down")
@@ -307,6 +314,15 @@ struct VoiceCloneView: View {
                 }
                 .font(.subheadline)
                 .foregroundStyle(.blue)
+            }
+            .disabled(audioMemories.isEmpty)
+            .sheet(isPresented: $showingImportPicker) {
+                VoiceImportPickerView(
+                    audioMemories: audioMemories,
+                    onImport: { selectedMemories in
+                        importSamplesFromMemories(selectedMemories)
+                    }
+                )
             }
         }
     }
@@ -370,6 +386,97 @@ struct VoiceCloneView: View {
             }
         } catch {
             // Handle error
+        }
+    }
+
+    private func importSamplesFromMemories(_ memories: [MemoryEntry]) {
+        let samplesDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            .appendingPathComponent("VoiceSamples")
+        try? FileManager.default.createDirectory(at: samplesDir, withIntermediateDirectories: true)
+
+        for memory in memories {
+            guard let audioPath = memory.audioFilePath else { continue }
+            let sourceURL = AudioRecordingService.recordingURL(for: audioPath)
+            guard FileManager.default.fileExists(atPath: sourceURL.path) else { continue }
+
+            let destFilename = "imported_\(UUID().uuidString).m4a"
+            let destURL = samplesDir.appendingPathComponent(destFilename)
+
+            do {
+                try FileManager.default.copyItem(at: sourceURL, to: destURL)
+
+                let asset = AVURLAsset(url: destURL)
+                let duration = CMTimeGetSeconds(asset.duration)
+
+                let sample = VoiceSample(
+                    audioFilePath: destFilename,
+                    duration: duration > 0 ? duration : 0,
+                    transcription: memory.content,
+                    sourceType: .memory,
+                    sourceId: memory.id
+                )
+                modelContext.insert(sample)
+            } catch {
+                continue
+            }
+        }
+        try? modelContext.save()
+    }
+}
+
+// MARK: - Voice Import Picker
+
+struct VoiceImportPickerView: View {
+    let audioMemories: [MemoryEntry]
+    let onImport: ([MemoryEntry]) -> Void
+
+    @Environment(\.dismiss) private var dismiss
+    @State private var selected: Set<UUID> = []
+
+    var body: some View {
+        NavigationStack {
+            List(audioMemories) { memory in
+                HStack {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(memory.title)
+                            .font(.body)
+                        Text(memory.createdAt, style: .date)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                    Spacer()
+                    if selected.contains(memory.id) {
+                        Image(systemName: "checkmark.circle.fill")
+                            .foregroundStyle(.blue)
+                    } else {
+                        Image(systemName: "circle")
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    if selected.contains(memory.id) {
+                        selected.remove(memory.id)
+                    } else {
+                        selected.insert(memory.id)
+                    }
+                }
+            }
+            .navigationTitle(String(localized: "voice.import_from_memories"))
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button(String(localized: "common.cancel")) { dismiss() }
+                }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button(String(localized: "voice.import_button")) {
+                        let selectedMemories = audioMemories.filter { selected.contains($0.id) }
+                        onImport(selectedMemories)
+                        dismiss()
+                    }
+                    .disabled(selected.isEmpty)
+                }
+            }
         }
     }
 }

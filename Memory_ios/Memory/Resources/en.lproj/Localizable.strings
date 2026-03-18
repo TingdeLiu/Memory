@@ -834,6 +834,7 @@
 "voice.continue_recording" = "Continue Recording";
 "voice.start_training" = "Train Voice";
 "voice.import_from_memories" = "Import from Memories";
+"voice.import_button" = "Import";
 "voice.samples" = "Voice Samples";
 "voice.sample_count %lld" = "%lld samples";
 "voice.view_all" = "View All Samples";
@@ -1633,3 +1634,8 @@
 "widget.capsule.sealed" = "Sealed until...";
 "widget.capsule.more %lld" = "+%lld more";
 "widget.capsule.none" = "No sealed capsules";
+
+/* Database Error */
+"database.error.title" = "Database Error";
+"database.error.message" = "Unable to load your data. Your memories are safe — please restart the app to try again.";
+"database.error.restart" = "Restart App";

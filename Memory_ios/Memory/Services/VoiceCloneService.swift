@@ -37,7 +37,7 @@ final class VoiceCloneService {
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: service,
             kSecAttrAccount as String: account,
-            kSecValueData as String: key.data(using: .utf8)!
+            kSecValueData as String: Data(key.utf8)
         ]
         SecItemAdd(addQuery as CFDictionary, nil)
     }
@@ -244,30 +244,33 @@ final class VoiceCloneService {
         var body = Data()
 
         // Add name
-        body.append("--\(boundary)\r\n".data(using: .utf8)!)
-        body.append("Content-Disposition: form-data; name=\"name\"\r\n\r\n".data(using: .utf8)!)
-        body.append("\(name)\r\n".data(using: .utf8)!)
+        body.append(Data("--\(boundary)\r\n".utf8))
+        body.append(Data("Content-Disposition: form-data; name=\"name\"\r\n\r\n".utf8))
+        body.append(Data("\(name)\r\n".utf8))
 
         // Add description
-        body.append("--\(boundary)\r\n".data(using: .utf8)!)
-        body.append("Content-Disposition: form-data; name=\"description\"\r\n\r\n".data(using: .utf8)!)
-        body.append("Voice clone created by Memory app\r\n".data(using: .utf8)!)
+        body.append(Data("--\(boundary)\r\n".utf8))
+        body.append(Data("Content-Disposition: form-data; name=\"description\"\r\n\r\n".utf8))
+        body.append(Data("Voice clone created by Memory app\r\n".utf8))
 
         // Add files
         for (index, (data, filename)) in audioFiles.enumerated() {
-            body.append("--\(boundary)\r\n".data(using: .utf8)!)
-            body.append("Content-Disposition: form-data; name=\"files\"; filename=\"\(filename)\"\r\n".data(using: .utf8)!)
-            body.append("Content-Type: audio/mpeg\r\n\r\n".data(using: .utf8)!)
+            body.append(Data("--\(boundary)\r\n".utf8))
+            body.append(Data("Content-Disposition: form-data; name=\"files\"; filename=\"\(filename)\"\r\n".utf8))
+            body.append(Data("Content-Type: audio/mpeg\r\n\r\n".utf8))
             body.append(data)
-            body.append("\r\n".data(using: .utf8)!)
+            body.append(Data("\r\n".utf8))
 
             trainingProgress = 0.1 + 0.4 * Double(index + 1) / Double(audioFiles.count)
         }
 
-        body.append("--\(boundary)--\r\n".data(using: .utf8)!)
+        body.append(Data("--\(boundary)--\r\n".utf8))
 
         // Make request
-        var request = URLRequest(url: URL(string: "https://api.elevenlabs.io/v1/voices/add")!)
+        guard let url = URL(string: "https://api.elevenlabs.io/v1/voices/add") else {
+            throw VoiceCloneError.invalidEndpoint
+        }
+        var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue(apiKey, forHTTPHeaderField: "xi-api-key")
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
@@ -332,7 +335,9 @@ final class VoiceCloneService {
             throw VoiceCloneError.missingAPIKey
         }
 
-        let url = URL(string: "https://api.elevenlabs.io/v1/text-to-speech/\(voiceId)")!
+        guard let url = URL(string: "https://api.elevenlabs.io/v1/text-to-speech/\(voiceId)") else {
+            throw VoiceCloneError.invalidEndpoint
+        }
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -370,7 +375,9 @@ final class VoiceCloneService {
             throw VoiceCloneError.missingAPIKey
         }
 
-        let url = URL(string: "https://api.openai.com/v1/audio/speech")!
+        guard let url = URL(string: "https://api.openai.com/v1/audio/speech") else {
+            throw VoiceCloneError.invalidEndpoint
+        }
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -442,7 +449,9 @@ final class VoiceCloneService {
                 throw VoiceCloneError.missingAPIKey
             }
 
-            let url = URL(string: "https://api.elevenlabs.io/v1/voices/\(voiceId)")!
+            guard let url = URL(string: "https://api.elevenlabs.io/v1/voices/\(voiceId)") else {
+                throw VoiceCloneError.invalidEndpoint
+            }
             var request = URLRequest(url: url)
             request.httpMethod = "DELETE"
             request.setValue(apiKey, forHTTPHeaderField: "xi-api-key")

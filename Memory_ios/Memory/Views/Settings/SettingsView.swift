@@ -366,16 +366,22 @@ struct SettingsView: View {
                 Label(String(localized: "settings.feedback"), systemImage: "bubble.left.and.text.bubble.right")
             }
 
-            Link(destination: URL(string: "https://memory.app/privacy")!) {
-                Label(String(localized: "settings.privacyPolicy"), systemImage: "doc.text")
+            if let url = URL(string: "https://memory.app/privacy") {
+                Link(destination: url) {
+                    Label(String(localized: "settings.privacyPolicy"), systemImage: "doc.text")
+                }
             }
 
-            Link(destination: URL(string: "https://memory.app/terms")!) {
-                Label(String(localized: "settings.termsOfUse"), systemImage: "doc.plaintext")
+            if let url = URL(string: "https://memory.app/terms") {
+                Link(destination: url) {
+                    Label(String(localized: "settings.termsOfUse"), systemImage: "doc.plaintext")
+                }
             }
 
-            Link(destination: URL(string: "https://memory.app/support")!) {
-                Label(String(localized: "settings.support"), systemImage: "questionmark.circle")
+            if let url = URL(string: "https://memory.app/support") {
+                Link(destination: url) {
+                    Label(String(localized: "settings.support"), systemImage: "questionmark.circle")
+                }
             }
         }
         .sheet(isPresented: $showingFeedback) {

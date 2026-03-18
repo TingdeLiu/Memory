@@ -62,7 +62,9 @@ final class GoogleDriveSyncService: NSObject {
         // Generate random state parameter for CSRF protection
         let state = generateRandomState()
 
-        var components = URLComponents(string: Self.authURL)!
+        guard var components = URLComponents(string: Self.authURL) else {
+            throw GoogleDriveError.invalidURL
+        }
         components.queryItems = [
             URLQueryItem(name: "client_id", value: Self.clientId),
             URLQueryItem(name: "redirect_uri", value: Self.redirectURI),
@@ -111,7 +113,10 @@ final class GoogleDriveSyncService: NSObject {
 
     /// Exchange authorization code for access/refresh tokens.
     private func exchangeCodeForTokens(code: String, codeVerifier: String) async throws {
-        var request = URLRequest(url: URL(string: Self.tokenURL)!)
+        guard let tokenURL = URL(string: Self.tokenURL) else {
+            throw GoogleDriveError.invalidURL
+        }
+        var request = URLRequest(url: tokenURL)
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 
@@ -144,7 +149,10 @@ final class GoogleDriveSyncService: NSObject {
             throw GoogleDriveError.notSignedIn
         }
 
-        var request = URLRequest(url: URL(string: Self.tokenURL)!)
+        guard let tokenURL = URL(string: Self.tokenURL) else {
+            throw GoogleDriveError.invalidURL
+        }
+        var request = URLRequest(url: tokenURL)
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
 

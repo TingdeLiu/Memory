@@ -258,7 +258,7 @@ struct MBTIAssessmentView: View {
     }
 
     private func calculateResult() {
-        let mbtiCode = MBTIQuestions.calculateType(answers: answers)
+        guard let mbtiCode = MBTIQuestions.calculateType(answers: answers) else { return }
 
         let assessment = AssessmentResult(type: .mbti)
         assessment.setAnswers(answers)

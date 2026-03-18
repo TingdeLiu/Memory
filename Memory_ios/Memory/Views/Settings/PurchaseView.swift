@@ -188,9 +188,13 @@ struct PurchaseView: View {
 
     private var legalLinks: some View {
         HStack(spacing: 16) {
-            Link(String(localized: "purchase.termsOfUse"), destination: URL(string: "https://memory.app/terms")!)
+            if let url = URL(string: "https://memory.app/terms") {
+                Link(String(localized: "purchase.termsOfUse"), destination: url)
+            }
             Text("·").foregroundStyle(.tertiary)
-            Link(String(localized: "purchase.privacyPolicy"), destination: URL(string: "https://memory.app/privacy")!)
+            if let url = URL(string: "https://memory.app/privacy") {
+                Link(String(localized: "purchase.privacyPolicy"), destination: url)
+            }
         }
         .font(.caption)
         .foregroundStyle(.secondary)

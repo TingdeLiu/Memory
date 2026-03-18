@@ -327,8 +327,8 @@ struct MBTIQuestions {
     ]
 
     /// Calculate MBTI type from answers (true = option A, false = option B)
-    static func calculateType(answers: [Bool]) -> String {
-        guard answers.count == 20 else { return "XXXX" }
+    static func calculateType(answers: [Bool]) -> String? {
+        guard answers.count == 20 else { return nil }
 
         var scores: [MBTIDimension: Int] = [.EI: 0, .SN: 0, .TF: 0, .JP: 0]
 

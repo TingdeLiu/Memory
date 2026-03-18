@@ -704,6 +704,7 @@
 "voice.continue_recording" = "继续录制";
 "voice.start_training" = "开始训练";
 "voice.import_from_memories" = "从回忆导入";
+"voice.import_button" = "导入";
 "voice.samples" = "声音样本";
 "voice.sample_count %lld" = "%lld 个样本";
 "voice.view_all" = "查看全部";
@@ -1610,3 +1611,8 @@
 "widget.capsule.sealed" = "等待揭开...";
 "widget.capsule.more %lld" = "还有 %lld 个";
 "widget.capsule.none" = "没有封存中的胶囊";
+
+/* Database Error */
+"database.error.title" = "数据库错误";
+"database.error.message" = "无法加载您的数据。您的记忆是安全的，请重新启动应用重试。";
+"database.error.restart" = "重新启动";
