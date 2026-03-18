@@ -82,4 +82,22 @@ enum L10n {
     static func purchaseFor(_ price: String) -> String {
         String(localized: "purchase.purchaseFor \(price)")
     }
+
+    // MARK: - Time Capsule
+
+    static func capsuleCountdown(days: Int, hours: Int) -> String {
+        String(localized: "capsule.countdown.daysHours \(days) \(hours)")
+    }
+
+    static func capsuleLocationRadius(_ meters: Int) -> String {
+        String(localized: "capsule.location.radius \(meters)")
+    }
+
+    static func capsuleOpenedOn(_ date: String) -> String {
+        String(localized: "capsule.openedOn \(date)")
+    }
+
+    static func homeCapsuleCount(_ count: Int) -> String {
+        String(localized: "home.capsule.count \(count)")
+    }
 }

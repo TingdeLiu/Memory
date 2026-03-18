@@ -31,7 +31,7 @@ Tests use Swift Testing framework (`@Test`, `#expect`), not XCTest. Located in `
 
 ### Data Layer — SwiftData Models
 
-Nine `@Model` classes:
+Thirteen `@Model` classes:
 - **`MemoryEntry`** — Memories (text, audio, photo, video) with tags, mood, privacy flag
 - **`Contact`** — People, with relationship type and optional system contact ID for dedup
 - **`Message`** — Directed messages to contacts with delivery conditions
@@ -44,8 +44,9 @@ Nine `@Model` classes:
 - **`WritingStyleProfile`** — Writing style analysis: status, word/phrase frequencies (JSON), sentence/paragraph metrics, AI-generated style descriptions (style, tone, vocabulary, emotional, unique traits), sample texts
 - **`AvatarProfile`** — User avatar: original photo (Data), stylized versions (JSON dictionary), selected style/frame, stylization status, timestamps
 - **`DigitalSelfConfig`** — Digital presence configuration: status, component readiness flags, allowed contacts, access mode, personality mode, voice output toggle, emotional response level, conversation history (JSON), statistics
+- **`TimeCapsule`** — Time capsule: unlock type (date/location/event), unlock date, location coordinates/radius/name, event description/target date, isUnlocked status, relationship to MemoryEntry
 
-`Contact` → `Message` is one-to-many with cascade delete (`@Relationship(deleteRule: .cascade, inverse: \Message.contact)`).
+`MemoryEntry` → `TimeCapsule` is optional one-to-one. `Contact` → `Message` is one-to-many with cascade delete (`@Relationship(deleteRule: .cascade, inverse: \Message.contact)`).
 
 The `ModelContainer` is configured in `MemoryApp.swift` and toggles between CloudKit (`.private("iCloud.com.tyndall.memory")`) and local-only (`.none`) based on the `iCloudSyncEnabled` AppStorage setting.
 
@@ -99,6 +100,16 @@ Services are `@Observable` or `ObservableObject` classes, instantiated as `@Stat
 - **`AvatarService`** — `@Observable` singleton (`AvatarService.shared`). Image processing for avatar stylization: Core Image filters (CIColorPosterize, CIPhotoEffectNoir, CIComicEffect, etc.) as placeholders for AI stylization. Export with frame shapes (circle, square, hexagon). Image resize/crop utilities.
 - **`DigitalSelfService`** — `@Observable` singleton (`DigitalSelfService.shared`). Integrates SoulProfile, WritingStyleProfile, VoiceProfile for conversation generation. Builds personalized system prompts, generates AI responses in user's style, synthesizes voice output, manages conversation context.
 - **`FeedbackService`** — `@Observable` singleton (`FeedbackService.shared`). Collects user feedback with type classification, device info, and contact email. Stores locally as JSON in `Documents/Feedback/`, supports email composition via MFMailComposeViewController.
+- **`TimeCapsuleService`** — `@Observable` singleton (`TimeCapsuleService.shared`). Manages time capsule lifecycle: date-based auto-unlock via UNUserNotificationCenter, location-based geofencing via CLLocationManager (CLCircularRegion, max 20 regions), event-based manual unlock. Countdown formatting helpers. On startup, checks date unlocks and re-registers geofences for location capsules.
+- **`WidgetDataManager`** — Enum with static methods. Syncs SwiftData to App Group shared UserDefaults (`group.com.tyndall.memory`) for WidgetKit. Writes recent memories, stats, and capsule data as JSON. Read methods delegate to shared `WidgetDataReader`. Called from `MemoryApp` on background transition. Respects encryption level (full mode shows placeholder content).
+
+### Widget Extension (Phase 19)
+
+`MemoryWidgets` target — WidgetKit extension with App Groups:
+- **`RecentMemoryWidget`** — Displays recent memories, rotates every 2 hours, supports all 6 widget families (systemSmall/Medium/Large, accessoryCircular/Rectangular/Inline)
+- **`StatsWidget`** — Shows total memories, weekly count, top mood, streak. Supports small/medium + lock screen
+- **`CapsuleCountdownWidget`** — Countdown to next capsule unlock, hourly refresh. Supports small/medium + lock screen
+- **Shared Data** — `Shared/WidgetData.swift` compiled into both targets: `AppGroupConfig`, `WidgetMemory`, `WidgetStats`, `WidgetCapsule` (Codable), `WidgetDataReader`
 
 ### Light Orb Universe (Phase 16)
 
@@ -155,6 +166,7 @@ Services are `@Observable` or `ObservableObject` classes, instantiated as `@Stat
 | `DigitalSelfStatus` | `.notReady`, `.ready`, `.active`, `.paused` | `DigitalSelfConfig.status` |
 | `DigitalSelfAccessMode` | `.everyone`, `.selectedContacts`, `.noOne` | `DigitalSelfConfig.accessMode` |
 | `DigitalSelfPersonalityMode` | `.authentic`, `.supportive`, `.playful`, `.wise` | `DigitalSelfConfig.personalityMode` |
+| `CapsuleUnlockType` | `.date`, `.location`, `.event` | `TimeCapsule.unlockType` |
 
 ### Shared UI Components
 
@@ -191,6 +203,8 @@ Audio files are stored as `memory_{UUID}.m4a` and video files as `memory_{UUID}.
 | 15 | ✅ Done | Digital Self: complete digital presence integrating Soul Profile + Voice Clone + Writing Style + Avatar, conversation interface with personality modes, access control, voice output support (Premium feature) |
 | 16 | ✅ Done | Light Orb Universe: immersive 3D-style UI with central user orb and orbiting contact orbs, rotation animation with tap-to-pause, tap contact orbs to chat with AI role-playing as that person |
 | 17 | ✅ Done | User Feedback: feedback form with type selection (bug/suggestion/feature/question/praise), device info collection, local storage + email fallback, full i18n support |
+| 18 | ✅ Done | Time Capsule: seal memories with date/location/event unlock conditions, countdown UI, geofencing (CLCircularRegion), local notifications, 3-step creation flow, MapKit location picker |
+| 19 | ✅ Done | Widgets: WidgetKit extension with App Groups, 3 widget types (RecentMemory/Stats/CapsuleCountdown), Home screen (small/medium/large) + Lock screen (circular/rectangular/inline), encryption-aware, auto-sync on background |
 
 ## AppStorage Keys
 

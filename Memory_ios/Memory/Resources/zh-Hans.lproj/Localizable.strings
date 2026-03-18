@@ -1464,3 +1464,149 @@
 "assessment.dimensions" = "维度解析";
 "assessment.complete.title" = "测评完成";
 "assessment.minutes %lld" = "%lld 分钟";
+
+/* MARK: - Time Capsule (Phase 20)
+ */
+"capsule.title" = "时间胶囊";
+"capsule.new" = "新建时间胶囊";
+"capsule.edit" = "编辑时间胶囊";
+"capsule.sealed" = "已封存";
+"capsule.locked" = "已锁定";
+"capsule.unlocks_on %@" = "将于 %@ 开启";
+"capsule.opened.title" = "胶囊已开启";
+"capsule.sealed.title" = "时间胶囊已封存";
+
+/* Capsule Types */
+"capsule.type.date" = "定时解封";
+"capsule.type.date.description" = "在指定日期自动解锁";
+"capsule.type.location" = "地点解封";
+"capsule.type.location.description" = "到达指定地点时解锁";
+"capsule.type.event" = "事件解封";
+"capsule.type.event.description" = "当你认为时机成熟时手动解锁";
+
+/* Capsule Conditions */
+"capsule.condition.unknown" = "未知";
+"capsule.condition.selectType" = "这个胶囊如何解锁？";
+"capsule.condition.location" = "一个特别的地方";
+"capsule.condition.event" = "一个特别的时刻";
+
+/* Capsule Countdown */
+"capsule.countdown.ready" = "可以开启了！";
+"capsule.countdown.daysHours %lld %lld" = "%lld天 %lld时";
+"capsule.countdown.hoursMinutes %lld %lld" = "%lld时 %lld分";
+"capsule.countdown.minutes %lld" = "%lld分";
+"capsule.countdown.hms %lld %lld %lld" = "%lld:%02lld:%02lld";
+"capsule.countdown.ms %lld %lld" = "%lld:%02lld";
+"capsule.unit.days" = "天";
+"capsule.unit.hours" = "时";
+"capsule.unit.min" = "分";
+"capsule.unit.sec" = "秒";
+
+/* Capsule Filters */
+"capsule.filter.all" = "全部";
+"capsule.filter.locked" = "封存中";
+"capsule.filter.unlocked" = "已开启";
+"capsule.section.sealed" = "封存中的胶囊";
+"capsule.section.opened" = "已开启的胶囊";
+
+/* Capsule Detail */
+"capsule.detail.title" = "时间胶囊";
+"capsule.detail.created" = "创建于";
+"capsule.detail.opened" = "开启于";
+"capsule.detail.sealedOn %@" = "封存于 %@";
+"capsule.openedOn %@" = "已于 %@ 开启";
+"capsule.locked.hint" = "这段记忆已被封存。当条件满足时，它将自己揭晓。";
+"capsule.waiting.location" = "等待你的到来...";
+"capsule.waiting.event" = "等待那个时刻...";
+
+/* Capsule Actions */
+"capsule.action.unlock" = "立即开启";
+"capsule.action.delete" = "删除胶囊";
+"capsule.unlock.confirm.title" = "开启这个胶囊？";
+"capsule.unlock.confirm.message" = "一旦开启，胶囊将无法重新封存。";
+"capsule.delete.confirm.title" = "删除胶囊？";
+"capsule.delete.confirm.message" = "这将永久删除时间胶囊及其中的记忆。";
+
+/* Capsule Editor Steps */
+"capsule.step.content" = "内容";
+"capsule.step.condition" = "条件";
+"capsule.step.confirm" = "封存";
+"capsule.step.content.hint" = "写下给未来自己的话...";
+"capsule.content.placeholder" = "你想留住什么？你想留下什么话？";
+"capsule.button.back" = "上一步";
+"capsule.button.next" = "下一步";
+"capsule.button.seal" = "封存胶囊";
+
+/* Capsule Confirm */
+"capsule.confirm.title" = "准备封存";
+"capsule.confirm.memory" = "记忆";
+"capsule.confirm.condition" = "解锁条件";
+"capsule.confirm.warning" = "封存后，这段记忆将在解锁条件满足前被隐藏，你无法偷看里面的内容。";
+
+/* Capsule Date */
+"capsule.date.selectDate" = "什么时候开启？";
+"capsule.date.presets" = "快速选择";
+"capsule.date.1month" = "1个月";
+"capsule.date.6months" = "半年";
+"capsule.date.1year" = "1年";
+"capsule.date.5years" = "5年";
+
+/* Capsule Location */
+"capsule.location.selectPlace" = "在哪里开启？";
+"capsule.location.search" = "搜索地点...";
+"capsule.location.radius %lld" = "触发半径：%lld 米";
+"capsule.location.permissionHint" = "封存胶囊时将请求位置权限。";
+
+/* Capsule Event */
+"capsule.event.describe" = "什么事件会触发这个胶囊？";
+"capsule.event.placeholder" = "例如：孩子满18岁时、结婚十周年时...";
+"capsule.event.targetDate" = "预计日期（可选）";
+"capsule.event.hint" = "事件胶囊可以在你认为时机到来时手动开启。";
+
+/* Capsule Empty State */
+"capsule.empty.title" = "还没有时间胶囊";
+"capsule.empty.subtitle" = "为未来封存一段记忆。选择何时、何地、或因何揭开它。";
+"capsule.empty.button" = "创建时间胶囊";
+
+/* Capsule Notifications */
+"capsule.notification.title" = "时间胶囊就绪！";
+"capsule.notification.body" = "你封存的一个时间胶囊已经可以开启了。";
+"capsule.notification.locationBody" = "你到了！有一个时间胶囊在这里等着你。";
+
+/* Home Capsule Card */
+"home.capsule.title" = "时间胶囊";
+"home.capsule.count %lld" = "%lld 个封存中的胶囊";
+
+/* Memory Editor */
+"memoryEditor.sealAsCapsule" = "封存为时间胶囊...";
+
+/* MARK: - 小组件 (Phase 19) */
+
+/* Widget Titles */
+"widget.recent.title" = "最近记忆";
+"widget.recent.description" = "一览你最新的记忆。";
+"widget.stats.title" = "记忆统计";
+"widget.stats.description" = "追踪你的记忆集和写作连续天数。";
+"widget.capsule.config.title" = "时间胶囊";
+"widget.capsule.config.description" = "距离下一个时间胶囊解锁的倒计时。";
+
+/* Widget Content */
+"widget.placeholder.title" = "宁静时刻";
+"widget.placeholder.content" = "你的记忆将在这里展示...";
+"widget.empty.title" = "还没有记忆";
+"widget.empty.hint" = "打开 Memory 开始记录";
+"widget.encrypted" = "加密记忆";
+
+/* Widget Stats */
+"widget.stat.total" = "总计";
+"widget.stat.memories" = "条记忆";
+"widget.stat.week" = "本周";
+"widget.stat.mood" = "心情";
+"widget.stat.streak" = "连续";
+"widget.stat.capsules" = "胶囊";
+
+/* Widget Capsule */
+"widget.capsule.title" = "时间胶囊";
+"widget.capsule.sealed" = "等待揭开...";
+"widget.capsule.more %lld" = "还有 %lld 个";
+"widget.capsule.none" = "没有封存中的胶囊";

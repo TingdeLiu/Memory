@@ -49,12 +49,31 @@ enum SyncDataSerializer {
         let updatedAt: Date
     }
 
+    struct SerializedTimeCapsule: Codable {
+        let id: UUID
+        let unlockType: String
+        let isUnlocked: Bool
+        let unlockedAt: Date?
+        let unlockDate: Date?
+        let unlockLatitude: Double?
+        let unlockLongitude: Double?
+        let unlockRadius: Double?
+        let unlockLocationName: String?
+        let eventDescription: String?
+        let eventTargetDate: Date?
+        let eventContactId: UUID?
+        let memoryId: UUID?
+        let createdAt: Date
+        let updatedAt: Date
+    }
+
     struct SyncManifest: Codable {
         let version: Int
         let lastSync: Date
         let memories: [ManifestEntry]
         let contacts: [ManifestEntry]
         let messages: [ManifestEntry]
+        let timeCapsules: [ManifestEntry]?
         let deletedIds: [UUID]
     }
 
@@ -113,6 +132,26 @@ enum SyncDataSerializer {
         )
     }
 
+    static func serialize(capsule: TimeCapsule) -> SerializedTimeCapsule {
+        SerializedTimeCapsule(
+            id: capsule.id,
+            unlockType: capsule.unlockType.rawValue,
+            isUnlocked: capsule.isUnlocked,
+            unlockedAt: capsule.unlockedAt,
+            unlockDate: capsule.unlockDate,
+            unlockLatitude: capsule.unlockLatitude,
+            unlockLongitude: capsule.unlockLongitude,
+            unlockRadius: capsule.unlockRadius,
+            unlockLocationName: capsule.unlockLocationName,
+            eventDescription: capsule.eventDescription,
+            eventTargetDate: capsule.eventTargetDate,
+            eventContactId: capsule.eventContactId,
+            memoryId: capsule.memory?.id,
+            createdAt: capsule.createdAt,
+            updatedAt: capsule.updatedAt
+        )
+    }
+
     // MARK: - Encode to JSON
 
     static func encodeToJSON<T: Encodable>(_ value: T) throws -> Data {
@@ -149,6 +188,7 @@ enum SyncDataSerializer {
         memories: [MemoryEntry],
         contacts: [Contact],
         messages: [Message],
+        timeCapsules: [TimeCapsule] = [],
         deletedIds: [UUID] = []
     ) -> SyncManifest {
         SyncManifest(
@@ -157,6 +197,7 @@ enum SyncDataSerializer {
             memories: memories.map { ManifestEntry(id: $0.id, updatedAt: $0.updatedAt) },
             contacts: contacts.map { ManifestEntry(id: $0.id, updatedAt: $0.updatedAt) },
             messages: messages.map { ManifestEntry(id: $0.id, updatedAt: $0.updatedAt) },
+            timeCapsules: timeCapsules.isEmpty ? nil : timeCapsules.map { ManifestEntry(id: $0.id, updatedAt: $0.updatedAt) },
             deletedIds: deletedIds
         )
     }

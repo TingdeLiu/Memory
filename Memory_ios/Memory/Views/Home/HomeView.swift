@@ -4,6 +4,7 @@ import SwiftData
 struct HomeView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \MemoryEntry.createdAt, order: .reverse) private var memories: [MemoryEntry]
+    @Query(filter: #Predicate<TimeCapsule> { !$0.isUnlocked }, sort: \TimeCapsule.createdAt, order: .reverse) private var lockedCapsules: [TimeCapsule]
     @State private var viewModel: HomeViewModel?
 
     @AppStorage("aiEnabled") private var aiEnabled = false
@@ -145,6 +146,10 @@ struct HomeView: View {
                     VStack(spacing: 16) {
                         statsBar
 
+                        if !lockedCapsules.isEmpty {
+                            timeCapsuleCard
+                        }
+
                         if StoreService.shared.isPremium && aiEnabled && AIService().hasAPIKey(for: AIService().selectedProvider) {
                             aiQuickAccess
                         }
@@ -230,6 +235,54 @@ struct HomeView: View {
         .padding(.vertical, 8)
         .background(Color.accentColor.opacity(0.1))
         .clipShape(RoundedRectangle(cornerRadius: 10))
+        .padding(.horizontal)
+    }
+
+    private var timeCapsuleCard: some View {
+        NavigationLink(destination: TimeCapsuleListView()) {
+            HStack(spacing: 12) {
+                ZStack {
+                    Circle()
+                        .fill(LinearGradient(colors: [.orange, .purple], startPoint: .topLeading, endPoint: .bottomTrailing))
+                        .frame(width: 40, height: 40)
+                    Image(systemName: "hourglass")
+                        .font(.system(size: 18))
+                        .foregroundStyle(.white)
+                }
+
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(String(localized: "home.capsule.title"))
+                        .font(.subheadline)
+                        .fontWeight(.bold)
+                    if let next = lockedCapsules
+                        .filter({ $0.countdownTarget != nil })
+                        .sorted(by: { ($0.countdownTarget ?? .distantFuture) < ($1.countdownTarget ?? .distantFuture) })
+                        .first {
+                        CountdownView(targetDate: next.countdownTarget, style: .compact)
+                    } else {
+                        Text(String(localized: "home.capsule.count \(lockedCapsules.count)"))
+                            .font(.caption2)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+
+                Spacer()
+
+                Text("\(lockedCapsules.count)")
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .foregroundStyle(.orange)
+
+                Image(systemName: "chevron.right")
+                    .font(.caption2)
+                    .foregroundStyle(.tertiary)
+            }
+            .padding(12)
+            .background(Color(.secondarySystemBackground))
+            .clipShape(RoundedRectangle(cornerRadius: 16))
+            .shadow(color: .black.opacity(0.03), radius: 5, x: 0, y: 2)
+        }
+        .buttonStyle(.plain)
         .padding(.horizontal)
     }
 

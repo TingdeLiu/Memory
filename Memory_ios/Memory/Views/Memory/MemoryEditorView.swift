@@ -380,6 +380,8 @@ struct MemoryEditorView: View {
         }
     }
 
+    @State private var showingTimeCapsuleEditor = false
+
     private var optionsSection: some View {
         VStack(spacing: 0) {
             Toggle(isOn: $isPrivate) {
@@ -396,6 +398,24 @@ struct MemoryEditorView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
                     .padding(.bottom, 8)
+            }
+
+            Divider().padding(.horizontal)
+
+            if !isEditing {
+                Button {
+                    showingTimeCapsuleEditor = true
+                } label: {
+                    Label(String(localized: "memoryEditor.sealAsCapsule"), systemImage: "hourglass")
+                        .font(.subheadline)
+                        .foregroundStyle(.orange)
+                }
+                .padding(.horizontal)
+                .padding(.vertical, 10)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .sheet(isPresented: $showingTimeCapsuleEditor) {
+                    TimeCapsuleEditorView()
+                }
             }
         }
     }

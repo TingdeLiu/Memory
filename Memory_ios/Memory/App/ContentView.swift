@@ -51,5 +51,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: [MemoryEntry.self, Contact.self, Message.self, SoulProfile.self, InterviewSession.self, AssessmentResult.self, RelationshipProfile.self, VoiceProfile.self, VoiceSample.self, WritingStyleProfile.self, AvatarProfile.self, DigitalSelfConfig.self], inMemory: true)
+        .modelContainer(for: [MemoryEntry.self, Contact.self, Message.self, SoulProfile.self, InterviewSession.self, AssessmentResult.self, RelationshipProfile.self, VoiceProfile.self, VoiceSample.self, WritingStyleProfile.self, AvatarProfile.self, DigitalSelfConfig.self, TimeCapsule.self], inMemory: true)
 }

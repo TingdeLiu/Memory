@@ -28,6 +28,7 @@ struct MemoryApp: App {
             WritingStyleProfile.self,
             AvatarProfile.self,
             DigitalSelfConfig.self,
+            TimeCapsule.self,
         ])
 
         let iCloudEnabled = UserDefaults.standard.bool(forKey: "iCloudSyncEnabled")
@@ -67,9 +68,11 @@ struct MemoryApp: App {
             case .background:
                 if requireBiometricAuth && autoLockOnBackground {
                     isUnlocked = false
-                    // Clear cached encryption key when app locks for security
                     EncryptionHelper.clearCachedMasterKey()
                 }
+                // Sync data to widgets when going to background
+                let context = sharedModelContainer.mainContext
+                WidgetDataManager.refreshAll(modelContext: context)
             case .active:
                 break
             case .inactive:

@@ -42,4 +42,7 @@ GoogleService-Info.plist
 .vscode/
 
 # Build
-build/
+build
+
+#others
+Memory_ios_副本/

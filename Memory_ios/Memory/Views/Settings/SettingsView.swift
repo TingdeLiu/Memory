@@ -9,15 +9,16 @@ struct SettingsView: View {
 
     @AppStorage("googleDriveEnabled") private var googleDriveEnabled = false
 
-    @ObservedObject private var cloudService = CloudSyncService.shared
+    @StateObject private var cloudService = CloudSyncService.shared
     private var gdriveService: GoogleDriveSyncService { GoogleDriveSyncService.shared }
     private var store: StoreService { StoreService.shared }
     private var languageManager: LanguageManager { LanguageManager.shared }
     @State private var showingPurchase = false
     @State private var showingFeedback = false
     @State private var showingLanguageRestart = false
-    @State private var storageSize: String = "Calculating..."
+    @State private var storageSize: String = "..."
     @State private var stats: DataStatistics?
+    @State private var isLoading = true
 
     private var biometricType: BiometricAuth.BiometricType {
         BiometricAuth.availableType
@@ -70,9 +71,11 @@ struct SettingsView: View {
                 PurchaseView()
             }
             .task {
-                await cloudService.checkiCloudStatus()
-                await loadStats()
-                calculateStorage()
+                async let icloudCheck: Void = cloudService.checkiCloudStatus()
+                async let statsLoad: Void = loadStats()
+                async let storageCalc: Void = calculateStorage()
+                _ = await (icloudCheck, statsLoad, storageCalc)
+                isLoading = false
             }
         }
     }
@@ -382,24 +385,26 @@ struct SettingsView: View {
 
     // MARK: - Helpers
 
-    private func calculateStorage() {
-        Task.detached {
+    private func calculateStorage() async {
+        let formatted = await Task.detached {
             let bytes = CloudSyncService.shared.calculateLocalStorageSize()
-            let formatted = CloudSyncService.formatBytes(bytes)
-            await MainActor.run {
-                storageSize = formatted
-            }
-        }
+            return CloudSyncService.formatBytes(bytes)
+        }.value
+        storageSize = formatted
     }
 
     private func loadStats() async {
-        let container = modelContext.container
-        let storage = StorageService(modelContainer: container)
-        stats = try? await storage.getStatistics()
+        do {
+            let container = modelContext.container
+            let storage = StorageService(modelContainer: container)
+            stats = try await storage.getStatistics()
+        } catch {
+            // Stats loading failed — leave as nil (hidden)
+        }
     }
 }
 
 #Preview {
     SettingsView()
-        .modelContainer(for: [MemoryEntry.self, Contact.self, Message.self], inMemory: true)
+        .modelContainer(for: [MemoryEntry.self, Contact.self, Message.self, SoulProfile.self, InterviewSession.self, AssessmentResult.self, RelationshipProfile.self, VoiceProfile.self, VoiceSample.self, WritingStyleProfile.self, AvatarProfile.self, DigitalSelfConfig.self, TimeCapsule.self], inMemory: true)
 }

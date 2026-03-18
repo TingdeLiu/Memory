@@ -14,6 +14,9 @@ final class MemoryEntry {
     var videoDuration: TimeInterval?
     var unlockDate: Date?
 
+    // MARK: - Time Capsule Relationship (Phase 20)
+    var timeCapsule: TimeCapsule?
+
     // MARK: - Plain-text storage (always used in cloudOnly mode)
 
     var _plainTitle: String
@@ -217,6 +220,9 @@ final class MemoryEntry {
     }
 
     var isLocked: Bool {
+        if let capsule = timeCapsule {
+            return !capsule.isUnlocked
+        }
         if let unlockDate = unlockDate {
             return Date() < unlockDate
         }

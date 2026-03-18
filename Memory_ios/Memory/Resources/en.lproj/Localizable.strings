@@ -1487,3 +1487,149 @@
 "assessment.mbti.desc" = "Understand your personality type through 16 dimensions.";
 "legacy.title" = "Life Meaning & Legacy";
 "legacy.desc" = "Reflect on and record the spiritual legacy you want to leave the world.";
+
+/* MARK: - Time Capsule (Phase 20)
+ */
+"capsule.title" = "Time Capsules";
+"capsule.new" = "New Time Capsule";
+"capsule.edit" = "Edit Time Capsule";
+"capsule.sealed" = "Sealed";
+"capsule.locked" = "Locked";
+"capsule.unlocks_on %@" = "Opens on %@";
+"capsule.opened.title" = "Capsule Opened";
+"capsule.sealed.title" = "Time Capsule Sealed";
+
+/* Capsule Types */
+"capsule.type.date" = "Date Unlock";
+"capsule.type.date.description" = "Opens automatically on a specific date";
+"capsule.type.location" = "Location Unlock";
+"capsule.type.location.description" = "Opens when you arrive at a place";
+"capsule.type.event" = "Event Unlock";
+"capsule.type.event.description" = "Opens when you decide the moment is right";
+
+/* Capsule Conditions */
+"capsule.condition.unknown" = "Unknown";
+"capsule.condition.selectType" = "How should this capsule unlock?";
+"capsule.condition.location" = "A special place";
+"capsule.condition.event" = "A special moment";
+
+/* Capsule Countdown */
+"capsule.countdown.ready" = "Ready to open!";
+"capsule.countdown.daysHours %lld %lld" = "%lldd %lldh";
+"capsule.countdown.hoursMinutes %lld %lld" = "%lldh %lldm";
+"capsule.countdown.minutes %lld" = "%lldm";
+"capsule.countdown.hms %lld %lld %lld" = "%lld:%02lld:%02lld";
+"capsule.countdown.ms %lld %lld" = "%lld:%02lld";
+"capsule.unit.days" = "days";
+"capsule.unit.hours" = "hrs";
+"capsule.unit.min" = "min";
+"capsule.unit.sec" = "sec";
+
+/* Capsule Filters */
+"capsule.filter.all" = "All";
+"capsule.filter.locked" = "Sealed";
+"capsule.filter.unlocked" = "Opened";
+"capsule.section.sealed" = "Sealed Capsules";
+"capsule.section.opened" = "Opened Capsules";
+
+/* Capsule Detail */
+"capsule.detail.title" = "Time Capsule";
+"capsule.detail.created" = "Created";
+"capsule.detail.opened" = "Opened";
+"capsule.detail.sealedOn %@" = "Sealed on %@";
+"capsule.openedOn %@" = "Opened %@";
+"capsule.locked.hint" = "This memory is sealed. It will reveal itself when the time comes.";
+"capsule.waiting.location" = "Waiting for you to arrive...";
+"capsule.waiting.event" = "Waiting for the moment...";
+
+/* Capsule Actions */
+"capsule.action.unlock" = "Open Now";
+"capsule.action.delete" = "Delete Capsule";
+"capsule.unlock.confirm.title" = "Open This Capsule?";
+"capsule.unlock.confirm.message" = "Once opened, the capsule cannot be re-sealed.";
+"capsule.delete.confirm.title" = "Delete Capsule?";
+"capsule.delete.confirm.message" = "This will permanently delete the time capsule and its memory.";
+
+/* Capsule Editor Steps */
+"capsule.step.content" = "Content";
+"capsule.step.condition" = "Condition";
+"capsule.step.confirm" = "Seal";
+"capsule.step.content.hint" = "Write something to your future self...";
+"capsule.content.placeholder" = "What do you want to remember? What message do you want to leave?";
+"capsule.button.back" = "Back";
+"capsule.button.next" = "Next";
+"capsule.button.seal" = "Seal Capsule";
+
+/* Capsule Confirm */
+"capsule.confirm.title" = "Ready to Seal";
+"capsule.confirm.memory" = "Memory";
+"capsule.confirm.condition" = "Unlock Condition";
+"capsule.confirm.warning" = "Once sealed, this memory will be hidden until the unlock condition is met. You cannot peek inside.";
+
+/* Capsule Date */
+"capsule.date.selectDate" = "When should it open?";
+"capsule.date.presets" = "Quick options";
+"capsule.date.1month" = "1 month";
+"capsule.date.6months" = "6 months";
+"capsule.date.1year" = "1 year";
+"capsule.date.5years" = "5 years";
+
+/* Capsule Location */
+"capsule.location.selectPlace" = "Where should it open?";
+"capsule.location.search" = "Search for a place...";
+"capsule.location.radius %lld" = "Trigger radius: %lld m";
+"capsule.location.permissionHint" = "Location access will be requested when you seal the capsule.";
+
+/* Capsule Event */
+"capsule.event.describe" = "What event will trigger this capsule?";
+"capsule.event.placeholder" = "e.g. When my child turns 18, our 10th anniversary...";
+"capsule.event.targetDate" = "Expected date (optional)";
+"capsule.event.hint" = "You can open event-based capsules manually when the moment arrives.";
+
+/* Capsule Empty State */
+"capsule.empty.title" = "No Time Capsules Yet";
+"capsule.empty.subtitle" = "Seal a memory for the future. Choose when, where, or why it should be revealed.";
+"capsule.empty.button" = "Create Time Capsule";
+
+/* Capsule Notifications */
+"capsule.notification.title" = "Time Capsule Ready!";
+"capsule.notification.body" = "A time capsule you sealed is ready to be opened.";
+"capsule.notification.locationBody" = "You've arrived! A time capsule is waiting for you here.";
+
+/* Home Capsule Card */
+"home.capsule.title" = "Time Capsules";
+"home.capsule.count %lld" = "%lld sealed capsules";
+
+/* Memory Editor */
+"memoryEditor.sealAsCapsule" = "Seal as Time Capsule...";
+
+/* MARK: - Widgets (Phase 19) */
+
+/* Widget Titles */
+"widget.recent.title" = "Recent Memory";
+"widget.recent.description" = "See your latest memories at a glance.";
+"widget.stats.title" = "Memory Stats";
+"widget.stats.description" = "Track your memory collection and writing streak.";
+"widget.capsule.config.title" = "Time Capsule";
+"widget.capsule.config.description" = "Countdown to your next time capsule unlock.";
+
+/* Widget Content */
+"widget.placeholder.title" = "A quiet moment";
+"widget.placeholder.content" = "Your memories will appear here...";
+"widget.empty.title" = "No memories yet";
+"widget.empty.hint" = "Open Memory to start recording";
+"widget.encrypted" = "Encrypted Memory";
+
+/* Widget Stats */
+"widget.stat.total" = "Total";
+"widget.stat.memories" = "memories";
+"widget.stat.week" = "This Week";
+"widget.stat.mood" = "Mood";
+"widget.stat.streak" = "Streak";
+"widget.stat.capsules" = "Capsules";
+
+/* Widget Capsule */
+"widget.capsule.title" = "Time Capsules";
+"widget.capsule.sealed" = "Sealed until...";
+"widget.capsule.more %lld" = "+%lld more";
+"widget.capsule.none" = "No sealed capsules";

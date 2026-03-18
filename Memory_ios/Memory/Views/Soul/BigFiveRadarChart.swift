@@ -119,15 +119,19 @@ private struct RadarLabels: View {
         GeometryReader { geometry in
             let center = CGPoint(x: geometry.size.width / 2, y: geometry.size.height / 2)
             ForEach(0..<labels.count, id: \.self) { i in
-                let angle = CGFloat(i) * (2 * .pi / CGFloat(labels.count)) - .pi / 2
-                let x = center.x + radius * cos(angle)
-                let y = center.y + radius * sin(angle)
-                
-                Text(labels[i])
-                    .font(.caption2)
-                    .fontWeight(.bold)
-                    .position(x: x, y: y)
+                labelView(index: i, center: center)
             }
         }
+    }
+
+    private func labelView(index: Int, center: CGPoint) -> some View {
+        let count = CGFloat(labels.count)
+        let angle = CGFloat(index) * (2 * .pi / count) - .pi / 2
+        let x = center.x + radius * cos(angle)
+        let y = center.y + radius * sin(angle)
+        return Text(labels[index])
+            .font(.caption2)
+            .fontWeight(.bold)
+            .position(x: x, y: y)
     }
 }

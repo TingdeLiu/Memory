@@ -50,17 +50,35 @@ struct MemoryCardView: View {
 
     private var lockedContent: some View {
         VStack(spacing: 16) {
-            Image(systemName: "lock.fill")
-                .font(.system(size: 40))
-                .foregroundStyle(.secondary)
-            
-            Text(String(localized: "capsule.locked"))
-                .font(.headline)
-            
-            if let unlockDate = memory.unlockDate {
-                Text(String(localized: "capsule.unlocks_on \(unlockDate.formatted(date: .abbreviated, time: .omitted))"))
-                    .font(.subheadline)
+            if let capsule = memory.timeCapsule {
+                Image(systemName: "hourglass")
+                    .font(.system(size: 40))
+                    .foregroundStyle(
+                        LinearGradient(colors: [.orange, .purple], startPoint: .topLeading, endPoint: .bottomTrailing)
+                    )
+                    .symbolEffect(.pulse, options: .repeating)
+
+                Text(String(localized: "capsule.sealed"))
+                    .font(.headline)
+
+                Label(capsule.unlockType.label, systemImage: capsule.unlockType.icon)
+                    .font(.caption)
+                    .foregroundStyle(.orange)
+
+                CountdownView(targetDate: capsule.countdownTarget, style: .compact)
+            } else {
+                Image(systemName: "lock.fill")
+                    .font(.system(size: 40))
                     .foregroundStyle(.secondary)
+
+                Text(String(localized: "capsule.locked"))
+                    .font(.headline)
+
+                if let unlockDate = memory.unlockDate {
+                    Text(String(localized: "capsule.unlocks_on \(unlockDate.formatted(date: .abbreviated, time: .omitted))"))
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
             }
         }
         .frame(maxWidth: .infinity)

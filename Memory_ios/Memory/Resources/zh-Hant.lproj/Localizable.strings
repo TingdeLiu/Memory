@@ -1471,3 +1471,119 @@
 "legacy.title" = "生命意義與傳承";
 "legacy.desc" = "思考並記錄你想要留給世界的精神遺產。";
 "assessment.complete" = "已完成";
+
+/* MARK: - Time Capsule (Phase 20)
+ */
+"capsule.title" = "時間膠囊";
+"capsule.new" = "新建時間膠囊";
+"capsule.edit" = "編輯時間膠囊";
+"capsule.sealed" = "已封存";
+"capsule.locked" = "已鎖定";
+"capsule.unlocks_on %@" = "將於 %@ 開啟";
+"capsule.opened.title" = "膠囊已開啟";
+"capsule.sealed.title" = "時間膠囊已封存";
+"capsule.type.date" = "定時解封";
+"capsule.type.date.description" = "在指定日期自動解鎖";
+"capsule.type.location" = "地點解封";
+"capsule.type.location.description" = "到達指定地點時解鎖";
+"capsule.type.event" = "事件解封";
+"capsule.type.event.description" = "當你認為時機成熟時手動解鎖";
+"capsule.condition.unknown" = "未知";
+"capsule.condition.selectType" = "這個膠囊如何解鎖？";
+"capsule.condition.location" = "一個特別的地方";
+"capsule.condition.event" = "一個特別的時刻";
+"capsule.countdown.ready" = "可以開啟了！";
+"capsule.countdown.daysHours %lld %lld" = "%lld天 %lld時";
+"capsule.countdown.hoursMinutes %lld %lld" = "%lld時 %lld分";
+"capsule.countdown.minutes %lld" = "%lld分";
+"capsule.countdown.hms %lld %lld %lld" = "%lld:%02lld:%02lld";
+"capsule.countdown.ms %lld %lld" = "%lld:%02lld";
+"capsule.unit.days" = "天";
+"capsule.unit.hours" = "時";
+"capsule.unit.min" = "分";
+"capsule.unit.sec" = "秒";
+"capsule.filter.all" = "全部";
+"capsule.filter.locked" = "封存中";
+"capsule.filter.unlocked" = "已開啟";
+"capsule.section.sealed" = "封存中的膠囊";
+"capsule.section.opened" = "已開啟的膠囊";
+"capsule.detail.title" = "時間膠囊";
+"capsule.detail.created" = "建立於";
+"capsule.detail.opened" = "開啟於";
+"capsule.detail.sealedOn %@" = "封存於 %@";
+"capsule.openedOn %@" = "已於 %@ 開啟";
+"capsule.locked.hint" = "這段記憶已被封存。當條件滿足時，它將自己揭曉。";
+"capsule.waiting.location" = "等待你的到來...";
+"capsule.waiting.event" = "等待那個時刻...";
+"capsule.action.unlock" = "立即開啟";
+"capsule.action.delete" = "刪除膠囊";
+"capsule.unlock.confirm.title" = "開啟這個膠囊？";
+"capsule.unlock.confirm.message" = "一旦開啟，膠囊將無法重新封存。";
+"capsule.delete.confirm.title" = "刪除膠囊？";
+"capsule.delete.confirm.message" = "這將永久刪除時間膠囊及其中的記憶。";
+"capsule.step.content" = "內容";
+"capsule.step.condition" = "條件";
+"capsule.step.confirm" = "封存";
+"capsule.step.content.hint" = "寫下給未來自己的話...";
+"capsule.content.placeholder" = "你想留住什麼？你想留下什麼話？";
+"capsule.button.back" = "上一步";
+"capsule.button.next" = "下一步";
+"capsule.button.seal" = "封存膠囊";
+"capsule.confirm.title" = "準備封存";
+"capsule.confirm.memory" = "記憶";
+"capsule.confirm.condition" = "解鎖條件";
+"capsule.confirm.warning" = "封存後，這段記憶將在解鎖條件滿足前被隱藏，你無法偷看裡面的內容。";
+"capsule.date.selectDate" = "什麼時候開啟？";
+"capsule.date.presets" = "快速選擇";
+"capsule.date.1month" = "1個月";
+"capsule.date.6months" = "半年";
+"capsule.date.1year" = "1年";
+"capsule.date.5years" = "5年";
+"capsule.location.selectPlace" = "在哪裡開啟？";
+"capsule.location.search" = "搜尋地點...";
+"capsule.location.radius %lld" = "觸發半徑：%lld 公尺";
+"capsule.location.permissionHint" = "封存膠囊時將請求位置權限。";
+"capsule.event.describe" = "什麼事件會觸發這個膠囊？";
+"capsule.event.placeholder" = "例如：孩子滿18歲時、結婚十週年時...";
+"capsule.event.targetDate" = "預計日期（可選）";
+"capsule.event.hint" = "事件膠囊可以在你認為時機到來時手動開啟。";
+"capsule.empty.title" = "還沒有時間膠囊";
+"capsule.empty.subtitle" = "為未來封存一段記憶。選擇何時、何地、或因何揭開它。";
+"capsule.empty.button" = "建立時間膠囊";
+"capsule.notification.title" = "時間膠囊就緒！";
+"capsule.notification.body" = "你封存的一個時間膠囊已經可以開啟了。";
+"capsule.notification.locationBody" = "你到了！有一個時間膠囊在這裡等著你。";
+"home.capsule.title" = "時間膠囊";
+"home.capsule.count %lld" = "%lld 個封存中的膠囊";
+"memoryEditor.sealAsCapsule" = "封存為時間膠囊...";
+
+/* MARK: - 小組件 (Phase 19) */
+
+/* Widget Titles */
+"widget.recent.title" = "最近記憶";
+"widget.recent.description" = "一覽你最新的記憶。";
+"widget.stats.title" = "記憶統計";
+"widget.stats.description" = "追蹤你的記憶集和寫作連續天數。";
+"widget.capsule.config.title" = "時間膠囊";
+"widget.capsule.config.description" = "距離下一個時間膠囊解鎖的倒計時。";
+
+/* Widget Content */
+"widget.placeholder.title" = "寧靜時刻";
+"widget.placeholder.content" = "你的記憶將在這裡展示...";
+"widget.empty.title" = "還沒有記憶";
+"widget.empty.hint" = "打開 Memory 開始記錄";
+"widget.encrypted" = "加密記憶";
+
+/* Widget Stats */
+"widget.stat.total" = "總計";
+"widget.stat.memories" = "條記憶";
+"widget.stat.week" = "本週";
+"widget.stat.mood" = "心情";
+"widget.stat.streak" = "連續";
+"widget.stat.capsules" = "膠囊";
+
+/* Widget Capsule */
+"widget.capsule.title" = "時間膠囊";
+"widget.capsule.sealed" = "等待揭開...";
+"widget.capsule.more %lld" = "還有 %lld 個";
+"widget.capsule.none" = "沒有封存中的膠囊";

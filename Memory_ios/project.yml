@@ -23,6 +23,7 @@ targets:
       - path: Memory
         excludes:
           - "**/.DS_Store"
+      - path: Shared
     resources:
       - path: Memory/Resources
     settings:
@@ -54,7 +55,30 @@ targets:
           - UIInterfaceOrientationPortraitUpsideDown
           - UIInterfaceOrientationLandscapeLeft
           - UIInterfaceOrientationLandscapeRight
-    dependencies: []
+    dependencies:
+      - target: MemoryWidgets
+        embed: true
+
+  MemoryWidgets:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: MemoryWidgets
+        excludes:
+          - "**/.DS_Store"
+          - Resources
+      - path: Shared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.tyndall.memory.widgets
+        CODE_SIGN_ENTITLEMENTS: MemoryWidgets/MemoryWidgets.entitlements
+        LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks"
+        GENERATE_INFOPLIST_FILE: true
+        INFOPLIST_KEY_CFBundleDisplayName: MemoryWidgets
+        INFOPLIST_KEY_NSHumanReadableCopyright: ""
+        INFOPLIST_KEY_NSExtension_NSExtensionPointIdentifier: com.apple.widgetkit-extension
+        SKIP_INSTALL: true
+        SWIFT_EMIT_LOC_STRINGS: true
 
   MemoryTests:
     type: bundle.unit-test
@@ -75,6 +99,7 @@ schemes:
     build:
       targets:
         Memory: all
+        MemoryWidgets: all
         MemoryTests: [test]
     run:
       config: Debug
