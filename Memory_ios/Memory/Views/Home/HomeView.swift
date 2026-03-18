@@ -10,12 +10,16 @@ struct HomeView: View {
     @AppStorage("aiEnabled") private var aiEnabled = false
     @AppStorage("encryptionLevel") private var encryptionLevelRaw = "cloudOnly"
 
+    private var publishedMemories: [MemoryEntry] {
+        memories.filter { !$0.title.hasPrefix("[Draft] ") }
+    }
+
     var body: some View {
         NavigationStack {
             ZStack {
                 Color(.systemGroupedBackground).ignoresSafeArea()
 
-                if memories.filter({ !$0.title.hasPrefix("[Draft] ") }).isEmpty {
+                if publishedMemories.isEmpty {
                     emptyState
                 } else {
                     timelineContent
