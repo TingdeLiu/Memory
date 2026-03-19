@@ -214,6 +214,7 @@
 		6594BCB4C2F383523A71F928 /* LockScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenView.swift; sourceTree = "<group>"; };
 		687D66E7048B540F82F6DC11 /* DigitalSelfChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalSelfChatView.swift; sourceTree = "<group>"; };
 		6A11EB8A102F9CF4577A0BFB /* ContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailView.swift; sourceTree = "<group>"; };
+		6B8DA596CDF8DBD67F399087 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6BA7420BDEBF3787A42D985A /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
 		6C54F290D8CECCB938098C2B /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		6C8A58CB61C8F6B60A76AB7D /* VoiceCloneService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceCloneService.swift; sourceTree = "<group>"; };
@@ -296,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				934BCF52909108A0B9E217A6 /* CapsuleCountdownWidget.swift */,
+				6B8DA596CDF8DBD67F399087 /* Info.plist */,
 				10B431B28A3F1C6E8319F7FE /* MemoryWidgetBundle.swift */,
 				12960A56AAE84FD34AE92A76 /* MemoryWidgets.entitlements */,
 				460327AFAFDE683B0367254D /* RecentMemoryWidget.swift */,
@@ -921,10 +923,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = MemoryWidgets/MemoryWidgets.entitlements;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = MemoryWidgets;
-				INFOPLIST_KEY_NSExtension_NSExtensionPointIdentifier = "com.apple.widgetkit-extension";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_FILE = MemoryWidgets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tyndall.memory.widgets;
 				SDKROOT = iphoneos;
@@ -938,10 +937,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = MemoryWidgets/MemoryWidgets.entitlements;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = MemoryWidgets;
-				INFOPLIST_KEY_NSExtension_NSExtensionPointIdentifier = "com.apple.widgetkit-extension";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_FILE = MemoryWidgets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tyndall.memory.widgets;
 				SDKROOT = iphoneos;

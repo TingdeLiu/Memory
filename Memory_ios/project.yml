@@ -80,11 +80,8 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.tyndall.memory.widgets
         CODE_SIGN_ENTITLEMENTS: MemoryWidgets/MemoryWidgets.entitlements
+        INFOPLIST_FILE: MemoryWidgets/Info.plist
         LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks"
-        GENERATE_INFOPLIST_FILE: true
-        INFOPLIST_KEY_CFBundleDisplayName: MemoryWidgets
-        INFOPLIST_KEY_NSHumanReadableCopyright: ""
-        INFOPLIST_KEY_NSExtension_NSExtensionPointIdentifier: com.apple.widgetkit-extension
         SKIP_INSTALL: true
         SWIFT_EMIT_LOC_STRINGS: true
 
