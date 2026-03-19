@@ -1639,3 +1639,60 @@
 "database.error.title" = "Database Error";
 "database.error.message" = "Unable to load your data. Your memories are safe — please restart the app to try again.";
 "database.error.restart" = "Restart App";
+
+/* MARK: - Proactive Insights */
+
+/* On This Day */
+"insight.onThisDay.title" = "On This Day";
+"insight.onThisDay.lastYear" = "1 Year Ago Today";
+"insight.onThisDay.yearsAgo %lld" = "%lld Years Ago Today";
+"insight.onThisDay.single %@" = "\"%@\" — revisit this moment";
+"insight.onThisDay.multiple %lld" = "You have %lld memories from this day";
+
+/* Mood Trends */
+"insight.mood.alert.title" = "How Are You?";
+"insight.mood.alert.message %@ %@ %lld" = "You've felt %@ %@ in %lld recent entries. Want to talk about it?";
+"insight.mood.positive.title" = "You're on a Roll!";
+"insight.mood.positive.message %@ %lld" = "%@ %lld times recently — keep up the good vibes!";
+
+/* Milestones */
+"insight.milestone.title %lld" = "%lld Memories!";
+"insight.milestone.message %lld" = "You've captured %lld moments. Every memory matters.";
+"insight.anniversary.title" = "Memory Anniversary";
+"insight.anniversary.message %lld" = "Your journey started %lld year(s) ago today!";
+
+/* Connection Suggestions */
+"insight.connection.title" = "Reconnect";
+"insight.connection.message %@ %lld" = "It's been %lld days since you last wrote to %@";
+
+/* Reflection Prompts */
+"insight.reflection.title" = "Today's Reflection";
+"insight.prompt.introvert.1" = "What did you learn about yourself today?";
+"insight.prompt.introvert.2" = "Describe a moment of peace you experienced recently.";
+"insight.prompt.introvert.3" = "What thought keeps coming back to you lately?";
+"insight.prompt.introvert.4" = "When did you last feel truly understood?";
+"insight.prompt.introvert.5" = "What would you tell your younger self about today?";
+"insight.prompt.extrovert.1" = "Who made you smile today and why?";
+"insight.prompt.extrovert.2" = "What's the most interesting conversation you had recently?";
+"insight.prompt.extrovert.3" = "Describe a moment when you felt most alive this week.";
+"insight.prompt.extrovert.4" = "What are you looking forward to sharing with someone?";
+"insight.prompt.extrovert.5" = "What adventure would you love to have tomorrow?";
+"insight.prompt.general.1" = "What moment from today do you want to remember?";
+"insight.prompt.general.2" = "If today had a color, what would it be and why?";
+"insight.prompt.general.3" = "What are you grateful for right now?";
+"insight.prompt.general.4" = "What would your future self want to know about today?";
+"insight.prompt.general.5" = "Describe how you're feeling in three words.";
+
+/* Insight Actions */
+"insight.action.view" = "View";
+"insight.action.record" = "Record";
+"insight.action.talkToAI" = "Talk to AI";
+"insight.action.writeMessage" = "Write";
+
+/* MARK: - Message Editor: Style Rewrite */
+"messageEditor.rewriteInMyStyle" = "Rewrite in My Style";
+"messageEditor.rewriteHint" = "AI will rewrite your message using your personal writing style.";
+
+/* MARK: - Capsule Reveal Ceremony */
+"capsuleReveal.tapToOpen" = "Tap to Open";
+"capsuleReveal.continue" = "View Full Memory";

@@ -1593,3 +1593,60 @@
 "database.error.title" = "資料庫錯誤";
 "database.error.message" = "無法載入您的資料。您的記憶是安全的，請重新啟動應用程式重試。";
 "database.error.restart" = "重新啟動";
+
+/* MARK: - 主動洞察 */
+
+/* 歷史上的今天 */
+"insight.onThisDay.title" = "歷史上的今天";
+"insight.onThisDay.lastYear" = "去年的今天";
+"insight.onThisDay.yearsAgo %lld" = "%lld 年前的今天";
+"insight.onThisDay.single %@" = "「%@」——重溫這個時刻";
+"insight.onThisDay.multiple %lld" = "今天有 %lld 條歷史回憶";
+
+/* 情緒趨勢 */
+"insight.mood.alert.title" = "你還好嗎？";
+"insight.mood.alert.message %@ %@ %lld" = "近期 %lld 條記錄中你的心情是 %@ %@，想聊聊嗎？";
+"insight.mood.positive.title" = "狀態很棒！";
+"insight.mood.positive.message %@ %lld" = "最近 %lld 次記錄都是 %@，繼續保持好心情！";
+
+/* 里程碑 */
+"insight.milestone.title %lld" = "第 %lld 條記憶！";
+"insight.milestone.message %lld" = "你已經記錄了 %lld 個珍貴瞬間，每一條都有意義。";
+"insight.anniversary.title" = "記憶週年紀念";
+"insight.anniversary.message %lld" = "你的記憶之旅從 %lld 年前的今天開始！";
+
+/* 聯繫建議 */
+"insight.connection.title" = "該聯繫一下了";
+"insight.connection.message %@ %lld" = "你已經 %lld 天沒有給 %@ 寫訊息了";
+
+/* 每日反思 */
+"insight.reflection.title" = "今日反思";
+"insight.prompt.introvert.1" = "今天你對自己有什麼新的認識？";
+"insight.prompt.introvert.2" = "描述一個最近讓你感到平靜的時刻。";
+"insight.prompt.introvert.3" = "最近總是在想什麼？";
+"insight.prompt.introvert.4" = "上一次感覺被真正理解是什麼時候？";
+"insight.prompt.introvert.5" = "如果能對過去的自己說一句話，你會說什麼？";
+"insight.prompt.extrovert.1" = "今天誰讓你笑了？為什麼？";
+"insight.prompt.extrovert.2" = "最近最有趣的一次對話是什麼？";
+"insight.prompt.extrovert.3" = "這週什麼時刻讓你感覺最有活力？";
+"insight.prompt.extrovert.4" = "有什麼好事想分享給別人？";
+"insight.prompt.extrovert.5" = "明天最想經歷什麼樣的冒險？";
+"insight.prompt.general.1" = "今天最想記住的瞬間是什麼？";
+"insight.prompt.general.2" = "如果今天有一種顏色，會是什麼？";
+"insight.prompt.general.3" = "此刻你最感恩什麼？";
+"insight.prompt.general.4" = "未來的自己會想知道今天的什麼？";
+"insight.prompt.general.5" = "用三個詞描述你現在的心情。";
+
+/* 洞察操作 */
+"insight.action.view" = "查看";
+"insight.action.record" = "記錄";
+"insight.action.talkToAI" = "和 AI 聊聊";
+"insight.action.writeMessage" = "寫訊息";
+
+/* MARK: - 訊息編輯器：風格改寫 */
+"messageEditor.rewriteInMyStyle" = "用我的風格改寫";
+"messageEditor.rewriteHint" = "AI 將用你的個人寫作風格重寫這條訊息。";
+
+/* MARK: - 時間膠囊開啟儀式 */
+"capsuleReveal.tapToOpen" = "輕觸打開";
+"capsuleReveal.continue" = "查看完整回憶";

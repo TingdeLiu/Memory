@@ -39,7 +39,7 @@ final class SoulProfile {
     var _plainLifeStory: String?
     var _plainCommunicationStyle: String?
     var _plainEmotionalPatterns: String?
-    var _plainCoreMemoeries: String?
+    var _plainCoreMemories: String?
 
     var _encryptedPersonalityInsights: String?
     var _encryptedValuesAndBeliefs: String?
@@ -204,10 +204,10 @@ final class SoulProfile {
             if EncryptionLevel.current == .full, let encrypted = _encryptedCoreMemories {
                 return EncryptedFieldHelper.decryptString(encrypted, recordId: id)
             }
-            return _plainCoreMemoeries
+            return _plainCoreMemories
         }
         set {
-            _plainCoreMemoeries = newValue
+            _plainCoreMemories = newValue
             if EncryptionLevel.current == .full, let value = newValue {
                 _encryptedCoreMemories = EncryptedFieldHelper.encryptString(value, recordId: id)
             } else {
@@ -241,7 +241,7 @@ final class SoulProfile {
         self._plainLifeStory = nil
         self._plainCommunicationStyle = nil
         self._plainEmotionalPatterns = nil
-        self._plainCoreMemoeries = nil
+        self._plainCoreMemories = nil
         self._encryptedPersonalityInsights = nil
         self._encryptedValuesAndBeliefs = nil
         self._encryptedLifeStory = nil
@@ -356,7 +356,7 @@ final class SoulProfile {
         if let e = _plainEmotionalPatterns {
             _encryptedEmotionalPatterns = EncryptedFieldHelper.encryptString(e, recordId: id)
         }
-        if let m = _plainCoreMemoeries {
+        if let m = _plainCoreMemories {
             _encryptedCoreMemories = EncryptedFieldHelper.encryptString(m, recordId: id)
         }
     }
@@ -387,7 +387,7 @@ final class SoulProfile {
             _plainEmotionalPatterns = d
         }
         if let e = _encryptedCoreMemories, let d = EncryptedFieldHelper.decryptString(e, recordId: id) {
-            _plainCoreMemoeries = d
+            _plainCoreMemories = d
         }
 
         _encryptedNickname = nil

@@ -8,6 +8,7 @@ struct TimeCapsuleDetailView: View {
     @State private var showingUnlockConfirm = false
     @State private var showingDeleteConfirm = false
     @State private var justUnlocked = false
+    @State private var showingRevealCeremony = false
 
     var body: some View {
         ScrollView {
@@ -48,10 +49,9 @@ struct TimeCapsuleDetailView: View {
         }
         .alert(String(localized: "capsule.unlock.confirm.title"), isPresented: $showingUnlockConfirm) {
             Button(String(localized: "capsule.action.unlock"), role: .destructive) {
-                withAnimation(.spring(response: 0.6)) {
-                    TimeCapsuleService.shared.unlockManually(capsule: capsule, modelContext: modelContext)
-                    justUnlocked = true
-                }
+                TimeCapsuleService.shared.unlockManually(capsule: capsule, modelContext: modelContext)
+                justUnlocked = true
+                showingRevealCeremony = true
             }
             Button(String(localized: "common.cancel"), role: .cancel) {}
         } message: {
@@ -65,13 +65,17 @@ struct TimeCapsuleDetailView: View {
         } message: {
             Text(String(localized: "capsule.delete.confirm.message"))
         }
+        .fullScreenCover(isPresented: $showingRevealCeremony) {
+            CapsuleRevealView(capsule: capsule) {
+                showingRevealCeremony = false
+            }
+        }
         .onAppear {
-            // Auto-unlock date capsules if ready
+            // Auto-unlock date capsules if ready — show ceremony
             if !capsule.isUnlocked && capsule.isReady {
-                withAnimation(.spring(response: 0.6)) {
-                    capsule.unlock()
-                    justUnlocked = true
-                }
+                capsule.unlock()
+                justUnlocked = true
+                showingRevealCeremony = true
             }
         }
         .sensoryFeedback(.success, trigger: justUnlocked)

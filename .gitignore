@@ -1,7 +1,5 @@
 # Sensitive files
 **/plan.md
-**/AIService.swift
-**/EncryptionHelper.swift
 
 # Xcode
 xcuserdata/

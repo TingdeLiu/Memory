@@ -5,7 +5,10 @@ struct HomeView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \MemoryEntry.createdAt, order: .reverse) private var memories: [MemoryEntry]
     @Query(filter: #Predicate<TimeCapsule> { !$0.isUnlocked }, sort: \TimeCapsule.createdAt, order: .reverse) private var lockedCapsules: [TimeCapsule]
+    @Query private var soulProfiles: [SoulProfile]
+    @Query(sort: \Contact.name) private var contacts: [Contact]
     @State private var viewModel: HomeViewModel?
+    @State private var insightService = MemoryInsightService.shared
 
     @AppStorage("aiEnabled") private var aiEnabled = false
     @AppStorage("encryptionLevel") private var encryptionLevelRaw = "cloudOnly"
@@ -92,6 +95,11 @@ struct HomeView: View {
                 if viewModel == nil {
                     viewModel = HomeViewModel(modelContext: modelContext)
                 }
+                insightService.generateInsights(
+                    memories: publishedMemories,
+                    soulProfile: soulProfiles.first,
+                    contacts: contacts
+                )
             }
         }
     }
@@ -149,6 +157,11 @@ struct HomeView: View {
                 if viewModel?.searchText.isEmpty == true && viewModel?.hasDateFilter != true {
                     VStack(spacing: 16) {
                         statsBar
+
+                        // Proactive insights
+                        if !insightService.insights.isEmpty {
+                            insightsSection
+                        }
 
                         if !lockedCapsules.isEmpty {
                             timeCapsuleCard
@@ -327,6 +340,75 @@ struct HomeView: View {
         .buttonStyle(.plain)
         .padding(.horizontal)
     }
+
+    // MARK: - Insights
+
+    private var insightsSection: some View {
+        VStack(spacing: 10) {
+            ForEach(insightService.insights.prefix(3)) { insight in
+                insightCard(insight)
+            }
+        }
+        .padding(.horizontal)
+    }
+
+    private func insightCard(_ insight: MemoryInsight) -> some View {
+        HStack(spacing: 12) {
+            ZStack {
+                Circle()
+                    .fill(insight.color.opacity(0.15))
+                    .frame(width: 40, height: 40)
+                Image(systemName: insight.icon)
+                    .font(.system(size: 18))
+                    .foregroundStyle(insight.color)
+            }
+
+            VStack(alignment: .leading, spacing: 3) {
+                Text(insight.title)
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                Text(insight.message)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .lineLimit(2)
+            }
+
+            Spacer()
+
+            if let actionLabel = insight.actionLabel {
+                Button {
+                    handleInsightAction(insight)
+                } label: {
+                    Text(actionLabel)
+                        .font(.caption2)
+                        .fontWeight(.medium)
+                        .foregroundStyle(insight.color)
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 5)
+                        .background(insight.color.opacity(0.1))
+                        .clipShape(Capsule())
+                }
+            }
+        }
+        .padding(12)
+        .background(Color(.secondarySystemBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 14))
+    }
+
+    private func handleInsightAction(_ insight: MemoryInsight) {
+        switch insight.type {
+        case .reflectionPrompt:
+            viewModel?.showingEditor = true
+        case .moodTrend:
+            viewModel?.showingAIChat = true
+        case .connectionSuggestion:
+            break // Navigate to contacts handled by parent
+        case .onThisDay, .milestone:
+            break // Could navigate to specific memory
+        }
+    }
+
+    // MARK: - Stats
 
     private var statsBar: some View {
         ScrollView(.horizontal, showsIndicators: false) {

@@ -75,6 +75,7 @@ struct LightOrbUniverseView: View {
     @State private var editingContact: Contact?
     @State private var showingContactEditor = false
     @State private var showingAddContact = false
+    @State private var showingReflectionEditor = false
     @State private var draggedContact: Contact?
     @State private var dragOffset: CGSize = .zero
     @State private var orbOrder: [UUID] = []
@@ -226,6 +227,7 @@ struct LightOrbUniverseView: View {
             .toolbar { universeToolbar }
             .sheet(isPresented: $showingChat) { if let c = selectedContact { OrbChatView(contact: c) } }
             .sheet(isPresented: $showingAddContact) { ContactEditorView() }
+            .sheet(isPresented: $showingReflectionEditor) { MemoryEditorView() }
             .onReceive(timer) { _ in
                 if isRotating && !reduceMotion {
                     rotationAngle += 0.2
@@ -280,7 +282,7 @@ struct LightOrbUniverseView: View {
         VStack {
             Spacer()
             Button {
-                // Future: Action to start interview
+                showingReflectionEditor = true
             } label: {
                 HStack(spacing: 12) {
                     Image(systemName: "sparkles")

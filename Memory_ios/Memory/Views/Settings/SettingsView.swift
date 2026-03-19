@@ -9,7 +9,7 @@ struct SettingsView: View {
 
     @AppStorage("googleDriveEnabled") private var googleDriveEnabled = false
 
-    @StateObject private var cloudService = CloudSyncService.shared
+    @State private var cloudService = CloudSyncService.shared
     private var gdriveService: GoogleDriveSyncService { GoogleDriveSyncService.shared }
     private var store: StoreService { StoreService.shared }
     private var languageManager: LanguageManager { LanguageManager.shared }

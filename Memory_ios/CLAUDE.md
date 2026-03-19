@@ -80,15 +80,16 @@ Complex views use dedicated ViewModels for better separation of concerns and tes
 
 ### Services Layer
 
-Services are `@Observable` or `ObservableObject` classes, instantiated as `@State` in views:
+Services are `@Observable` classes, instantiated as `@State` in views:
+- **`MemoryInsightService`** — `@Observable` singleton (`MemoryInsightService.shared`). Generates proactive insights for the home screen: "On This Day" memories (same date in previous years), mood trend detection (negative streak alerts, positive encouragement), milestone celebrations (memory count, first memory anniversary), connection suggestions (neglected favorite contacts), and daily reflection prompts personalized by MBTI type from SoulProfile.
 - **`AudioRecordingService`** — AVAudioRecorder with metering, stores files in `Documents/Recordings/`
 - **`AudioPlaybackService`** — AVAudioPlayer with seek/progress
 - **`SpeechTranscriptionService`** — Apple Speech framework, file-based and live transcription
 - **`ContactImportService`** — CNContactStore wrapper with permission management and dedup filtering
-- **`CloudSyncService`** — Singleton (`CloudSyncService.shared`), monitors CKAccountChanged notifications
+- **`CloudSyncService`** — `@Observable` singleton (`CloudSyncService.shared`), monitors CKAccountChanged notifications, properly cleans up observer in deinit
 - **`StorageService`** — Actor for data export (JSON/plain text) and statistics
 - **`DataExportService`** — Coordinates export to temporary files for sharing
-- **`AIService`** — `@Observable` multi-provider AI service. Supports Claude, OpenAI, Gemini, DeepSeek, and custom OpenAI-compatible endpoints. API keys stored per-provider in Keychain (`com.tyndall.memory.ai` service). Provides `summarizeMemories`, `chatAboutMemories`, `analyzeEmotionTrends`, `generateAnnualReport`. Privacy filtering excludes `isPrivate` memories and binary data. Crisis keyword detection appends hotline info.
+- **`AIService`** — `@Observable` multi-provider AI service. Supports Claude (claude-sonnet-4-6, claude-opus-4-6), OpenAI (gpt-4o, o3-mini), Gemini (gemini-2.0-flash, gemini-2.5-pro), DeepSeek, and custom endpoints. API keys stored per-provider in Keychain. Gemini API key sent via `x-goog-api-key` header (not URL). Provides `summarizeMemories`, `chatAboutMemories`, `analyzeEmotionTrends`, `generateAnnualReport`, and `personalizedSystemPrompt(soulProfile:)` for MBTI/values-aware AI responses. Crisis keyword detection covers English, Chinese (simplified + traditional), Japanese, Korean with localized hotline info.
 - **`StoreService`** — `@Observable` singleton (`StoreService.shared`), manages StoreKit 2 one-time purchase for Premium (`com.tyndall.memory.premium`). Loads products, handles purchase/restore, listens for transaction updates. Feature gating: `canUseAI`, `canExportEncrypted`, `canUseDigitalSelf` (Premium only); `canCreateVoiceMemory`, `canCreateVideoMemory`, `contactLimit`, `voiceMemoryLimit`, `videoMemoryLimit` (all free unlimited). Caches premium status in `@AppStorage("isPremiumCached")`.
 - **`VideoRecordingService`** — `@Observable` video recording service. AVCaptureSession + AVCaptureMovieFileOutput. Front/back camera switching. Thumbnail generation via AVAssetImageGenerator. Auto-encrypts in full encryption mode.
 - **`GoogleDriveSyncService`** — `@Observable` singleton (`GoogleDriveSyncService.shared`). Google Drive REST API v3 with OAuth 2.0 PKCE (ASWebAuthenticationSession). Tokens stored in Keychain (`com.tyndall.memory.gdrive`). Only accesses app-created files (drive.file scope). Encrypted sync via SyncDataSerializer.

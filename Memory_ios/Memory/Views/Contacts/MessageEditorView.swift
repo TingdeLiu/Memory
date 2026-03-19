@@ -21,6 +21,10 @@ struct MessageEditorView: View {
     @State private var showingRecordingSheet = false
     @State private var messageType: MessageType = .text
 
+    // Writing style rewrite
+    @Query private var writingProfiles: [WritingStyleProfile]
+    @State private var isRewriting = false
+
     private var isEditing: Bool { existingMessage != nil }
     private var hasContent: Bool {
         !content.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || audioURL != nil
@@ -68,6 +72,30 @@ struct MessageEditorView: View {
                                         .allowsHitTesting(false)
                                 }
                             }
+                    }
+
+                    // Rewrite in my style
+                    if let styleProfile = writingProfiles.first, styleProfile.isReady,
+                       !content.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                        Section {
+                            Button {
+                                Task { await rewriteInMyStyle(profile: styleProfile) }
+                            } label: {
+                                HStack {
+                                    if isRewriting {
+                                        ProgressView()
+                                            .controlSize(.small)
+                                    } else {
+                                        Image(systemName: "wand.and.stars")
+                                    }
+                                    Text(String(localized: "messageEditor.rewriteInMyStyle"))
+                                    Spacer()
+                                }
+                            }
+                            .disabled(isRewriting)
+                        } footer: {
+                            Text(String(localized: "messageEditor.rewriteHint"))
+                        }
                     }
                 } else {
                     // Voice message section
@@ -252,6 +280,29 @@ struct MessageEditorView: View {
                 contact: contact
             )
             modelContext.insert(message)
+        }
+    }
+
+    private func rewriteInMyStyle(profile: WritingStyleProfile) async {
+        isRewriting = true
+        defer { isRewriting = false }
+
+        let prompt = """
+        Rewrite the following message to \(contact.name) (\(contact.relationship.rawValue)) \
+        in my personal writing style. Keep the meaning and intent, but make it sound like me:
+
+        \(content)
+        """
+
+        do {
+            let rewritten = try await WritingStyleService.shared.generateInStyle(
+                prompt: prompt,
+                profile: profile,
+                aiService: AIService()
+            )
+            content = rewritten
+        } catch {
+            // Keep original content on failure
         }
     }
 

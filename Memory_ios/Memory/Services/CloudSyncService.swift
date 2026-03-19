@@ -1,18 +1,18 @@
 import Foundation
 import CloudKit
-import Combine
 import SwiftUI
 
 /// Manages iCloud sync state, monitoring, and configuration.
 /// SwiftData handles actual CloudKit sync automatically when configured
 /// with a CloudKit database in ModelConfiguration. This service monitors
 /// the sync state and provides user-facing status.
-final class CloudSyncService: ObservableObject {
-    @Published var syncStatus: SyncStatus = .unknown
-    @Published var lastSyncDate: Date?
-    @Published var iCloudAvailable = false
-    @Published var accountName: String?
-    @Published var storageUsed: String?
+@Observable
+final class CloudSyncService {
+    var syncStatus: SyncStatus = .unknown
+    var lastSyncDate: Date?
+    var iCloudAvailable = false
+    var accountName: String?
+    var storageUsed: String?
 
     static let shared = CloudSyncService()
 
@@ -68,6 +68,12 @@ final class CloudSyncService: ObservableObject {
 
     init() {
         setupNotifications()
+    }
+
+    deinit {
+        if let observer = notificationObserver {
+            NotificationCenter.default.removeObserver(observer)
+        }
     }
 
     // MARK: - Account Status

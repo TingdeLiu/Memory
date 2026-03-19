@@ -1616,3 +1616,60 @@
 "database.error.title" = "数据库错误";
 "database.error.message" = "无法加载您的数据。您的记忆是安全的，请重新启动应用重试。";
 "database.error.restart" = "重新启动";
+
+/* MARK: - 主动洞察 */
+
+/* 历史上的今天 */
+"insight.onThisDay.title" = "历史上的今天";
+"insight.onThisDay.lastYear" = "去年的今天";
+"insight.onThisDay.yearsAgo %lld" = "%lld 年前的今天";
+"insight.onThisDay.single %@" = "「%@」——重温这个时刻";
+"insight.onThisDay.multiple %lld" = "今天有 %lld 条历史回忆";
+
+/* 情绪趋势 */
+"insight.mood.alert.title" = "你还好吗？";
+"insight.mood.alert.message %@ %@ %lld" = "近期 %lld 条记录中你的心情是 %@ %@，想聊聊吗？";
+"insight.mood.positive.title" = "状态很棒！";
+"insight.mood.positive.message %@ %lld" = "最近 %lld 次记录都是 %@，继续保持好心情！";
+
+/* 里程碑 */
+"insight.milestone.title %lld" = "第 %lld 条记忆！";
+"insight.milestone.message %lld" = "你已经记录了 %lld 个珍贵瞬间，每一条都有意义。";
+"insight.anniversary.title" = "记忆周年纪念";
+"insight.anniversary.message %lld" = "你的记忆之旅从 %lld 年前的今天开始！";
+
+/* 联系建议 */
+"insight.connection.title" = "该联系一下了";
+"insight.connection.message %@ %lld" = "你已经 %lld 天没有给 %@ 写消息了";
+
+/* 每日反思 */
+"insight.reflection.title" = "今日反思";
+"insight.prompt.introvert.1" = "今天你对自己有什么新的认识？";
+"insight.prompt.introvert.2" = "描述一个最近让你感到平静的时刻。";
+"insight.prompt.introvert.3" = "最近总是在想什么？";
+"insight.prompt.introvert.4" = "上一次感觉被真正理解是什么时候？";
+"insight.prompt.introvert.5" = "如果能对过去的自己说一句话，你会说什么？";
+"insight.prompt.extrovert.1" = "今天谁让你笑了？为什么？";
+"insight.prompt.extrovert.2" = "最近最有趣的一次对话是什么？";
+"insight.prompt.extrovert.3" = "这周什么时刻让你感觉最有活力？";
+"insight.prompt.extrovert.4" = "有什么好事想分享给别人？";
+"insight.prompt.extrovert.5" = "明天最想经历什么样的冒险？";
+"insight.prompt.general.1" = "今天最想记住的瞬间是什么？";
+"insight.prompt.general.2" = "如果今天有一种颜色，会是什么？";
+"insight.prompt.general.3" = "此刻你最感恩什么？";
+"insight.prompt.general.4" = "未来的自己会想知道今天的什么？";
+"insight.prompt.general.5" = "用三个词描述你现在的心情。";
+
+/* 洞察操作 */
+"insight.action.view" = "查看";
+"insight.action.record" = "记录";
+"insight.action.talkToAI" = "和 AI 聊聊";
+"insight.action.writeMessage" = "写消息";
+
+/* MARK: - 消息编辑器：风格改写 */
+"messageEditor.rewriteInMyStyle" = "用我的风格改写";
+"messageEditor.rewriteHint" = "AI 将用你的个人写作风格重写这条消息。";
+
+/* MARK: - 时间胶囊开启仪式 */
+"capsuleReveal.tapToOpen" = "轻触打开";
+"capsuleReveal.continue" = "查看完整回忆";
