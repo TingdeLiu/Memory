@@ -320,7 +320,7 @@ struct VoiceCloneView: View {
                 VoiceImportPickerView(
                     audioMemories: audioMemories,
                     onImport: { selectedMemories in
-                        importSamplesFromMemories(selectedMemories)
+                        Task { await importSamplesFromMemories(selectedMemories) }
                     }
                 )
             }
@@ -389,7 +389,7 @@ struct VoiceCloneView: View {
         }
     }
 
-    private func importSamplesFromMemories(_ memories: [MemoryEntry]) {
+    private func importSamplesFromMemories(_ memories: [MemoryEntry]) async {
         let samplesDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
             .appendingPathComponent("VoiceSamples")
         try? FileManager.default.createDirectory(at: samplesDir, withIntermediateDirectories: true)
@@ -406,7 +406,8 @@ struct VoiceCloneView: View {
                 try FileManager.default.copyItem(at: sourceURL, to: destURL)
 
                 let asset = AVURLAsset(url: destURL)
-                let duration = CMTimeGetSeconds(asset.duration)
+                let cmDuration = try await asset.load(.duration)
+                let duration = CMTimeGetSeconds(cmDuration)
 
                 let sample = VoiceSample(
                     audioFilePath: destFilename,
